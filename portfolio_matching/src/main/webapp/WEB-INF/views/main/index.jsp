@@ -1,13 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 
   <!-- SITE TITTLE -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>포매</title>
+  <title>í¬ë§¤</title>
   
   <!-- FAVICON -->
   <link href="img/favicon.png" rel="shortcut icon">
@@ -47,7 +49,7 @@
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 					<a class="navbar-brand" href="index.html">
 						<img src="images/logo.png" alt=""> 
-						<h3>포매</h3>
+						<h3>포매22222</h3>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,9 +128,9 @@
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>무료로 포트폴리오를 등록하세요 </h1>
-					<p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
-						포트폴리오를 등록하고 판매해보세요!
+					<h1>ë¬´ë£ë¡ í¬í¸í´ë¦¬ì¤ë¥¼ ë±ë¡íì¸ì </h1>
+					<p>í¬ë§¤ë§ì´ ê°ë¥í ìì í ìì° ê´ë¦¬ ìì¤íì¼ë¡ ìì íê²
+						í¬í¸í´ë¦¬ì¤ë¥¼ ë±ë¡íê³  íë§¤í´ë³´ì¸ì!
 					</p>
 					<div class="short-popular-category-list text-center">
 						<h2>Popular Category</h2>
@@ -616,7 +618,7 @@
       <div class="col-sm-6 col-12">
         <!-- Copyright -->
         <div class="copyright">
-          <p>Copyright © <script>
+          <p>Copyright Â© <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
             </script>. All Rights Reserved, theme by <a class="text-primary" href="https://themefisher.com" target="_blank">themefisher.com</a></p>
