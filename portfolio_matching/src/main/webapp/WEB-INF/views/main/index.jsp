@@ -24,8 +24,11 @@
   <link href="./resources/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   <!-- CUSTOM CSS -->
   <link href="./resources/css/style.css" rel="stylesheet">
-
-
+<!-- i class -->
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+  />
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -192,7 +195,7 @@
 
 
 <!--===========================================
-=            Popular deals section            =
+=           포트폴리오 목록        =
 ============================================-->
 
 <section class="popular-deals section bg-gray">
@@ -200,8 +203,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Trending Adds</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, magnam.</p>
+					<h1>추천 포트폴리오</h1>	
 				</div>
 			</div>
 		</div>
@@ -215,21 +217,59 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+			<a href="#">
+				<img class="card-img-top img-fluid" src="resources/Picture/app.PNG" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="#">모바일 앱 제작</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="#"><i class="fa fa-folder-open-o"></i>모바일 앱</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="#"><i class="fa fa-calendar"></i>2월7일</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">최적화된 모바일 앱을 깔끔하게 개발해 드립니다.</p>
+		    <div class="product-ratings">
+		    	<ul class="list-inline">
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+</div>
+
+
+
+					</div>
+					<div class="col-sm-12 col-lg-4">
+						<!-- product card -->
+<div class="product-item bg-light">
+	<div class="card">
+		<div class="thumb-content">
+			<!-- <div class="price">$200</div> -->
+			<a href="#">
+				<img class="card-img-top img-fluid" src="resources/Picture/site.PNG" alt="Card image cap">
+			</a>
+		</div>
+		<div class="card-body">
+		    <h4 class="card-title"><a href="#">커뮤니티 사이트</a></h4>
+		    <ul class="list-inline product-meta">
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-folder-open-o"></i>웹사이트 개발</a>
+		    	</li>
+		    	<li class="list-inline-item">
+		    		<a href="#"><i class="fa fa-calendar"></i>4월14일</a>
+		    	</li>
+		    </ul>
+		    <p class="card-text">커뮤니티 사이트를 만들어드립니다. </p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -252,28 +292,29 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+			<a href="#">
+				<img class="card-img-top img-fluid" src="resources/Picture/home.PNG" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="#">반응형 홈페이지 제작</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>웹사이트 개발</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="#"><i class="fa fa-calendar"></i>4월5일</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">SEO최적화 거품없는 가격으로 반응형 홈페이지 제작해 드립니다.</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
+		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+		    		
 		    	</ul>
 		    </div>
 		</div>
@@ -289,58 +330,21 @@
 	<div class="card">
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+			<a href="#">
+				<img class="card-img-top img-fluid" src="resources/Picture/logo.PNG" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="#">로고디자인</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="#"><i class="fa fa-folder-open-o"></i>로고·브랜딩</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="#"><i class="fa fa-calendar"></i>3월31일</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="#"><i class="fa fa-calendar"></i>26th December</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">생각을 뛰어넘는 로고를 만들어 드립니다.</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -368,7 +372,7 @@
 
 
 <!--==========================================
-=            All Category Section            =
+=           카테고리 목록       =
 ===========================================-->
 
 <section class=" section">
@@ -378,22 +382,21 @@
 			<div class="col-12">
 				<!-- Section title -->
 				<div class="section-title">
-					<h2>All Categories</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, provident!</p>
+					<h2>전체 카테고리</h2>
 				</div>
 				<div class="row">
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-laptop icon-bg-1"></i> 
-								<h4>Electronics</h4>
+							 <i class="fa fa-paint-brush icon-bg-1" aria-hidden="true"></i>
+								<h4>디자인</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Laptops <span>93</span></a></li>
-								<li><a href="category.html">Iphone <span>233</span></a></li>
-								<li><a href="category.html">Microsoft  <span>183</span></a></li>
-								<li><a href="category.html">Monitors <span>343</span></a></li>
+									<li><a href="#">로고·브랜딩<span>0</span></a></li>
+								<li><a href="#">상세·이벤트 페이지<span>0</span></a></li>
+								<li><a href="#">인쇄·홍보물 <span>0</span></a></li>
+								<li><a href="#">제품·패키지<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -401,14 +404,14 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-apple icon-bg-2"></i> 
-								<h4>Restaurants</h4>
+								<i class="fa fa-laptop icon-bg-2"></i> 
+								<h4>IT·프로그래밍</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Cafe <span>393</span></a></li>
-								<li><a href="category.html">Fast food <span>23</span></a></li>
-								<li><a href="category.html">Restaurants  <span>13</span></a></li>
-								<li><a href="category.html">Food Track<span>43</span></a></li>
+								<li><a href="#">웹사이트 개발<span>0</span></a></li>
+								<li><a href="#">쇼핑몰·커머스<span>0</span></a></li>
+								<li><a href="#">모바일 앱<span>0</span></a></li>
+								<li><a href="#">프로그램 개발<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -416,14 +419,14 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-home icon-bg-3"></i> 
-								<h4>Real Estate</h4>
+								<i class="fa fa-camera icon-bg-3" aria-hidden="true"></i>
+								<h4>영상·사진</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Farms <span>93</span></a></li>
-								<li><a href="category.html">Gym <span>23</span></a></li>
-								<li><a href="category.html">Hospitals  <span>83</span></a></li>
-								<li><a href="category.html">Parolurs <span>33</span></a></li>
+								<li><a href="#">영상찰영·편집<span>0</span></a></li>
+								<li><a href="#">유튜브 제작 <span>0</span></a></li>
+								<li><a href="#">애니메이션 <span>0</span></a></li>
+								<li><a href="#">사진촬영<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -431,14 +434,15 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-shopping-basket icon-bg-4"></i> 
-								<h4>Shoppings</h4>
+								<i class="fa fa-shopping-basket icon-bg-4"></i> <!-- 아이콘 -->
+								<h4>마케팅</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Mens Wears <span>53</span></a></li>
-								<li><a href="category.html">Accessories <span>212</span></a></li>
-								<li><a href="category.html">Kids Wears <span>133</span></a></li>
-								<li><a href="category.html">It & Software <span>143</span></a></li>
+								<li><a href="#">종합광고대행 <span>0</span></a></li>
+								<li><a href="#">블로그·카페<span>0</span></a></li>
+								<li><a href="#">SNS 마케팅<span>0</span></a></li>
+								<li><a href="#">쇼핑몰·스토어<span>0</span></a></li>
+							
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -446,14 +450,14 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-briefcase icon-bg-5"></i> 
-								<h4>Jobs</h4>
+							<i class="fa fa-building icon-bg-5"" aria-hidden="true"></i> 
+								<h4>취업</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">It Jobs <span>93</span></a></li>
-								<li><a href="category.html">Cleaning & Washing <span>233</span></a></li>
-								<li><a href="category.html">Management  <span>183</span></a></li>
-								<li><a href="category.html">Voluntary Works <span>343</span></a></li>
+								<li><a href="#">직무 멘토링 <span>0</span></a></li>
+								<li><a href="#">자소서·이력서(국내기업)<span>0</span></a></li>
+								<li><a href="#">자소서·이력서(외국기업)<span>0</span></a></li>
+								<li><a href="#">자소서(입시·기타)<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -461,14 +465,14 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-car icon-bg-6"></i> 
-								<h4>Vehicles</h4>
+								<i class="fa fa-pencil icon-bg-6"></i> 
+								<h4>문서·글쓰기</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Bus <span>193</span></a></li>
-								<li><a href="category.html">Cars <span>23</span></a></li>
-								<li><a href="category.html">Motobike  <span>33</span></a></li>
-								<li><a href="category.html">Rent a car <span>73</span></a></li>
+								<li><a href="#">기업명·네이밍 <span>0</span></a></li>
+								<li><a href="#">제품 카피라이팅<span>0</span></a></li>
+								<li><a href="#">광고 카피라이팅 <span>0</span></a></li>
+								<li><a href="#">마케팅 글작성<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -476,14 +480,14 @@
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
 						<div class="category-block">
 							<div class="header">
-								<i class="fa fa-paw icon-bg-7"></i> 
-								<h4>Pets</h4>
+								<i class="fa fa-archive icon-bg-7"></i> 
+								<h4>주문제작</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Cats <span>65</span></a></li>
-								<li><a href="category.html">Dogs <span>23</span></a></li>
-								<li><a href="category.html">Birds  <span>113</span></a></li>
-								<li><a href="category.html">Others <span>43</span></a></li>
+								<li><a href="#">인쇄 <span>0</span></a></li>
+								<li><a href="#">간판 <span>0</span></a></li>
+								<li><a href="#">3D프린팅 <span>0</span></a></li>
+								<li><a href="#">기념품 제작<span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -492,14 +496,14 @@
 						<div class="category-block">
 							
 							<div class="header">
-								<i class="fa fa-laptop icon-bg-8"></i> 
-								<h4>Services</h4>
+								<i class="fa fa-bars icon-bg-8"></i> 
+								<h4>기타</h4>
 							</div>
 							<ul class="category-list" >
-								<li><a href="category.html">Cleaning <span>93</span></a></li>
-								<li><a href="category.html">Car Washing <span>233</span></a></li>
-								<li><a href="category.html">Clothing  <span>183</span></a></li>
-								<li><a href="category.html">Business <span>343</span></a></li>
+								<li><a href="#">통역<span>0</span></a></li>
+								<li><a href="#">비즈니스컨설팅 <span>0</span></a></li>
+								<li><a href="#">레슨·실무교육 <span>0</span></a></li>
+								<li><a href="#">운세·상담 <span>0</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
