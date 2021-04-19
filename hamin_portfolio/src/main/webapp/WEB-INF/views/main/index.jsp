@@ -164,7 +164,7 @@
 												<div class="form-group col-md-3">
 													<select class="w-100 form-control mt-lg-1 mt-md-2">
 														<option>필터</option>
-														<option value="1">Top portfolio</option>
+														<option value="1">Top portfolio2</option>
 														<option value="2">Lowest Price portfolio</option>
 														<option value="3">Highest Price portfolio</option>
 													</select>
