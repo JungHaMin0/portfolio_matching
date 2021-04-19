@@ -1,6 +1,7 @@
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
 <head>
 
   <!-- SITE TITTLE -->
@@ -14,18 +15,18 @@
   <!-- PLUGINS CSS STYLE -->
   <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+  <link rel="stylesheet" href="./resources/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./resources/plugins/bootstrap/css/bootstrap-slider.css">
   <!-- Font Awesome -->
-  <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="./resources/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- Owl Carousel -->
-  <link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-  <link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+  <link href="./resources/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+  <link href="./resources/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
   <!-- Fancy Box -->
-  <link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-  <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+  <link href="./resources/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+  <link href="./resources/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   <!-- CUSTOM CSS -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="./resources/css/style.css" rel="stylesheet">
 
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +47,7 @@
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
 					<a class="navbar-brand" href="index.html">
-						<img src="images/logo.png" alt=""> 
+						<img src="./resources/images/logo.png" alt=""> 
 						<h3>포매</h3>
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -56,7 +57,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li class="nav-item active">
-								<a class="nav-link" href="index.html">Home</a>
+								<a class="nav-link" href="index.html">Hodffme</a>
 							</li>
 							<li class="nav-item dropdown dropdown-slide">
 								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Dashboard<span><i class="fa fa-angle-down"></i></span>
@@ -126,7 +127,7 @@
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>무료로 포트폴리오를 등록하세요 </h1>
+					<!-- 	<h1>무료로 포트폴리오를 등록하세요 </h1>
 					<p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
 						포트폴리오를 등록하고 판매해보세요!
 					</p>
@@ -148,9 +149,8 @@
 								<a href="category.html"><i class="fa fa-coffee"></i> moovie</a>
 							</li>
 						</ul>
-					</div>
-					
-				</div>
+					</div> -->
+				</div> 
 				<!-- Advance Search -->
 				<div class="advance-search">
 						<div class="container">
@@ -159,21 +159,28 @@
 										<form>
 											<div class="form-row">
 												<div class="form-group col-md-4">
-													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
+													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
 												</div>
 												<div class="form-group col-md-3">
 													<select class="w-100 form-control mt-lg-1 mt-md-2">
-														<option>Category</option>
-														<option value="1">Top rated</option>
-														<option value="2">Lowest Price</option>
-														<option value="4">Highest Price</option>
+														<option>필터</option>
+														<option value="1">Top portfolio</option>
+														<option value="2">Lowest Price portfolio</option>
+														<option value="3">Highest Price portfolio</option>
 													</select>
 												</div>
 												<div class="form-group col-md-3">
-													<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
+													<select class="w-100 form-control mt-lg-1 mt-md-2">
+														<option>카테고리</option>
+														<option value="1">Web</option>
+														<option value="2">App</option>
+														<option value="3">Photo</option>
+														<option value="4">Design</option>
+														<option value="5">Moovie</option>
+													</select>
 												</div>
 												<div class="form-group col-md-2 align-self-center">
-													<button type="submit" class="btn btn-primary">Search Now</button>
+													<button type="submit" class="btn btn-primary">검색하기</button>
 												</div>
 											</div>
 										</form>
@@ -181,7 +188,6 @@
 								</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -641,25 +647,22 @@
 </footer>
 
 <!-- JAVASCRIPTS -->
-<script src="plugins/jQuery/jquery.min.js"></script>
-<script src="plugins/bootstrap/js/popper.min.js"></script>
-<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/bootstrap/js/bootstrap-slider.js"></script>
+<script src="./resources/plugins/jQuery/jquery.min.js"></script>
+<script src="./resources/plugins/bootstrap/js/popper.min.js"></script>
+<script src="./resources/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="./resources/plugins/bootstrap/js/bootstrap-slider.js"></script>
   <!-- tether js -->
-<script src="plugins/tether/js/tether.min.js"></script>
-<script src="plugins/raty/jquery.raty-fa.js"></script>
-<script src="plugins/slick-carousel/slick/slick.min.js"></script>
-<script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-<script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-<script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
+<script src="./resources/plugins/tether/js/tether.min.js"></script>
+<script src="./resources/plugins/raty/jquery.raty-fa.js"></script>
+<script src="./resources/plugins/slick-carousel/slick/slick.min.js"></script>
+<script src="./resources/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+<script src="./resources/plugins/fancybox/jquery.fancybox.pack.js"></script>
+<script src="./resources/plugins/smoothscroll/SmoothScroll.min.js"></script>
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-<script src="plugins/google-map/gmap.js"></script>
-<script src="js/script.js"></script>
+<script src="./resources/plugins/google-map/gmap.js"></script>
+<script src="./resources/js/script.js"></script>
 
 </body>
 
 </html>
-
-
-
