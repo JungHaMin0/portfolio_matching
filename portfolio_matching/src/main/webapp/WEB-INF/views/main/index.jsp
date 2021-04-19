@@ -8,7 +8,7 @@
   <title>포매</title>
   
   <!-- FAVICON -->
-  <link href="./resources/img/favicon.png" rel="shortcut icon">
+  <link href="./resources/img/favicon.jpg" rel="shortcut icon">
   <!-- PLUGINS CSS STYLE -->
   <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
   <!-- Bootstrap -->
@@ -47,7 +47,7 @@
             <div class="col-md-12">
                <nav class="navbar navbar-expand-lg navbar-light navigation">
                   <a class="navbar-brand" href="index.html"> <img
-                     src="./resources/images/logo.jpg" alt="logo" width="40" height="50">
+                     src="./resources/images/logo.png" alt="logo" width="40" height="50">
                      <h3>포매</h3>
                   </a>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
