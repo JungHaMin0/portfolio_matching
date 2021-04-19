@@ -176,7 +176,7 @@
 														<option value="2">App</option>
 														<option value="3">Photo</option>
 														<option value="4">Design</option>
-														<option value="5">Moovie</option>
+														<option value="5">Movie</option>
 													</select>
 												</div>
 												<div class="form-group col-md-2 align-self-center">
