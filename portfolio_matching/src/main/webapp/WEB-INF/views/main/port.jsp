@@ -36,6 +36,12 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+
+<style>
+h2 { text-align: center; }
+</style>
+
+
 </head>
 
 <body class="body-wrapper">
@@ -81,31 +87,79 @@
          </div>
       </div>
    </section>
-<section class="login py-5 border-top-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
-                <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
-                    <form action="#">
-                        <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                    <input type="checkbox" id="keep-me-logged-in">
-                                    <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
-                            </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
+
+	<div id="fh5co-about">
+		<div class="container">
+			<div class="about-content">
+				<div class="row animate-box">
+					<div class="col-md-6">
+						<div class="desc">
+							<h3>세상이 일하는 방식을 더 행복하게</h3> 
+							<h5>IT 기술의 발달로 일하는 방식이 변화하고 있습니다.</h5>
+							<h5>우리가 맞이할 미래의 일하는 방식은 <br> 과거와 같지 않을 것입니다.</h5> 
+							<h5>포매는 계속해서 변화하는 사회와 시장의 문제를 <br> 앞장서서 해결하며
+							세상이 일하는 방식을 더 행복하게 <br> 변화시키고자 합니다.</h5>
+						</div>
+						<div class="desc">
+							<h3>IT 아웃소싱 시장의 정보 비대칭으로 발생하는 문제들을 <br> 예방하고 해결하며 성장하고 있습니다.</h3>
+							
+							</div>
+					</div>
+					<div class="col-md-6">
+					
+
+						<img class="img-responsive" src="resources/images/logo.png" alt="about">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<h2>CONTACT US</h2>
+	
+	<div id="map" style="width:100%;height:350px;"></div>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01f7615ee8d025a981b28bb6241ff9f0"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.51954, 126.94014), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+  
+// 마커를 표시할 위치입니다 
+var position =  new kakao.maps.LatLng(37.51954, 126.94014);
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+  position: position,
+  clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+});
+
+// 아래 코드는 위의 마커를 생성하는 코드에서 clickable: true 와 같이
+// 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
+// marker.setClickable(true);
+
+// 마커를 지도에 표시합니다.
+marker.setMap(map);
+
+var iwContent = '<div style="padding:5px;">Hello World!</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
+
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    content : iwContent,
+    removable : iwRemoveable
+});
+
+// 마커에 클릭이벤트를 등록합니다
+kakao.maps.event.addListener(marker, 'click', function() {
+      // 마커 위에 인포윈도우를 표시합니다
+      infowindow.open(map, marker);  
+});
+</script>
 	
 <footer class="footer section section-sm">
   <!-- Container Start -->
@@ -117,7 +171,7 @@
           <!-- footer logo -->
           <!-- description -->
           <p class="alt-color">
-         우리는 아웃소싱 시장의 거래 방식을 
+           우리는 아웃소싱 시장의 거래 방식을 
           혁신하고 있습니다.<br>
           회원/회사와 기업을 연결하여 <br>
           기업의 디지털 기술을 활용한 비즈니스 혁신을 돕고 있습니다.
@@ -218,3 +272,4 @@
 </body>
 
 </html>
+	

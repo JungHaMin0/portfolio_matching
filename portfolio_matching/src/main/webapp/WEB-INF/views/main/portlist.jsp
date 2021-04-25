@@ -81,31 +81,198 @@
          </div>
       </div>
    </section>
-<section class="login py-5 border-top-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
-                <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
-                    <form action="#">
-                        <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                    <input type="checkbox" id="keep-me-logged-in">
-                                    <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
-                            </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
+	<div class="container">
+		<section class="listsection">
+			<div class="left-category">
+        <div class="left-maintext">
+          <h3>웹 프로그래밍</h3>
+          <div class="left-bottom-line"></div>
+          <!-- 현재 선택한 카테고리가 이 메인 텍스트 -->
+        </div>
+        <div class="left-list">
+
+          <div class="left-items">
+            <div class="left-subtext">
+              <h4><a href="">WEB</a></h4>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="left-item">
+              <a href=""><p>Front-end</p></a>
+              <a href=""><p>Back-end</p></a>
+              <a href=""><p>Programming</p></a>
+            </div>
+          </div>
+
+          <div class="left-items">
+            <div class="left-subtext">
+              <h4><a href="">APP</a></h4>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="left-item">
+              <a href=""><p>Front-end</p></a>
+              <a href=""><p>Back-end</p></a>
+              <a href=""><p>Programming</p></a>
+            </div>
+          </div>
+
+          <div class="left-items">
+            <div class="left-subtext">
+              <h4><a href="">Design</a></h4>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="left-item">
+              <a href=""><p>WebDesinger</p></a>
+              <a href=""><p>illustrator</p></a>
+              <a href=""><p>WebToon</p></a>
+            </div>
+          </div>
+
+          <div class="left-items">
+            <div class="left-subtext">
+              <h4><a href="">Data</a></h4>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="left-item">
+              <a href=""><p>Manager</p></a>
+              <a href=""><p>BigData</p></a>
+            </div>
+          </div>
+
+          <div class="left-items">
+            <div class="left-subtext">
+              <h4><a href="">Photo</a></h4>
+              <i class="fa fa-chevron-down"></i>
+            </div>
+            <div class="left-item">
+              <a href=""><p>photographer</p></a>
+            </div>
+          </div>
+
+
+          <div class="register">
+            <a href="">등록하기</a>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="section-main-list">
+			<div class="list">
+        <div class="top-category">
+          <div class="top-list">
+            <div class="stack">
+              <a href="" class="stack-content"><p>기술수준</p></a>
+              <div class="stack-item">
+                <a href=""><p>초급/수정</p></a>
+                <a href=""><p>중급/설계</p></a>
+                <a href=""><p>고급/최적화</p></a>
+              </div>
+            </div>
+            <div class="team">
+              <a href="" class="team-content"><p>팀 규모</p></a>
+              <div class="team-item">
+                <a href=""><p>1인</p></a>
+                <a href=""><p>2인-4인</p></a>
+                <a href=""><p>5인-9인</p></a>
+                <a href=""><p>10인 이상</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-list">
+        <div class="items"> <!-- 컬럼으로 만들게 하고 -->
+          <div class="rows"> <!-- 로우로 가로로 가게끔 하기 -->
+            <div class="item">
+              <img src="resources/images/item_image1.PNG">
+
+              <div class="item-content">
+                <a href="" class="badge"><p>경민대</p></a>
+                <a href=""><p>홈페이지 퍼블리싱</p></a>
+                <div class="item-lastcontent">
+                  <a href="" class="people"><p>1인</p></a>
+                  <a href="" class="price"><p>100,000원 ~</p></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="resources/images/item_image2.PNG">
+
+              <div class="item-content">
+                <a href="" class="badge"><p>개인</p></a>
+                <a href=""><p>반응형 웹 홈페이지 제작</p></a>
+                <div class="item-lastcontent">
+                  <a href="" class="people"><p>2-4인</p></a>
+                  <a href="" class="price"><p>490,000원 ~</p></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <img src="resources/images/item_image3.PNG">
+
+              <div class="item-content">
+                <a href="" class="badge"><p>TOSS</p></a>
+                <a href=""><p>센스 있는 앱 개발</p></a>
+                <div class="item-lastcontent">
+                  <a href="" class="people"><p>1인</p></a>
+                  <a href="" class="price"><p>500,000원 ~</p></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rows2"> <!-- 로우로 가로로 가게끔 하기 -->
+          <div class="item">
+            <img src="resources/images/item_image4.PNG">
+
+            <div class="item-content">
+              <a href="" class="badge"><p>개인</p></a>
+              <a href=""><p>고급 홈페이지 제작</p></a>
+              <div class="item-lastcontent">
+                <a href="" class="people"><p>10인 이상</p></a>
+                <a href="" class="price"><p>770,000원 ~</p></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="resources/images/item_image5.PNG">
+
+            <div class="item-content">
+              <a href="" class="badge"><p>Bring</p></a>
+              <a href=""><p>고객 맞춤형 크롤링</p></a>
+              <div class="item-lastcontent">
+                <a href="" class="people"><p>1인</p></a>
+                <a href="" class="price"><p>2,100,000원 ~</p></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="resources/images/item_image6.PNG">
+
+            <div class="item-content">
+              <a href="" class="badge"><p>SoSo</p></a>
+              <a href=""><p>프로그램 개발</p></a>
+              <div class="item-lastcontent">
+                <a href="" class="people"><p>2-4인</p></a>
+                <a href="" class="price"><p>1,000,000원 ~</p></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+      
+		</section>
+	</div>
 	
 <footer class="footer section section-sm">
   <!-- Container Start -->
@@ -117,7 +284,7 @@
           <!-- footer logo -->
           <!-- description -->
           <p class="alt-color">
-         우리는 아웃소싱 시장의 거래 방식을 
+           우리는 아웃소싱 시장의 거래 방식을 
           혁신하고 있습니다.<br>
           회원/회사와 기업을 연결하여 <br>
           기업의 디지털 기술을 활용한 비즈니스 혁신을 돕고 있습니다.
@@ -142,7 +309,7 @@
           <h4>서비스 안내</h4>
           <ul>
             <li><a href="#">서비스 안내</a></li>
-            
+           
             <li><a href="#">FAQ</a></li>
           </ul>
         </div>
@@ -218,3 +385,4 @@
 </body>
 
 </html>
+	
