@@ -1,14 +1,16 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+
   <!-- SITE TITTLE -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>포매</title>
   
   <!-- FAVICON -->
-  <link href="./resources/img/favicon.jpg" rel="shortcut icon">
+  <link href="./resources/images/favicon.png" rel="shortcut icon">
   <!-- PLUGINS CSS STYLE -->
   <!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
   <!-- Bootstrap -->
@@ -24,22 +26,51 @@
   <link href="./resources/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   <!-- CUSTOM CSS -->
   <link href="./resources/css/style.css" rel="stylesheet">
-<!-- i class -->
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-  />
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  
   <![endif]-->
+ <style>
+     table table-hover {
+        border-collapse: collapse;
+        padding-left:250;
+        width: 600px;
+        top:100px;
+          float: left;
+      }
+      th, td {
+         float: left;
+        padding: 10px;
+        text-align: center;
+      }
+  #one {
+position: relative;
+top:45px;
+left:380px;
+  }
+  
+#text1 {
+position: relative;
+top:55px;
+left:375px;
+}
 
+#tab {
+position: relative;
+top:263px;
+left:375px;
+}
+
+    </style>
 </head>
-
-<body class="body-wrapper">
-
+<body>
 
 <section>
       <div class="container">
@@ -81,32 +112,102 @@
          </div>
       </div>
    </section>
-<section class="login py-5 border-top-1">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-8 align-item-center">
-                <div class="border">
-                    <h3 class="bg-gray p-4">Login Now</h3>
-                    <form action="#">
-                        <fieldset class="p-4">
-                            <input type="text" placeholder="Username" class="border p-3 w-100 my-2">
-                            <input type="password" placeholder="Password" class="border p-3 w-100 my-2">
-                            <div class="loggedin-forgot">
-                                    <input type="checkbox" id="keep-me-logged-in">
-                                    <label for="keep-me-logged-in" class="pt-3 pb-2">Keep me logged in</label>
-                            </div>
-                            <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">Log in</button>
-                            <a class="mt-3 d-block  text-primary" href="#">Forget Password?</a>
-                            <a class="mt-3 d-inline-block text-primary" href="register.html">Register Now</a>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+   
 
-	
+<div id=one>
+<button type="button" class="btn btn-primary btn-circle btn-lg">7</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-success btn-circle btn-lg">22</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-info btn-circle btn-lg">25</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="btn btn-danger btn-circle btn-lg">17</button>
+ </div>
+ 
+<div id=text1>
+관심상품 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+결제 내역 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+서비스 평가 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+문의내역
+</div>
+
+<div id = tab>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#qwe">구매 중 상품</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#asd">구매 완료 상품</a>
+  </li>
+ 
+</ul>
+<div class="tab-content">
+  <div class="tab-pane fade show active" id="구매 중 상품">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ornare libero. Vivamus iaculis, justo vel mattis pharetra, nisi ligula varius nisl, sit amet mollis tortor ligula vitae nisi.</p>
+  </div>
+  <div class="tab-pane fade" id="구매 완료 상품">
+    <p>Nunc vitae turpis id nibh sodales commodo et non augue. Proin fringilla ex nunc. Integer tincidunt risus ut facilisis tristique.</p>
+  </div>
+ 
+</div>
+</div>
+
+
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">마이페이지</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">구매 관리</th>
+      <tr>
+      <td>관심 상품</td>
+        <tr>
+      <td>결제 내역</td>
+        <tr>
+      <td>서비스 평가</td>
+        <tr>
+      <td>문의 내역</td>
+    </tr>
+    <tr>
+      <th scope="row">판매 관리</th>
+        <tr>
+      <td>판매 중</td>
+           <tr>
+      <td>판매 완료</td>
+           <tr>
+      <td>수익 현황</td>
+           <tr>
+      <td>문의 내역</td>
+    </tr>
+    <tr>
+      <th scope="row">회원 정보</th>
+           <tr>
+      <td>회원정보 수정</td>
+           <tr>
+      <td>회원 탈퇴</td>
+    </tr>
+  </tbody>
+</table>
+
+
 <footer class="footer section section-sm">
   <!-- Container Start -->
   <div class="container">
@@ -117,7 +218,7 @@
           <!-- footer logo -->
           <!-- description -->
           <p class="alt-color">
-         우리는 아웃소싱 시장의 거래 방식을 
+       우리는 아웃소싱 시장의 거래 방식을 
           혁신하고 있습니다.<br>
           회원/회사와 기업을 연결하여 <br>
           기업의 디지털 기술을 활용한 비즈니스 혁신을 돕고 있습니다.
@@ -156,7 +257,7 @@
           <ul>
             <li>상호:(주)포매 | 대표: 정다윤</li>
             <li>사업자등록번호: 000-001-00002</li>
-            <li>주소:서울특별시 영등포구 여의도동 63로 50 </li>
+            <li>주소:서울특별시 영등포구 여의도동 63로 50</li>
             <li>서비스 이용문의 :1234-5678</li>
             <li>이메일 : help@PORT.com</li>
           </ul>
@@ -216,5 +317,4 @@
 <script src="./resources/js/script.js"></script>
 
 </body>
-
 </html>
