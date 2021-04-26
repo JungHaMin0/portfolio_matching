@@ -575,8 +575,8 @@
 	</section>
 
 	<!--============================
-=            Footer            =
-=============================-->
+	=            Footer            =
+	=============================-->
 
 	<footer class="footer section section-sm">
 		<!-- Container Start -->
