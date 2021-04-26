@@ -324,6 +324,7 @@ button {
 }
 
 .section-title {
+  margin-top: 50px;
   position: relative;
   margin-bottom: 75px;
   text-align: center;
@@ -371,7 +372,7 @@ button {
   padding-top: 50px;
 }
 
-.overly {
+/* .overly {
   position: relative;
 }
 
@@ -383,7 +384,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-}
+} */
 
 .page-wrapper {
   padding: 70px 0;
@@ -598,7 +599,7 @@ ul.pagination .active a {
 }
 
 .page-search .advance-search .form-group {
-  margin-bottom: 0;
+  margin-bottom: -50;
 }
 
 .page-search .advance-search .form-control {
@@ -635,9 +636,10 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("../images/home/hero.jpg");
+  background: url("../images/intro_banner.png");
   background-size: cover;
   background-repeat: no-repeat;
+  width: 100%;
 }
 
 .bg-2 {
@@ -908,18 +910,21 @@ ul.pagination .active a {
 }
 
 .hero-area {
-  padding: 100px 0 0;
+  padding: 315px 0;
 }
 
 .hero-area .content-block {
-  padding-bottom: 80px;
+  padding-bottom: -50px;
 }
 
 .hero-area .advance-search {
+  position: absolute;
+  width: 1000px;
+  top: 230px;
+  left: 60px;
   background: #fff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
-  margin-bottom: -50px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
