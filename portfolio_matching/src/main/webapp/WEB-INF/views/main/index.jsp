@@ -1,14 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style.jsp"%>
-<%@ include file="../../include/navigator.jsp"%>
+<%@ include file="../../include/style_css.jsp"%>
+<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
 <head>
 
-	<!--===============================
-=            Hero Area            =
-================================-->
+	<!-------------------------       Hero area           ------------------------->
 
 <section class="hero-area bg-1 text-center overly">
    <!-- Container Start -->
@@ -84,14 +82,10 @@
    <!-- Container End -->
 </section>
 
-	<!--===================================
-=            Client Slider            =
-====================================-->
+	<!-------------------------       client slide         ------------------------->
 
 
-	<!--===========================================
-=           포트폴리오 목록        =
-============================================-->
+	<!-------------------------       포트폴리오 목록                        ------------------------->
 
 	<section class="popular-deals section bg-gray">
 		<div class="container">
@@ -281,10 +275,7 @@
 	</section>
 
 
-
-	<!--==========================================
-=           카테고리 목록       =
-===========================================-->
+<!-------------------------        카테고리 목록                  ------------------------->
 
 	<section class=" section">
 		<!-- Container Start -->
@@ -445,9 +436,7 @@
 	</section>
 
 
-	<!--====================================
-=            Call to Action            =
-=====================================-->
+	<!-------------------------        Call to Action        ------------------------->
 
 	<section class="call-to-action overly bg-3 section-sm">
 		<!-- Container Start -->
@@ -467,128 +456,12 @@
 		</div>
 		<!-- Container End -->
 	</section>
-
-	<!--============================
-=            Footer            =
-=============================-->
-
-	<footer class="footer section section-sm">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0">
-					<!-- About -->
-					<div class="block about">
-						<!-- footer logo -->
-
-						<!-- description -->
-						<p class="alt-color">
-							우리는 아웃소싱 시장의 거래 방식을 혁신하고 있습니다.<br> 회원/회사와 기업을 연결하여 <br>
-							기업의 디지털 기술을 활용한 비즈니스 혁신을 돕고 있습니다.
-						</p>
-					</div>
-				</div>
-				<!-- Link list -->
-				<div class="col-lg-2 offset-lg-1 col-md-3">
-					<div class="block">
-						<h4>포매</h4>
-						<ul>
-							<li><a href="port.do">포매소개</a></li>
-							<li><a href="#">이용약관</a></li>
-							<li><a href="#">개인정보 처리방침</a></li>
-
-						</ul>
-					</div>
-				</div>
-				<!-- Link list -->
-				<div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0">
-					<div class="block">
-						<h4>서비스 안내</h4>
-						<ul>
-							<li><a href="#">서비스 안내</a></li>
-							<li><a href="#">FAQ</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<!-- Promotion -->
-
-				<div class="col-lg-4 col-md-7">
-					<div class="block">
-						<h4>사업자 정보</h4>
-						<ul>
-							<li>상호:(주)포매 | 대표: 정다윤</li>
-							<li>사업자등록번호: 000-001-00002</li>
-							<li>주소:서울특별시 영등포구 여의도동 63로 50</li>
-							<li>서비스 이용문의 :1234-5678</li>
-							<li>이메일 : help@PORT.com</li>
-						</ul>
-					</div>
-				</div>
+<%@ include file="../../include/footer.jsp"%>
+<%@ include file="../../include/style_js.jsp"%>
 
 
-			</div>
-		</div>
-		<!-- Container End -->
-	</footer>
-	<!-- Footer Bottom -->
-	<footer class="footer-bottom">
-		<!-- Container Start -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-12">
-					<!-- Copyright -->
-					<div class="copyright">
-						<p>
-							Copyright ©
-							<script>
-              var CurrentYear = new Date().getFullYear()
-              document.write(CurrentYear)
-            </script>
-							portfolio_matching. All Rights Reserved
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-6 col-12">
-					<!-- Social Icons -->
-					<ul class="social-media-icons text-right">
-						<li><a class="fa fa-facebook" href="https://www.facebook.com"
-							target="_blank"></a></li>
-						<li><a class="fa fa-twitter" href="https://www.twitter.com"
-							target="_blank"></a></li>
-						<li><a class="fa fa-pinterest-p"
-							href="https://www.pinterest.com" target="_blank"></a></li>
 
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- Container End -->
-		<!-- To Top -->
-		<div class="top-to">
-			<a id="top" class="" href="index.do"><i class="fa fa-angle-up"></i></a>
-		</div>
-	</footer>
 
-	
-<!-- JAVASCRIPTS -->
-	<script src="./resources/plugins/jQuery/jquery.min.js"></script>
-	<script src="./resources/plugins/bootstrap/js/popper.min.js"></script>
-	<script src="./resources/plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./resources/plugins/bootstrap/js/bootstrap-slider.js"></script>
-	<!-- tether js -->
-	<script src="./resources/plugins/tether/js/tether.min.js"></script>
-	<script src="./resources/plugins/raty/jquery.raty-fa.js"></script>
-	<script src="./resources/plugins/slick-carousel/slick/slick.min.js"></script>
-	<script
-		src="./resources/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="./resources/plugins/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="./resources/plugins/smoothscroll/SmoothScroll.min.js"></script>
-	<!-- google map -->
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
-	<script src="./resources/plugins/google-map/gmap.js"></script>
-	<script src="./resources/js/script.js"></script>
 </body>
 </html>
 
