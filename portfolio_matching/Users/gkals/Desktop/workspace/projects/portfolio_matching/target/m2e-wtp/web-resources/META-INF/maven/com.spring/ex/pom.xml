@@ -115,10 +115,8 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>   
-		
-	
-</dependencies>
+		</dependency>        
+	</dependencies>
     <build>
         <plugins>
             <plugin>
