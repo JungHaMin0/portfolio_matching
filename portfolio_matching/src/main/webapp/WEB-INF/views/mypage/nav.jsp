@@ -15,23 +15,23 @@
 		<!-- Dashboard Links -->
 		<div class="widget user-dashboard-menu">
 			<hr />
-			<strong><a href="Pm.do">구매 관리</a></strong>
+			<strong><a href="pm.do">구매 관리</a></strong>
 			<hr />
 			<ul>
-				<li><a href="PmInterest.do"><i class="fa fa-bookmark-o"></i> 관심 상품</a></li>
-				<li><a href="PmPurStat.do"><i class="fa fa-credit-card"></i> 결제 내역</a></li>
-				<li><a href="PmServEvl.do"><i class="fa fa-thumbs-o-up"></i> 서비스 평가</a></li>
-				<li><a href="PmQuest.do"><i class="fa fa-commenting-o"></i> 문의 내역</a></li>
+				<li><a href="pmInterest.do"><i class="fa fa-bookmark-o"></i> 관심 상품</a></li>
+				<li><a href="pmPurStat.do"><i class="fa fa-credit-card"></i> 결제 내역</a></li>
+				<li><a href="pmServEvl.do"><i class="fa fa-thumbs-o-up"></i> 서비스 평가</a></li>
+				<li><a href="pmQuest.do"><i class="fa fa-commenting-o"></i> 문의 내역</a></li>
 			</ul>
 
 			<hr />
-			<strong><a href="Sm.do">판매 관리</a></strong>
+			<strong><a href="sm.do">판매 관리</a></strong>
 			<hr />
 			<ul>
-				<li><a href="SmSale.do"><i class="fa fa-hourglass-half"></i> 판매 중</a></li>
-				<li><a href="SmComplete.do"><i class="fa fa-hourglass-end"></i> 판매 완료</a></li>
-				<li><a href="SmQuest.do"><i class="fa fa-commenting"></i> 문의 내역</a></li>
-				<li><a href="SmProfit.do"><i class="fa fa-krw"></i> 수익 현황</a></li>
+				<li><a href="smSale.do"><i class="fa fa-hourglass-half"></i> 판매 중</a></li>
+				<li><a href="smComplete.do"><i class="fa fa-hourglass-end"></i> 판매 완료</a></li>
+				<li><a href="smQuest.do"><i class="fa fa-commenting"></i> 문의 내역</a></li>
+				<li><a href="smProfit.do"><i class="fa fa-krw"></i> 수익 현황</a></li>
 			</ul>
 
 			<hr />
