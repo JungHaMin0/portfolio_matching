@@ -32,4 +32,13 @@ public class MemberController {
               response.setCharacterEncoding("UTF-8");
          return "member/Join";
       }
+      
+      @RequestMapping(value = "mypage.do", method = RequestMethod.GET)
+      public String mypage(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "member/mypage";
+      }
 }
