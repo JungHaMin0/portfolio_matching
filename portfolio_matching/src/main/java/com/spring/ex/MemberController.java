@@ -21,7 +21,7 @@ public class MemberController {
          response.setContentType("text/html; charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
               response.setCharacterEncoding("UTF-8");
-         return "mypage/login";
+         return "member/login";
       }
       
       @RequestMapping(value = "Join.do", method = RequestMethod.GET)
@@ -30,6 +30,6 @@ public class MemberController {
          response.setContentType("text/html; charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
               response.setCharacterEncoding("UTF-8");
-         return "mypage/Join";
+         return "member/Join";
       }
 }
