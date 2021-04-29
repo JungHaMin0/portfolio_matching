@@ -6,7 +6,7 @@
 		<div class="widget user-dashboard-profile">
 			<!-- User Image -->
 			<div class="profile-thumb">
-				<img src="images/user/user-thumb.jpg" alt="" class="rounded-circle">
+				<img src="resources/images/user/user-thumb.jpg" alt="" class="rounded-circle">
 			</div>
 			<!-- User Name -->
 			<h5 class="text-center">정하민</h5>
@@ -15,13 +15,11 @@
 		<!-- Dashboard Links -->
 		<div class="widget user-dashboard-menu">
 			<hr />
-			<strong><a href="pm.do">구매 관리</a></strong>
+			<strong>구매 관리</strong>
 			<hr />
 			<ul>
+				<li><a href="pmPurchase.do"><i class="fa fa-credit-card"></i> 구매 내역</a></li>
 				<li><a href="pmInterest.do"><i class="fa fa-bookmark-o"></i> 관심 상품</a></li>
-				<li><a href="pmPurStat.do"><i class="fa fa-credit-card"></i> 결제 내역</a></li>
-				<li><a href="pmServEvl.do"><i class="fa fa-thumbs-o-up"></i> 서비스 평가</a></li>
-				<li><a href="pmQuest.do"><i class="fa fa-commenting-o"></i> 문의 내역</a></li>
 			</ul>
 
 			<hr />

@@ -38,13 +38,13 @@
 						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
 							<div class="counter-content text-center py-4 rounded">
 								<i class="fa fa-commenting"></i> <span class="counter my-2 d-block" data-count="12">0</span>
-								<h5>수익 현황</h5>
+								<h5>문의 내역</h5>
 							</div>
 						</div>
 						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
 							<div class="counter-content text-center py-4 rounded">
 								<i class="fa fa-krw"></i> <span class="counter my-2 d-block" data-count="48">0</span>
-								<h5>문의 내역</h5>
+								<h5>수익 현황</h5>
 							</div>
 						</div>
 					</div>

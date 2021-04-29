@@ -16,12 +16,12 @@ public class MyPageController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
 	// 备概 包府
-	@RequestMapping(value = "pm.do", method = RequestMethod.GET)
-	public String pm(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+	@RequestMapping(value = "pmPurchase.do", method = RequestMethod.GET)
+	public String pmPurchase(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		return "mypage/pm";
+		return "mypage/pmPurchase";
 	}
 
 	@RequestMapping(value = "pmInterest.do", method = RequestMethod.GET)
@@ -30,30 +30,6 @@ public class MyPageController {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		return "mypage/pmInterest";
-	}
-
-	@RequestMapping(value = "pmPurStat.do", method = RequestMethod.GET)
-	public String pmPurStat(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		return "mypage/pmPurStat";
-	}
-
-	@RequestMapping(value = "pmServEvl.do", method = RequestMethod.GET)
-	public String pmServEvl(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		return "mypage/pmServEvl";
-	}
-
-	@RequestMapping(value = "pmQuest.do", method = RequestMethod.GET)
-	public String pmQuest(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		return "mypage/pmQuest";
 	}
 
 	// 魄概 包府
