@@ -28,7 +28,7 @@
               <thead>
                 <tr>
                   <th>이미지</th>
-                  <th>상품</th>
+                  <th>관심 상품</th>
                   <th class="text-center">카테고리</th>
                   <th></th>
                 </tr>

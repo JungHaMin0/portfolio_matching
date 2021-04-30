@@ -39,16 +39,16 @@ public class MyPageController {
 		response.setCharacterEncoding("UTF-8");
 		return "mypage/pmReview";
 	}
-
-	// 魄概 包府
-	@RequestMapping(value = "sm.do", method = RequestMethod.GET)
-	public String sm(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+	
+	@RequestMapping(value = "pmInquiry.do", method = RequestMethod.GET)
+	public String pmInquiry(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		return "mypage/sm";
+		return "mypage/pmInquiry";
 	}
 
+	// 魄概 包府
 	@RequestMapping(value = "smSale.do", method = RequestMethod.GET)
 	public String smSale(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
@@ -57,7 +57,7 @@ public class MyPageController {
 		return "mypage/smSale";
 	}
 
-	@RequestMapping(value = "smComplete.do", method = RequestMethod.GET)
+	@RequestMapping(value = "smSaleStat.do", method = RequestMethod.GET)
 	public String smComplete(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
