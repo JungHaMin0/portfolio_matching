@@ -27,8 +27,6 @@
 			<hr />
 			<ul>
 				<li><a href="smSale.do"><i class="fa fa-hourglass-half"></i> 판매 중</a></li>
-				<li><a href="smComplete.do"><i class="fa fa-hourglass-end"></i> 판매 완료</a></li>
-				<li><a href="smQuest.do"><i class="fa fa-commenting"></i> 문의 내역</a></li>
 				<li><a href="smProfit.do"><i class="fa fa-krw"></i> 수익 현황</a></li>
 			</ul>
 

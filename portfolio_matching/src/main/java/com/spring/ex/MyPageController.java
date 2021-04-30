@@ -57,20 +57,12 @@ public class MyPageController {
 		return "mypage/smSale";
 	}
 
-	@RequestMapping(value = "smSaleStat.do", method = RequestMethod.GET)
-	public String smComplete(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+	@RequestMapping(value = "smInquiry.do", method = RequestMethod.GET)
+	public String smInquiry(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		return "mypage/smComplete";
-	}
-
-	@RequestMapping(value = "smProfit.do", method = RequestMethod.GET)
-	public String smProfit(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
-		return "mypage/smProfit";
+		return "mypage/smInquiry";
 	}
 
 	@RequestMapping(value = "smQuest.do", method = RequestMethod.GET)
