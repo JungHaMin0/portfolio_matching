@@ -65,12 +65,12 @@ public class MyPageController {
 		return "mypage/smInquiry";
 	}
 
-	@RequestMapping(value = "smQuest.do", method = RequestMethod.GET)
-	public String smQuest(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+	@RequestMapping(value = "smDeal.do", method = RequestMethod.GET)
+	public String smDeal(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		return "mypage/smQuest";
+		return "mypage/smDeal";
 	}
 
 	// 회원 정보 관리

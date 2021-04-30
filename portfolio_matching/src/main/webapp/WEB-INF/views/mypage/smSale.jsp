@@ -42,9 +42,9 @@
                   <td class="action" data-title="Action">
                     <div>
                       <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="category.html"> <i class="fa fa-usd"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="smDeal.do" target="_blank"> <i class="fa fa-usd"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do"> <i class="fa fa-comment"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do" target="_blank"> <i class="fa fa-comment"></i>
                         </a></li>
                       </ul>
                     </div>
@@ -71,9 +71,9 @@
                   <td class="action" data-title="Action">
                     <div>
                       <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="category.html"> <i class="fa fa-usd"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="smDeal.do" target="_blank"> <i class="fa fa-usd"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do"> <i class="fa fa-comment"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do" target="_blank"> <i class="fa fa-comment"></i>
                         </a></li>
                       </ul>
                     </div>
@@ -100,9 +100,9 @@
                   <td class="action" data-title="Action">
                     <div>
                       <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="category.html"> <i class="fa fa-usd"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="거래 내역" class="view" href="smDeal.do" target="_blank"> <i class="fa fa-usd"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do"> <i class="fa fa-comment"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 내역" class="edit" href="smInquiry.do" target="_blank"> <i class="fa fa-comment"></i>
                         </a></li>
                       </ul>
                     </div>
