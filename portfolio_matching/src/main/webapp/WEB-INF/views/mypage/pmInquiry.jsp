@@ -6,9 +6,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 </head>
 
 <body class="body-wrapper">
+
   <!--==================================
 =            User Profile            =
 ===================================-->
@@ -28,7 +30,7 @@
                   <th>이미지</th>
                   <th>결제 상품</th>
                   <th class="text-center">상태</th>
-                  <th class="text-center">문의/후기</th>
+                  <th class="text-center">가격</th>
                 </tr>
               </thead>
               <tbody>
@@ -41,9 +43,10 @@
                   <td class="action" data-title="Action">
                     <div>
                       <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="category.html"> <i class="fa fa-commenting-o"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="category.html" onclick="showPopup();"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href=""> <i class="fa fa-thumbs-o-up"></i>
+                        </a></li>
                       </ul>
                     </div>
                   </td>
@@ -60,7 +63,7 @@
                       <ul class="list-inline justify-content-center">
                         <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="category.html"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href=""> <i class="fa fa-thumbs-o-up"></i>
                         </a></li>
                       </ul>
                     </div>
@@ -78,7 +81,7 @@
                       <ul class="list-inline justify-content-center">
                         <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="category.html"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href=""> <i class="fa fa-thumbs-o-up"></i>
                         </a></li>
                       </ul>
                     </div>

@@ -31,6 +31,14 @@ public class MyPageController {
 		response.setCharacterEncoding("UTF-8");
 		return "mypage/pmInterest";
 	}
+	
+	@RequestMapping(value = "pmReview.do", method = RequestMethod.GET)
+	public String pmReview(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		return "mypage/pmReview";
+	}
 
 	// 판매 관리
 	@RequestMapping(value = "sm.do", method = RequestMethod.GET)

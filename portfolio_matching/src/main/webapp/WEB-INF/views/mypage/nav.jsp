@@ -23,7 +23,7 @@
 			</ul>
 
 			<hr />
-			<strong><a href="sm.do">판매 관리</a></strong>
+			<strong>판매 관리</strong>
 			<hr />
 			<ul>
 				<li><a href="smSale.do"><i class="fa fa-hourglass-half"></i> 판매 중</a></li>
