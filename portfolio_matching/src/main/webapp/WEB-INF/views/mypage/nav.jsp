@@ -34,8 +34,8 @@
 			<strong>내 정보 관리</strong>
 			<hr />
 			<ul>
-				<li><a href="userMod.do"><i class="fa fa-user"></i> 회원정보수정</a></li>
-				<li><a href="userDel.do"><i class="fa fa-remove"></i> 회원탈퇴</a></li>
+				<li><a href="userMod.do"><i class="fa fa-user"></i> 내 정보 수정</a></li>
+				<li><a href="userDel.do"><i class="fa fa-remove"></i> 회원 탈퇴</a></li>
 			</ul>
 		</div>
 	</div>

@@ -22,36 +22,15 @@
 				<%@ include file="nav.jsp"%>
 
 				<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-					<div class="row text-center">
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-hourglass-half"></i> <span class="counter my-2 d-block" data-count="20">0</span>
-								<h5>판매 중</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-hourglass-end"></i> <span class="counter my-2 d-block" data-count="32">0</span>
-								<h5>판매 완료</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-commenting"></i> <span class="counter my-2 d-block" data-count="12">0</span>
-								<h5>수익 현황</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-krw"></i> <span class="counter my-2 d-block" data-count="48">0</span>
-								<h5>문의 내역</h5>
-							</div>
-						</div>
-					</div>
-
 					<div class="widget dashboard-container my-adslist">
-						<h3 class="widget-header">최근 활동 내역</h3>
-
+						<h3 class="widget-header">회원 탈퇴</h3>
+                        
+                        <div class="text-center"><strong>탈퇴하시겠습니까?</strong></div>
+                        <div class="text-center">
+                           <br>
+                          <button type="button" class="btn btn-danger">탈퇴</button>
+                          <button type="button" class="btn btn-success">취소</button>
+                        </div>
 					</div>
 				</div>
 			</div>

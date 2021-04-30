@@ -72,6 +72,14 @@ public class MyPageController {
 		response.setCharacterEncoding("UTF-8");
 		return "mypage/smDeal";
 	}
+	
+	@RequestMapping(value = "smProfit.do", method = RequestMethod.GET)
+	public String smProfit(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		return "mypage/smProfit";
+	}
 
 	// 회원 정보 관리
 	@RequestMapping(value = "userMod.do", method = RequestMethod.GET)

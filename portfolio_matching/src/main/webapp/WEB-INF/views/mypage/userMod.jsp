@@ -11,57 +11,75 @@
 
 <body class="body-wrapper">
 
-	<!--==================================
+  <!--==================================
 =            User Profile            =
 ===================================-->
-	<section class="dashboard section">
-		<!-- Container Start -->
-		<div class="container">
-			<!-- Row Start -->
-			<div class="row">
-				<%@ include file="nav.jsp"%>
+  <section class="dashboard section">
+    <!-- Container Start -->
+    <div class="container">
+      <!-- Row Start -->
+      <div class="row">
+        <%@ include file="nav.jsp"%>
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
+          <!-- Edit Personal Info -->
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <div class="widget personal-info">
+                <h3 class="widget-header user">내 정보 수정</h3>
+                <form action="#">
+                  <!-- First Name -->
+                  <div class="form-group">
+                    <label for="first-name">이름</label> <input type="text" class="form-control" id="first-name">
+                  </div>
+                  <!-- Last Name -->
+                  <div class="form-group">
+                    <label for="last-name">전화번호</label> <input type="text" class="form-control" id="last-name">
+                  </div>
+                  <!-- Comunity Name -->
+                  <div class="form-group">
+                    <label for="comunity-name">이메일</label> <input type="text" class="form-control" id="comunity-name">
+                  </div>
+                  <!-- File chooser -->
+                  <div class="form-group choose-file d-inline-flex">
+                    <i class="fa fa-user text-center px-3"></i> <input type="file" class="form-control-file mt-2 pt-1" id="input-file">
+                  </div>
+                  <!-- Submit button -->
+                  <button class="btn btn-transparent">수정</button>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <!-- Change Password -->
+              <div class="widget change-password">
+                <h3 class="widget-header user">비밀번호 변경</h3>
+                <form action="#">
+                  <!-- Current Password -->
+                  <div class="form-group">
+                    <label for="current-password">현재 비밀번호</label> <input type="password" class="form-control" id="current-password">
+                  </div>
+                  <!-- New Password -->
+                  <div class="form-group">
+                    <label for="new-password">새 비밀번호</label> <input type="password" class="form-control" id="new-password">
+                  </div>
+                  <!-- Confirm New Password -->
+                  <div class="form-group">
+                    <label for="confirm-password">새 비밀번호 확인</label> <input type="password" class="form-control" id="confirm-password">
+                  </div>
+                  <!-- Submit Button -->
+                  <button class="btn btn-transparent">비밀번호 변경</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Row End -->
+    </div>
+    <!-- Container End -->
+  </section>
 
-				<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-					<div class="row text-center">
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-hourglass-half"></i> <span class="counter my-2 d-block" data-count="20">0</span>
-								<h5>판매 중</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-hourglass-end"></i> <span class="counter my-2 d-block" data-count="32">0</span>
-								<h5>판매 완료</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-commenting"></i> <span class="counter my-2 d-block" data-count="12">0</span>
-								<h5>수익 현황</h5>
-							</div>
-						</div>
-						<div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-							<div class="counter-content text-center py-4 rounded">
-								<i class="fa fa-krw"></i> <span class="counter my-2 d-block" data-count="48">0</span>
-								<h5>문의 내역</h5>
-							</div>
-						</div>
-					</div>
-
-					<div class="widget dashboard-container my-adslist">
-						<h3 class="widget-header">최근 활동 내역</h3>
-
-					</div>
-				</div>
-			</div>
-			<!-- Row End -->
-		</div>
-		<!-- Container End -->
-	</section>
-
-	<%@ include file="../../include/footer.jsp"%>
-	<%@ include file="../../include/style_js.jsp"%>
+  <%@ include file="../../include/footer.jsp"%>
+  <%@ include file="../../include/style_js.jsp"%>
 </body>
 
 </html>
