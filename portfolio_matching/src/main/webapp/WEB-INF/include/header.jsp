@@ -18,50 +18,19 @@
 							<li class="nav-item active">
 								<a class="nav-link" href="index.do">Home</a>
 							</li>
-							<!-- <li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">Dashboard<span><i class="fa fa-angle-down"></i></span>
+							<li class="nav-item dropdown dropdown-slide">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오 목록<span><i class="fa fa-angle-down"></i></span>
 								</a>
-
-								Dropdown list
 								<div class="dropdown-menu">
-									<a class="dropdown-item" href="dashboard.html">Dashboard</a>
-									<a class="dropdown-item" href="dashboard-my-ads.html">Dashboard My Ads</a>
-									<a class="dropdown-item" href="dashboard-favourite-ads.html">Dashboard Favourite Ads</a>
-									<a class="dropdown-item" href="dashboard-archived-ads.html">Dashboard Archived Ads</a>
-									<a class="dropdown-item" href="dashboard-pending-ads.html">Dashboard Pending Ads</a>
+									<a class="dropdown-item" href="portlist.do">IT프로그래밍</a>
+									<a class="dropdown-item" href="dashboard-my-ads.html">디자인</a>
+									<a class="dropdown-item" href="dashboard-favourite-ads.html">영상편집</a>
+									<a class="dropdown-item" href="dashboard-archived-ads.html">마케팅</a>
+									<a class="dropdown-item" href="dashboard-pending-ads.html">취업</a>
 								</div>
 							</li>
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									Pages <span><i class="fa fa-angle-down"></i></span>
-								</a>
-								Dropdown list
-								<div class="dropdown-menu">
-									<a class="dropdown-item" href="about-us.html">About Us</a>
-									<a class="dropdown-item" href="contact-us.html">Contact Us</a>
-									<a class="dropdown-item" href="user-profile.html">User Profile</a>
-									<a class="dropdown-item" href="404.html">404 Page</a>
-									<a class="dropdown-item" href="package.html">Package</a>
-									<a class="dropdown-item" href="single.html">Single Page</a>
-									<a class="dropdown-item" href="store.html">Store Single</a>
-									<a class="dropdown-item" href="single-blog.html">Single Post</a>
-									<a class="dropdown-item" href="blog.html">Blog</a>
-
-								</div>
-							</li> -->
-							<li class="nav-item dropdown dropdown-slide">
-								<a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									MyPage 
-									<span><i class="fa fa-angle-down"></i></span>
-								</a>
-								
-							
-				
-								<!-- Dropdown list -->
-								<!-- <div class="dropdown-menu">
-									<a class="dropdown-item" href="category.html">Ad-Gird View</a>
-									<a class="dropdown-item" href="ad-listing-list.html">Ad-List View</a>
-								</div> -->
+							<li class="nav-item active">
+								<a class="nav-link" href="pmPurchase.do">MyPage</a>
 							</li>
 						</ul>
 							<ul class="navbar-nav ml-auto mt-10">

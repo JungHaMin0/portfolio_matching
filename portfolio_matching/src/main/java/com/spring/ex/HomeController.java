@@ -33,40 +33,7 @@ public class HomeController {
          return "main/index";
       }
       
-      @RequestMapping(value = "MyPage.do", method = RequestMethod.GET)
-      public String MyPage(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
-      {
-         response.setContentType("text/html; charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-              response.setCharacterEncoding("UTF-8");
-         return "main/MyPage";
-      }
-      
-      @RequestMapping(value = "port.do", method = RequestMethod.GET)
-      public String port(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
-      {
-         response.setContentType("text/html; charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-              response.setCharacterEncoding("UTF-8");
-         return "main/port";
-      }
-      
-      @RequestMapping(value = "MyPageDetail.do", method = RequestMethod.GET)
-      public String MyPageDetail(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
-      {
-         response.setContentType("text/html; charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-              response.setCharacterEncoding("UTF-8");
-         return "main/MyPageDetail";
-      }
-      @RequestMapping(value = "portlist.do", method = RequestMethod.GET)
-      public String portlist(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
-      {
-         response.setContentType("text/html; charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-              response.setCharacterEncoding("UTF-8");
-         return "main/portlist";
-      }
+     
       
       
 

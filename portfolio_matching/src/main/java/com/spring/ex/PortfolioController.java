@@ -33,6 +33,23 @@ public class PortfolioController {
          return "portfolio_page/portfolio_detail";
       }
       
+      @RequestMapping(value = "port.do", method = RequestMethod.GET)
+      public String port(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "main/port";
+      }
+      
+      @RequestMapping(value = "portlist.do", method = RequestMethod.GET)
+      public String portlist(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "main/portlist";
+      }
       
 
 }
