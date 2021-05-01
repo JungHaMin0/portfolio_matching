@@ -1849,6 +1849,13 @@ ul.pagination .active a {
   margin-bottom: 25px;
 }
 
+.widget.coupon p3 {
+	font-size: 12px;
+  line-height: 1.4;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
 .widget.rate .starrr {
   display: flex;
   justify-content: center;
