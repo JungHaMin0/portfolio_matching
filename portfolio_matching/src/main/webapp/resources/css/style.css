@@ -242,8 +242,8 @@ a:focus, a:hover {
 
 .form-control {
   border-radius: 2px;
-  height: 150px;
-  background-color: transparsent;
+  height: 50px;
+  background-color: transparent;
   color: #666;
   box-shadow: none;
   font-size: 15px;
@@ -324,7 +324,6 @@ button {
 }
 
 .section-title {
-  margin-top: 50px;
   position: relative;
   margin-bottom: 75px;
   text-align: center;
@@ -372,7 +371,7 @@ button {
   padding-top: 50px;
 }
 
-/* .overly {
+.overly {
   position: relative;
 }
 
@@ -384,7 +383,7 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-} */
+}
 
 .page-wrapper {
   padding: 70px 0;
@@ -599,7 +598,7 @@ ul.pagination .active a {
 }
 
 .page-search .advance-search .form-group {
-  margin-bottom: -50;
+  margin-bottom: 0;
 }
 
 .page-search .advance-search .form-control {
@@ -636,10 +635,9 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("../images/intro_banner.png");
+  background: url("../images/home/hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
 }
 
 .bg-2 {
@@ -910,21 +908,18 @@ ul.pagination .active a {
 }
 
 .hero-area {
-  padding: 315px 0;
+  padding: 100px 0 0;
 }
 
 .hero-area .content-block {
-  padding-bottom: -50px;
+  padding-bottom: 80px;
 }
 
 .hero-area .advance-search {
-  position: absolute;
-  width: 1000px;
-  top: 230px;
-  left: 60px;
   background: #fff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
+  margin-bottom: -50px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
@@ -1475,7 +1470,8 @@ ul.pagination .active a {
 }
 
 .product-item .card .card-body {
-  padding: 20px;
+  padding: 30px;
+  height: 220px;
 }
 
 .product-item .card .card-body .card-title {
@@ -1504,6 +1500,8 @@ ul.pagination .active a {
 }
 
 .product-item .product-meta {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 15px;
 }
 
@@ -1518,6 +1516,11 @@ ul.pagination .active a {
 
 .product-item .product-meta li a i {
   margin-right: 4px;
+}
+
+.product-item .product-ratings {
+  position: absolute;
+  bottom:  10%;
 }
 
 .product-item .product-ratings li {
@@ -1709,7 +1712,7 @@ ul.pagination .active a {
 }
 
 .widget.category-list ul li a {
-  padding: 8px 0;
+  padding: 10px 0;
   display: block;
   transition: all linear 0.3s;
 }
@@ -1727,7 +1730,7 @@ ul.pagination .active a {
   color: #5672f9;
 }
 
-.widget.category-list ul li a:hover span {
+.widget.category-list ul li a:hover {
   background: #5672f9;
   color: #fff;
 }
@@ -2515,7 +2518,6 @@ article.single-post p {
   font-size: 18px;
   color: #5672f9;
 }
-
 .terms-condition-content p {
   line-height: 30px;
 }
