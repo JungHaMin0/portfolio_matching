@@ -15,18 +15,18 @@
 	<!-- PLUGINS CSS STYLE -->
 	<!-- <link href="plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet"> -->
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap-slider.css">
+	<link rel="stylesheet" href="resources/plugins/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/plugins/bootstrap/css/bootstrap-slider.css">
 	<!-- Font Awesome -->
-	<link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href="resources/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Owl Carousel -->
-	<link href="plugins/slick-carousel/slick/slick.css" rel="stylesheet">
-	<link href="plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
+	<link href="resources/plugins/slick-carousel/slick/slick.css" rel="stylesheet">
+	<link href="resources/plugins/slick-carousel/slick/slick-theme.css" rel="stylesheet">
 	<!-- Fancy Box -->
-	<link href="plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
-	<link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link href="resources/plugins/fancybox/jquery.fancybox.pack.css" rel="stylesheet">
+	<link href="resources/plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
 	<!-- CUSTOM CSS -->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="resources/css/style.css" rel="stylesheet">
 
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -46,7 +46,7 @@
 				<div class="col-md-12">
 					<nav class="navbar navbar-expand-lg navbar-light navigation">
 						<a class="navbar-brand" href="index.html">
-							<img src="images/logo.png" alt="">
+							<img src="resources/images/logo.png" alt="">
 						</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse"
 							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -265,7 +265,7 @@
 											<!-- <div class="price">$200</div> -->
 											<a href="single.html">
 												<img class="card-img-top img-fluid"
-													src="./images/portImage/item_image1.PNG" alt="Card image cap">
+													src="resources/images/portImage/item_image1.PNG" alt="Card image cap">
 											</a>
 										</div>
 										<div class="card-body">
@@ -308,7 +308,7 @@
 											<!-- <div class="price">$200</div> -->
 											<a href="single.html">
 												<img class="card-img-top img-fluid"
-													src="./images/portImage/item_image2.PNG" alt="Card image cap">
+													src="resources/images/portImage/item_image2.PNG" alt="Card image cap">
 											</a>
 										</div>
 										<div class="card-body">
@@ -350,7 +350,7 @@
 											<!-- <div class="price">$200</div> -->
 											<a href="single.html">
 												<img class="card-img-top img-fluid"
-													src="./images/portImage/item_image3.PNG" alt="Card image cap">
+													src="resources/images/portImage/item_image3.PNG" alt="Card image cap">
 											</a>
 										</div>
 										<div class="card-body">
@@ -517,22 +517,22 @@
 	</footer>
 
 	<!-- JAVASCRIPTS -->
-	<script src="plugins/jQuery/jquery.min.js"></script>
-	<script src="plugins/bootstrap/js/popper.min.js"></script>
-	<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-	<script src="plugins/bootstrap/js/bootstrap-slider.js"></script>
+	<script src="resources/plugins/jQuery/jquery.min.js"></script>
+	<script src="resources/plugins/bootstrap/js/popper.min.js"></script>
+	<script src="resources/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/plugins/bootstrap/js/bootstrap-slider.js"></script>
 	<!-- tether js -->
-	<script src="plugins/tether/js/tether.min.js"></script>
-	<script src="plugins/raty/jquery.raty-fa.js"></script>
-	<script src="plugins/slick-carousel/slick/slick.min.js"></script>
-	<script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
-	<script src="plugins/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="plugins/smoothscroll/SmoothScroll.min.js"></script>
+	<script src="resources/plugins/tether/js/tether.min.js"></script>
+	<script src="resources/plugins/raty/jquery.raty-fa.js"></script>
+	<script src="resources/plugins/slick-carousel/slick/slick.min.js"></script>
+	<script src="resources/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	<script src="resources/plugins/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="resources/plugins/smoothscroll/SmoothScroll.min.js"></script>
 	<!-- google map -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places">
 	</script>
-	<script src="plugins/google-map/gmap.js"></script>
-	<script src="js/script.js"></script>
+	<script src="resources/plugins/google-map/gmap.js"></script>
+	<script src="resources/js/script.js"></script>
 
 </body>
 
