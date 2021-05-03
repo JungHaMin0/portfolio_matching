@@ -23,7 +23,6 @@ public class HomeController {
     * Simply selects the home view to render by returning its name.
     */
       
-      
       @RequestMapping(value = "index.do", method = RequestMethod.GET)
       public String index(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
       {
@@ -33,8 +32,30 @@ public class HomeController {
          return "main/index";
       }
       
-     
+      @RequestMapping(value = "MyPageDetail.do", method = RequestMethod.GET)
+      public String MyPageDetail(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "main/MyPageDetail";
+      }
+      @RequestMapping(value = "portlist.do", method = RequestMethod.GET)
+      public String portlist(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "main/portlist";
+      }
       
-      
+      @RequestMapping(value = "category.do", method = RequestMethod.GET)
+      public String category(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      {
+         response.setContentType("text/html; charset=UTF-8");
+            request.setCharacterEncoding("UTF-8");
+              response.setCharacterEncoding("UTF-8");
+         return "category/category";
+      }
 
 }
