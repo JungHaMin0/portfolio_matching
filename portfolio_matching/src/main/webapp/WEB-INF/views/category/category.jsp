@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ include file="../../include/header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +41,7 @@
 
 <body class="body-wrapper">
 
-	<section>
+	<!-- <section>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -63,7 +64,7 @@
 												class="fa fa-angle-down"></i></span>
 									</a>
 
-									<!-- Dropdown list -->
+									Dropdown list
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="dashboard.html">Dashboard</a>
 										<a class="dropdown-item" href="dashboard-my-ads.html">Dashboard My Ads</a>
@@ -80,7 +81,7 @@
 										aria-haspopup="true" aria-expanded="false">
 										Pages <span><i class="fa fa-angle-down"></i></span>
 									</a>
-									<!-- Dropdown list -->
+									Dropdown list
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="about-us.html">About Us</a>
 										<a class="dropdown-item" href="contact-us.html">Contact Us</a>
@@ -99,7 +100,7 @@
 										aria-haspopup="true" aria-expanded="false">
 										Listing <span><i class="fa fa-angle-down"></i></span>
 									</a>
-									<!-- Dropdown list -->
+									Dropdown list
 									<div class="dropdown-menu">
 										<a class="dropdown-item" href="category.html">Ad-Gird View</a>
 										<a class="dropdown-item" href="ad-listing-list.html">Ad-List View</a>
@@ -120,7 +121,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<section class="page-search">
 		<div class="container">
 			<div class="row">
@@ -131,19 +132,19 @@
 							<div class="form-row">
 								<div class="form-group col-md-4">
 									<input type="text" class="form-control my-2 my-lg-0" id="inputtext4"
-										placeholder="What are you looking for">
+										placeholder="주제">
 								</div>
 								<div class="form-group col-md-3">
 									<input type="text" class="form-control my-2 my-lg-0" id="inputCategory4"
-										placeholder="Category">
+										placeholder="카테고리">
 								</div>
 								<div class="form-group col-md-3">
 									<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4"
-										placeholder="Location">
+										placeholder="팀 규모">
 								</div>
 								<div class="form-group col-md-2">
 
-									<button type="submit" class="btn btn-primary">Search Now</button>
+									<button type="submit" class="btn btn-primary">검색하기</button>
 								</div>
 							</div>
 						</form>

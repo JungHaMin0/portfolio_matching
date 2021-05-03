@@ -2727,4 +2727,8 @@ form textarea {
   text-decoration: none;
 }
 
+ul.pagination {
+  margin-left: 305px;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
