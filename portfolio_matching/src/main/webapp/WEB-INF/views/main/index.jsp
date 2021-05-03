@@ -9,133 +9,70 @@
 	<!-------------------------       Hero area           ------------------------->
 
 <section class="hero-area bg-1 text-center overly">
-   <!-- Container Start -->
-   <div class="container">
-      <div class="row">
-         <div class="col-md-12">
-            <!-- Header Contetnt -->
-            <!-- <div class="content-block">
-                  <h1>무료로 포트폴리오를 등록하세요 </h1>
-               <p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
-                  포트폴리오를 등록하고 판매해보세요!
-               </p>
-               <div class="short-popular-category-list text-center">
-                  <h2>Popular Category</h2>
-                  <ul class="list-inline">
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-bed"></i> Web</a></li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-grav"></i> App</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-car"></i> Design</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-cutlery"></i> photo</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-coffee"></i> moovie</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>  -->
-            <!-- Advance Search -->
-            <div class="advance-search">
-                  <div class="container">
-                     <div class="row justify-content-center">
-                        <div class="col-lg-12 col-md-12 align-content-center">
-                              <form>
-                                 <div class="form-row">
-                                    <div class="form-group col-md-4">
-                                       <input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                       <select class="w-100 form-control mt-lg-1 mt-md-2">
-                                          <option>필터</option>
-                                          <option value="1">Top portfolio</option>
-                                          <option value="2">Lowest Price portfolio</option>
-                                          <option value="3">Highest Price portfolio</option>
-                                       </select>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                       <select class="w-100 form-control mt-lg-1 mt-md-2">
-                                          <option>카테고리</option>
-                                          <option value="1">Web</option>
-                                          <option value="2">App</option>
-                                          <option value="3">Photo</option>
-                                          <option value="4">Design</option>
-                                          <option value="5">Movie</option>
-                                       </select>
-                                    </div>
-                                    <div class="form-group col-md-2 align-self-center">
-                                       <button type="submit" class="btn btn-primary">검색하기</button>
-                                    </div>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- Container End -->
-</section>
+	<!-- Container Start -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- Header Contetnt -->
+				<div class="content-block">
+					<!-- 	<h1>무료로 포트폴리오를 등록하세요 </h1>
+					<p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
+						포트폴리오를 등록하고 판매해보세요!
+					</p>
+					<div class="short-popular-category-list text-center">
+						<h2>Popular Category</h2>
+						<ul class="list-inline">
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-bed"></i> Web</a></li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-grav"></i> App</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-car"></i> Design</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-cutlery"></i> photo</a>
+							</li>
+							<li class="list-inline-item">
+								<a href="category.html"><i class="fa fa-coffee"></i> moovie</a>
+							</li>
+						</ul>
+					</div> -->
+				</div> 
+				<!-- Advance Search -->
+				<div class="advance-search">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-lg-12 col-md-12 align-content-center">
+										<form>
+											<div class="form-row">
+												<div class="form-group col-md-4">
+													<input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
+												</div>
+												<div class="form-group col-md-3">
+													<select class="w-100 form-control mt-lg-1 mt-md-2">
+														<option>필터</option>
+														<option value="1">Top portfolio</option>
+														<option value="2">Lowest Price portfolio</option>
+														<option value="3">Highest Price portfolio</option>
+													</select>
+												</div>
+												<div class="form-group col-md-3">
+													<select class="w-100 form-control mt-lg-1 mt-md-2">
+														<option>카테고리</option>
+														<option value="1">Web</option>
+														<option value="2">App</option>
+														<option value="3">Photo</option>
+														<option value="4">Design</option>
+														<option value="5">Movie</option>
+													</select>
+												</div>
+												<div class="form-group col-md-2 align-self-center">
+													<button type="submit" class="btn btn-primary">검색하기</button>
+												</div>
+											</div>
+										</form>
 
-	<!-------------------------       client slide         ------------------------->
-
-
-	<!-------------------------       포트폴리오 목록                        ------------------------->
-
-	<section class="popular-deals section bg-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title">
-						<h1>추천 포트폴리오</h1>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<!-- offer 01 -->
-				<div class="col-lg-12">
-					<div class="trending-ads-slide">
-						<div class="col-sm-12 col-lg-4">
-							<!-- product card -->
-							<div class="product-item bg-light">
-								<div class="card">
-									<div class="thumb-content">
-										<!-- <div class="price">$200</div> -->
-										<a href="portlist.do"> <img class="card-img-top img-fluid"
-											src="resources/Picture/app.PNG" alt="Card image cap"
-											width="600px" height="400px">
-										</a>
-									</div>
-									<div class="card-body">
-										<h4 class="card-title">
-											<a href="portlist.do">모바일 앱 제작</a>
-										</h4>
-										<ul class="list-inline product-meta">
-											<li class="list-inline-item"><a href="#"><i
-													class="fa fa-folder-open-o"></i>모바일 앱</a></li>
-											<li class="list-inline-item"><a href="#"><i
-													class="fa fa-calendar"></i>2월7일</a></li>
-										</ul>
-										<p class="card-text">최적화된 모바일 앱을 개발해 드립니다.</p>
-										<div class="product-ratings">
-											<ul class="list-inline">
-												<li class="list-inline-item selected"><i
-													class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i
-													class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i
-													class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i
-													class="fa fa-star"></i></li>
-												<li class="list-inline-item selected"><i
-													class="fa fa-star"></i></li>
-											</ul>
-										</div>
 									</div>
 								</div>
 							</div>
@@ -461,5 +398,4 @@
 
 </body>
 </html>
-
 
