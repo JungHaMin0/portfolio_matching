@@ -459,9 +459,6 @@
 <%@ include file="../../include/footer.jsp"%>
 <%@ include file="../../include/style_js.jsp"%>
 
-
-
-
 </body>
 </html>
 
