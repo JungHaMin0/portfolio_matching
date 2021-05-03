@@ -264,7 +264,7 @@
 									<div class="card">
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
-											<a href="single.html">
+											<a href="portfolio_detail.do">
 												<img class="card-img-top img-fluid"
 													src="resources/images/portImage/item_image1.PNG" alt="Card image cap">
 											</a>
