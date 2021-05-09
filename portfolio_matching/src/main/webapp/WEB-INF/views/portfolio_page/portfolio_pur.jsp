@@ -9,100 +9,74 @@
 </head>
 
 <body class="body-wrapper">
-  <!--==================================
-=            User Profile            =
-===================================-->
-  <section class="dashboard section">
+  <section class="section bg-gray">
     <!-- Container Start -->
     <div class="container">
-      <!-- Row Start -->
       <div class="row">
-        <%@ include file="nav.jsp"%>
+        <!-- Left sidebar -->
+        <div class="col-md-8">
+          <div class="product-details">
+            <h1 class="product-title">결제하기</h1>
+            <div class="content">
+              <div class="tab-content" id="pills-tabContent">
+                <h3 class="tab-title">구매 내역</h3>
 
-        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-          <div class="widget dashboard-container my-adslist">
-            <h3>구매 내역</h3> <br />
-            <table class="table product-dashboard-table">
-              <thead>
-                <tr>
-                  <th>이미지</th>
-                  <th>구매 상품</th>
-                  <th class="text-center">상태</th>
-                  <th class="text-center">문의/후기</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="product-thumb"><img width="80px" height="auto" src="resources/images/item_image1.PNG" alt="image description"></td>
-                  <td class="product-details">
-                    <h3 class="title">웹사이트 제작</h3> <span><strong>가격</strong>490,000 원</span><span><strong>구매일</strong>2021-04-11</span><span><strong>판매자</strong>개인</span><span><strong>연락처</strong>010-0000-0000</span>
-                  </td>
-                  <td class="product-category"><span>입금 완료</span></td>
-                  <td class="action" data-title="Action">
-                    <div>
-                      <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
+                <div class="col-md-12">
+                  <div style="float: left; margin-right:20px;"><img width="120px" height="auto" src="resources/images/item_image1.PNG" alt="image description"></div>
+                  <div style="float: left;"><h4>웹 사이트 제작</h4><p>웹 사이트 제작해드려요~~</p></div>
+                  <div style="clear:both;"></div>
+                </div>
 
-                <tr>
-                  <td class="product-thumb"><img width="80px" height="auto" src="resources/images/item_image2.PNG" alt="image description"></td>
-                  <td class="product-details">
-                    <h3 class="title">반응형 웹 제작</h3><span><strong>가격</strong>490,000 원</span><span><strong>구매일</strong>2021-4-10</span><span><strong>판매자</strong>TOSS</span><span><strong>연락처</strong>010-0000-0000</span>
-                  </td>
-                  <td class="product-category"><span>작업 중</span></td>
-                  <td class="action" data-title="Action">
-                    <div class="">
-                      <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
-                        </a></li>
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-                
-                <tr>
-                  <td class="product-thumb"><img width="80px" height="auto" src="resources/images/item_image3.PNG" alt="image description"></td>
-                  <td class="product-details">
-                    <h3 class="title">안드로이드 앱 제작</h3><span><strong>가격</strong>1,000,000 원</span><span><strong>구매일</strong>2021-4-1</span><span><strong>판매자</strong>Android</span><span><strong>연락처</strong>010-0000-0000</span>
-                  </td>
-                  <td class="product-category"><span>구매 완료</span></td>
-                  <td class="action" data-title="Action">
-                    <div class="">
-                      <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
-                        </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
-                        </a></li>
-                        
-                      </ul>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                <hr />
+
+                <div class="col-md-12">
+                  <ul class="list-inline mt-20">
+                    <li>✔ 설명</li>
+                    <li>✔ 설명</li>
+                    <li>✔ 설명</li>
+                    <li>✔ 설명</li>
+                    <li>✔ 설명</li>
+                    <li>✔ 설명</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="content">
+              <div class="tab-content">
+                <h3 class="tab-title">결제 방법</h3>
+                <div class="col-md-12">
+                  <div>
+                    <ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
+                      <li class="nav-item" style="border: 1px solid #5672F9;"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">신용카드</a></li>
+                      <li class="nav-item" style="border: 1px solid #5672F9;"><a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">무통장 입금</a></li>
+                      <li class="nav-item" style="border: 1px solid #5672F9;"><a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">페이코(PAYCO)</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="sidebar" style="position: fixed; width: 350px;">
+            <div class="widget user text-center">
+              <h3>결제 금액</h3>
+              <p class="member-time">440,000 원</p>
+              <ul class="list-inline mt-20">
+                <li class="list-inline-item"><a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">결제하기</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <!-- Row End -->
     </div>
     <!-- Container End -->
   </section>
-
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+
 </body>
 
 </html>

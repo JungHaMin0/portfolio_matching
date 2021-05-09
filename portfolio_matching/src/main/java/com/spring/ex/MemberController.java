@@ -24,12 +24,12 @@ public class MemberController {
          return "member/login";
       }
       
-      @RequestMapping(value = "Join.do", method = RequestMethod.GET)
-      public String Join(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
+      @RequestMapping(value = "register.do", method = RequestMethod.GET)
+      public String register(HttpServletRequest request, HttpServletResponse response, Model model)throws Exception
       {
          response.setContentType("text/html; charset=UTF-8");
             request.setCharacterEncoding("UTF-8");
               response.setCharacterEncoding("UTF-8");
-         return "member/Join";
+         return "member/register";
       }
 }
