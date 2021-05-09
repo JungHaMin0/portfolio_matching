@@ -21,5 +21,13 @@ public class PortController {
 		response.setCharacterEncoding("UTF-8");
 		return "portfolio_page/portfolio_detail";
 	}
+	
+	@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
+	public String portfolio_pur(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		return "portfolio_page/portfolio_pur";
+	}
 
 }
