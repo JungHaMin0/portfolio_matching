@@ -37,7 +37,7 @@
                 <ul class="list-inline justify-content-center">
                   <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 중" class="view" href="" target="_blank"> <i class="fa fa-hourglass-half"></i>
                   </a></li>
-                  <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="판매 완료" class="edit" href="" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                  <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 완료" class="edit" href="" target="_blank"><i class="fa fa-hourglass-end"></i></a></li>
                   <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="환불/취소" class="delete" href="" target="_blank"><i class="fa fa-undo"></i></a></li>
                 </ul>
               </div>
@@ -55,7 +55,7 @@
                 <ul class="list-inline justify-content-center">
                   <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 중" class="view" href="" target="_blank"> <i class="fa fa-hourglass-half"></i>
                   </a></li>
-                  <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="판매 완료" class="edit" href="" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                  <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 완료" class="edit" href="" target="_blank"><i class="fa fa-hourglass-end"></i></a></li>
                   <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="환불/취소" class="delete" href="" target="_blank"><i class="fa fa-undo"></i></a></li>
                 </ul>
               </div>

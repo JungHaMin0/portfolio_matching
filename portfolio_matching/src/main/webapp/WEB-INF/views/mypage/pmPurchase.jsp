@@ -43,7 +43,9 @@
                       <ul class="list-inline justify-content-center">
                         <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
+                        </a></li>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
                       </ul>
                     </div>
                   </td>
@@ -60,7 +62,9 @@
                       <ul class="list-inline justify-content-center">
                         <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
+                        </a></li>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
                         </a></li>
                       </ul>
                     </div>
@@ -78,8 +82,11 @@
                       <ul class="list-inline justify-content-center">
                         <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
                         </a></li>
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
                         </a></li>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"> <i class="fa fa-thumbs-o-up"></i>
+                        </a></li>
+                        
                       </ul>
                     </div>
                   </td>
