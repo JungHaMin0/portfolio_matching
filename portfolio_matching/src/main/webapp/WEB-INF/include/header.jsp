@@ -13,15 +13,23 @@
 						<img src="resources/images/logo.png" alt="logo" width="40" height="50">
 							<h3>포매</h3>
 						</a>
+						
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li class="nav-item active">
 								<a class="nav-link" href="index.do">Home</a>
 							</li>
-							<li class="nav-item dropdown dropdown-slide">
+							
+							<li class="nav-item active">
 								<a class="nav-link dropdown-toggle" href="category.do">포트폴리오
 								</a>
 							</li>
+							
+							<li class="nav-item active">
+							<a class="nav-link" href="portfolio_register1.do" target="_blank" onclick="window.open(this.href,'portfolio_matching', 'width=1000, height=1000, scrollbars=yes, resized=yes'); return false;">등록하기</a>
+							</li>
+							
 							<li class="nav-item active">
 								<a class="nav-link" href="pmPurchase.do">MyPage</a>
 							</li>
