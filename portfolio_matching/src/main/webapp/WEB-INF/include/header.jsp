@@ -38,7 +38,7 @@
 								<li class="nav-item"><a class="nav-link login-button"
 									href="login.do">로그인</a></li>
 								<li class="nav-item"><a class="nav-link login-button"
-									href="Join.do">회원가입</a></li>
+									href="register.do">회원가입</a></li>
 							</ul>
 						</div>
 					</nav>
