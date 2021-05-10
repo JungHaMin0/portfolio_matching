@@ -375,15 +375,6 @@ button {
   position: relative;
 }
 
-.overly:before {
-  content: '';
-  background: rgba(0, 0, 0, 0.51);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
 
 .page-wrapper {
   padding: 70px 0;
@@ -635,9 +626,11 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("../images/home/hero.jpg");
+  background: url("../images/port_banner.png");
   background-size: cover;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 60vh;
 }
 
 .bg-2 {
@@ -924,11 +917,15 @@ ul.pagination .active a {
 }
 
 .hero-area .advance-search {
+  position: absolute;
   background: #fff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
   margin-bottom: -50px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
+  width: 1000px;
+  margin-top: 400px;
+  margin-left: 50px;
 }
 
 @media (max-width: 480px) {
@@ -2738,5 +2735,7 @@ form textarea {
 ul.pagination {
   margin-left: 305px;
 }
-
+#yee {
+  cursor: pointer; 
+}
 /*# sourceMappingURL=maps/style.css.map */
