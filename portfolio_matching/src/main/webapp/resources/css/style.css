@@ -2730,5 +2730,7 @@ form textarea {
 ul.pagination {
   margin-left: 305px;
 }
-
+#yee {
+  cursor: pointer; 
+}
 /*# sourceMappingURL=maps/style.css.map */
