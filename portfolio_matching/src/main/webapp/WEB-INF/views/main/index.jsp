@@ -13,33 +13,6 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <!-- Header Contetnt -->
-        <!-- <div class="content-block">
-                  <h1>무료로 포트폴리오를 등록하세요 </h1>
-               <p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
-                  포트폴리오를 등록하고 판매해보세요!
-               </p>
-               <div class="short-popular-category-list text-center">
-                  <h2>Popular Category</h2>
-                  <ul class="list-inline">
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-bed"></i> Web</a></li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-grav"></i> App</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-car"></i> Design</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-cutlery"></i> photo</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-coffee"></i> moovie</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>  -->
-        <!-- Advance Search -->
         <div class="advance-search">
           <div class="container">
             <div class="row justify-content-center">
