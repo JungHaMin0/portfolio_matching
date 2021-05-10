@@ -52,19 +52,9 @@
                                     <div class="form-group col-md-3">
                                        <select class="w-100 form-control mt-lg-1 mt-md-2">
                                           <option>필터</option>
-                                          <option value="1">Top portfolio</option>
-                                          <option value="2">Lowest Price portfolio</option>
-                                          <option value="3">Highest Price portfolio</option>
-                                       </select>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                       <select class="w-100 form-control mt-lg-1 mt-md-2">
-                                          <option>카테고리</option>
-                                          <option value="1">Web</option>
-                                          <option value="2">App</option>
-                                          <option value="3">Photo</option>
-                                          <option value="4">Design</option>
-                                          <option value="5">Movie</option>
+                                          <option value="1">Top</option>
+                                          <option value="2">Lowest</option>
+                                          <option value="3">Highest</option>
                                        </select>
                                     </div>
                                     <div class="form-group col-md-2 align-self-center">

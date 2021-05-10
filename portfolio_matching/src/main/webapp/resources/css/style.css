@@ -676,6 +676,10 @@ ul.pagination .active a {
     padding: 6px 45px !important;
     margin: 5px 0;
   }
+  .ul.pagination {
+    margin: 0;
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -683,6 +687,10 @@ ul.pagination .active a {
     display: inline-block;
     padding: 6px 45px !important;
     margin: 5px 0;
+  }
+    .ul.pagination {
+    margin-left: 0;
+    margin-left: 20px;
   }
 }
 
