@@ -28,6 +28,7 @@
       });
     }
   }
+  
   $(window).on('scroll', function () {
     counter();
   });
