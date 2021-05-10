@@ -3,11 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../../include/style_css.jsp"%>
 <%@ include file="../../include/header.jsp"%>
-<head>
-</head>
-
 <body class="body-wrapper">
-<script src="/resources/js/register.js"></script>
   <section class="login py-5 border-top-1">
     <div class="container">
       <div class="row justify-content-center">
@@ -37,6 +33,7 @@
   </section>
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+  <script src="./resources/js/register.js"></script>
 </body>
 
 </html>
