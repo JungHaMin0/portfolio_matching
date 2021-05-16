@@ -2733,7 +2733,7 @@ form textarea {
 }
 
 ul.pagination {
-  margin-left: 305px;
+  margin-left: 0;
 }
 #yee {
   cursor: pointer; 
