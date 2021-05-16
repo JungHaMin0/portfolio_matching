@@ -28,8 +28,8 @@
                         <div class="text-center"><strong>탈퇴하시겠습니까?</strong></div>
                         <div class="text-center">
                            <br>
-                          <button type="button" class="btn btn-danger">탈퇴</button>
-                          <button type="button" class="btn btn-success">취소</button>
+                          <button type="button" class="btn btn-danger" id="delete">탈퇴</button>
+                          <button type="button" class="btn btn-success" id="cancel">취소</button>
                         </div>
 					</div>
 				</div>
@@ -38,9 +38,9 @@
 		</div>
 		<!-- Container End -->
 	</section>
-
+    
 	<%@ include file="../../include/footer.jsp"%>
 	<%@ include file="../../include/style_js.jsp"%>
+  <script src="./resources/js/userDel.js"></script>
 </body>
-
 </html>

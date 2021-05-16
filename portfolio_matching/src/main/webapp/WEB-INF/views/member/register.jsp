@@ -11,9 +11,10 @@
           <div class="border border">
             <h3 class="bg-gray p-4">회원가입</h3>
 
-            <form action="register.do" method="post">
+            <form id="regForm" action="register.do" method="post">
               <fieldset class="p-4">
                 <input type="text" placeholder="아이디" class="border p-3 w-100 my-2" id="user_id" name="user_id">
+                <button type="button" id="idChk" class="idChk d-block py-3 px-4 bg-primary text-white border-0 rounded font-weight-bold" onclick="fn_idChk();" value="N">중복 확인</button>
                 <input type="password" placeholder="비밀번호" class="border p-3 w-100 my-2" id="user_pw" name="user_pw">
                 <input type="password" placeholder="비밀번호 확인" class="border p-3 w-100 my-2" id="user_pw_confirm" name="user_pw_confirm">
                 <input type="email" placeholder="이메일" class="border p-3 w-100 my-2" id="user_email" name="user_email">
