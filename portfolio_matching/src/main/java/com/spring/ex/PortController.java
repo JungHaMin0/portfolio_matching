@@ -134,5 +134,4 @@ public class PortController {
 	public String portfolio_payment_fail() {
 		return "portfolio_page/portfolio_payment_fail";
 	}
-
 }
