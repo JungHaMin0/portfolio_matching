@@ -8,9 +8,16 @@ public class PortListVO {
 	private String portlist_content;
 	private String portlist_category;
 	private String portlist_day;
-	private Blob portlist_url;
+	private String portlist_url;
+	private double portlist_rating;
 	
-	
+
+	public double getPortlist_rating() {
+		return portlist_rating;
+	}
+	public void setPortlist_rating(double portlist_rating) {
+		this.portlist_rating = portlist_rating;
+	}
 	public int getPortlist_id() {
 		return portlist_id;
 	}
@@ -41,10 +48,10 @@ public class PortListVO {
 	public void setPortlist_day(String portlist_day) {
 		this.portlist_day = portlist_day;
 	}
-	public Blob getPortlist_url() {
+	public String getPortlist_url() {
 		return portlist_url;
 	}
-	public void setPortlist_url(Blob portlist_url) {
+	public void setPortlist_url(String portlist_url) {
 		this.portlist_url = portlist_url;
 	}
 	

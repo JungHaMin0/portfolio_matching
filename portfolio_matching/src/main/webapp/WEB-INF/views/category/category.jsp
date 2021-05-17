@@ -155,7 +155,7 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="resources/images/portImage/item_image1.PNG">
+												<img class="card-img-top img-fluid" src="${portlist.portlist_url}">
 											</a>
 										</div>
 										<div class="card-body">
@@ -171,16 +171,7 @@
 											<p class="card-text"><c:out value="${portlist.portlist_content}"/></p>
 											<div class="product-ratings">
 												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
+													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${portlist.portlist_rating}" /></li>
 												</ul>
 											</div>
 										</div>
