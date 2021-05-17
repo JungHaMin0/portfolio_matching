@@ -39,6 +39,34 @@
                   </ul>
                </div>
             </div>  -->
+<<<<<<< HEAD
+            <!-- Advance Search -->
+            <div class="advance-search">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-lg-12 col-md-12 align-content-center">
+                              <form>
+                                 <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                       <input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                       <select class="w-100 form-control mt-lg-1 mt-md-2">
+                                          <option>필터</option>
+                                          <option value="1">Top</option>
+                                          <option value="2">Lowest</option>
+                                          <option value="3">Highest</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group col-md-2 align-self-center">
+                                       <button type="submit" class="btn btn-primary">검색하기</button>
+                                    </div>
+                                 </div>
+                              </form>
+                           </div>
+                        </div>
+               </div>
+=======
         <!-- Advance Search -->
         <div class="advance-search">
           <div class="container">
@@ -73,6 +101,7 @@
                   </div>
                 </form>
               </div>
+>>>>>>> refs/heads/jeongwon
             </div>
           </div>
         </div>

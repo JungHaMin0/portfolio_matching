@@ -69,4 +69,5 @@ public class PortController {
 		response.setCharacterEncoding("UTF-8");
 		return "portfolio_page/portfolio_register4";
 	}
+	
 }
