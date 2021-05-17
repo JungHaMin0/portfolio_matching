@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../../include/style_css.jsp"%>
@@ -36,18 +37,16 @@
 				<div class="ad-listing-list col-md-8 bg-white">
 					<h3 style="margin-top: 20px">기본정보</h3>
 					<hr>
-					<form action="#">
+					<form id="register1"  name="regisert1" method="post">
 						<fieldset class="p-2">
 							<div class="form-group">
 								<div class="row">
 									<div class="col-lg-12 py-2">
 										<p class="pt-3">포트폴리오 제목 *</p>
-										<input type="text" placeholder="title" class="form-control">
+										<input type="text" placeholder="title" class="form-control"
+										name="port_title" id="port_title">
 										<!-- required -->
 									</div>
-									<!--  <div class="col-lg-6 pt-2">
-                                        <input type="email" placeholder="Email *" class="form-control" required>
-                                    </div> -->
 								</div>
 							</div>
 							<p class="pt-3">포트폴리오 카테고리 *</p>
@@ -82,8 +81,10 @@
 									class="form-check-label" for="inlineCheckbox3">퍼블리싱</label>
 							</div>
 							<div class="btn-grounp">
-								<a class="btn btn-primary mt-2 float-right"
-									href="portfolio_register2.do">다음</a>
+								<input type="button" class="btn btn-primary mt-2 float-right" value="다음"
+									 onClick="fn_next()" >
+									
+									
 								<!-- <button type="submit" class="btn btn-primary mt-2 float-right">다음</button> -->
 							</div>
 
@@ -97,6 +98,14 @@
 		</div>
 	<!-- contact us end -->
 
+
+<script>
+function fn_next() {
+	var form = document.getElementById("register1");
+	form.action = "<c:url value='/portfolio_register2.do'/>";
+	form.submit();
+}
+</script>
 
 
 	<!-- JAVASCRIPTS -->
