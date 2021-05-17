@@ -57,6 +57,14 @@
                                           <option value="3">Highest</option>
                                        </select>
                                     </div>
+                                      <div class="form-group col-md-2">
+                                       <select class="w-100 form-control mt-lg-1 mt-md-2">
+                                          <option>카테고리</option>
+                                          <option value="1">Web</option>
+                                          <option value="2">App</option>
+                                          <option value="3">Design</option>
+                                       </select>
+                                    </div>
                                     <div class="form-group col-md-2 align-self-center">
                                        <button type="submit" class="btn btn-primary">검색하기</button>
                                     </div>
