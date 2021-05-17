@@ -68,14 +68,14 @@
 						
 						<div class="form-group row">
 							<label for="colFormLabelSm"
-								class="col-sm-2 col-form-label col-form-label-sm">작업기간</label>
+								class="col-sm-2 col-form-label col-form-label-sm">예상작업기간</label>
 							<div class="col-sm-10">
 								<input type="email" class="form-control form-control-sm"
 									id="colFormLabelSm" placeholder="30일">
 							</div>
 						</div>
 						
-						<div class="form-group row">
+						<!-- <div class="form-group row">
 							<label for="colFormLabelSm"
 								class="col-sm-2 col-form-label col-form-label-sm">시작일 ~<br>마감일</label>
 							<div class="col-sm-5">
@@ -86,7 +86,7 @@
 								<input type="email" class="form-control form-control-sm"
 									id="colFormLabelSm" placeholder="2021/06/10">
 							</div>
-						</div>
+						</div> -->
 						
 						<div class="form-group row">
 							<label for="colFormLabelSm"
