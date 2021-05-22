@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../../include/style_css.jsp"%>
 <%@ include file="../../include/header.jsp"%>
@@ -142,133 +142,45 @@
 						</div> -->
 						</div>
 					</div>
+					
+					
 					<div class="product-grid-list">
 						<div class="row mt-30">
+							<c:forEach items="${portlist}" var = "portlist">
 							<div class="col-sm-12 col-lg-4 col-md-6">
 								<!-- product card -->
 								<div class="product-item bg-light">
+								
 									<div class="card">
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid"
-													src="resources/images/portImage/item_image1.PNG" alt="Card image cap">
+												<img class="card-img-top img-fluid" src="${portlist.portlist_url}">
 											</a>
 										</div>
 										<div class="card-body">
-											<h4 class="card-title"><a href="single.html">포트폴리오 이름</a></h4>
+											<h4 class="card-title"><a href="single.html"><c:out value="${portlist.portlist_title}"/></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="single.html"><i class="fa fa-folder-open-o"></i>WEB</a>
+													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portlist_category}"/></a>
 												</li>
 												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i>30days</a>
+													<a href="#"><i class="fa fa-calendar"></i><c:out value="${portlist.portlist_day}"/></a>
 												</li>
 											</ul>
-											<p class="card-text">반응형, 고급형 웹 홈페이지를 만들 개발자를 구합니다.</p>
+											<p class="card-text"><c:out value="${portlist.portlist_content}"/></p>
 											<div class="product-ratings">
 												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
+													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${portlist.portlist_rating}" /></li>
 												</ul>
 											</div>
 										</div>
 									</div>
-								</div>
-
-
-
-							</div>
-							<div class="col-sm-12 col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="single.html">
-												<img class="card-img-top img-fluid"
-													src="resources/images/portImage/item_image2.PNG" alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.html">포트폴리오 이름2</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.html"><i class="fa fa-folder-open-o"></i>App</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i>30days</a>
-												</li>
-											</ul>
-											<p class="card-text">반응형, 고급형 웹 홈페이지를 만들 개발자를 구합니다.</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
 									</div>
 								</div>
-
-
-
+								</c:forEach>
 							</div>
-							<div class="col-sm-12 col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="single.html">
-												<img class="card-img-top img-fluid"
-													src="resources/images/portImage/item_image3.PNG" alt="Card image cap">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.html">포트폴리오 이름3</a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.html"><i
-															class="fa fa-folder-open-o"></i>Designer</a>
-												</li>
-												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i>30days</a>
-												</li>
-											</ul>
-											<p class="card-text">반응형, 고급형 웹 홈페이지를 만들 개발자를 구합니다.</p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item selected"><i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item"><i class="fa fa-star"></i></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+					
 					<div class="pagination justify-content-center">
 						<nav aria-label="Page navigation example">
 							<ul class="pagination">
@@ -292,6 +204,7 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</section>
 

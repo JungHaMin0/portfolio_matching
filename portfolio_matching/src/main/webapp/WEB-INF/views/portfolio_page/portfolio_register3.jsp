@@ -64,7 +64,7 @@
 							</div>
 						</div>
 
-						<p class="pt-3">예상 시작일~마침일 *</p>
+						<!-- <p class="pt-3">예상 시작일~마침일 *</p>
 						<div class="col-lg-6 py-2">
 							<div class="form-group">
 								<div class="input-group date" id="datetimepicker1"
@@ -94,10 +94,10 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 
-						<p class="pt-3">진행기간 *</p>
+						<p class="pt-3">예상작업기간 *</p>
 						<div class="col-lg-6 py-2">
 						<input type="text" placeholder="일" class="form-control">
 						</div>
