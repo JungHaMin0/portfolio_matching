@@ -23,7 +23,7 @@ public class PortController {
 	@Autowired
 	private PortRegService portRegServiceImpl;
 
-
+   
 	@RequestMapping(value = "portfolio_detail.do", method = RequestMethod.GET)
 	public String portfolio_detail(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
@@ -49,73 +49,58 @@ public class PortController {
 	}
 	
 
+	//등록 작성 폼 
+	@RequestMapping(value = "/PwriteForm.do")
+	public String portfolio_register() throws Exception{
 
-	//�룷�듃�뤃由ъ삤 �벑濡�1
-	@RequestMapping(value = "/register1.do", method = RequestMethod.POST)
-	public String register1(PortRegVO portRegVO) throws Exception{
-		
-		portRegServiceImpl.portInsert(portRegVO);
-		
-		return null;
+		return "portfolio_page/portfolio_register";
 	}
-	
-	//�룷�듃�뤃由ъ삤 �벑濡�2
-	@RequestMapping(value="/register2.do", method = RequestMethod.POST)
-	public String register1(@RequestParam("file") MultipartFile[] uploadFile, @ModelAttribute("portRegVO") PortRegVO portRegVO, Model model) throws Exception{
-		System.out.println(portRegVO);
+
+
+	//포트폴리오 등록 
+	@RequestMapping(value="/Pwrite.do")
+	public String write(@RequestParam("file") MultipartFile[] uploadFile, @ModelAttribute("portregVO") PortRegVO portregVO) throws Exception{
+		System.out.println(portregVO);
 		String base64 = "";
-    	for (MultipartFile multipartFile : uploadFile) {
-    		byte[] b = multipartFile.getBytes();
-    		base64 = Base64.getEncoder().encodeToString(b);
+		for(MultipartFile multipartFile : uploadFile) {
+			byte[] b = multipartFile.getBytes();
+			base64 = Base64.getEncoder().encodeToString(b);
 		}
-    	portRegVO.setPort_Img(base64);
-		portRegServiceImpl.portInsert(portRegVO);
-		return "redirect:/portfolio_register3.do";
+		portregVO.setPort_Img(base64);
+		portRegServiceImpl.portInsert(portregVO);
+		  return "redirect:/portfoilo_detail.do";
 	}
 	
 	
-	
 
-	
 	
 	 
 	
 	
 	
 	
-	
-	//�럹�씠吏� 蹂쇰젮怨좎삤�삤�삤
-	@RequestMapping(value = "portfolio_register1.do", method = RequestMethod.GET)
-	public String portfolio_register1(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+	@RequestMapping(value = "portfolio_register1.do")
+	public String portfolio_register1() {
+
 		return "portfolio_page/portfolio_register1";
 	}
-	@RequestMapping(value = "portfolio_register2.do", method = RequestMethod.GET)
-	public String portfolio_register2(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+	@RequestMapping(value = "portfolio_register2.do")
+	public String portfolio_register2() {
+
 		return "portfolio_page/portfolio_register2";
 	}
+	@RequestMapping(value = "portfolio_register3.do")
+	public String portfolio_register3() {
 
-	@RequestMapping(value = "portfolio_register3.do", method = RequestMethod.GET)
-	public String portfolio_register3(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
 		return "portfolio_page/portfolio_register3";
 	}
+	
+	@RequestMapping(value = "portfolio_register4.do")
+	public String portfolio_register4() {
 
-	@RequestMapping(value = "portfolio_register4.do", method = RequestMethod.GET)
-	public String portfolio_register4(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
 		return "portfolio_page/portfolio_register4";
 	}
-
+	
 	@RequestMapping(value = "portfolio_payment.do", method = RequestMethod.GET)
 	public String portfolio_payment(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		response.setContentType("text/html; charset=UTF-8");
