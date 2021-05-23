@@ -16,7 +16,7 @@
   <div class="col-md-12">
     <div class="widget dashboard-container">
       <h3 class="widget-header text-center">문의 게시판</h3>
-
+        
         <ol>
           <li>
             <div><i class="fa fa-question-circle-o"></i>정하민님 | 2021-04-15</div>
@@ -27,12 +27,12 @@
             <div>내일 완료 예정입니다~</div><hr />
           </li>
         </ol>
-
+        
       <textarea name="message" id="" placeholder="문의 내용을 입력해주세요." class="border w-100 p-3 mt-3 mt-lg-4"></textarea>
       <div class="btn-grounp text-right">
         <button type="submit" class="btn btn-primary mt-2">문의 하기</button>
       </div>
-
+    
     </div>
 
   </div>

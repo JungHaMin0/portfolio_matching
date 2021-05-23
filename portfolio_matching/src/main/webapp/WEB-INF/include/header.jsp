@@ -29,7 +29,7 @@
                   <li class="nav-item"><a class="nav-link login-button" href="register.do">회원가입</a></li>
                 </c:if>
                 <c:if test="${member != null}">
-                  <li class="nav-item"><a class="nav-link login-button" href="userMod.do">${member.user_id}님 환영합니다.</a></li>
+                  <li class="nav-item"><a class="nav-link login-button" href="#">${member.user_id}</a></li>
                   <li class="nav-item"><a class="nav-link login-button" href="logout.do">로그아웃</a></li>
                 </c:if>
                 <c:if test="${msg == false}">

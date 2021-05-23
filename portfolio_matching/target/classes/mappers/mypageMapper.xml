@@ -3,7 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mypageMapper">
-
+	<!-- pmPurchase 리스트 출력 -->
+	<select id="pmPurchase_list" resultType="com.spring.ex.vo.PmPurchaseVO">
+		SELECT * from FROM deal, portfolio WHERE deal_portfolio_id = portfolio_id;
+	</select>
+	
+	<!-- 문의 조회 -->
+	<select id="inq_select" resultType="com.spring.ex.vo.InquiryVO">
+		SELECT inq_num, port_num, user_id, inq_content, inq_regDate FROM inquiry
+		WHERE port_num = #{port_num};
+	</select>
+	
+	<!-- 문의 작성 -->
+	<insert id="inq_insert">
+		INSERT INTO inquiry(
+			inq_num,
+			port_num,
+			user_id,
+			inq_content,
+			inq_regDate
+		)
+		VALUES(
+			#{inq_num},
+			#{port_num},
+			#{user_id},
+			#{inq_content},
+			#{inq_regDate}
+		);
+	</insert>
+	
 	<!-- 회원 정보 수정 -->
 	<update id="userUpdate">
 		UPDATE user SET
