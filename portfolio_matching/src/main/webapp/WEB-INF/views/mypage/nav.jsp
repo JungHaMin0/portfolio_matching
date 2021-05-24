@@ -19,6 +19,7 @@
       <ul>
         <li><a href="pmPurchase.do"><i class="fa fa-credit-card"></i> 구매 내역</a></li>
         <li><a href="pmInterest.do"><i class="fa fa-bookmark-o"></i> 관심 상품</a></li>
+        <li><a href="pmInquiry.do"><i class="fa fa-commenting-o"></i> 문의 내역</a></li>
       </ul>
 
       <hr />
@@ -27,6 +28,7 @@
       <ul>
         <li><a href="smSale.do"><i class="fa fa-hourglass-half"></i> 판매 중</a></li>
         <li><a href="smProfit.do"><i class="fa fa-krw"></i> 수익 현황</a></li>
+        <li><a href="smInquiry.do"><i class="fa fa-commenting"></i> 문의 내역</a></li>
       </ul>
 
       <hr />

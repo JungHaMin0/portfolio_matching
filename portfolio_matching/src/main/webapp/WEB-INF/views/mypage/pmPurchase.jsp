@@ -26,9 +26,9 @@
               <thead>
                 <tr>
                   <th>이미지</th>
-                  <th>구매 상품</th>
+                  <th>구매 정보</th>
                   <th class="text-center">상태</th>
-                  <th class="text-center">문의/후기</th>
+                  <th class="text-center"></th>
                 </tr>
               </thead>
               <tbody>
@@ -36,17 +36,21 @@
                   <tr>
                     <td class="product-thumb"><img width="80px" height="auto" src="${pmPurList.portfolio_thumbUrl}"></td>
                     <td class="product-details">
-                      <h3 class="title">${pmPurList.portfolio_title}</h3> <span><strong>가격</strong>${pmPurList.portfolio_price} 원</span><span><strong>구매일</strong>${pmPurList.deal_date}</span><span><strong>판매자</strong>${pmPurList.saleUser}</span><span><strong>연락처</strong>db값 없음</span>
+                      <h3 class="title">${pmPurList.portfolio_title}</h3> <span><strong>가격</strong>${pmPurList.portfolio_price} 원</span><span><strong>구매일</strong>${pmPurList.deal_date}</span><span><strong>판매자</strong>${pmPurList.deal_saleUser}</span>
                     </td>
-                    <td class="product-category"><span>${pmPurList.portfolio_sCat}</span></td>
+                    <td class="product-category"><span><strong>${pmPurList.deal_status}</strong></span></td>
                     <td class="action" data-title="Action">
                       <div>
                         <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiry.do" target="_blank"> <i class="fa fa-commenting-o"></i>
-                          </a></li>
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="#"> <i class="fa fa-check"></i>
-                          </a></li>
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="view" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiryWrite.do?deal_id=${pmPurList.deal_id}&portfolio_title=${pmPurList.portfolio_title}" target="_blank"> <i class="fa fa-commenting-o"></i></a></li>
+                          <c:choose>
+                            <c:when test="${pmPurList.deal_status eq '구매 확정'}">
+                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do" target="_blank"><i class="fa fa-thumbs-o-up"></i></a></li>
+                            </c:when>
+                            <c:otherwise>
+                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="pmPurchaseConfirm.do?deal_id=${pmPurList.deal_id}"> <i class="fa fa-check"></i></a></li>
+                            </c:otherwise>
+                          </c:choose>
                         </ul>
                       </div>
                     </td>

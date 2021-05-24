@@ -43,7 +43,7 @@
               </div>
             </td>
           </tr>
-
+          
           <tr>
             <td class="product-thumb"><img width="80px" height="auto" src="resources/images/item_image1.PNG" alt="image description"></td>
             <td class="product-details">

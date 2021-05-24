@@ -3,34 +3,43 @@ package com.spring.ex.vo;
 import java.util.Date;
 
 public class InquiryVO {
-	private int inq_num;
-	private int port_num;
-	private String user_id;
+	private int inq_id;
+	private int inq_deal_id;
+	private String inq_purUser;
+	private String inq_title;
 	private String inq_content;
 	private Date inq_regDate;
 
-	public int getInq_num() {
-		return inq_num;
+	public int getInq_id() {
+		return inq_id;
 	}
 
-	public void setInq_num(int inq_num) {
-		this.inq_num = inq_num;
+	public void setInq_id(int inq_id) {
+		this.inq_id = inq_id;
 	}
 
-	public int getPort_num() {
-		return port_num;
+	public int getInq_deal_id() {
+		return inq_deal_id;
 	}
 
-	public void setPort_num(int port_num) {
-		this.port_num = port_num;
+	public void setInq_deal_id(int inq_deal_id) {
+		this.inq_deal_id = inq_deal_id;
+	}
+	
+	public String getInq_purUser() {
+		return inq_purUser;
+	}
+	
+	public void setInq_purUser(String inq_purUser) {
+		this.inq_purUser = inq_purUser;
 	}
 
-	public String getUser_id() {
-		return user_id;
+	public String getInq_title() {
+		return inq_title;
 	}
 
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setInq_title(String inq_title) {
+		this.inq_title = inq_title;
 	}
 
 	public String getInq_content() {
@@ -48,4 +57,5 @@ public class InquiryVO {
 	public void setInq_regDate(Date inq_regDate) {
 		this.inq_regDate = inq_regDate;
 	}
+
 }

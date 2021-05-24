@@ -66,4 +66,5 @@ public class DealVO {
 	public void setDeal_date(Date deal_date) {
 		this.deal_date = deal_date;
 	}
+
 }
