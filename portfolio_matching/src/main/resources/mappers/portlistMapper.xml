@@ -9,4 +9,41 @@
 	FROM port_list
 	
 	</select>
+	
+	<select id="webcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'web'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="appcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'app'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="designcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'design'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="photocg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'photo'
+	ORDER BY portlist_category DESC
+	
+	</select>
+  
 </mapper>

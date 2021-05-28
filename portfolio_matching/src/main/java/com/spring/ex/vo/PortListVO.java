@@ -1,6 +1,5 @@
 package com.spring.ex.vo;
 
-import java.sql.Blob;
 
 public class PortListVO {
 	private int portlist_id;

@@ -44,8 +44,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="search-result bg-gray">
-						<h2>현재 누른 카테고리</h2>
-						<p>세부카테고리</p>
+						<h2>전체</h2>
+						<p>모든 카테고리</p>
 					</div>
 				</div>
 			</div>
@@ -55,36 +55,13 @@
 						<div class="widget category-list">
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
-								<li><a href="category.html">전체 <span>200</span></a></li>
-								<li><a href="category.html">웹사이트 개발 <span>100</span></a></li>
-								<li><a href="category.html">모바일 앱 <span>50</span></a></li>
+								<li><a href="portlist.do">전체 <span>200</span></a></li>
+								<li><a href="webCategory.do">웹사이트 개발 <span>100</span></a></li>
+								<li><a href="appCategory.do">모바일 앱 <span>50</span></a></li>
 								<li><a href="category.html">디자인 <span>30</span></a></li>
 								<li><a href="category.html">사진 <span>20</span></a></li>
 							</ul>
 						</div>
-
-
-
-						<!-- <div class="widget filter">
-	<h4 class="widget-header">Show Produts</h4>
-	<select>
-		<option>Popularity</option>
-		<option value="1">Top rated</option>
-		<option value="2">Lowest Price</option>
-		<option value="4">Highest Price</option>
-	</select>
-</div> -->
-
-						<!-- <div class="widget price-range w-100">
-	<h4 class="widget-header">Price Range</h4>
-	<div class="block">
-						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="10000000" data-slider-step="5"
-						data-slider-value="[0,10000000]">
-				<div class="d-flex justify-content-between mt-2">
-						<span class="value">0원 - 10,000,000원</span>
-				</div>
-	</div>
-</div> -->
 
 						<div class="widget product-shorting">
 							<h4 class="widget-header">팀 규모</h4>
@@ -122,24 +99,11 @@
 							<div class="col-md-6">
 								<strong>필터</strong>
 								<select>
-									<option>가장 인기 있는</option>
-									<option value="1">가장 가격 낮은</option>
-									<option value="2">가장 많이 참여한</option>
+									<option value="1">별점순</option>
+									<option value="2">높은 가격순</option>
+									<option value="3">낮은 가격순</option>
 								</select>
 							</div>
-							<!-- <div class="col-md-6">
-							<div class="view">
-								<strong>Views</strong>
-								<ul class="list-inline view-switcher">
-									<li class="list-inline-item">
-										<a href="#" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="ad-list-view.html"><i class="fa fa-reorder"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div> -->
 						</div>
 					</div>
 					
@@ -204,7 +168,7 @@
 					</div>
 				</div>
 			</div>
-			
+			</div>
 		</div>
 	</section>
 
