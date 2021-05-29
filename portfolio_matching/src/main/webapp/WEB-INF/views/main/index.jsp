@@ -39,7 +39,6 @@
                   </ul>
                </div>
             </div>  -->
-<<<<<<< HEAD
             <!-- Advance Search -->
             <div class="advance-search">
                   <div class="container">
@@ -66,7 +65,6 @@
                            </div>
                         </div>
                </div>
-=======
         <!-- Advance Search -->
         <div class="advance-search">
           <div class="container">
@@ -101,7 +99,6 @@
                   </div>
                 </form>
               </div>
->>>>>>> refs/heads/jeongwon
             </div>
           </div>
         </div>
