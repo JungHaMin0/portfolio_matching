@@ -14,7 +14,7 @@
 =            User Profile            =
 ===================================-->
   <div class="col-md-12">
-    <div class="widget dashboard-container">
+    <div class="widget dashboard-container mt-4">
       <h3 class="widget-header text-center">문의 하기</h3>
 
       <form role="form" action="pmInquiryWrite.do" method="post">

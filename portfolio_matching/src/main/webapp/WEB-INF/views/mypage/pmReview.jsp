@@ -26,7 +26,7 @@
 =            User Profile            =
 ===================================-->
   <div class="col-md-12">
-    <div class="widget rate">
+    <div class="widget rate mt-4">
       <!-- Heading -->
       <h5 class="widget-header text-center">이용하신 포트폴리오에 점수를 부여해주세요</h5>
       <!-- Rate -->
@@ -38,7 +38,6 @@
         <label>이용 후기 제목</label><input type="text" id="review_title" name="review_title" class="form-control" placeholder="제목을 입력하세요." /><br />
         <label>이용 후기 내용</label><textarea id="review_content" name="review_content" id="" class="border w-100 p-3" placeholder="내용을 입력해주세요."></textarea>
         <div class="btn-grounp text-right">
-          <a onclick="rating();">dsadsadsadsdasdsa</a>
           <a class="btn btn-primary mt-2" onclick="rating();">리뷰 작성</a>
         </div>
       </form>

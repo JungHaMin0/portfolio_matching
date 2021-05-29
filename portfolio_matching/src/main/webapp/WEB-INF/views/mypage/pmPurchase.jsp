@@ -6,6 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="text/javascript">
+  	function pur_confirm() {
+  		if(!confirm('구매를 확정하시겠습니까?')) {
+			alert('구매 확정을 취소하셨습니다.');
+			return;
+  		} else {
+  			alert('구매 확정이 완료되었습니다.');
+  		}
+  	}
+  </script>
 </head>
 
 <body class="body-wrapper">
@@ -42,13 +52,13 @@
                     <td class="action" data-title="Action">
                       <div>
                         <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiryWrite.do?deal_id=${pmPurList.deal_id}&portfolio_title=${pmPurList.portfolio_title}" target="_blank"> <i class="fa fa-commenting-o"></i></a></li>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="문의 하기" class="view" href="pmInquiryWrite.do?deal_id=${pmPurList.deal_id}&portfolio_title=${pmPurList.portfolio_title}" onclick="window.open(this.href, '_blank', 'width=1000, height=700'); return false;"> <i class="fa fa-commenting-o"></i></a></li>
                           <c:choose>
                             <c:when test="${pmPurList.deal_status eq '구매 확정'}">
-                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do?portfolio_id=${pmPurList.portfolio_id}"><i class="fa fa-thumbs-o-up"></i></a></li>
+                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="후기 작성" class="edit" href="pmReview.do?portfolio_id=${pmPurList.portfolio_id}" onclick="window.open(this.href, '_blank', 'width=1000, height=580'); return false;"><i class="fa fa-thumbs-o-up"></i></a></li>
                             </c:when>
                             <c:otherwise>
-                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="pmPurchaseConfirm.do?deal_id=${pmPurList.deal_id}"> <i class="fa fa-check"></i></a></li>
+                              <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="pmPurchaseConfirm.do?deal_id=${pmPurList.deal_id}" onclick="pur_confirm"> <i class="fa fa-check"></i></a></li>
                             </c:otherwise>
                           </c:choose>
                         </ul>
