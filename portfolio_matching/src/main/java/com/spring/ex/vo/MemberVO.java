@@ -47,4 +47,8 @@ public class MemberVO {
 		this.user_phone = user_phone;
 	}
 
+	@Override
+	public String toString() {
+		return "MemberVO [user_id=" + user_id + ", user_pw=" + user_pw + ", user_email=" + user_email + ", user_name=" + user_name + ", user_phone=" + user_phone + "]";
+	}
 }

@@ -1,23 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
+  <%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
-
-	<!--==================================
-=            User Profile            =
-===================================-->
+  <%@ include file="../../include/header.jsp"%>
+  
 	<section class="dashboard section">
-		<!-- Container Start -->
 		<div class="container">
-			<!-- Row Start -->
 			<div class="row">
 				<%@ include file="nav.jsp"%>
 
@@ -28,19 +22,17 @@
                         <div class="text-center"><strong>탈퇴하시겠습니까?</strong></div>
                         <div class="text-center">
                            <br>
-                          <button type="button" class="btn btn-danger">탈퇴</button>
-                          <button type="button" class="btn btn-success">취소</button>
+                          <button type="button" class="btn btn-danger" id="delete">탈퇴</button>
+                          <button type="button" class="btn btn-success" id="cancel">취소</button>
                         </div>
 					</div>
 				</div>
 			</div>
-			<!-- Row End -->
 		</div>
-		<!-- Container End -->
 	</section>
-
+    
 	<%@ include file="../../include/footer.jsp"%>
 	<%@ include file="../../include/style_js.jsp"%>
+  <script src="./resources/js/userDel.js"></script>
 </body>
-
 </html>
