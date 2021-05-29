@@ -1,10 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<%@ include file="../../include/style_css.jsp"%>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 	function rating() {
@@ -21,10 +20,6 @@
 </head>
 
 <body class="body-wrapper">
-
-  <!--==================================
-=            User Profile            =
-===================================-->
   <div class="col-md-12">
     <div class="widget rate mt-4">
       <!-- Heading -->

@@ -1,18 +1,13 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
-
-  <!--==================================
-=            User Profile            =
-===================================-->
   <div class="col-md-12">
     <div class="widget dashboard-container">
       <h3 class="text-center">거래 관리</h3>

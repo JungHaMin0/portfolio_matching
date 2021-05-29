@@ -1,19 +1,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
-
-  <!--==================================
-=            User Profile            =
-===================================-->
+  <%@ include file="../../include/header.jsp"%>
+  
   <section class="dashboard section">
     <!-- Container Start -->
     <div class="container">
@@ -65,9 +61,7 @@
           </div>
         </div>
       </div>
-      <!-- Row End -->
     </div>
-    <!-- Container End -->
   </section>
 
   <%@ include file="../../include/footer.jsp"%>

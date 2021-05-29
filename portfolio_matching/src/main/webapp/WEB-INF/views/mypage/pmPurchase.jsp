@@ -1,31 +1,27 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <script type="text/javascript">
-  	function pur_confirm() {
-  		if(!confirm('구매를 확정하시겠습니까?')) {
+<%@ include file="../../include/style_css.jsp"%>
+<script type="text/javascript">
+	function pur_confirm() {
+		if (!confirm('구매를 확정하시겠습니까?')) {
 			alert('구매 확정을 취소하셨습니다.');
 			return;
-  		} else {
-  			alert('구매 확정이 완료되었습니다.');
-  		}
-  	}
-  </script>
+		} else {
+			alert('구매 확정이 완료되었습니다.');
+		}
+	}
+</script>
 </head>
 
 <body class="body-wrapper">
-  <!--==================================
-=            User Profile            =
-===================================-->
+  <%@ include file="../../include/header.jsp"%>
+
   <section class="dashboard section">
-    <!-- Container Start -->
     <div class="container">
-      <!-- Row Start -->
       <div class="row">
         <%@ include file="nav.jsp"%>
 
@@ -72,13 +68,10 @@
           </div>
         </div>
       </div>
-      <!-- Row End -->
     </div>
-    <!-- Container End -->
   </section>
 
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
 </body>
-
 </html>

@@ -1,18 +1,12 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
-
-  <!--==================================
-=            User Profile            =
-===================================-->
   <div class="col-md-12">
     <div class="widget dashboard-container mt-4">
       <h3 class="widget-header text-center">문의 하기</h3>
@@ -35,13 +29,14 @@
               </div>
             </div>
           </div>
-          <label>문의 내용</label><textarea id="inq_content" name="inq_content" placeholder="문의 내용을 입력하세요." class="border w-100 p-3"></textarea>
+          <label>문의 내용</label>
+          <textarea id="inq_content" name="inq_content" placeholder="문의 내용을 입력하세요." class="border w-100 p-3"></textarea>
           <div class="btn-grounp">
             <button type="submit" class="btn btn-primary mt-2 float-right">문의하기</button>
           </div>
         </fieldset>
       </form>
-      
+
     </div>
   </div>
 

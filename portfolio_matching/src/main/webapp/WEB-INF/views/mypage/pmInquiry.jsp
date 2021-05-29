@@ -1,21 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
-  <!--==================================
-=            User Profile            =
-===================================-->
+  <%@ include file="../../include/header.jsp"%>
+  
   <section class="dashboard section">
-    <!-- Container Start -->
     <div class="container">
-      <!-- Row Start -->
       <div class="row">
         <%@ include file="nav.jsp"%>
 
@@ -36,31 +32,25 @@
                   <tr>
                     <td class="product-thumb"><img width="80px" height="auto" src="${pmInqList.portfolio_thumbUrl}"></td>
                     <td class="product-details">
-                      <h3 class="title">${pmInqList.portfolio_title}</h3>
-                      <span><strong>문의 제목</strong>${pmInqList.inq_title}</span>
-                      <span><strong>문의 일자</strong>${pmInqList.inq_regDate}</span>
+                      <h3 class="title">${pmInqList.portfolio_title}</h3> <span><strong>문의 제목</strong>${pmInqList.inq_title}</span> <span><strong>문의 일자</strong>${pmInqList.inq_regDate}</span>
                     </td>
                     <td class="product-category"></td>
                     <td class="action" data-title="Action">
                       <div>
                         <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="답변 확인" class="view" href="pmInquiryRead.do?inq_id=${pmInqList.inq_id}&portfolio_title=${pmInqList.portfolio_title}" target="_blank"> <i class="fa fa-commenting-o"></i></a>
-                          </li>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="답변 확인" class="view" href="pmInquiryRead.do?inq_id=${pmInqList.inq_id}&portfolio_title=${pmInqList.portfolio_title}" target="_blank"> <i class="fa fa-commenting-o"></i></a></li>
                         </ul>
                       </div>
                     </td>
                   </tr>
                 </c:forEach>
-                
+
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <!-- Row End -->
     </div>
-    <!-- Container End -->
   </section>
 
   <%@ include file="../../include/footer.jsp"%>
