@@ -1,78 +1,98 @@
 package com.spring.ex.vo;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class PortRegVO {
-	private int port_num;
-	private String user_id;
-	private String b_category_num;
-	private String s_category_num;
-	private String port_title;
-	private String port_detail_content;
-	private int port_price;
-	private String port_Img;
-	private String port_file;
-	private Date port_period;
 	
-	public int getPort_num() {
-		return port_num;
+	private int portfolio_id;
+	private String portfolio_userId;
+	private String portfolio_title;
+	private String portfolio_bCat;
+	private String portfolio_sCat;
+	private String portfolio_thumbUrl;
+	private String portfolio_content;
+	private int portfolio_price;
+	private String portfolio_term;
+	private Timestamp portfolio_regDate;
+	private String portfolio_Img;
+	
+	public String getPortfolio_Img() {
+		return portfolio_Img;
 	}
-	public void setPort_num(int port_num) {
-		this.port_num = port_num;
+	public void setPortfolio_Img(String portfolio_Img) {
+		this.portfolio_Img = portfolio_Img;
 	}
-	public String getUser_id() {
-		return user_id;
+	public int getPortfolio_id() {
+		return portfolio_id;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setPortfolio_id(int portfolio_id) {
+		this.portfolio_id = portfolio_id;
 	}
-	public String getB_category_num() {
-		return b_category_num;
+	public String getPortfolio_userId() {
+		return portfolio_userId;
 	}
-	public void setB_category_num(String b_category_num) {
-		this.b_category_num = b_category_num;
+	public void setPortfolio_userId(String portfolio_userId) {
+		this.portfolio_userId = portfolio_userId;
 	}
-	public String getS_category_num() {
-		return s_category_num;
+	public String getPortfolio_title() {
+		return portfolio_title;
 	}
-	public void setS_category_num(String s_category_num) {
-		this.s_category_num = s_category_num;
+	public void setPortfolio_title(String portfolio_title) {
+		this.portfolio_title = portfolio_title;
 	}
-	public String getPort_title() {
-		return port_title;
+	public String getPortfolio_bCat() {
+		return portfolio_bCat;
 	}
-	public void setPort_title(String port_title) {
-		this.port_title = port_title;
+	public void setPortfolio_bCat(String portfolio_bCat) {
+		this.portfolio_bCat = portfolio_bCat;
 	}
-	public String getPort_detail_content() {
-		return port_detail_content;
+	public String getPortfolio_sCat() {
+		return portfolio_sCat;
 	}
-	public void setPort_detail_content(String port_detail_content) {
-		this.port_detail_content = port_detail_content;
+	public void setPortfolio_sCat(String portfolio_sCat) {
+		this.portfolio_sCat = portfolio_sCat;
 	}
-	public int getPort_price() {
-		return port_price;
+	public String getPortfolio_thumbUrl() {
+		return portfolio_thumbUrl;
 	}
-	public void setPort_price(int port_price) {
-		this.port_price = port_price;
+	public void setPortfolio_thumbUrl(String portfolio_thumbUrl) {
+		this.portfolio_thumbUrl = portfolio_thumbUrl;
 	}
-	public String getPort_Img() {
-		return port_Img;
+	public String getPortfolio_content() {
+		return portfolio_content;
 	}
-	public void setPort_Img(String port_Img) {
-		this.port_Img = port_Img;
+	public void setPortfolio_content(String portfolio_content) {
+		this.portfolio_content = portfolio_content;
 	}
-	public String getPort_file() {
-		return port_file;
+	public int getPortfolio_price() {
+		return portfolio_price;
 	}
-	public void setPort_file(String port_file) {
-		this.port_file = port_file;
+	public void setPortfolio_price(int portfolio_price) {
+		this.portfolio_price = portfolio_price;
 	}
-	public Date getPort_period() {
-		return port_period;
+	public String getPortfolio_term() {
+		return portfolio_term;
 	}
-	public void setPort_period(Date port_period) {
-		this.port_period = port_period;
+	public void setPortfolio_term(String portfolio_term) {
+		this.portfolio_term = portfolio_term;
 	}
+	public Timestamp getPortfolio_regDate() {
+		return portfolio_regDate;
+	}
+	public void setPortfolio_regDate(Timestamp portfolio_regDate) {
+		this.portfolio_regDate = portfolio_regDate;
+	}
+	@Override
+	public String toString() {
+		return "PortRegVO [portfolio_id=" + portfolio_id + ", portfolio_userId=" + portfolio_userId
+				+ ", portfolio_title=" + portfolio_title + ", portfolio_bCat=" + portfolio_bCat + ", portfolio_sCat="
+				+ portfolio_sCat + ", portfolio_thumbUrl=" + portfolio_thumbUrl + ", portfolio_content="
+				+ portfolio_content + ", portfolio_price=" + portfolio_price + ", portfolio_term=" + portfolio_term
+				+ ", portfolio_regDate=" + portfolio_regDate + ", portfolio_Img=" + portfolio_Img + "]";
+	}
+	
+	
+
 
 }

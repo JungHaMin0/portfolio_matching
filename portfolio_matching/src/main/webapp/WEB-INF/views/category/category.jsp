@@ -213,6 +213,23 @@
 	</section>
 
 
+
+<script>
+
+//content 상세보기
+function fn_view(portfolio_id){
+  
+  var form = document.getElementById("viewForm");
+  var url = "<c:url value='/PortContent.do'/>";
+  url = url + "?portfolio_id=" + portfolio_id;
+  
+  form.action = url;    
+  form.submit(); 
+}
+
+</script>
+
+
 <!-- JAVASCRIPTS -->
 <%@ include file="../../include/footer.jsp"%>
 <%@ include file="../../include/style_js.jsp"%>

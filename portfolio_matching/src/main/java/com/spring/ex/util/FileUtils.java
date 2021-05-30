@@ -31,7 +31,7 @@ public class FileUtils {
 		List<Map<String, Object>> list = new ArrayList<Map<String,Object>>();
 		Map<String, Object> listMap = null;
 		
-		int port_num = portRegVO.getPort_num();
+		int portfolio_id = portRegVO.getPortfolio_id();
 		
 		File file = new File(filePath);
 		if(file.exists() == false) {
@@ -48,7 +48,7 @@ public class FileUtils {
 				file = new File(filePath + storedFileName);
 				multipartFile.transferTo(file);
 				listMap = new HashMap<String, Object>();
-				listMap.put("port_num", port_num);
+				listMap.put("portfolio_id", portfolio_id);
 				listMap.put("STORED_FILE_NAME", storedFileName);
 				listMap.put("FILE_SIZE", multipartFile.getSize());
 				list.add(listMap);

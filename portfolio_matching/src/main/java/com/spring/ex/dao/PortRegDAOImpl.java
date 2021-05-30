@@ -1,5 +1,7 @@
 package com.spring.ex.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -15,5 +17,16 @@ public class PortRegDAOImpl implements PortRegDAO{
 	@Override
 	public void portInsert(PortRegVO vo) throws Exception {
 		sqlSession.insert("portRegMapper.portInsert", vo);
+	}
+
+	@Override
+	public List<PortRegVO> portList(PortRegVO vo) throws Exception {
+		return sqlSession.selectList("portRegMapper.portList");
+	}
+
+	@Override
+	public PortRegVO portSelect(PortRegVO vo) {
+		return sqlSession.selectOne("portRegMapper.portSelect", vo);
+		
 	}
 }
