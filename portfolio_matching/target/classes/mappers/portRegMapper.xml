@@ -3,31 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portRegMapper">
-	<!-- 게시판 글 작성 -->
-	<insert id="portInsert" useGeneratedKeys="true" keyProperty="port_num" parameterType="com.spring.ex.vo.PortRegVO">
-		INSERT INTO port(
-			port_num,
-			user_id,
-			b_category_num,
-			s_category_num,
-			port_title,
-			port_detail_content,
-			port_price,
-			port_Img,
-			port_file,
-			port_period
+
+	<!-- 포트폴리오 등록  -->
+	<insert id="portInsert" useGeneratedKeys="true" keyProperty="portfolio_id" parameterType="com.spring.ex.vo.PortRegVO">
+		INSERT INTO portfolio(
+			portfolio_id,
+			portfolio_userId,
+			portfolio_title,
+			portfolio_bCat,
+			portfolio_sCat,
+			portfolio_thumbUrl,
+			portfolio_Img,
+			portfolio_content,
+			portfolio_price,
+			portfolio_term,
+			portfolio_regDate
 		) VALUES(
-			#{port_num},
-			#{user_id},
-			#{b_category_num},
-			#{s_category_num},
-			#{port_title},
-			#{port_detail_content},
-			#{port_price},
-			#{port_Img},
-			#{port_file},
-			#{port_period}
+			#{portfolio_id},
+			#{portfolio_userId},
+			#{portfolio_title},
+			#{portfolio_bCat},
+			#{portfolio_sCat},
+			#{portfolio_thumbUrl},
+			#{portfolio_Img},
+			#{portfolio_content},
+			#{portfolio_price},
+			#{portfolio_term},
+			#{portfolio_regDate}
 		);
 	</insert>
+	
 
 </mapper>

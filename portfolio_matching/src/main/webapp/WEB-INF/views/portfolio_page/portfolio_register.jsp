@@ -1,15 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ include file="../../include/style_css.jsp"%>
 <%@ include file="../../include/header.jsp"%>
-
 
 <body>
 	<!-- contact us start-->
@@ -37,12 +36,11 @@
 								<div class="col-lg-12 py-2">
 									<p class="pt-3">포트폴리오 제목 *</p>
 									<input type="text" placeholder="title" class="form-control"
-										name="port_title" id="port_title">
+										name="portfolio_title" id="portfolio_title">
 									<!-- required -->
 								</div>
-							</div>
 
-							<p class="pt-3">포트폴리오 카테고리 *</p>
+								<!-- 	<p class="pt-3">포트폴리오 카테고리 *</p>
 							<select name="" id="" class="form-control w-100">
 								<option value="1">원하시는 카테고리를 고르세요.</option>
 								<option value="1">웹·앱개발</option>
@@ -74,43 +72,53 @@
 									class="form-check-label" for="inlineCheckbox3">퍼블리싱</label>
 							</div>
 
-							<br> <br> <br>
+							<br> <br> <br> -->
+								<div class="col-lg-12 py-2">
+									<p class="pt-3">포트폴리오 관련 자료*</p>
+									<input type="file" id="file" name="file" accept="image/*"
+										onchange="setThumbnail(event);" />
+									<div id="image_container"></div>
+								</div>
 
-							<p class="pt-3">포트폴리오 관련 자료*</p>
-							<input type="file" id="file" accept="image/*" onchange="setThumbnail(event);" multiple/> 
-							<div id="image_container">
+
+								<br>
+								<div class="col-lg-12 py-2">
+									<p class="pt-3">상세 내용 작성 *</p>
+									<textarea name="portfolio_content" id="portfolio_content"
+										placeholder="<포트폴리오 상세 설명>"
+										class="border w-100 p-3 mt-3 mt-lg-4"></textarea>
+
+								</div>
+
+
+								<br> <br> <br>
+								<div class="col-lg-12 py-2">
+
+									<h3 style="margin-top: 20px">포트폴리오 정보등록</h3>
+									<hr>
+									<p class="pt-3">가격 *</p>
+									<div class="input-group">
+										<input id="portfolio_price" name="portfolio_price" type="text"
+											class="form-control" aria-required="true"
+											aria-invalid="false">
+									</div>
+								</div>
+								<div class="col-lg-12 py-2">
+									<p class="pt-3">예상작업기간 *</p>
+									<div class="col-lg-6 py-2">
+										<input id="portfolio_term" name="portfolio_term" type="text"
+											placeholder="일" class="form-control">
+									</div>
+								</div>
+
+								<br> <br> <br>
+								<div class="col-lg-12 py-2">
+									<div class="btn-grounp">
+										<input type="button" class="btn btn-primary mt-2 float-right"
+											value="등록" onClick="fn_register()">
+									</div>
+								</div>
 							</div>
-
-							<br>
-							<p class="pt-3">상세 내용 작성 *</p>
-							<textarea name="port_detail_content" id="port_detail_content"
-								placeholder="<포트폴리오 상세 설명>"
-								class="border w-100 p-3 mt-3 mt-lg-4"></textarea>
-
-
-							<br> <br> <br>
-
-							<h3 style="margin-top: 20px">포트폴리오 정보등록</h3>
-							<hr>
-							<p class="pt-3">가격 *</p>
-							<div class="input-group">
-								<input id="port_price" name="port_price" type="text"
-									class="form-control" aria-required="true" aria-invalid="false"
-									value="100.00">
-							</div>
-
-							<p class="pt-3">예상작업기간 *</p>
-							<div class="col-lg-6 py-2">
-								<input id="port_period" name="port_period" type="text" placeholder="일" class="form-control">
-							</div>
-
-							<br> <br> <br>
-
-							<div class="btn-grounp">
-								<input type="button" class="btn btn-primary mt-2 float-right"
-									value="등록" onClick="fn_register()">
-							</div>
-							<br> <br> <br>
 						</div>
 					</fieldset>
 				</form>
@@ -119,23 +127,23 @@
 	</div>
 
 
-	<!-- contact us end -->
 
-	<script> 
-	function setThumbnail(event) { 
-		for (var file of event.target.files) { 
-			var reader = new FileReader(); 
+
+
+	<!-------------------------------- 파일 첨부 스크립트 ---------------------------------->
+	<script>
+		function setThumbnail(event) {
+			var reader = new FileReader();
 			reader.onload = function(event) {
-				var img = document.createElement("img"); 
+				var img = document.createElement("img");
 				img.setAttribute("src", event.target.result);
 				img.setAttribute("width", 200);
 				document.querySelector("div#image_container").appendChild(img);
-				};
-				console.log(file);
-				reader.readAsDataURL(file); 
-				}
+			};
+			reader.readAsDataURL(event.target.files[0]);
 		}
 	</script>
+
 
 	<!-------------------------------- 파일 첨부 스크립트END ---------------------------------->
 
@@ -145,7 +153,7 @@
 		//글쓰기
 		function fn_register() {
 			var form = document.getElementById("writeForm");
-			form.action = "<c:url value='/Pwrite.do'/>";
+			form.action = "<c:url value='/port_register.do'/>";
 			form.submit();
 		}
 	</script>
