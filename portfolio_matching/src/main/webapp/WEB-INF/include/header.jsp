@@ -19,7 +19,6 @@
               <li class="nav-item active"><a class="nav-link dropdown-toggle" href="category.do">포트폴리오 </a></li>
 
                 <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
-              <li class="nav-item active"><a class="nav-link" href="portfolio_register1.do" target="_blank" onclick="window.open(this.href,'portfolio_matching', 'width=1000, height=1000, scrollbars=yes, resized=yes'); return false;">등록하기</a></li>
 
               <li class="nav-item active"><a class="nav-link" href="pmPurchase.do">MyPage</a></li>
             </ul>
