@@ -1,26 +1,21 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
+  <%@ include file="../../include/header.jsp"%>
 
-  <!--==================================
-=            User Profile            =
-===================================-->
   <section class="dashboard section">
-    <!-- Container Start -->
     <div class="container">
-      <!-- Row Start -->
       <div class="row">
         <%@ include file="nav.jsp"%>
+        
         <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-0">
-          <!-- Edit Personal Info -->
           <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="widget personal-info">
@@ -47,7 +42,6 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
-              <!-- Change Password -->
               <div class="widget change-password">
                 <h3 class="widget-header user">비밀번호 변경</h3>
                 <form action="userPwMod.do" method="post">
@@ -69,9 +63,7 @@
           </div>
         </div>
       </div>
-      <!-- Row End -->
     </div>
-    <!-- Container End -->
   </section>
 
   <%@ include file="../../include/footer.jsp"%>
