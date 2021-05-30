@@ -68,7 +68,12 @@
   <%@ include file="../../include/style_js.jsp"%>
   <script type="text/javascript">
   	$(".delete").on('click', function() {
-  		return confirm('정말 삭제하시겠습니까?');
+  		if(confirm('정말 삭제하시겠습니까?') == true) {
+  			alert('삭제되었습니다.');
+  			return;
+  		} else {
+  			return false;
+  		}
   	});
   </script>
 </body>

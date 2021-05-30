@@ -45,7 +45,10 @@ public interface MyPageDAO {
 
 	// 판매중
 	public List<PortfolioVO> smSaleList(String user_id) throws Exception;
-
+	
+	// 판매중 - 삭제
+	public void smSaleDelete(int portfolio_id) throws Exception;
+	
 	// 거래 현황
 	public List<Deal_PortVO> smDealList(int portfolio_id) throws Exception;
 
@@ -63,6 +66,9 @@ public interface MyPageDAO {
 
 	// 문의 내역(판매) - 답변 하기
 	public InquiryVO smInquiryRead(int inq_id) throws Exception;
+	
+	// 문의 내역(판매) - 답변 여부 확인
+	public int smAnswerChk(int inq_id) throws Exception;
 
 	// 문의 내역(판매) - 답변 하기 기능
 	public void smAnswerWrite(AnswerVO answerVO) throws Exception;

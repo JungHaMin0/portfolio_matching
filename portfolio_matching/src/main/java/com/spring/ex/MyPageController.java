@@ -84,6 +84,7 @@ public class MyPageController {
 			service.pmPurchaseReview(reviewVO);
 			result = 1;
 		} catch (Exception e) {
+			e.printStackTrace();
 			result = 0;
 		}
 		return result;
@@ -152,6 +153,7 @@ public class MyPageController {
 			service.pmInquiryWrite(inquiryVO);
 			result = 1;
 		} catch (Exception e) {
+			e.printStackTrace();
 			result = 0;
 		}
 		return result;
@@ -181,6 +183,16 @@ public class MyPageController {
 		model.addAttribute("smSaleList", service.smSaleList(user_id));
 
 		return "mypage/smSale";
+	}
+	
+	// 판매 중 - 삭제 기능
+	@RequestMapping(value = "smSaleDelete.do", method = RequestMethod.GET)
+	public String smSaleDelete(HttpServletRequest req, Model model) throws Exception {
+		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+		
+		service.smSaleDelete(portfolio_id);
+		
+		return "redirect:/smSale.do";
 	}
 
 	// 거래 현황
@@ -247,20 +259,34 @@ public class MyPageController {
 
 		int inq_id = Integer.parseInt(req.getParameter("inq_id"));
 		String portfolio_title = req.getParameter("porfolio_title");
-
-		req.setAttribute("portfolio_title", portfolio_title);
-		req.setAttribute("ans_saleUser", user_id);
-
-		model.addAttribute("smInquiryRead", service.smInquiryRead(inq_id));
-		return "mypage/smAnswerWrite";
+		
+		if(service.smAnswerChk(inq_id) == 1) {
+			req.setAttribute("portfolio_title", portfolio_title);
+			model.addAttribute("pmInquiryRead", service.pmInquiryRead(inq_id));
+			model.addAttribute("pmAnswerRead", service.pmAnswerRead(inq_id));
+			return "mypage/pmInquiryRead";
+		} else {
+			req.setAttribute("portfolio_title", portfolio_title);
+			req.setAttribute("ans_saleUser", user_id);
+			model.addAttribute("smInquiryRead", service.smInquiryRead(inq_id));
+			return "mypage/smAnswerWrite";
+		}
 	}
 
 	// 문의 내역(판매) - 답변 하기 기능
 	@RequestMapping(value = "smAnswerWrite.do", method = RequestMethod.POST)
-	public String postSmAnswerWrite(AnswerVO answerVO) throws Exception {
-		service.smAnswerWrite(answerVO);
-
-		return "mypage/smAnswerWrite";
+	@ResponseBody
+	public int postSmAnswerWrite(AnswerVO answerVO) throws Exception {
+		int result;
+		try {
+			service.smAnswerWrite(answerVO);
+			result = 1;
+		} catch(Exception e) {
+			e.printStackTrace();
+			result = 0;
+			return result;
+		}
+		return result;
 	}
 
 	// 내 정보 수정

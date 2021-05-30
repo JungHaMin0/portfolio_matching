@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%@ include file="../../include/style_css.jsp"%>
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
@@ -36,7 +36,7 @@
                     </td>
                     <td class="product-category action" data-title="Action">
                       <ul class="list-inline justify-content-center">
-                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="보기" class="edit" href="smDeal.do?portfolio_id=${smSaleList.portfolio_id}"> <i class="fa fa-krw"></i>
+                        <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="보기" class="edit" href="" onclick="smDeal('${smSaleList.portfolio_id}');"> <i class="fa fa-krw"></i>
                         </a></li>
                       </ul>
                     </td>
@@ -47,7 +47,7 @@
                           </a></li>
                           <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="수정" class="edit" href=""> <i class="fa fa-pencil"></i>
                           </a></li>
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href=""> <i class="fa fa-trash"></i>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href="smSaleDelete.do?portfolio_id=${smSaleList.portfolio_id}" onclick=""> <i class="fa fa-trash"></i>
                           </a></li>
                         </ul>
                       </div>
@@ -65,6 +65,29 @@
 
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+  <script type="text/javascript">
+  function smDeal(portfolio_id) {
+		var popupWidth = 1000;
+		var popupHeight = 705;
+		var popupX = (window.screen.width / 2) - (popupWidth / 2);
+		var popupY = (window.screen.height / 2) - (popupHeight / 2);
+		
+		url = "smDeal.do?portfolio_id=" + portfolio_id;
+		specs = "width=" + popupWidth + ", height= " + popupHeight + ", top=" + popupY + ", left=" + popupX;
+		window.open(url, name, specs);
+		
+		return false;
+  }
+  
+  $(".delete").on('click', function() {
+		if(confirm('정말 삭제하시겠습니까?') == true) {
+			alert('삭제되었습니다.');
+			return;
+		} else {
+			return false;
+		}
+	});
+  </script>
 </body>
 
 </html>

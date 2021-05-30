@@ -96,6 +96,12 @@
 		WHERE portfolio_userId = #{user_id};
 	</select>
 	
+	<!-- 판매 중 - 삭제 기능 -->
+	<delete id="smSaleDelete">
+		DELETE FROM portfolio
+		WHERE portfolio_id = #{portfolio_id}
+	</delete>
+	
 	<!-- 거래 현황 -->
 	<select id="smDealList" parameterType="int" resultType="com.spring.ex.vo.Deal_PortVO">
 		SELECT * FROM deal, portfolio
@@ -139,6 +145,12 @@
 		WHERE inq_id = #{inq_id};
 	</select>
 	
+	<!-- 문의 내역(판매) - 답변 여부 확인 -->
+	<select id="smAnswerChk" resultType="int">
+		SELECT count(*) FROM inquiry, answer
+		WHERE inq_id = ans_inq_id
+		AND inq_id = #{inq_id};
+	</select>
 	<!-- 문의 내역(판매) - 답변 하기 기능 -->
 	<insert id="smAnswerWrite">
 		INSERT INTO answer(

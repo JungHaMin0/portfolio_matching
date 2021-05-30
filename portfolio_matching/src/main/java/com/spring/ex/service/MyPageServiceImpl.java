@@ -77,6 +77,11 @@ public class MyPageServiceImpl implements MyPageService {
 	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
 		return dao.smSaleList(user_id);
 	}
+	
+	@Override // 판매중 - 삭제
+	public void smSaleDelete(int portfolio_id) throws Exception {
+		dao.smSaleDelete(portfolio_id);
+	}
 
 	@Override // 거래 현황
 	public List<Deal_PortVO> smDealList(int portfolio_id) throws Exception {
@@ -107,7 +112,12 @@ public class MyPageServiceImpl implements MyPageService {
 	public InquiryVO smInquiryRead(int inq_id) throws Exception {
 		return dao.smInquiryRead(inq_id);
 	}
-
+	
+	@Override // 문의 내역(판매) - 답변 여부 확인
+	public int smAnswerChk(int inq_id) throws Exception {
+		return dao.smAnswerChk(inq_id);
+	}
+	
 	@Override // 문의 내역(판매) - 답변 하기 기능
 	public void smAnswerWrite(AnswerVO answerVO) throws Exception {
 		dao.smAnswerWrite(answerVO);

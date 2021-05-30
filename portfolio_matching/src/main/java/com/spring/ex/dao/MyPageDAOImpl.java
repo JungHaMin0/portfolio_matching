@@ -77,6 +77,11 @@ public class MyPageDAOImpl implements MyPageDAO {
 	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.smSaleList", user_id);
 	}
+	
+	@Override // 판매중 - 삭제
+	public void smSaleDelete(int portfolio_id) throws Exception {
+		sqlSession.delete("mypageMapper.smSaleDelete", portfolio_id);
+	}
 
 	@Override // 거래 현황
 	public List<Deal_PortVO> smDealList(int portfolio_id) throws Exception {
@@ -108,6 +113,11 @@ public class MyPageDAOImpl implements MyPageDAO {
 		return sqlSession.selectOne("mypageMapper.smInquiryRead", inq_id);
 	}
 
+	@Override // 문의 내역(판매) - 답변 여부 확인
+	public int smAnswerChk(int inq_id) throws Exception {
+		return sqlSession.selectOne("mypageMapper.smAnswerChk", inq_id);
+	}
+	
 	@Override // 문의 내역(판매) - 답변 하기 기능
 	public void smAnswerWrite(AnswerVO answerVO) throws Exception {
 		sqlSession.insert("mypageMapper.smAnswerWrite", answerVO);

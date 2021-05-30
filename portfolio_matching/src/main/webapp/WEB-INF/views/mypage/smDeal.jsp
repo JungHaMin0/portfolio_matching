@@ -47,6 +47,34 @@
     </div>
   </div>
   <%@ include file="../../include/style_js.jsp"%>
+  <script type="text/javascript">
+  	$(".view").on('click', function() {
+  		if(confirm('현재 상태를 작업 중으로 변경하시겠습니까?') == true) {
+  			alert('변경되었습니다.');
+  			return;
+  		} else {
+  			return false;
+  		}
+  	});
+  	
+  	$(".edit").on('click', function() {
+  		if(confirm('현재 상태를 작업 완료로 변경하시겠습니까?') == true) {
+  			alert('변경되었습니다.');
+  			return;
+  		} else {
+  			return false;
+  		}
+  	});
+  	
+  	$(".delete").on('click', function() {
+  		if(confirm('환불/취소 요청을 처리하시겠습니까?') == true) {
+  			alert('환불/취소되었습니다.');
+  			return;
+  		} else {
+  			return false;
+  		}
+  	});
+  </script>
 </body>
 
 </html>

@@ -58,7 +58,7 @@
   <script type="text/javascript">
   function pmInquiryRead(inq_id, portfolio_title) {
 		var popupWidth = 1000;
-		var popupHeight = 585;
+		var popupHeight = 900;
 		var popupX = (window.screen.width / 2) - (popupWidth / 2);
 		var popupY = (window.screen.height / 2) - (popupHeight / 2);
 		
