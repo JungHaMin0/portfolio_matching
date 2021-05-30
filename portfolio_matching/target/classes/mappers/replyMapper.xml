@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="replyMapper">
+  <select id = "replyList" parameterType="replyVO" resultType="replyVO">
+  SELECT a.re_num,a.portfolio_id,a.re_content,a.re_m_num,a.re_date,b.user_id 
+FROM review a,user b WHERE a.portfolio_id = #{portfolio_id}
+ AND a.re_num = b.user_id
+  </select>
+  
+  <insert id = "replyInsert" parameterType="replyVO">
+  INSERT INTO review (
+		re_num
+		,portfolio_id
+		,re_m_num
+		,re_content
+		,re_date )
+		VALUES (
+		#{re_num}
+		,#{portfolio_id}
+		,#{re_m_num}
+		,#{re_content}
+		,NOW())
+  </insert>
+  
+  
+  <delete id="replyDelete" parameterType="replyVO">
+  DELETE FROM review WHERE  re_num=#{re_num} AND re_num = #{user_id}
+  </delete>
+  </mapper>
