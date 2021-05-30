@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="../../include/style_css.jsp"%>
 <style>
 	#btn1{ 
 	border-top-left-radius: 5px;
@@ -31,7 +30,9 @@
 
 </style>
 </head>
+    
 <body>
+<%@ include file="../../include/header.jsp"%>
 <section class="section">
     <div class="container">
                 <div class="about-content" align="center">
