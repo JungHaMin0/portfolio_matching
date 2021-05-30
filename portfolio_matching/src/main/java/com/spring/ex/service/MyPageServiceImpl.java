@@ -1,6 +1,7 @@
 package com.spring.ex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -15,6 +16,7 @@ import com.spring.ex.vo.MemberVO;
 import com.spring.ex.vo.Deal_Port_InqVO;
 import com.spring.ex.vo.PortfolioVO;
 import com.spring.ex.vo.ReviewVO;
+import com.spring.ex.vo.ScrapVO;
 
 @Service
 public class MyPageServiceImpl implements MyPageService {
@@ -25,23 +27,32 @@ public class MyPageServiceImpl implements MyPageService {
 	public List<Deal_PortVO> pmPurchaseList(String user_id) throws Exception {
 		return dao.pmPurchaseList(user_id);
 	}
-	
+
 	@Override // 구매 내역 - 구매 확정 기능
 	public void pmPurchaseConfirm(String deal_id) throws Exception {
 		dao.pmPurchaseConfirm(deal_id);
 	}
-	
+
+	@Override // 구매 내역 - 리뷰 중복 체크
+	public int reviewChk(Map<String, String> map) throws Exception {
+		return dao.reviewChk(map);
+	}
+
 	@Override // 구매 내역 - 리뷰 작성 기능
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception {
 		dao.pmPurchaseReview(reviewVO);
 	}
 
-	
 	@Override // 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
 		return dao.pmInterestList(user_id);
 	}
 	
+	@Override // 관심 상품 - 삭제 기능
+	public void pmInterestDelete(ScrapVO scrapVO) throws Exception {
+		dao.pmInterestDelete(scrapVO);
+	}
+
 	@Override // 문의 내역
 	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception {
 		return dao.pmInquiryList(user_id);
@@ -66,27 +77,27 @@ public class MyPageServiceImpl implements MyPageService {
 	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
 		return dao.smSaleList(user_id);
 	}
-	
+
 	@Override // 거래 현황
 	public List<Deal_PortVO> smDealList(int portfolio_id) throws Exception {
 		return dao.smDealList(portfolio_id);
 	}
-	
+
 	@Override // 거래 현황 - 작업 중으로 변경
 	public void smDealWorking(int deal_id) throws Exception {
 		dao.smDealWorking(deal_id);
 	}
-	
+
 	@Override // 거래 현황 - 작업 완료로 변경
 	public void smDealComplete(int deal_id) throws Exception {
 		dao.smDealComplete(deal_id);
 	}
-	
+
 	@Override // 수익 현황
 	public List<Deal_PortVO> smProfitList(String user_id) throws Exception {
 		return dao.smProfitList(user_id);
 	}
-	
+
 	@Override // 문의 내역(판매)
 	public List<Deal_Port_InqVO> smInquiryList(String user_id) throws Exception {
 		return dao.smInquiryList(user_id);

@@ -17,6 +17,13 @@
 		WHERE deal_id = #{deal_id};
 	</update>
 	
+	<!-- 후기 중복 확인 -->
+	<select id="reviewChk" parameterType="hashmap" resultType="int">
+		SELECT count(*) FROM review
+		WHERE review_portfolio_id = #{review_portfolio_id}
+		AND review_userId = #{user_id}
+	</select>
+	
 	<!-- 구매 내역 - 후기 작성 -->
 	<insert id="pmPurchaseReview">
 		INSERT INTO review(
@@ -40,6 +47,12 @@
 		AND scrap_userId = #{user_id}
 	</select>
 	
+	<!-- 관심 상품 - 삭제 기능 -->
+	<delete id="pmInterestDelete">
+		DELETE FROM scrap
+		WHERE scrap_userId = #{scrap_userId}
+		AND scrap_portfolio_id = #{scrap_portfolio_id}
+	</delete>
 	
 	<!-- 문의 내역(구매) -->
 	<select id="pmInquiryList" resultType="com.spring.ex.vo.Deal_Port_InqVO">

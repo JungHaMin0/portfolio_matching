@@ -1,6 +1,7 @@
 package com.spring.ex.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -8,13 +9,13 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.AnswerVO;
-import com.spring.ex.vo.DealVO;
 import com.spring.ex.vo.Deal_PortVO;
+import com.spring.ex.vo.Deal_Port_InqVO;
 import com.spring.ex.vo.InquiryVO;
 import com.spring.ex.vo.MemberVO;
-import com.spring.ex.vo.Deal_Port_InqVO;
 import com.spring.ex.vo.PortfolioVO;
 import com.spring.ex.vo.ReviewVO;
+import com.spring.ex.vo.ScrapVO;
 
 @Repository
 public class MyPageDAOImpl implements MyPageDAO {
@@ -29,19 +30,29 @@ public class MyPageDAOImpl implements MyPageDAO {
 
 	@Override // 구매 내역 - 구매 확정 기능
 	public void pmPurchaseConfirm(String deal_id) throws Exception {
-		sqlSession.update("pmPurchaseConfirm", deal_id);
+		sqlSession.update("mypageMapper.pmPurchaseConfirm", deal_id);
 	}
-	
+
+	@Override // 구매 내역 - 리뷰 중복 체크
+	public int reviewChk(Map<String, String> map) throws Exception {
+		return sqlSession.selectOne("mypageMapper.reviewChk", map);
+	}
+
 	@Override // 구매 내역 - 리뷰 작성 기능
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception {
-		sqlSession.insert("pmPurchaseReview", reviewVO);
+		sqlSession.insert("mypageMapper.pmPurchaseReview", reviewVO);
 	}
 
 	@Override // 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.pmInterestList", user_id);
 	}
-	
+
+	@Override // 관심 상품 - 삭제 기능
+	public void pmInterestDelete(ScrapVO scrapVO) throws Exception {
+		sqlSession.delete("mypageMapper.pmInterestDelete", scrapVO);
+	}
+
 	@Override // 문의 내역(구매)
 	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.pmInquiryList", user_id);
@@ -66,22 +77,22 @@ public class MyPageDAOImpl implements MyPageDAO {
 	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.smSaleList", user_id);
 	}
-	
+
 	@Override // 거래 현황
 	public List<Deal_PortVO> smDealList(int portfolio_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.smDealList", portfolio_id);
 	}
-	
+
 	@Override // 거래 현황 - 작업 중으로 변경
 	public void smDealWorking(int deal_id) throws Exception {
 		sqlSession.update("mypageMapper.smDealWorking", deal_id);
 	}
-	
+
 	@Override // 거래 현황 - 작업 완료로 변경
 	public void smDealComplete(int deal_id) throws Exception {
 		sqlSession.update("mypageMapper.smDealComplete", deal_id);
 	}
-	
+
 	@Override // 수익 현황
 	public List<Deal_PortVO> smProfitList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.smProfitList", user_id);

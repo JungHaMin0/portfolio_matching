@@ -1,15 +1,16 @@
 package com.spring.ex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.ex.vo.AnswerVO;
-import com.spring.ex.vo.DealVO;
 import com.spring.ex.vo.Deal_PortVO;
+import com.spring.ex.vo.Deal_Port_InqVO;
 import com.spring.ex.vo.InquiryVO;
 import com.spring.ex.vo.MemberVO;
-import com.spring.ex.vo.Deal_Port_InqVO;
 import com.spring.ex.vo.PortfolioVO;
 import com.spring.ex.vo.ReviewVO;
+import com.spring.ex.vo.ScrapVO;
 
 public interface MyPageService {
 	// 구매 내역
@@ -18,12 +19,18 @@ public interface MyPageService {
 	// 구매 내역 - 구매 확정 기능
 	public void pmPurchaseConfirm(String deal_id) throws Exception;
 
+	// 구매 내역 - 리뷰 중복 체크
+	public int reviewChk(Map<String, String> map) throws Exception;
+
 	// 구매 내역 - 리뷰 작성 기능
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception;
 
 	// 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception;
 
+	// 관심 상품 - 삭제 기능
+	public void pmInterestDelete(ScrapVO scrapVO) throws Exception;
+	
 	// 문의 내역(구매)
 	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception;
 
