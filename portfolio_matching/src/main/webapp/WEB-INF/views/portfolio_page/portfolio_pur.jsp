@@ -94,7 +94,7 @@
                 </div>
               
               <ul class="list-inline mt-20">
-                <li class="list-inline-item"><a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">결제하기</a></li>
+                <li class="list-inline-item"><a href="portfolio_payment.do" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">결제하기</a></li>
               </ul>
             </div>
           </div>
