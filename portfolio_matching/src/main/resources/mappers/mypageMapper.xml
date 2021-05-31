@@ -7,7 +7,8 @@
 	<select id="pmPurchase_list" parameterType="String" resultType="com.spring.ex.vo.Deal_PortVO">
 		SELECT * FROM deal, portfolio
 		WHERE deal_portfolio_id = portfolio_id
-		AND deal_purUser = #{user_id};
+		AND deal_purUser = #{user_id}
+		ORDER BY deal_id DESC;
 	</select>
 	
 	<!-- 구매 내역 - 구매 확정 기능 -->
@@ -45,6 +46,7 @@
 		SELECT portfolio.* FROM scrap, portfolio
 		WHERE scrap_portfolio_id = portfolio_id
 		AND scrap_userId = #{user_id}
+		ORDER BY scrap_id DESC;
 	</select>
 	
 	<!-- 관심 상품 - 삭제 기능 -->
@@ -93,7 +95,8 @@
 	<!-- 판매 중 -->
 	<select id="smSaleList" parameterType="String" resultType="com.spring.ex.vo.PortfolioVO">
 		SELECT * FROM portfolio
-		WHERE portfolio_userId = #{user_id};
+		WHERE portfolio_userId = #{user_id}
+		ORDER BY portfolio_id DESC;
 	</select>
 	
 	<!-- 판매 중 - 삭제 기능 -->
@@ -106,7 +109,8 @@
 	<select id="smDealList" parameterType="int" resultType="com.spring.ex.vo.Deal_PortVO">
 		SELECT * FROM deal, portfolio
 		WHERE deal_portfolio_id = portfolio_id
-		AND portfolio_id = #{portfolio_id};
+		AND portfolio_id = #{portfolio_id}
+		ORDER BY deal_id DESC;
 	</select>
 	
 	<!-- 거래 현황 - 작업 중으로 변경 -->
@@ -136,7 +140,7 @@
 		WHERE inq_deal_id = deal_id
 		AND deal_portfolio_id = portfolio_id
 		AND deal_saleUser = #{user_id}
-		ORDER BY portfolio_id;
+		ORDER BY inq_id DESC;
 	</select>
 	
 	<!-- 문의 내역(판매) - 답변 하기 -->
@@ -151,6 +155,7 @@
 		WHERE inq_id = ans_inq_id
 		AND inq_id = #{inq_id};
 	</select>
+	
 	<!-- 문의 내역(판매) - 답변 하기 기능 -->
 	<insert id="smAnswerWrite">
 		INSERT INTO answer(

@@ -24,6 +24,7 @@ public class Deal_Port_InqVO {
 	private String portfolio_bCat;
 	private String portfolio_sCat;
 	private String portfolio_thumbUrl;
+	private String portfolio_Img;
 	private String portfolio_content;
 	private int portfolio_price;
 	private String portfolio_term;
@@ -181,6 +182,14 @@ public class Deal_Port_InqVO {
 
 	public void setPortfolio_thumbUrl(String portfolio_thumbUrl) {
 		this.portfolio_thumbUrl = portfolio_thumbUrl;
+	}
+	
+	public String getPortfolio_Img() {
+		return portfolio_Img;
+	}
+
+	public void setPortfolio_Img(String portfolio_Img) {
+		this.portfolio_Img = portfolio_Img;
 	}
 
 	public String getPortfolio_content() {
