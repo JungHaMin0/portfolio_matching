@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="portlistMapper">
+	<select id="portlist" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT *
+	FROM port_list
+	
+	</select>
+	
+	<select id="webcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'web'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="appcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'app'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="designcg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'design'
+	ORDER BY portlist_category DESC
+	
+	</select>
+	
+	<select id="photocg" resultType="com.spring.ex.vo.PortListVO">
+	
+	SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
+	FROM port_list
+	WHERE portlist_category LIKE 'photo'
+	ORDER BY portlist_category DESC
+	
+	</select>
+  
+</mapper>

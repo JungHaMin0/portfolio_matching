@@ -247,6 +247,7 @@ a:focus, a:hover {
   color: #666;
   box-shadow: none;
   font-size: 15px;
+  margin-left: 300px;
 }
 
 .form-control:focus {
@@ -424,6 +425,8 @@ button {
   display: inline-block;
   padding: 15px 30px;
   border-radius: 4px;
+  width: 200px;
+  margin-left: 320px;
 }
 
 .btn-main, .btn-main-sm {
@@ -625,12 +628,29 @@ ul.pagination .active a {
   background: #F5F5F5;
 }
 
+.quick-menu {
+}
+.quick-box {
+	width: 300px;
+	height: 100px;
+	background-color: white;
+	border-radius: 10px 10px 0 0;
+}
+
+.quick-box img {
+	width: 70px;
+	height: 70px;
+	margin: 0 30px;
+	margin-top: 10px;
+}
+
 .bg-1 {
   background: url("../images/port_banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  height: 60vh;
+  height: 500px;
+  width: 100%;
 }
 
 .bg-2 {
@@ -669,6 +689,10 @@ ul.pagination .active a {
     padding: 6px 45px !important;
     margin: 5px 0;
   }
+  .ul.pagination {
+    margin: 0;
+    margin-left: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -676,6 +700,10 @@ ul.pagination .active a {
     display: inline-block;
     padding: 6px 45px !important;
     margin: 5px 0;
+  }
+    .ul.pagination {
+    margin-left: 0;
+    margin-left: 20px;
   }
 }
 
@@ -1928,7 +1956,7 @@ ul.pagination .active a {
   margin-bottom: 25px;
 }
 
-.widget.personal-info .form-group i, .widget.change-password .form-group i, .widget.change-email .form-group i {
+.widget.personal-info .` i, .widget.change-password .form-group i, .widget.change-email .form-group i {
   color: white;
   background: #5672f9;
   font-size: 25px;
@@ -2725,9 +2753,13 @@ form textarea {
 }
 
 ul.pagination {
-  margin-left: 305px;
+  margin-left: 0;
 }
 #yee {
   cursor: pointer; 
 }
-/*# sourceMappingURL=maps/style.css.map */
+
+.cg_active {
+	background-color: #5672f9;
+}
+

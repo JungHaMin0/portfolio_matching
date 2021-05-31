@@ -5,82 +5,16 @@
 
 <!DOCTYPE html>
 <head>
+</head>
 
 <!-------------------------       Hero area           ------------------------->
 
 <section class="hero-area bg-1 text-center overly">
-  <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Header Contetnt -->
-        <!-- <div class="content-block">
-                  <h1>무료로 포트폴리오를 등록하세요 </h1>
-               <p>포매만이 가능한 안전한 자산 관리 시스템으로 안전하게
-                  포트폴리오를 등록하고 판매해보세요!
-               </p>
-               <div class="short-popular-category-list text-center">
-                  <h2>Popular Category</h2>
-                  <ul class="list-inline">
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-bed"></i> Web</a></li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-grav"></i> App</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-car"></i> Design</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-cutlery"></i> photo</a>
-                     </li>
-                     <li class="list-inline-item">
-                        <a href="category.html"><i class="fa fa-coffee"></i> moovie</a>
-                     </li>
-                  </ul>
-               </div>
-            </div>  -->
-        <!-- Advance Search -->
-        <div class="advance-search">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 col-md-12 align-content-center">
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
-                    </div>
-                    <div class="form-group col-md-3">
-                      <select class="w-100 form-control mt-lg-1 mt-md-2">
-                        <option>필터</option>
-                        <option value="1">Top</option>
-                        <option value="2">Lowest</option>
-                        <option value="3">Highest</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <select class="w-100 form-control mt-lg-1 mt-md-2">
-                        <option>카테고리</option>
-                        <option value="1">Web</option>
-                        <option value="2">App</option>
-                        <option value="3">Photo</option>
-                        <option value="4">Design</option>
-                        <option value="5">Movie</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-2 align-self-center">
-                      <button type="submit" class="btn btn-primary">검색하기</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Container End -->
 </section>
+
+<div class="quick-box">
+	<img class="category-web" src="resources/images/indexCategory/web.png">
+</div>	
 
 <!-------------------------       client slide         ------------------------->
 
@@ -129,8 +63,6 @@
               </div>
             </div>
 
-
-
           </div>
           <div class="col-sm-12 col-lg-4">
             <!-- product card -->
@@ -160,8 +92,6 @@
                 </div>
               </div>
             </div>
-
-
 
           </div>
           <div class="col-sm-12 col-lg-4">
@@ -193,8 +123,6 @@
                 </div>
               </div>
             </div>
-
-
 
           </div>
           <div class="col-sm-12 col-lg-4">
