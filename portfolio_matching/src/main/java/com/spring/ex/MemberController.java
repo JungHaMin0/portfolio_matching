@@ -27,7 +27,7 @@ public class MemberController {
 
 	// 로그인 get >> 페이지 이동
 	@RequestMapping(value = "login.do", method = RequestMethod.GET)
-	public String getLogin(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
+	public String getLogin() throws Exception {
 		return "member/login";
 	}
 

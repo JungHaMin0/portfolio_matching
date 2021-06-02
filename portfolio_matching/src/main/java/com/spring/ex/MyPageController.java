@@ -1,16 +1,21 @@
 package com.spring.ex;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.ex.service.MyPageService;
+import com.spring.ex.vo.AnswerVO;
+import com.spring.ex.vo.InquiryVO;
 import com.spring.ex.vo.MemberVO;
+import com.spring.ex.vo.ReviewVO;
 
 @Controller
 public class MyPageController {
@@ -20,55 +25,211 @@ public class MyPageController {
 	@Inject
 	MyPageService service;
 
-	// ±¸¸Å °ü¸®
+	// êµ¬ë§¤ ë‚´ì—­
 	@RequestMapping(value = "pmPurchase.do", method = RequestMethod.GET)
-	public String pmPurchase() throws Exception {
+	public String pmPurchase(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("pmPurchaseList", service.pmPurchaseList(user_id));
+
 		return "mypage/pmPurchase";
 	}
 
+	// êµ¬ë§¤ ë‚´ì—­ - êµ¬ë§¤ í™•ì • ê¸°ëŠ¥
+	@RequestMapping(value = "pmPurchaseConfirm.do", method = RequestMethod.GET)
+	public String pmPurchaseConfirm(HttpServletRequest req) throws Exception {
+		String deal_id = req.getParameter("deal_id");
+
+		service.pmPurchaseConfirm(deal_id);
+
+		return "redirect:pmPurchase.do";
+	}
+	
+	// êµ¬ë§¤ë‚´ì—­ - ë¦¬ë·° ì‘ì„±
+	@RequestMapping(value = "pmReview.do", method = RequestMethod.GET)
+	public String pmReview(HttpServletRequest req, HttpSession session) throws Exception {
+		
+		String portfolio_id = req.getParameter("portfolio_id");
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+		
+		req.setAttribute("portfolio_id", portfolio_id);
+		req.setAttribute("user_id", user_id);
+		
+		return "mypage/pmReview";
+	}
+	
+	// êµ¬ë§¤ ë‚´ì—­ - ë¦¬ë·° ì‘ì„± ê¸°ëŠ¥
+	@RequestMapping(value = "pmPurchaseReview.do", method = RequestMethod.POST)
+	public String pmPurchaseReview(HttpServletRequest req, ReviewVO reviewVO) throws Exception {
+		
+		service.pmPurchaseReview(reviewVO);
+
+		return "redirect:pmPurchase.do";
+	}
+
+	// ê´€ì‹¬ ìƒí’ˆ
 	@RequestMapping(value = "pmInterest.do", method = RequestMethod.GET)
-	public String pmInterest() throws Exception {
+	public String pmInterest(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("pmInterestList", service.pmInterestList(user_id));
+
 		return "mypage/pmInterest";
 	}
 
-	@RequestMapping(value = "pmReview.do", method = RequestMethod.GET)
-	public String pmReview() throws Exception {
-		return "mypage/pmReview";
-	}
-
+	// ë¬¸ì˜ ë‚´ì—­(êµ¬ë§¤)
 	@RequestMapping(value = "pmInquiry.do", method = RequestMethod.GET)
-	public String pmInquiry() throws Exception {
+	public String pmInquiry(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("pmInquiryList", service.pmInquiryList(user_id));
 		return "mypage/pmInquiry";
 	}
 
-	// ÆÇ¸Å °ü¸®
+	// ë¬¸ì˜ ë‚´ì—­(êµ¬ë§¤) - ë¬¸ì˜ ì‘ì„±
+	@RequestMapping(value = "pmInquiryWrite.do", method = RequestMethod.GET)
+	public String getPmInquiryWrite(HttpServletRequest req, HttpSession session, Model model) throws Exception {
+		String deal_id = req.getParameter("deal_id");
+		String portfolio_title = req.getParameter("portfolio_title");
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		req.setAttribute("inq_deal_id", deal_id);
+		req.setAttribute("portfolio_title", portfolio_title);
+		req.setAttribute("inq_purUser", user_id);
+		
+		return "mypage/pmInquiryWrite";
+	}
+
+	// ë¬¸ì˜ ë‚´ì—­(êµ¬ë§¤) - ì‘ì„± ê¸°ëŠ¥
+	@RequestMapping(value = "pmInquiryWrite.do", method = RequestMethod.POST)
+	public String postPmInquiryWrite(InquiryVO inquiryVO) throws Exception {
+
+		service.pmInquiryWrite(inquiryVO);
+
+		return "redirect:/pmPurchase.do";
+	}
+
+	// ë¬¸ì˜ ë‚´ì—­(êµ¬ë§¤) - ë‹µë³€ ì½ê¸° ê¸°ëŠ¥
+	@RequestMapping(value = "pmInquiryRead.do", method = RequestMethod.GET)
+	public String pmInquiryRead(HttpServletRequest req, Model model) throws Exception {
+
+		int inq_id = Integer.parseInt(req.getParameter("inq_id"));
+		String portfolio_title = req.getParameter("portfolio_title");
+
+		req.setAttribute("portfolio_title", portfolio_title);
+		model.addAttribute("pmInquiryRead", service.pmInquiryRead(inq_id));
+		model.addAttribute("pmAnswerRead", service.pmAnswerRead(inq_id));
+
+		return "mypage/pmInquiryRead";
+	}
+
+	// íŒë§¤ ì¤‘
 	@RequestMapping(value = "smSale.do", method = RequestMethod.GET)
-	public String smSale() throws Exception {
+	public String smSale(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("smSaleList", service.smSaleList(user_id));
+
 		return "mypage/smSale";
 	}
 
-	@RequestMapping(value = "smInquiry.do", method = RequestMethod.GET)
-	public String smInquiry() throws Exception {
-		return "mypage/smInquiry";
-	}
-
+	// ê±°ë˜ í˜„í™©
 	@RequestMapping(value = "smDeal.do", method = RequestMethod.GET)
-	public String smDeal() throws Exception {
+	public String smDeal(HttpServletRequest req, Model model) throws Exception {
+		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+
+		model.addAttribute("smDealList", service.smDealList(portfolio_id));
+
 		return "mypage/smDeal";
 	}
 
+	// ê±°ë˜ í˜„í™© - ì‘ì—… ì¤‘ìœ¼ë¡œ ë³€ê²½
+	@RequestMapping(value = "smDealWorking.do", method = RequestMethod.GET)
+	public String smDealWorking(HttpServletRequest req, Model model) throws Exception {
+		int deal_id = Integer.parseInt(req.getParameter("deal_id"));
+		String url = "smDeal.do?portfolio_id=" + req.getParameter("portfolio_id");
+
+		service.smDealWorking(deal_id);
+
+		return "redirect:" + url;
+	}
+
+	// ê±°ë˜ í˜„í™© - ì‘ì—… ì¤‘ìœ¼ë¡œ ë³€ê²½
+	@RequestMapping(value = "smDealComplete.do", method = RequestMethod.GET)
+	public String smDealComplete(HttpServletRequest req, Model model) throws Exception {
+		int deal_id = Integer.parseInt(req.getParameter("deal_id"));
+		String url = "smDeal.do?portfolio_id=" + req.getParameter("portfolio_id");
+
+		service.smDealComplete(deal_id);
+
+		return "redirect:" + url;
+	}
+
+	// ìˆ˜ìµ í˜„í™©
 	@RequestMapping(value = "smProfit.do", method = RequestMethod.GET)
-	public String smProfit() throws Exception {
+	public String smProfit(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("smProfitList", service.smProfitList(user_id));
+
 		return "mypage/smProfit";
 	}
 
-	// È¸¿ø Á¤º¸ °ü¸® >> ÆäÀÌÁö ÀÌµ¿
+	// ë¬¸ì˜ ë‚´ì—­(íŒë§¤)
+	@RequestMapping(value = "smInquiry.do", method = RequestMethod.GET)
+	public String smInquiry(HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		model.addAttribute("smInquiryList", service.smInquiryList(user_id));
+		return "mypage/smInquiry";
+	}
+
+	// ë¬¸ì˜ ë‚´ì—­(íŒë§¤) - ë‹µë³€ í•˜ê¸°
+	@RequestMapping(value = "smAnswerWrite.do", method = RequestMethod.GET)
+	public String getSmAnswerWrite(HttpServletRequest req, HttpSession session, Model model) throws Exception {
+
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+
+		int inq_id = Integer.parseInt(req.getParameter("inq_id"));
+		String portfolio_title = req.getParameter("porfolio_title");
+
+		req.setAttribute("portfolio_title", portfolio_title);
+		req.setAttribute("ans_saleUser", user_id);
+
+		model.addAttribute("smInquiryRead", service.smInquiryRead(inq_id));
+		return "mypage/smAnswerWrite";
+	}
+
+	// ë¬¸ì˜ ë‚´ì—­(íŒë§¤) - ë‹µë³€ í•˜ê¸° ê¸°ëŠ¥
+	@RequestMapping(value = "smAnswerWrite.do", method = RequestMethod.POST)
+	public String postSmAnswerWrite(AnswerVO answerVO) throws Exception {
+		service.smAnswerWrite(answerVO);
+
+		return "mypage/smAnswerWrite";
+	}
+
+	// ë‚´ ì •ë³´ ìˆ˜ì •
 	@RequestMapping(value = "userMod.do", method = RequestMethod.GET)
 	public String getUserMod() throws Exception {
 		return "mypage/userMod";
 	}
 
-	// È¸¿ø Á¤º¸ ¼öÁ¤ >> È¸¿ø Á¤º¸ ¼öÁ¤ ±â´É
+	// ë‚´ ì •ë³´ ìˆ˜ì • - ìˆ˜ì • ê¸°ëŠ¥
 	@RequestMapping(value = "userMod.do", method = RequestMethod.POST)
 	public String postUserMod(MemberVO vo, HttpSession session) throws Exception {
 		service.userUpdate(vo);
@@ -78,7 +239,7 @@ public class MyPageController {
 		return "redirect:/index.do";
 	}
 
-	// È¸¿ø Á¤º¸ ¼öÁ¤ >> ºñ¹Ğ¹øÈ£ ¼öÁ¤ ±â´É
+	// ë‚´ ì •ë³´ ìˆ˜ì • - ë¹„ë°€ë²ˆí˜¸ ìˆ˜ì • ê¸°ëŠ¥
 	@RequestMapping(value = "userPwMod.do", method = RequestMethod.POST)
 	public String postUserPwMod(MemberVO vo, HttpSession session) throws Exception {
 		service.userPwUpdate(vo);
@@ -87,19 +248,19 @@ public class MyPageController {
 
 		return "redirect:/index.do";
 	}
-	
-	// È¸¿ø Å»Åğ >> ÆäÀÌÁö ÀÌµ¿
+
+	// íšŒì› íƒˆí‡´
 	@RequestMapping(value = "userDel.do", method = RequestMethod.GET)
 	public String getUserDel() throws Exception {
 		return "mypage/userDel";
 	}
-	
-	// È¸¿ø Å»Åğ >> ±â´É
+
+	// íšŒì› íƒˆí‡´ - íƒˆí‡´ ê¸°ëŠ¥
 	@RequestMapping(value = "userDelete.do", method = RequestMethod.GET)
 	public String UserDelete(MemberVO vo, HttpSession session) throws Exception {
-		MemberVO member = (MemberVO)session.getAttribute("member");
+		MemberVO member = (MemberVO) session.getAttribute("member");
 		service.userDelete(member);
-		
+
 		session.invalidate();
 		return "redirect:/index.do";
 	}
