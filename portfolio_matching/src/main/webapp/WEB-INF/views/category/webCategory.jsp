@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 
-
 <body class="body-wrapper">
 
 	<section class="page-search">
@@ -46,11 +45,11 @@
 						<div class="widget category-list">
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
-								<li><a href="portlist.do">전체 <span>200</span></a></li>
-								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>100</span></a></li>
-								<li><a href="appCategory.do">모바일 앱 <span>50</span></a></li>
-								<li><a href="designCategory.do">디자인 <span>30</span></a></li>
-								<li><a href="category.html">사진 <span>20</span></a></li>
+								<li><a href="portlist.do">전체 <span>6</span></a></li>
+								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>3</span></a></li>
+								<li><a href="appCategory.do">모바일 앱 <span>1</span></a></li>
+								<li><a href="designCategory.do">디자인 <span>1</span></a></li>
+								<li><a href="photoCategory.do">사진 <span>1</span></a></li>
 							</ul>
 						</div>
 					
@@ -109,23 +108,23 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${webcg.portlist_url}">
+												<img class="card-img-top img-fluid" src="${webcg.portfolio_Img}">
 											</a>
 										</div>
 										<div class="card-body">
-											<h4 class="card-title"><a href="single.html"><c:out value="${webcg.portlist_title}"/></a></h4>
+											<h4 class="card-title"><a href="single.html"><c:out value="${webcg.portfolio_title}"/></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${webcg.portlist_category}"/></a>
+													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${webcg.portfolio_sCat}"/></a>
 												</li>
 												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i><c:out value="${webcg.portlist_day}"/></a>
+													<a href="#"><i class="fa fa-calendar"></i><c:out value="${webcg.portfolio_term}"/></a>
 												</li>
 											</ul>
-											<p class="card-text"><c:out value="${webcg.portlist_content}"/></p>
+											<p class="card-text"><c:out value="${webcg.portfolio_content}"/></p>
 											<div class="product-ratings">
 												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${webcg.portlist_rating}" /></li>
+													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${webcg.portfolio_rating}" /></li>
 												</ul>
 											</div>
 										</div>
