@@ -1,6 +1,9 @@
 eclipse.preferences.version=1
 <<<<<<< HEAD
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/views/category/portlist.jsp=UTF-8
+=======
+>>>>>>> refs/heads/jeongwon
 encoding//src/main/webapp/WEB-INF/views/main/index.jsp=UTF-8
 =======
 encoding//src/main/java/com/spring/ex/PortController.java=UTF-8

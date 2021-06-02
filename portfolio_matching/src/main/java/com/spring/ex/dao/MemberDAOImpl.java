@@ -4,7 +4,6 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.Model;
 
 import com.spring.ex.vo.MemberVO;
 
