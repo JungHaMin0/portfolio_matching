@@ -25,13 +25,21 @@ public class MemberController {
 	@Inject
 	MemberService service;
 
+<<<<<<< HEAD
 	// 로그인
+=======
+	// �α��� get >> ������ �̵�
+>>>>>>> refs/heads/hamin
 	@RequestMapping(value = "login.do", method = RequestMethod.GET)
 	public String getLogin() throws Exception {
 		return "member/login";
 	}
 
+<<<<<<< HEAD
 	// 로그인 - 기능
+=======
+	// �α��� POST >> �α��� ���
+>>>>>>> refs/heads/hamin
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String postLogin(MemberVO vo, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		HttpSession session = request.getSession();
@@ -49,7 +57,10 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 
+<<<<<<< HEAD
 	// 로그아웃
+=======
+>>>>>>> refs/heads/hamin
 	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception {
 		session.invalidate();
@@ -57,13 +68,21 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 
+<<<<<<< HEAD
 	// 회원가입
+=======
+	// ȸ������ get >> ������ �̵�
+>>>>>>> refs/heads/hamin
 	@RequestMapping(value = "register.do", method = RequestMethod.GET)
 	public String getRegister(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		return "member/register";
 	}
 
+<<<<<<< HEAD
 	// 회원가입 - 기능
+=======
+	// ȸ������ post >> ȸ������ ���
+>>>>>>> refs/heads/hamin
 	@RequestMapping(value = "register.do", method = RequestMethod.POST)
 	public String postRegister(MemberVO vo) throws Exception {
 		int result = service.idChk(vo);
@@ -79,7 +98,11 @@ public class MemberController {
 		return "redirect:/login.do";
 	}
 
+<<<<<<< HEAD
 	// 회원가입 - 중복체크
+=======
+	// ���̵� �ߺ� Ȯ��
+>>>>>>> refs/heads/hamin
 	@ResponseBody
 	@RequestMapping(value = "idChk.do", method = RequestMethod.POST)
 	public int idChk(MemberVO vo) throws Exception {

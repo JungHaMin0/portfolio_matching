@@ -4,16 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+</head>
+
+=======
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%@ include file="../../include/style_css.jsp"%>
 </head>
+>>>>>>> branch 'hamin' of https://github.com/junhamin/portfolio_matching.git
 <!-------------------------       Hero area           ------------------------->
 <body>
 <%@ include file="../../include/header.jsp"%>
 
 <section class="hero-area bg-1 text-center overly">
+<<<<<<< HEAD
+=======
   <!-- Container Start -->
   <div class="container">
     <div class="row">
@@ -59,7 +66,12 @@
     </div>
   </div>
   <!-- Container End -->
+>>>>>>> branch 'hamin' of https://github.com/junhamin/portfolio_matching.git
 </section>
+
+<div class="quick-box">
+	<img class="category-web" src="resources/images/indexCategory/web.png">
+</div>	
 
 <!-------------------------       client slide         ------------------------->
 
@@ -108,8 +120,6 @@
               </div>
             </div>
 
-
-
           </div>
           <div class="col-sm-12 col-lg-4">
             <!-- product card -->
@@ -139,8 +149,6 @@
                 </div>
               </div>
             </div>
-
-
 
           </div>
           <div class="col-sm-12 col-lg-4">
@@ -172,8 +180,6 @@
                 </div>
               </div>
             </div>
-
-
 
           </div>
           <div class="col-sm-12 col-lg-4">
