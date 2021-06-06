@@ -1,7 +1,6 @@
 package com.spring.ex.service;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.ex.dao.MemberDAO;
@@ -10,22 +9,22 @@ import com.spring.ex.vo.MemberVO;
 @Service
 public class MemberServiceImpl implements MemberService {
 
-	@Inject MemberDAO dao;
+	@Autowired MemberDAO dao;
 	
-	// È¸¿ø °¡ÀÔ
+	// íšŒì› ê°€ì…
 	@Override
 	public void register(MemberVO vo) throws Exception {
 		dao.register(vo);
 	}
 	
-	// ¾ÆÀÌµğ Áßº¹ È®ÀÎ
+	// íšŒì› ê°€ì… - ì¤‘ë³µ ì²´í¬
 	@Override
 	public int idChk(MemberVO vo)throws Exception {
 		int result = dao.idChk(vo);
 		return result;
 	}
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	@Override
 	public MemberVO login(MemberVO vo) throws Exception {
 		return dao.login(vo);

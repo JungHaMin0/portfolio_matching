@@ -12,20 +12,20 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Inject SqlSession sqlSession;
 	
-	// È¸¿ø°¡ÀÔ
+	// íšŒì› ê°€ì…
 	@Override
 	public void register(MemberVO vo) throws Exception {
 		sqlSession.insert("memberMapper.register", vo);
 	}
 	
-	// ¾ÆÀÌµğ Áßº¹ È®ÀÎ
+	// íšŒì› ê°€ì… - ì¤‘ë³µ ì²´í¬
 	@Override
 	public int idChk(MemberVO vo) throws Exception {
 		int result = sqlSession.selectOne("memberMapper.idChk", vo);
 		return result;
 	}
 	
-	//·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	@Override
 	public MemberVO login(MemberVO vo) throws Exception {
 		return sqlSession.selectOne("memberMapper.login", vo);
