@@ -25,13 +25,13 @@ public class MemberController {
 	@Inject
 	MemberService service;
 
-	// �α��� get >> ������ �̵�
+	// 로그인
 	@RequestMapping(value = "login.do", method = RequestMethod.GET)
 	public String getLogin() throws Exception {
 		return "member/login";
 	}
 
-	// �α��� POST >> �α��� ���
+	// 로그인 - 기능
 	@RequestMapping(value = "login.do", method = RequestMethod.POST)
 	public String postLogin(MemberVO vo, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
 		HttpSession session = request.getSession();
@@ -49,6 +49,7 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 
+	// 로그아웃
 	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
 	public String logout(HttpSession session) throws Exception {
 		session.invalidate();
@@ -56,13 +57,13 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 
-	// ȸ������ get >> ������ �̵�
+	// 회원가입
 	@RequestMapping(value = "register.do", method = RequestMethod.GET)
 	public String getRegister(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		return "member/register";
 	}
 
-	// ȸ������ post >> ȸ������ ���
+	// 회원가입 - 기능
 	@RequestMapping(value = "register.do", method = RequestMethod.POST)
 	public String postRegister(MemberVO vo) throws Exception {
 		int result = service.idChk(vo);
@@ -78,7 +79,7 @@ public class MemberController {
 		return "redirect:/login.do";
 	}
 
-	// ���̵� �ߺ� Ȯ��
+	// 회원가입 - 중복체크
 	@ResponseBody
 	@RequestMapping(value = "idChk.do", method = RequestMethod.POST)
 	public int idChk(MemberVO vo) throws Exception {

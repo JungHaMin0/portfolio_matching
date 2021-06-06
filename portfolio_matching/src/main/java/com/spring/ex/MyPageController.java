@@ -1,5 +1,8 @@
 package com.spring.ex;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,12 +13,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.ex.service.MyPageService;
 import com.spring.ex.vo.AnswerVO;
 import com.spring.ex.vo.InquiryVO;
 import com.spring.ex.vo.MemberVO;
 import com.spring.ex.vo.ReviewVO;
+import com.spring.ex.vo.ScrapVO;
 
 @Controller
 public class MyPageController {
@@ -46,28 +51,43 @@ public class MyPageController {
 
 		return "redirect:pmPurchase.do";
 	}
-	
+
 	// 구매내역 - 리뷰 작성
 	@RequestMapping(value = "pmReview.do", method = RequestMethod.GET)
 	public String pmReview(HttpServletRequest req, HttpSession session) throws Exception {
-		
+
 		String portfolio_id = req.getParameter("portfolio_id");
 		MemberVO vo = (MemberVO) session.getAttribute("member");
 		String user_id = vo.getUser_id();
-		
+
 		req.setAttribute("portfolio_id", portfolio_id);
 		req.setAttribute("user_id", user_id);
-		
+
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("review_portfolio_id", portfolio_id);
+		map.put("user_id", user_id);
+
+		if (service.reviewChk(map) == 0) {
+			req.setAttribute("chk", 1);
+		} else {
+			req.setAttribute("chk", 0);
+		}
 		return "mypage/pmReview";
 	}
-	
+
 	// 구매 내역 - 리뷰 작성 기능
 	@RequestMapping(value = "pmPurchaseReview.do", method = RequestMethod.POST)
-	public String pmPurchaseReview(HttpServletRequest req, ReviewVO reviewVO) throws Exception {
-		
-		service.pmPurchaseReview(reviewVO);
-
-		return "redirect:pmPurchase.do";
+	@ResponseBody
+	public int pmPurchaseReview(ReviewVO reviewVO) throws Exception {
+		int result;
+		try {
+			service.pmPurchaseReview(reviewVO);
+			result = 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = 0;
+		}
+		return result;
 	}
 
 	// 관심 상품
@@ -80,6 +100,21 @@ public class MyPageController {
 		model.addAttribute("pmInterestList", service.pmInterestList(user_id));
 
 		return "mypage/pmInterest";
+	}
+
+	// 관심 상품 - 삭제 기능
+	@RequestMapping(value = "pmInterestDelete.do", method = RequestMethod.GET)
+	public String pmInterestDelete(HttpServletRequest req, HttpSession session, Model model, ScrapVO scrapVO) throws Exception {
+		int scrap_portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+		MemberVO vo = (MemberVO) session.getAttribute("member");
+		String user_id = vo.getUser_id();
+		
+		scrapVO.setScrap_portfolio_id(scrap_portfolio_id);
+		scrapVO.setScrap_userId(user_id);
+		
+		service.pmInterestDelete(scrapVO);
+		
+		return "redirect:/pmInterest.do";
 	}
 
 	// 문의 내역(구매)
@@ -104,17 +139,24 @@ public class MyPageController {
 		req.setAttribute("inq_deal_id", deal_id);
 		req.setAttribute("portfolio_title", portfolio_title);
 		req.setAttribute("inq_purUser", user_id);
-		
+
 		return "mypage/pmInquiryWrite";
 	}
 
 	// 문의 내역(구매) - 작성 기능
 	@RequestMapping(value = "pmInquiryWrite.do", method = RequestMethod.POST)
-	public String postPmInquiryWrite(InquiryVO inquiryVO) throws Exception {
+	@ResponseBody
+	public int postPmInquiryWrite(InquiryVO inquiryVO) throws Exception {
+		int result;
 
-		service.pmInquiryWrite(inquiryVO);
-
-		return "redirect:/pmPurchase.do";
+		try {
+			service.pmInquiryWrite(inquiryVO);
+			result = 1;
+		} catch (Exception e) {
+			e.printStackTrace();
+			result = 0;
+		}
+		return result;
 	}
 
 	// 문의 내역(구매) - 답변 읽기 기능
@@ -141,6 +183,16 @@ public class MyPageController {
 		model.addAttribute("smSaleList", service.smSaleList(user_id));
 
 		return "mypage/smSale";
+	}
+	
+	// 판매 중 - 삭제 기능
+	@RequestMapping(value = "smSaleDelete.do", method = RequestMethod.GET)
+	public String smSaleDelete(HttpServletRequest req, Model model) throws Exception {
+		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+		
+		service.smSaleDelete(portfolio_id);
+		
+		return "redirect:/smSale.do";
 	}
 
 	// 거래 현황
@@ -207,20 +259,34 @@ public class MyPageController {
 
 		int inq_id = Integer.parseInt(req.getParameter("inq_id"));
 		String portfolio_title = req.getParameter("porfolio_title");
-
-		req.setAttribute("portfolio_title", portfolio_title);
-		req.setAttribute("ans_saleUser", user_id);
-
-		model.addAttribute("smInquiryRead", service.smInquiryRead(inq_id));
-		return "mypage/smAnswerWrite";
+		
+		if(service.smAnswerChk(inq_id) == 1) {
+			req.setAttribute("portfolio_title", portfolio_title);
+			model.addAttribute("pmInquiryRead", service.pmInquiryRead(inq_id));
+			model.addAttribute("pmAnswerRead", service.pmAnswerRead(inq_id));
+			return "mypage/pmInquiryRead";
+		} else {
+			req.setAttribute("portfolio_title", portfolio_title);
+			req.setAttribute("ans_saleUser", user_id);
+			model.addAttribute("smInquiryRead", service.smInquiryRead(inq_id));
+			return "mypage/smAnswerWrite";
+		}
 	}
 
 	// 문의 내역(판매) - 답변 하기 기능
 	@RequestMapping(value = "smAnswerWrite.do", method = RequestMethod.POST)
-	public String postSmAnswerWrite(AnswerVO answerVO) throws Exception {
-		service.smAnswerWrite(answerVO);
-
-		return "mypage/smAnswerWrite";
+	@ResponseBody
+	public int postSmAnswerWrite(AnswerVO answerVO) throws Exception {
+		int result;
+		try {
+			service.smAnswerWrite(answerVO);
+			result = 1;
+		} catch(Exception e) {
+			e.printStackTrace();
+			result = 0;
+			return result;
+		}
+		return result;
 	}
 
 	// 내 정보 수정

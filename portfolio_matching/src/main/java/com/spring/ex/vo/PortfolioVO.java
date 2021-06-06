@@ -2,7 +2,6 @@ package com.spring.ex.vo;
 
 import java.util.Date;
 
-
 public class PortfolioVO {
 	private int portfolio_id;
 	private String portfolio_userId;
@@ -10,10 +9,11 @@ public class PortfolioVO {
 	private String portfolio_bCat;
 	private String portfolio_sCat;
 	private String portfolio_thumbUrl;
+	private String portfolio_Img;
 	private String portfolio_content;
 	private int portfolio_price;
 	private String portfolio_term;
-	private int portfolio_rating;
+	private double portfolio_rating;
 	private Date portfolio_regDate;
 
 	public int getPortfolio_id() {
@@ -60,6 +60,14 @@ public class PortfolioVO {
 		return portfolio_thumbUrl;
 	}
 
+	public String getPortfolio_Img() {
+		return portfolio_Img;
+	}
+
+	public void setPortfolio_Img(String portfolio_Img) {
+		this.portfolio_Img = portfolio_Img;
+	}
+
 	public void setPortfolio_thumbUrl(String portfolio_thumbUrl) {
 		this.portfolio_thumbUrl = portfolio_thumbUrl;
 	}
@@ -88,11 +96,11 @@ public class PortfolioVO {
 		this.portfolio_term = portfolio_term;
 	}
 
-	public int getPortfolio_rating() {
+	public double getPortfolio_rating() {
 		return portfolio_rating;
 	}
 
-	public void setPortfolio_rating(int portfolio_rating) {
+	public void setPortfolio_rating(double portfolio_rating) {
 		this.portfolio_rating = portfolio_rating;
 	}
 

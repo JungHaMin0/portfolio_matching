@@ -48,7 +48,7 @@
                             <a data-toggle="tooltip" data-placement="top" title="보기" class="view" href=""> <i class="fa fa-eye"></i></a>
                           </li>
                           <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href=""> <i class="fa fa-trash"></i></a>
+                            <a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href="pmInterestDelete.do?portfolio_id=${pmInterList.portfolio_id}"> <i class="fa fa-trash"></i></a>
                           </li>
                         </ul>
                       </div>
@@ -66,6 +66,16 @@
 
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+  <script type="text/javascript">
+  	$(".delete").on('click', function() {
+  		if(confirm('정말 삭제하시겠습니까?') == true) {
+  			alert('삭제되었습니다.');
+  			return;
+  		} else {
+  			return false;
+  		}
+  	});
+  </script>
 </body>
 
 </html>

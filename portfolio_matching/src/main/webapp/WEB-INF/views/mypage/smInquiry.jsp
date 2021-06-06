@@ -4,12 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <%@ include file="../../include/style_css.jsp"%>
+<%@ include file="../../include/style_css.jsp"%>
 </head>
 
 <body class="body-wrapper">
   <%@ include file="../../include/header.jsp"%>
-  
+
   <section class="dashboard section">
     <div class="container">
       <div class="row">
@@ -38,7 +38,7 @@
                     <td class="action" data-title="Action">
                       <div>
                         <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="답변 하기" class="view" href="smAnswerWrite.do?inq_id=${smInqList.inq_id}&porfolio_title=${smInqList.portfolio_title}" target="_blank"> <i class="fa fa-commenting-o"></i></a></li>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="답변/확인" class="view" href="" onclick="smAnswerWrite('${smInqList.inq_id}','${smInqList.portfolio_title}')"> <i class="fa fa-commenting-o"></i></a></li>
                         </ul>
                       </div>
                     </td>
@@ -55,6 +55,20 @@
 
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+  <script type="text/javascript">
+  function smAnswerWrite(inq_id, portfolio_title) {
+		var popupWidth = 1000;
+		var popupHeight = 900;
+		var popupX = (window.screen.width / 2) - (popupWidth / 2);
+		var popupY = (window.screen.height / 2) - (popupHeight / 2);
+		
+		url = "smAnswerWrite.do?inq_id=" + inq_id + "&porfolio_title=" + portfolio_title;
+		specs = "width=" + popupWidth + ", height= " + popupHeight + ", top=" + popupY + ", left=" + popupX;
+		window.open(url, name, specs);
+		
+		return false;
+	}
+  </script>
 </body>
 
 </html>

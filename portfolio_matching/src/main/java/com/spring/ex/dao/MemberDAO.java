@@ -3,12 +3,12 @@ package com.spring.ex.dao;
 import com.spring.ex.vo.MemberVO;
 
 public interface MemberDAO {
-	// È¸¿ø°¡ÀÔ
+	// íšŒì› ê°€ì…
 	public void register(MemberVO vo) throws Exception;
 	
-	// ¾ÆÀÌµğ Áßº¹ È®ÀÎ
+	// íšŒì› ê°€ì… - ì¤‘ë³µ ì²´í¬
 	public int idChk(MemberVO vo) throws Exception;
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
 	public MemberVO login(MemberVO vo) throws Exception;
 }
