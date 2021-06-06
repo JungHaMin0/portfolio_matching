@@ -31,13 +31,13 @@ public class HomeController {
 		return "main/MyPageDetail";
 	}
 
-	@RequestMapping(value = "portlist.do", method = RequestMethod.GET)
+	@RequestMapping(value = "category.do", method = RequestMethod.GET)
 	public String portlist(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		logger.info("portlist");
 		model.addAttribute("portlist", service.list());
 		System.out.println(model);
 
-		return "category/portlist";
+		return "category/category";
 	}
 
 	@RequestMapping(value = "webCategory.do", method = RequestMethod.GET)

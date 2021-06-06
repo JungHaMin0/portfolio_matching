@@ -16,7 +16,7 @@
             <ul class="navbar-nav ml-auto main-nav ">
               <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
 
-              <li class="nav-item active"><a class="nav-link dropdown-toggle" href="portlist.do">포트폴리오 </a></li>
+              <li class="nav-item active"><a class="nav-link dropdown-toggle" href="category.do">포트폴리오 </a></li>
 
                 <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
               <li class="nav-item active"><a class="nav-link" href="pmPurchase.do">MyPage</a></li>
