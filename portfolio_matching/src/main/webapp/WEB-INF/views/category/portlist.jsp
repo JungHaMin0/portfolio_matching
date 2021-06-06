@@ -56,14 +56,14 @@
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
 								<li><a href="portlist.do">전체 <span>6</span></a></li>
-								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>${cntWeb}</span></a></li>
+								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>3</span></a></li>
 								<li><a href="appCategory.do">모바일 앱 <span>1</span></a></li>
 								<li><a href="designCategory.do">디자인 <span>1</span></a></li>
 								<li><a href="photoCategory.do">사진 <span>1</span></a></li>
 							</ul>
 						</div>
 
-						<div class="widget product-shorting">
+						<!-- <div class="widget product-shorting">
 							<h4 class="widget-header">팀 규모</h4>
 							<div class="form-check">
 								<label class="form-check-label">
@@ -89,7 +89,7 @@
 									10인 이상
 								</label>
 							</div>
-						</div>
+						</div> -->
 
 					</div>
 				</div>

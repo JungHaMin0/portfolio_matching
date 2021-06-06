@@ -3,47 +3,88 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portlistMapper">
-   <select id="portlist" resultType="com.spring.ex.vo.PortListVO">
+   <select id="portlist" resultType="com.spring.ex.vo.PortfolioVO">
    
    SELECT *
-   FROM port_list
+   FROM portfolio
+   ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="webcg" resultType="com.spring.ex.vo.PortListVO">
+   <select id="webcg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
-   FROM port_list
-   WHERE portlist_category LIKE 'web'
-   ORDER BY portlist_category DESC
-   
-   </select>
-   
-   <select id="appcg" resultType="com.spring.ex.vo.PortListVO">
-   
-   SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
-   FROM port_list
-   WHERE portlist_category LIKE 'app'
-   ORDER BY portlist_category DESC
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   FROM portfolio
+   WHERE portfolio_sCat LIKE 'web'
+   ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="designcg" resultType="com.spring.ex.vo.PortListVO">
+   <select id="appcg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
-   FROM port_list
-   WHERE portlist_category LIKE 'design'
-   ORDER BY portlist_category DESC
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   FROM portfolio
+   WHERE portfolio_sCat LIKE 'app'
+   ORDER BY portfolio_rating DESC
+   
+   </select>
+   
+   <select id="designcg" resultType="com.spring.ex.vo.PortfolioVO">
+   
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   FROM portfolio
+   WHERE portfolio_sCat LIKE 'design'
+   ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="photocg" resultType="com.spring.ex.vo.PortListVO">
+   <select id="photocg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portlist_category, portlist_title, portlist_content, portlist_day, portlist_url, portlist_rating
-   FROM port_list
-   WHERE portlist_category LIKE 'photo'
-   ORDER BY portlist_category DESC
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   FROM portfolio
+   WHERE portfolio_sCat LIKE 'photo'
+   ORDER BY portfolio_rating DESC
    
    </select>
+  
+<!--    <select id="countAll" resultType="com.spring.ex.vo.PortfolioVO">
+  
+ 	SELECT COUNT(*)
+	FROM portfolio
+	GROUP BY portfolio_sCat DESC
+  
+  </select>
+  
+  <select id="countWeb" resultType="com.spring.ex.vo.PortfolioVO">
+  
+ 	SELECT COUNT(*)
+	FROM portfolio
+	WHERE portfolio_sCat = 'web'
+  
+  </select>
+  
+    <select id="countWeb" resultType="com.spring.ex.vo.PortfolioVO">
+  
+ 	SELECT COUNT(*)
+	FROM portfolio
+	WHERE portfolio_sCat = 'app'
+  
+  </select>
+  
+    <select id="countWeb" resultType="com.spring.ex.vo.PortfolioVO">
+  
+ 	SELECT COUNT(*)
+	FROM portfolio
+	WHERE portfolio_sCat = 'design'
+  
+  </select>
+  
+    <select id="countWeb" resultType="com.spring.ex.vo.PortfolioVO">
+  
+ 	SELECT COUNT(*)
+	FROM portfolio
+	WHERE portfolio_sCat = 'photo'
+  
+  </select> -->
   
 </mapper>

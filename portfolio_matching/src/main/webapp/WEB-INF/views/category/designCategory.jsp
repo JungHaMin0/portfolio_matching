@@ -53,35 +53,6 @@
 								<li><a href="photoCategory.do">사진 <span>1</span></a></li>
 							</ul>
 						</div>
-					
-						<div class="widget product-shorting">
-							<h4 class="widget-header">팀 규모</h4>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									1인
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									2-4인
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									5-9인
-								</label>
-							</div>
-							<div class="form-check">
-								<label class="form-check-label">
-									<input class="form-check-input" type="checkbox" value="">
-									10인 이상
-								</label>
-							</div>
-						</div>
-
 					</div>
 				</div>
 				
