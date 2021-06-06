@@ -30,10 +30,6 @@
         <property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml" />
 	</bean>
 	
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.spring.ex.test" />
-	</bean>
-	
 	<!-- SqlSessionTemplate -->
 	<bean id="sqlSessoinTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />

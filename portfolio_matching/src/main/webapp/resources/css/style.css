@@ -1955,7 +1955,7 @@ ul.pagination .active a {
   margin-bottom: 25px;
 }
 
-.widget.personal-info .` i, .widget.change-password .form-group i, .widget.change-email .form-group i {
+.widget.personal-info .i, .widget.change-password .form-group i, .widget.change-email .form-group i {
   color: white;
   background: #5672f9;
   font-size: 25px;
