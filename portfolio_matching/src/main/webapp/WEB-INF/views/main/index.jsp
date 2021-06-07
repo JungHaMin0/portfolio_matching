@@ -31,9 +31,9 @@
                     <div class="form-group col-md-3">
                       <select class="w-100 form-control mt-lg-1 mt-md-2">
                         <option>필터</option>
-                        <option value="1">Top</option>
-                        <option value="2">Lowest</option>
-                        <option value="3">Highest</option>
+                        <option value="1">별점순</option>
+                        <option value="2">가격 낮은순</option>
+                        <option value="3">가격 높은순</option>
                       </select>
                     </div>
                     <div class="form-group col-md-3">
