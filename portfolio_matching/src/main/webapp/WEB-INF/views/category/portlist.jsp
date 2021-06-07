@@ -151,6 +151,7 @@
 					<div class="product-grid-list">
 						<div class="row mt-30">
 							<c:forEach items="${portlist}" var = "portlist">
+						<%-- 	<c:forEach items="${portlist}" var = "result" varStatus="stauts"> --%>
 							<div class="col-sm-12 col-lg-4 col-md-6">
 								<!-- product card -->
 								<div class="product-item bg-light">
@@ -165,8 +166,8 @@
 										<a href="#" onClick='fn_view()'>
 										<div class="card-body">
 											<h4 class="card-title">
-											<a href ="${path }/portfolio_page/portfolio_detail?id=${result.portfolio_id }">${portlist.portfolio_title}</a>
-											<%-- <a href="single.html"><c:out value="${portlist.portfolio_title}"/></a> --%></h4>
+											<%-- <a href ="${path }/portfolio_page/portfolio_detail/${portlist.portfolio_id }">${portlist.portfolio_title}</a> --%>
+											<a href="PortContent.do?portfolio_id=${portlist.portfolio_id}"><c:out value="${portlist.portfolio_title}"/></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
 													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portfolio_sCat}"/></a>
@@ -221,15 +222,14 @@
 <script>
 
 //content 상세보기
-function fn_view(portfolio_id){
+/* function fn_view(portfolio_id){
 
   var form = document.getElementById("viewForm");
   var url = "<c:url value='/PortContent.do'/>";
   url = url + "?portfolio_id=" + portfolio_id;
-  
   form.action = url;    
   form.submit(); 
-}
+} */
 
 </script>
 

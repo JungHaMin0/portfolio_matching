@@ -50,7 +50,7 @@
 	</insert>
 	
 	
-  <select id = "selectPortByCode" parameterType="com.spring.ex.vo.PortfolioVO">
+  <select id = "selectPortByCode" parameterType="int" resultType="com.spring.ex.vo.PortRegVO">
   SELECT * 
   FROM portfolio 
   WHERE portfolio_id = #{portfolio_id}
