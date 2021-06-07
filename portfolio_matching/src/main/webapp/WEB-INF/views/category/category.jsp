@@ -159,23 +159,23 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${portlist.portlist_url}">
+												<img class="card-img-top img-fluid" src="${portlist.portfolio_thumbUrl}">
 											</a>
 										</div>
 										<div class="card-body">
-											<h4 class="card-title"><a href="single.html"><c:out value="${portlist.portlist_title}"/></a></h4>
+											<h4 class="card-title"><a href="single.html"><c:out value="${portlist.portfolio_title}"/></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
-													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portlist_category}"/></a>
+													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portfolio_sCat}"/></a>
 												</li>
 												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i><c:out value="${portlist.portlist_day}"/></a>
+													<a href="#"><i class="fa fa-calendar"></i><c:out value="${portlist.portfolio_term}"/></a>
 												</li>
 											</ul>
-											<p class="card-text"><c:out value="${portlist.portlist_content}"/></p>
+											<p class="card-text"><c:out value="${portlist.portfolio_content}"/></p>
 											<div class="product-ratings">
 												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${portlist.portlist_rating}" /></li>
+													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${portlist.portfolio_rating}" /></li>
 												</ul>
 											</div>
 										</div>

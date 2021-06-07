@@ -11,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.spring.ex.service.PortRegService;
@@ -39,23 +41,33 @@ public class PortController {
 	  portregVO.setPortfolio_Img(base64);
 	  portregVO.setPortfolio_regDate(Timestamp.valueOf(LocalDateTime.now()));
 	  portRegServiceImpl.portInsert(portregVO); 
-	  return "redirect:/category.do"; 
+	  return "redirect:/portlist.do"; 
 	  }
 	 
 
 	  //포트폴리오 게시글 상세 
-	  @RequestMapping(value="/PortContent.do", method=RequestMethod.POST)
+	  @RequestMapping(value="/PortContent.do", method={RequestMethod.POST, RequestMethod.GET})
 	  public String viewForm(@ModelAttribute("portregVO") PortRegVO portregVO, Model model, HttpServletRequest request) throws Exception{
 		  request.setCharacterEncoding("UTF-8");
 		  int portfolio_id = Integer.parseInt(request.getParameter("portfolio_id"));
 		  portregVO.setPortfolio_id(portfolio_id);
-		  PortRegVO resultVO = portRegServiceImpl.portSelect(portregVO);
+		  PortRegVO resultVO = portRegServiceImpl.selectPortByCode(portfolio_id);
 		  model.addAttribute("result", resultVO);
 		  System.out.println(resultVO);
 		  return "portfolio_page/portfolio_detail";
 	  }
 	
 	  
+	  //상세정보페이지에서 url 매핑되서 실행 ? 
+	  @RequestMapping("/portfolio_page/portfolio_detail/{portfolio_id}") 
+	  public ModelAndView portfolio_detail( @PathVariable("portfolio_id") int portfolio_id, ModelAndView mav) throws Exception {
+	  mav.setViewName("/portfolio_page/portfolio_detail"); 
+	  mav.addObject("dto", portRegServiceImpl.selectPortByCode(portfolio_id)); 
+	  return mav;
+	  
+	  }
+	  
+	 
 	  
 	  
 	  
@@ -67,17 +79,13 @@ public class PortController {
 	  
 	  
 	  
-	  
-	  
-	  
-	  
-	  
-	  @RequestMapping(value = "portfolio_detail.do", method = RequestMethod.GET)
-		public String portfolio_detail(HttpServletRequest request, HttpServletResponse response, Model model)
-				throws Exception {
-			
-			return "portfolio_page/portfolio_detail";
-		}
+	/*
+	 * @RequestMapping(value = "portfolio_detail.do", method = RequestMethod.GET)
+	 * public String portfolio_detail(HttpServletRequest request,
+	 * HttpServletResponse response, Model model) throws Exception {
+	 * 
+	 * return "portfolio_page/portfolio_detail"; }
+	 */
 
 		@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
 		public String portfolio_pur(HttpServletRequest request, HttpServletResponse response, Model model)

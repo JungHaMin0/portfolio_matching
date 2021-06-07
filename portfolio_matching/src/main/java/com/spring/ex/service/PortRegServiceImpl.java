@@ -33,5 +33,11 @@ public class PortRegServiceImpl implements PortRegService {
 		
 	}
 
+	@Override
+	public PortRegVO selectPortByCode(int portfolio_id) throws Exception {
+		return dao.selectPortByCode(portfolio_id);
+	}
+	
+
 
 }

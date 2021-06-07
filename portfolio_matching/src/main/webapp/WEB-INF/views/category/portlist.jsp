@@ -1,12 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="../../include/style_css.jsp"%>
-<%@ include file="../../include/header.jsp"%>
 <!DOCTYPE html>
 <html>
-
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<%@ include file="../../include/style_css.jsp"%>
+</head>
 
 <body class="body-wrapper">
+  <%@ include file="../../include/header.jsp"%>
 
 	<section class="page-search">
 		<div class="container">
@@ -44,8 +48,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="search-result bg-gray">
-						<h2>전체</h2>
-						<p>모든 카테고리</p>
+						<h2>현재 누른 카테고리</h2>
+						<p>세부카테고리</p>
 					</div>
 				</div>
 			</div>
@@ -55,15 +59,38 @@
 						<div class="widget category-list">
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
-								<li><a href="portlist.do">전체 <span>6</span></a></li>
-								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>3</span></a></li>
-								<li><a href="appCategory.do">모바일 앱 <span>1</span></a></li>
-								<li><a href="designCategory.do">디자인 <span>1</span></a></li>
-								<li><a href="photoCategory.do">사진 <span>1</span></a></li>
+								<li><a href="category.html">전체 <span>200</span></a></li>
+								<li><a href="category.html">웹사이트 개발 <span>100</span></a></li>
+								<li><a href="category.html">모바일 앱 <span>50</span></a></li>
+								<li><a href="category.html">디자인 <span>30</span></a></li>
+								<li><a href="category.html">사진 <span>20</span></a></li>
 							</ul>
 						</div>
 
-						<!-- <div class="widget product-shorting">
+
+
+						<!-- <div class="widget filter">
+	<h4 class="widget-header">Show Produts</h4>
+	<select>
+		<option>Popularity</option>
+		<option value="1">Top rated</option>
+		<option value="2">Lowest Price</option>
+		<option value="4">Highest Price</option>
+	</select>
+</div> -->
+
+						<!-- <div class="widget price-range w-100">
+	<h4 class="widget-header">Price Range</h4>
+	<div class="block">
+						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="10000000" data-slider-step="5"
+						data-slider-value="[0,10000000]">
+				<div class="d-flex justify-content-between mt-2">
+						<span class="value">0원 - 10,000,000원</span>
+				</div>
+	</div>
+</div> -->
+
+						<div class="widget product-shorting">
 							<h4 class="widget-header">팀 규모</h4>
 							<div class="form-check">
 								<label class="form-check-label">
@@ -89,7 +116,7 @@
 									10인 이상
 								</label>
 							</div>
-						</div> -->
+						</div>
 
 					</div>
 				</div>
@@ -99,11 +126,24 @@
 							<div class="col-md-6">
 								<strong>필터</strong>
 								<select>
-									<option value="1">별점순</option>
-									<option value="2">높은 가격순</option>
-									<option value="3">낮은 가격순</option>
+									<option>가장 인기 있는</option>
+									<option value="1">가장 가격 낮은</option>
+									<option value="2">가장 많이 참여한</option>
 								</select>
 							</div>
+							<!-- <div class="col-md-6">
+							<div class="view">
+								<strong>Views</strong>
+								<ul class="list-inline view-switcher">
+									<li class="list-inline-item">
+										<a href="#" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
+									</li>
+									<li class="list-inline-item">
+										<a href="ad-list-view.html"><i class="fa fa-reorder"></i></a>
+									</li>
+								</ul>
+							</div>
+						</div> -->
 						</div>
 					</div>
 					
@@ -111,6 +151,7 @@
 					<div class="product-grid-list">
 						<div class="row mt-30">
 							<c:forEach items="${portlist}" var = "portlist">
+						<%-- 	<c:forEach items="${portlist}" var = "result" varStatus="stauts"> --%>
 							<div class="col-sm-12 col-lg-4 col-md-6">
 								<!-- product card -->
 								<div class="product-item bg-light">
@@ -122,8 +163,11 @@
 												<img class="card-img-top img-fluid" src="${portlist.portfolio_thumbUrl}">
 											</a>
 										</div>
+										<a href="#" onClick='fn_view()'>
 										<div class="card-body">
-											<h4 class="card-title"><a href="single.html"><c:out value="${portlist.portfolio_title}"/></a></h4>
+											<h4 class="card-title">
+											<%-- <a href ="${path }/portfolio_page/portfolio_detail/${portlist.portfolio_id }">${portlist.portfolio_title}</a> --%>
+											<a href="PortContent.do?portfolio_id=${portlist.portfolio_id}"><c:out value="${portlist.portfolio_title}"/></a></h4>
 											<ul class="list-inline product-meta">
 												<li class="list-inline-item">
 													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portfolio_sCat}"/></a>
@@ -139,6 +183,7 @@
 												</ul>
 											</div>
 										</div>
+										</a>
 									</div>
 									</div>
 								</div>
@@ -168,9 +213,25 @@
 					</div>
 				</div>
 			</div>
-			</div>
+			
 		</div>
 	</section>
+
+
+
+<script>
+
+//content 상세보기
+/* function fn_view(portfolio_id){
+
+  var form = document.getElementById("viewForm");
+  var url = "<c:url value='/PortContent.do'/>";
+  url = url + "?portfolio_id=" + portfolio_id;
+  form.action = url;    
+  form.submit(); 
+} */
+
+</script>
 
 
 <!-- JAVASCRIPTS -->
