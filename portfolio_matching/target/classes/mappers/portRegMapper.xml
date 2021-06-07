@@ -49,5 +49,11 @@
 		
 	</insert>
 	
+	
+  <select id = "selectPortByCode" parameterType="com.spring.ex.vo.PortfolioVO">
+  SELECT * 
+  FROM portfolio 
+  WHERE portfolio_id = #{portfolio_id}
+  </select>
 
 </mapper>

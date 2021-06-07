@@ -14,4 +14,7 @@ public interface PortRegDAO {
 	
 	//select
 	public PortRegVO portSelect(PortRegVO vo) throws Exception;
+	
+	public PortRegVO selectPortByCode(int portfoilo_id) throws Exception;
+
 }
