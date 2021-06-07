@@ -265,8 +265,8 @@
 
 <script>
 function fn_list(){
-   var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/category.do'/>";
+	var form = document.getElementById("viewForm");
+    form.action = "<c:url value='/portlist.do'/>";
     form.submit();
 }
 </script>

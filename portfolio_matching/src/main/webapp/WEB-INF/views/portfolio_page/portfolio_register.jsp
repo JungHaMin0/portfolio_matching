@@ -47,13 +47,12 @@
 									<!-- required -->
 								</div>
 
-								<!-- 	<p class="pt-3">포트폴리오 카테고리 *</p>
-							<select name="" id="" class="form-control w-100">
-								<option value="1">원하시는 카테고리를 고르세요.</option>
-								<option value="1">웹·앱개발</option>
-								<option value="1">디자인</option>
-								<option value="1">영상·편집</option>
-								<option value="1">마케팅</option>
+									<p class="pt-3">포트폴리오 카테고리 *</p>
+							<select name="portfolio_sCat" id="portfolio_sCat" class="form-control w-100">
+								<option value="web">웹</option>
+								<option value="desgin">디자인</option>
+								<option value="app">앱</option>
+								<option value="photo">사진</option>
 							</select>
 
 
@@ -79,7 +78,7 @@
 									class="form-check-label" for="inlineCheckbox3">퍼블리싱</label>
 							</div>
 
-							<br> <br> <br> -->
+							<br> <br> <br>
 								<div class="col-lg-12 py-2">
 									<p class="pt-3">포트폴리오 관련 자료*</p>
 									<input type="file" id="file" name="file" accept="image/*"
@@ -165,8 +164,6 @@
 		}
 	</script>
 	<!-------------------------------------기능 Script END----------------------------------->
-
-
 
 
 

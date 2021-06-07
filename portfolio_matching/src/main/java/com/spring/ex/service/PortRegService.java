@@ -8,5 +8,6 @@ public interface PortRegService {
 	public void portInsert(PortRegVO vo) throws Exception;
 	public List<PortRegVO> portList(PortRegVO vo) throws Exception;
 	public PortRegVO portSelect(PortRegVO vo) throws Exception;
+	public PortRegVO selectPortByCode(int portfolio_id) throws Exception;
 
 }

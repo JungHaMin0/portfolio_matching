@@ -25,8 +25,14 @@ public class PortRegDAOImpl implements PortRegDAO{
 	}
 
 	@Override
-	public PortRegVO portSelect(PortRegVO vo) {
+	public PortRegVO portSelect(PortRegVO vo) throws Exception{
 		return sqlSession.selectOne("portRegMapper.portSelect", vo);
 		
 	}
+	
+	   @Override
+	    public PortRegVO selectPortByCode(int portfoilo_id) throws Exception { 
+	   return sqlSession.selectOne( "portRegMapper.selectPortByCode", portfoilo_id);
+	
+	    }
 }
