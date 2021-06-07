@@ -36,7 +36,6 @@ public class MyPageController {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
 		String user_id = vo.getUser_id();
-
 		model.addAttribute("pmPurchaseList", service.pmPurchaseList(user_id));
 
 		return "mypage/pmPurchase";

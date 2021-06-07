@@ -246,7 +246,6 @@ a:focus, a:hover {
   color: #666;
   box-shadow: none;
   font-size: 15px;
-  margin-left: 300px;
 }
 
 .form-control:focus {
@@ -424,8 +423,7 @@ button {
   display: inline-block;
   padding: 15px 30px;
   border-radius: 4px;
-  width: 200px;
-  margin-left: 320px;
+  width: 150px;
 }
 
 .btn-main, .btn-main-sm {
@@ -648,7 +646,7 @@ ul.pagination .active a {
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  height: 500px;
+  height: 620px;
   width: 100%;
 }
 
@@ -761,11 +759,10 @@ ul.pagination .active a {
   width: 43px;
   line-height: 43px;
   color: #5672f9;
-  border: 1px solid #5672f9;
+	border: 1px solid #5672f9;
   border-radius: 3px;
-  text-align: center;
+  text-align: flex-end;
 }
-
 .main-nav .search .input-group {
   width: 300px;
 }
@@ -943,7 +940,7 @@ ul.pagination .active a {
   margin-bottom: -50px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
   width: 1000px;
-  margin-top: 400px;
+  margin-top: 440px;
   margin-left: 50px;
 }
 

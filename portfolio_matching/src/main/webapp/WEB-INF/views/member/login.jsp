@@ -22,7 +22,7 @@
               <fieldset class="p-4">
                 <input type="text" id="user_id" name="user_id" placeholder="아이디" class="border p-3 w-100 my-2"> <input type="password" id="user_pw" name="user_pw" placeholder="비밀번호" class="border p-3 w-100 my-2">
                 <button type="submit" class="d-block py-3 px-5 bg-primary text-white border-0 rounded font-weight-bold mt-3">로그인</button>
-                <a class="mt-3 d-block  text-primary" href="#">비밀번호를 잊어버리셨나요?</a> <a class="mt-3 d-inline-block text-primary" href="register.html">회원가입</a>
+                <!-- <a class="mt-3 d-block  text-primary" href="#">비밀번호를 잊어버리셨나요?</a> --> <a class="mt-3 d-inline-block text-primary" href="register.do">회원가입</a>
               </fieldset>
             </form>
           </div>

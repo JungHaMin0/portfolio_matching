@@ -31,9 +31,9 @@
                     <div class="form-group col-md-3">
                       <select class="w-100 form-control mt-lg-1 mt-md-2">
                         <option>필터</option>
-                        <option value="1">Top</option>
-                        <option value="2">Lowest</option>
-                        <option value="3">Highest</option>
+                        <option value="1">별점순</option>
+                        <option value="2">가격 높은순</option>
+                        <option value="3">가격 낮은순</option>
                       </select>
                     </div>
                     <div class="form-group col-md-3">
@@ -82,120 +82,27 @@
           <div class="col-sm-12 col-lg-4">
             <!-- product card -->
             <div class="product-item bg-light">
+              <c:forEach items="${main}" var = "main">
               <div class="card">
                 <div class="thumb-content">
                   <!-- <div class="price">$200</div> -->
-                  <a href="portlist.do"> <img class="card-img-top img-fluid" src="resources/Picture/app.PNG" alt="Card image cap" width="600px" height="400px">
+                  <a href="category.do"> <img class="card-img-top img-fluid" src="${main.portfolio_thumbUrl}" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title"><a href="portlist.do">모바일 앱 제작</a></h4>
+                  <h4 class="card-title"><a href="category.do"><c:out value="${main.portfolio_title}"/></a></h4>
                   <ul class="list-inline product-meta">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>모바일 앱</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>2월7일</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i><c:out value="${main.portfolio_sCat}"/></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i><c:out value="${main.portfolio_term}"/></a></li>
                   </ul>
-                  <p class="card-text">최적화된 모바일 앱을 개발해 드립니다.</p>
+                  <p class="card-text"><c:out value="${main.portfolio_content}"/></p>
                   <div class="product-ratings">
                     <ul class="list-inline">
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                      <li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${main.portfolio_rating}"/></li>
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <!-- product card -->
-            <div class="product-item bg-light">
-              <div class="card">
-                <div class="thumb-content">
-                  <!-- <div class="price">$200</div> -->
-                  <a href="portlist.do"> <img class="card-img-top img-fluid" src="resources/Picture/site.PNG" alt="Card image cap" width="600px" height="400px">
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title"><a href="portlist.do">커뮤니티 사이트</a></h4>
-                  <ul class="list-inline product-meta">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>웹사이트 개발</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>4월15일</a></li>
-                  </ul>
-                  <p class="card-text">사이트제작 나만의 플랫폼 만들어드립니다.</p>
-                  <div class="product-ratings">
-                    <ul class="list-inline">
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <!-- product card -->
-            <div class="product-item bg-light">
-              <div class="card">
-                <div class="thumb-content">
-                  <!-- <div class="price">$200</div> -->
-                  <a href="portlist.do"> <img class="card-img-top img-fluid" src="resources/Picture/home.PNG" alt="Card image cap" width="600px" height="400px">
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title"><a href="portlist.do">반응형 홈페이지 제작</a></h4>
-                  <ul class="list-inline product-meta">
-                    <li class="list-inline-item"><a href="single.html"><i class="fa fa-folder-open-o"></i>웹사이트 개발</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>4월5일</a></li>
-                  </ul>
-                  <p class="card-text">거품없는 가격으로 홈페이지 제작해 드립니다.</p>
-                  <div class="product-ratings">
-                    <ul class="list-inline">
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-sm-12 col-lg-4">
-            <!-- product card -->
-            <div class="product-item bg-light">
-              <div class="card">
-                <div class="thumb-content">
-                  <!-- <div class="price">$200</div> -->
-                  <a href="portlist.do"> <img class="card-img-top img-fluid" src="resources/Picture/logo.PNG" alt="Card image cap" width="600px" height="400px">
-                  </a>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title"><a href="portlist.do">로고디자인</a></h4>
-                  <ul class="list-inline product-meta">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>로고·브랜딩</a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>3월31일</a></li>
-                  </ul>
-                  <p class="card-text">생각을 뛰어넘는 로고를 만들어 드립니다.</p>
-                  <div class="product-ratings">
-                    <ul class="list-inline">
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                      <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                    </ul>
-                  </div>
-                </div>
+                </c:forEach>
               </div>
             </div>
           </div>
@@ -242,8 +149,8 @@
                 <h4>IT·프로그래밍</h4>
               </div>
               <ul class="category-list">
-                <li><a href="#">웹사이트 개발<span>0</span></a></li>
-                <li><a href="#">쇼핑몰·커머스<span>0</span></a></li>
+                <li><a href="webCategory.do">웹사이트 개발<span>3</span></a></li>
+                <li><a href="appCategory.do">앱 프로그래밍<span>1</span></a></li>
                 <li><a href="#">모바일 앱<span>0</span></a></li>
                 <li><a href="#">프로그램 개발<span>0</span></a></li>
               </ul>

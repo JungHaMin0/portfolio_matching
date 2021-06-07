@@ -46,7 +46,7 @@
 						<div class="widget category-list">
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
-								<li><a href="portlist.do">전체 <span>6</span></a></li>
+								<li><a href="category.do">전체 <span>6</span></a></li>
 								<li><a href="webCategory.do" class="webcg_active">웹사이트 개발 <span>3</span></a></li>
 								<li><a href="appCategory.do">모바일 앱 <span>1</span></a></li>
 								<li><a href="designCategory.do">디자인 <span>1</span></a></li>
@@ -80,7 +80,7 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${designcg.portfolio_Img}">
+												<img class="card-img-top img-fluid" src="${designcg.portfolio_thumbUrl}">
 											</a>
 										</div>
 										<div class="card-body">
