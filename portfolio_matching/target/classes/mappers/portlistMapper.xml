@@ -13,7 +13,7 @@
    
    <select id="webcg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
    WHERE portfolio_sCat LIKE 'web'
    ORDER BY portfolio_rating DESC
@@ -22,7 +22,7 @@
    
    <select id="appcg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
    WHERE portfolio_sCat LIKE 'app'
    ORDER BY portfolio_rating DESC
@@ -31,7 +31,7 @@
    
    <select id="designcg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
    WHERE portfolio_sCat LIKE 'design'
    ORDER BY portfolio_rating DESC
@@ -40,7 +40,7 @@
    
    <select id="photocg" resultType="com.spring.ex.vo.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_Img, portfolio_rating
+   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
    WHERE portfolio_sCat LIKE 'photo'
    ORDER BY portfolio_rating DESC

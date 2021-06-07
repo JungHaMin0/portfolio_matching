@@ -119,7 +119,7 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${portlist.portfolio_Img}">
+												<img class="card-img-top img-fluid" src="${portlist.portfolio_thumbUrl}">
 											</a>
 										</div>
 										<div class="card-body">

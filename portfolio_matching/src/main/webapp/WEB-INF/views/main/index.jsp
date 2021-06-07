@@ -242,8 +242,8 @@
                 <h4>IT·프로그래밍</h4>
               </div>
               <ul class="category-list">
-                <li><a href="#">웹사이트 개발<span>0</span></a></li>
-                <li><a href="#">쇼핑몰·커머스<span>0</span></a></li>
+                <li><a href="webCategory.do">웹사이트 개발<span>3</span></a></li>
+                <li><a href="appCategory.do">앱 프로그래밍<span>1</span></a></li>
                 <li><a href="#">모바일 앱<span>0</span></a></li>
                 <li><a href="#">프로그램 개발<span>0</span></a></li>
               </ul>
