@@ -1,6 +1,7 @@
 package com.spring.ex.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -10,10 +11,11 @@ import org.springframework.stereotype.Repository;
 import com.spring.ex.vo.PortRegVO;
 
 @Repository
-public class PortRegDAOImpl implements PortRegDAO{
-	
-	@Inject SqlSession sqlSession;
-	
+public class PortRegDAOImpl implements PortRegDAO {
+
+	@Inject
+	SqlSession sqlSession;
+
 	@Override
 	public void portInsert(PortRegVO vo) throws Exception {
 		sqlSession.insert("portRegMapper.portInsert", vo);
@@ -25,14 +27,17 @@ public class PortRegDAOImpl implements PortRegDAO{
 	}
 
 	@Override
-	public PortRegVO portSelect(PortRegVO vo) throws Exception{
+	public PortRegVO portSelect(PortRegVO vo) throws Exception {
 		return sqlSession.selectOne("portRegMapper.portSelect", vo);
-		
 	}
-	
-	   @Override
-	    public PortRegVO selectPortByCode(int portfoilo_id) throws Exception { 
-	   return sqlSession.selectOne( "portRegMapper.selectPortByCode", portfoilo_id);
-	
-	    }
+
+	@Override
+	public PortRegVO selectPortByCode(int portfoilo_id) throws Exception {
+		return sqlSession.selectOne("portRegMapper.selectPortByCode", portfoilo_id);
+	}
+
+	// 첨부 파일 업로드
+	public void insertFile(Map<String, Object> map) throws Exception {
+		sqlSession.insert("portRegMapper.insertFile", map);
+	}
 }
