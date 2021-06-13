@@ -66,8 +66,7 @@
 
 						<!-- product slider -->
 						<div class="product-slider">
-							<div class="product-slider-item my-4"
-								data-image="./resources/images/item_image1.PNG">
+							<div class="product-slider-item my-4" data-image="./resources/images/item_image1.PNG">
 								<c:if
 									test="${result.portfolio_Img != null && result.portfolio_Img != ''}">
 									<img class="img-fluid w-100"
@@ -214,7 +213,8 @@
 
 				<div class="col-md-4">
 					<div class=" p-2">
-						<button type="button" class="btn btn-main-sm" href='#'>스크랩</button>
+						<a class="btn btn-main-sm" href="pmScarp.do?num=${result.portfolio_id}">스크랩</a>
+						<!-- <button type="button" class="btn btn-main-sm" onClick="fn_content()">스크랩</button> -->
 						<i class="fa fa-share-alt"></i>
 					</div>
 
@@ -268,6 +268,17 @@ function fn_list(){
 	var form = document.getElementById("viewForm");
     form.action = "<c:url value='/portlist.do'/>";
     form.submit();
+}
+</script>
+
+<script>
+function fn_content(portfolio_id) {
+	 var form = document.getElementById("viewForm");
+	  var url = "<c:url value='/pmInterest.do'/>";
+	  url = url + "?portfolio_id=" + portfolio_id;
+	  
+	  form.action = url;    
+	  form.submit(); 
 }
 </script>
 

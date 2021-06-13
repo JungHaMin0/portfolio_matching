@@ -56,28 +56,6 @@
 							</select>
 
 
-							<p class="pt-3">포트폴리오 상세 카테고리 *</p>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox"
-									id="inlineCheckbox1" value="option1"> <label
-									class="form-check-label" for="inlineCheckbox1">웹</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox"
-									id="inlineCheckbox2" value="option2"> <label
-									class="form-check-label" for="inlineCheckbox2">애플리케이션</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox"
-									id="inlineCheckbox2" value="option2"> <label
-									class="form-check-label" for="inlineCheckbox2">일반소프트웨어</label>
-							</div>
-							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="checkbox"
-									id="inlineCheckbox3" value="option3" disabled> <label
-									class="form-check-label" for="inlineCheckbox3">퍼블리싱</label>
-							</div>
-
 							<br> <br> <br>
 								<div class="col-lg-12 py-2">
 									<p class="pt-3">포트폴리오 관련 자료*</p>
