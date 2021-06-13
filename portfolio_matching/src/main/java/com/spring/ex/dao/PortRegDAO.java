@@ -1,8 +1,10 @@
 package com.spring.ex.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.vo.ReviewVO;
 
 public interface PortRegDAO {
 	
@@ -17,4 +19,8 @@ public interface PortRegDAO {
 	
 	public PortRegVO selectPortByCode(int portfoilo_id) throws Exception;
 
+	//첨부 파일 업로드
+	public void insertFile(Map<String, Object> map) throws Exception;
+	
+	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception;
 }

@@ -86,42 +86,50 @@
 					
 					<div class="product-grid-list">
 						<div class="row mt-30">
-							<c:forEach items="${portlist}" var = "portlist">
-							<div class="col-sm-12 col-lg-4 col-md-6">
-								<!-- product card -->
-								<div class="product-item bg-light">
-								
-									<div class="card">
-										<div class="thumb-content">
-											<!-- <div class="price">$200</div> -->
-											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${portlist.portfolio_thumbUrl}">
-											</a>
-										</div>
-										<div class="card-body">
-											<h4 class="card-title"><a href="single.html"><c:out value="${portlist.portfolio_title}"/></a></h4>
-											<ul class="list-inline product-meta">
-												<li class="list-inline-item">
-													<a href="single.html"><i class="fa fa-folder-open-o"></i><c:out value="${portlist.portfolio_sCat}"/></a>
-												</li>
-												<li class="list-inline-item">
-													<a href="#"><i class="fa fa-calendar"></i><c:out value="${portlist.portfolio_term}"/></a>
-												</li>
-											</ul>
-											<p class="card-text"><c:out value="${portlist.portfolio_content}"/></p>
-											<div class="product-ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${portlist.portfolio_rating}" /></li>
+							<c:forEach items="${portlist}" var="portlist">
+								<div class="col-sm-12 col-lg-4 col-md-6">
+									<!-- product card -->
+									<div class="product-item bg-light">
+
+										<div class="card">
+											<div class="thumb-content">
+												<!-- <div class="price">$200</div> -->
+												<a href="portfolio_detail.do"> <img
+													class="card-img-top img-fluid"
+													src="${portlist.portfolio_thumbUrl}">
+											</div>
+											<div class="card-body">
+												<h4 class="card-title">
+													<a href="single.html"><c:out
+															value="${portlist.portfolio_title}" /></a>
+												</h4>
+												<ul class="list-inline product-meta">
+													<li class="list-inline-item"><a href="single.html"><i
+															class="fa fa-folder-open-o"></i> <c:out
+																value="${portlist.portfolio_sCat}" /></a></li>
+													<li class="list-inline-item"><a href="#"><i
+															class="fa fa-calendar"></i> <c:out
+																value="${portlist.portfolio_term}" /></a></li>
 												</ul>
+												<p class="card-text">
+													<c:out value="${portlist.portfolio_content}" />
+												</p>
+												<div class="product-ratings">
+													<ul class="list-inline">
+														<li class="list-inline-item selected"><i
+															class="fa fa-star"></i> <c:out
+																value="${portlist.portfolio_rating}" /></li>
+													</ul>
+												</div>
+												</a>
 											</div>
 										</div>
 									</div>
-									</div>
 								</div>
-								</c:forEach>
-							</div>
-					
-					<div class="pagination justify-content-center">
+							</c:forEach>
+						</div>
+
+						<div class="pagination justify-content-center">
 						<nav aria-label="Page navigation example">
 							<ul class="pagination">
 								<li class="page-item">

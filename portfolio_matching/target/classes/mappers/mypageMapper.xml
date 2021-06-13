@@ -192,4 +192,6 @@
 		DELETE FROM USER
 		WHERE user_id = #{user_id}
 	</delete>
+	
+	<!-- 페이징 -->
 </mapper>
