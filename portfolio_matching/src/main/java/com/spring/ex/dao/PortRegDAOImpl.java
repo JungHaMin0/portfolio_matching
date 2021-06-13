@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.vo.ReviewVO;
 
 @Repository
 public class PortRegDAOImpl implements PortRegDAO {
@@ -39,5 +40,10 @@ public class PortRegDAOImpl implements PortRegDAO {
 	// 첨부 파일 업로드
 	public void insertFile(Map<String, Object> map) throws Exception {
 		sqlSession.insert("portRegMapper.insertFile", map);
+	}
+	
+	@Override
+	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception {
+		return sqlSession.selectList("portRegMapper.selectReview", portfolio_id);
 	}
 }

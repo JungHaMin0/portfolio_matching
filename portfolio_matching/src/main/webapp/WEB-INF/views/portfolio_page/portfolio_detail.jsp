@@ -99,29 +99,27 @@
                     <h3 class="tab-title">서비스 평가</h3>
                     <div class="product-review">
                       <div class="media">
-                        <!-- Avater -->
-                        <!-- <img src="images/user/user-thumb.jpg" alt="avater"> -->
-                        <div class="media-body">
-                          <!-- Ratings -->
-                          <div class="product-ratings">
-                            <ul class="list-inline">
-                              <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                              <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                            </ul>
+                        <c:forEach items="${review}" var="review">
+                          <div class="media-body">
+                            <!-- Ratings -->
+                            <div class="product-ratings">
+                              <ul class="list-inline">
+                                <c:forEach var="i" begin="0" end="${review.review_rating-1}">
+                                  <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                                </c:forEach>
+                              </ul>
+                            </div>
+                            <div class="name">
+                              <h5>${review.review_userId}</h5>
+                            </div>
+                            <div class="date">
+                              <p>${review.regDate}</p>
+                            </div>
+                            <div class="review-comment">
+                              <p>${review.review_content}</p>
+                            </div>
                           </div>
-                          <div class="name">
-                            <h5>쩡**</h5>
-                          </div>
-                          <div class="date">
-                            <p>2021.04.29</p>
-                          </div>
-                          <div class="review-comment">
-                            <p>빠른 응대와 친절한 설명 감사합니다.</p>
-                          </div>
-                        </div>
+                        </c:forEach>
                       </div>
                     </div>
                   </div>

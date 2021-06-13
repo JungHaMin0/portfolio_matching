@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.spring.ex.dao.PortRegDAO;
 import com.spring.ex.util.UploadFileUtils;
 import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.vo.ReviewVO;
 
 @Service
 public class PortRegServiceImpl implements PortRegService {
@@ -50,6 +51,8 @@ public class PortRegServiceImpl implements PortRegService {
 		return dao.selectPortByCode(portfolio_id);
 	}
 	
-
-
+	@Override
+	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception {
+		return dao.selectReivew(portfolio_id);
+	}
 }

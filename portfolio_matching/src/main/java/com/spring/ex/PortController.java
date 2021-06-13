@@ -55,7 +55,7 @@ public class PortController {
 		portregVO.setPortfolio_id(portfolio_id);
 		PortRegVO resultVO = portRegServiceImpl.selectPortByCode(portfolio_id);
 		model.addAttribute("result", resultVO);
-		System.out.println(resultVO);
+		model.addAttribute("review", portRegServiceImpl.selectReivew(portfolio_id));
 		return "portfolio_page/portfolio_detail";
 	}
 
@@ -65,17 +65,8 @@ public class PortController {
 		mav.setViewName("/portfolio_page/portfolio_detail");
 		mav.addObject("dto", portRegServiceImpl.selectPortByCode(portfolio_id));
 		return mav;
-
 	}
-
-	/*
-	 * @RequestMapping(value = "portfolio_detail.do", method = RequestMethod.GET)
-	 * public String portfolio_detail(HttpServletRequest request,
-	 * HttpServletResponse response, Model model) throws Exception {
-	 * 
-	 * return "portfolio_page/portfolio_detail"; }
-	 */
-
+	
 	@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
 	public String portfolio_pur(HttpServletRequest req, PortRegVO vo, Model model) throws Exception {
 		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
@@ -86,7 +77,6 @@ public class PortController {
 
 	@RequestMapping(value = "port.do", method = RequestMethod.GET)
 	public String port(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-
 		return "main/port";
 	}
 
