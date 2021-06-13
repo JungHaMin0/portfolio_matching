@@ -9,8 +9,10 @@ import com.spring.ex.vo.SearchCriteria;
 public interface PortListDAO {
 
 	 public List<PortListVO> list(SearchCriteria cri);
-	// 페이징을 위한 카운트  
-	  
+	 public List<PortListVO> Mainlist();
+	 public List<PortListVO> Mainlist2();
+	 public List<PortListVO> Mainlist3();
+	 public List<PortListVO> Mainlist4();
 	public Integer Count(SearchCriteria cri);
 	public List<Map<String,Object>> selectlist();
 	 public List<PortListVO> listWeb(SearchCriteria cri);

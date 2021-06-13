@@ -48,15 +48,34 @@
    </select>
    
    <select id="main" resultType="com.spring.ex.vo.PortfolioVO">
-   
    SELECT *
 	FROM portfolio
-	ORDER BY portfolio.portfolio_rating DESC
-	LIMIT 0, 3
-   
+	ORDER BY portfolio_regDate DESC
+	LIMIT 0, 1
    </select>
    
-   
+   <select id="main2" resultType="com.spring.ex.vo.PortfolioVO">
+	SELECT * FROM portfolio
+	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
+	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=2 FROM portfolio as e2
+	WHERE e1.portfolio_regDate <![CDATA[<=]]> e2.portfolio_regDate)) ORDER BY portfolio_title
+	LIMIT 0, 1
+   </select>
+    <select id="main3" resultType="com.spring.ex.vo.PortfolioVO">
+	SELECT * FROM portfolio
+	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
+	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=3 FROM portfolio as e2
+	WHERE e1.portfolio_regDate <![CDATA[<=]]> e2.portfolio_regDate)) ORDER BY portfolio_title
+	LIMIT 0, 1
+   </select>
+    <select id="main4" resultType="com.spring.ex.vo.PortfolioVO">
+	SELECT * FROM portfolio
+	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
+	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=4 FROM portfolio as e2
+	WHERE e1.portfolio_regDate <![CDATA[<=]]> e2.portfolio_regDate)) ORDER BY portfolio_title
+	LIMIT 0, 1
+   </select>
+
     <sql id="searchCondition">
     <if test="searchType != null">
         <if test="searchType == 't'.toString()">
