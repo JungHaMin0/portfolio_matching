@@ -4,54 +4,77 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portRegMapper">
 
-<!-- 리스트조회 -->
-<select id="portList" parameterType="com.spring.ex.vo.PortRegVO">
-	SELECT * 
-	FROM portfolio 
-	ORDER BY 
-	portfolio_id DESC
+	<!-- 리스트조회 -->
+	<select id="portList" parameterType="com.spring.ex.vo.PortRegVO">
+		SELECT *
+		FROM portfolio
+		ORDER BY
+		portfolio_id DESC
 
-</select>
+	</select>
 
-<!-- 상세 조회 -->
-<select id="portSelect" parameterType="com.spring.ex.vo.PortRegVO" resultType="com.spring.ex.vo.PortRegVO">
-  Select * from portfolio where portfolio_id= #{portfolio_id}
-  </select>
+	<!-- 상세 조회 -->
+	<select id="portSelect"
+		parameterType="com.spring.ex.vo.PortRegVO"
+		resultType="com.spring.ex.vo.PortRegVO">
+		Select * from portfolio where portfolio_id= #{portfolio_id}
+	</select>
 
-	<!-- 포트폴리오 등록  -->
-	<insert id="portInsert" useGeneratedKeys="true" keyProperty="portfolio_id" parameterType="com.spring.ex.vo.PortRegVO">
+	<!-- 포트폴리오 등록 -->
+	<insert id="portInsert" useGeneratedKeys="true"
+		keyProperty="portfolio_id" parameterType="com.spring.ex.vo.PortRegVO">
 		INSERT INTO portfolio(
-			portfolio_id,
-			portfolio_userId,
-			portfolio_title,
-			portfolio_bCat,
-			portfolio_sCat,
-			portfolio_thumbUrl,
-			portfolio_Img,
-			portfolio_content,
-			portfolio_price,
-			portfolio_term,
-			portfolio_regDate
+		portfolio_id,
+		portfolio_userId,
+		portfolio_title,
+		portfolio_bCat,
+		portfolio_sCat,
+		portfolio_thumbUrl,
+		portfolio_Img,
+		portfolio_content,
+		portfolio_price,
+		portfolio_term,
+		portfolio_regDate
 		) VALUES(
-			#{portfolio_id},
-			#{portfolio_userId},
-			#{portfolio_title},
-			#{portfolio_bCat},
-			#{portfolio_sCat},
-			#{portfolio_thumbUrl},
-			#{portfolio_Img},
-			#{portfolio_content},
-			#{portfolio_price},
-			#{portfolio_term},
-			NOW())
-		
-	</insert>
-	
-	
-  <select id = "selectPortByCode" parameterType="int" resultType="com.spring.ex.vo.PortRegVO">
-  SELECT * 
-  FROM portfolio 
-  WHERE portfolio_id = #{portfolio_id}
-  </select>
+		#{portfolio_id},
+		#{portfolio_userId},
+		#{portfolio_title},
+		#{portfolio_bCat},
+		#{portfolio_sCat},
+		#{portfolio_thumbUrl},
+		#{portfolio_Img},
+		#{portfolio_content},
+		#{portfolio_price},
+		#{portfolio_term},
+		NOW())
 
+	</insert>
+
+	<insert id="insertFile" parameterType="hashMap">
+		INSERT INTO file(
+		file_portfolio_id,
+		file_org_name,
+		file_stored_name,
+		file_size
+		) VALUE (
+		#{file_portfolio_id},
+		#{file_org_name},
+		#{file_stored_name},
+		#{file_size}
+		)
+	</insert>
+
+	<select id="selectPortByCode" parameterType="int"
+		resultType="com.spring.ex.vo.PortRegVO">
+		SELECT *
+		FROM portfolio
+		WHERE portfolio_id = #{portfolio_id}
+	</select>
+
+	<!-- 리뷰 조회 -->
+	<select id="selectReview" parameterType="int"
+		resultType="com.spring.ex.vo.ReviewVO">
+		SELECT * FROM review
+		WHERE review_portfolio_id = #{portfolio_id}
+	</select>
 </mapper>

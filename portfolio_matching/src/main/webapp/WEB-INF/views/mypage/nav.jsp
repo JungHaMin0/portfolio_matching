@@ -6,7 +6,7 @@
     <div class="widget user-dashboard-profile">
       <!-- User Image -->
       <div class="profile-thumb">
-        <img src="resources/images/user/user-thumb.jpg" alt="" class="rounded-circle">
+        <img src="resources/images/logo.png" alt="" class="rounded-circle">
       </div>
       <!-- User Name -->
       <h5 class="text-center">${member.user_id}</h5>

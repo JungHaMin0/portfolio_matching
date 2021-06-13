@@ -1,22 +1,35 @@
 package com.spring.ex.service;
 
 import java.util.List;
+import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.spring.ex.dao.PortRegDAO;
+import com.spring.ex.util.UploadFileUtils;
 import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.vo.ReviewVO;
 
 @Service
 public class PortRegServiceImpl implements PortRegService {
+	@Resource(name="UploadFileUtils")
+	private UploadFileUtils uploadFileUtils;
 	
 	@Inject PortRegDAO dao;
 	
 	@Override
-	public void portInsert(PortRegVO vo) throws Exception {
+	public void portInsert(PortRegVO vo, MultipartHttpServletRequest req) throws Exception {
 		dao.portInsert(vo);
+		
+		List<Map<String, Object>> list = uploadFileUtils.parseInsertFileInfo(vo, req);
+		int size= list.size();
+		for(int i=0; i<size; i++) {
+			dao.insertFile(list.get(i));
+		}
 	}
 
 	@Override
@@ -38,6 +51,8 @@ public class PortRegServiceImpl implements PortRegService {
 		return dao.selectPortByCode(portfolio_id);
 	}
 	
-
-
+	@Override
+	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception {
+		return dao.selectReivew(portfolio_id);
+	}
 }

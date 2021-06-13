@@ -9,7 +9,7 @@
 
 <body class="body-wrapper">
 <%@ include file="../../include/header.jsp"%>
-  <section class="section bg-gray">
+  <section class="section bg-white">
     <!-- Container Start -->
     <div class="container">
       <div class="row">
@@ -22,34 +22,12 @@
                 <h3 class="tab-title">주문 내역</h3>
 
                 <div class="col-md-12">
-                  <div style="float: left; margin-right:20px;"><img width="120px" height="auto" src="resources/images/item_image1.PNG" alt="image description"></div>
+                  <div style="float: left; margin-right:20px;"><img width="120px" height="auto" src="data:image/jpeg;base64,<c:out value='${portfolio.portfolio_Img }'/>" alt="image description"></div>
                   <div style="float: left;"><h4>웹 사이트 제작</h4><p>웹 사이트 제작해드려요~~</p></div>
                   <div style="clear:both;"></div>
                 </div>
-                
-                
-                <div class="col-md-12">
-                  
-                  <ul class="list-inline mt-20">
-                    <li>포트폴리오 설명</li>
-                    <li>포트폴리오 설명</li>
-                    <li>포트폴리오 설명</li>
-                    <li>포트폴리오 설명</li>
-                    <li>포트폴리오 설명</li>
-                    <li>포트폴리오 설명</li>
-                  </ul>
-                </div>
-                
-                <hr />
-                
                 <div class="col-md-12">
                   <ul class="list-inline mt-20">
-                    <li>✔ 옵션 설명</li>
-                    <li>✔ 옵션 설명</li>
-                    <li>✔ 옵션 설명</li>
-                    <li>✔ 옵션 설명</li>
-                    <li>✔ 옵션 설명</li>
-                    <li>✔ 옵션 설명</li>
                   </ul>
                 </div>
               </div>
@@ -92,14 +70,12 @@
               <div class="loggedin-forgot d-inline-flex my-3">
                   <input type="checkbox" id="chk_terms" name="chk_terms" class="mt-1"> <label for="registering" class="px-2">결제에 동의합니다.</label>
                 </div>
-              
               <ul class="list-inline mt-20">
-                <li class="list-inline-item"><a href="portfolio_payment.do" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">결제하기</a></li>
+                <li class="list-inline-item"><a href="portfolio_payment.do" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">결제</a></li>
               </ul>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <!-- Container End -->
