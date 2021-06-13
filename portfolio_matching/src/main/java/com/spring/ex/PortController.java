@@ -58,14 +58,6 @@ public class PortController {
 		return "portfolio_page/portfolio_detail";
 	}
 
-	// 상세정보페이지에서 url 매핑되서 실행 ?
-	@RequestMapping("/portfolio_page/portfolio_detail/{portfolio_id}")
-	public ModelAndView portfolio_detail(@PathVariable("portfolio_id") int portfolio_id, ModelAndView mav) throws Exception {
-		mav.setViewName("/portfolio_page/portfolio_detail");
-		mav.addObject("dto", portRegServiceImpl.selectPortByCode(portfolio_id));
-		return mav;
-	}
-	
 	@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
 	public String portfolio_pur(HttpServletRequest req, PortRegVO vo, Model model) throws Exception {
 		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
