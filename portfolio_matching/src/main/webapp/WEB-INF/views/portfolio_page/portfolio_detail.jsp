@@ -56,7 +56,6 @@
                   <li class="list-inline-item"><i class="fa fa-calendar-o"></i> 기간 | <c:out value="${result.portfolio_term }일" /></a></li>
                 </ul>
               </div>
-
               <!-- product slider -->
               <div class="product-slider">
                 <div class="product-slider-item my-4" data-image="./resources/images/item_image1.PNG">
@@ -136,7 +135,7 @@
               <button type="button" class="btn btn-main-sm" href='#'>스크랩</button>
               <i class="fa fa-share-alt"></i>
             </div>
-            
+
             <div class="widget user text-center">
               <a href=""><c:out value="${result.portfolio_price }" /></a>
               <p>STANDARD(VAT포함가)</p>
@@ -148,8 +147,7 @@
 
             <!--  별점    -->
             <div class="widget rate text-center">
-              <h5 class="widget-header text-center">총 평점 <br></h5>
-              <i class="fa fa-star"></i> ${result.portfolio_rating}
+              <h5 class="widget-header text-center">총 평점 <br></h5> <i class="fa fa-star"></i> ${result.portfolio_rating}
             </div>
 
             <div class="widget coupon text-center">
@@ -167,12 +165,23 @@
 
 
   <script>
-function fn_list(){
-	var form = document.getElementById("viewForm");
-    form.action = "<c:url value='/portlist.do'/>";
-    form.submit();
-}
-</script>
+			function fn_list() {
+				var form = document.getElementById("viewForm");
+				form.action = "<c:url value='/portlist.do'/>";
+				form.submit();
+			}
+		</script>
+
+  <script>
+			function fn_content(portfolio_id) {
+				var form = document.getElementById("viewForm");
+				var url = "<c:url value='/pmInterest.do'/>";
+				url = url + "?portfolio_id=" + portfolio_id;
+
+				form.action = url;
+				form.submit();
+			}
+		</script>
 
 
   <!-- JAVASCRIPTS -->
