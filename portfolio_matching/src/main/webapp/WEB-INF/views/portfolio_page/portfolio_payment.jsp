@@ -60,7 +60,6 @@ String name = (String)request.getParameter("name");
                 });
                 //성공시 이동할 페이지
                 location.href="<%=request.getContextPath()%>/portfolio_payment_success";
-               
              	
             } else {
                 msg = '결제에 실패하였습니다.';
@@ -70,7 +69,6 @@ String name = (String)request.getParameter("name");
                 alert(msg);
             }
         });
-        
     });
     </script>
 

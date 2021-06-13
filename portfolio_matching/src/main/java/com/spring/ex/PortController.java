@@ -1,5 +1,6 @@
 package com.spring.ex;
 
+import java.security.Provider.Service;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Base64;
@@ -41,6 +42,7 @@ public class PortController {
 		portregVO.setPortfolio_userId(memberVO.getUser_id());
 		portregVO.setPortfolio_Img(base64);
 		portregVO.setPortfolio_regDate(Timestamp.valueOf(LocalDateTime.now()));
+		System.out.println(req);
 		portRegServiceImpl.portInsert(portregVO, req);
 		return "redirect:/portlist.do";
 	}
@@ -75,8 +77,10 @@ public class PortController {
 	 */
 
 	@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
-	public String portfolio_pur(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-
+	public String portfolio_pur(HttpServletRequest req, PortRegVO vo, Model model) throws Exception {
+		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+		vo = portRegServiceImpl.selectPortByCode(portfolio_id);
+		model.addAttribute("portfolio", vo);
 		return "portfolio_page/portfolio_pur";
 	}
 
@@ -94,10 +98,7 @@ public class PortController {
 	}
 
 	@RequestMapping(value = "portfolio_payment.do", method = RequestMethod.GET)
-	public String portfolio_payment(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		response.setCharacterEncoding("UTF-8");
+	public String portfolio_payment() throws Exception {
 		return "portfolio_page/portfolio_payment";
 	}
 
