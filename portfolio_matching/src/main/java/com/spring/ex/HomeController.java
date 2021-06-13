@@ -30,10 +30,32 @@ public class HomeController {
 
 	
 	 @RequestMapping(value = "index.do", method = RequestMethod.GET) 
-	 public String index(HttpSession session, Model model, SearchCriteria cri) throws Exception {
+	 public String index(HttpSession session, Model model) throws Exception {
 		 MemberVO vo =(MemberVO)session.getAttribute("member");
 		 model.addAttribute("login", vo);
-		 model.addAttribute("portlist", service.list(cri));
+		 model.addAttribute("portlist", service.Mainlist());
+		 model.addAttribute("portlist2", service.Mainlist2());
+		 model.addAttribute("portlist3", service.Mainlist3());
+		 model.addAttribute("portlist4", service.Mainlist4());
+		
+		 List<Map<String, Object>> cate = service.selectlist();
+	       
+	        String aa = cate.get(0).get("a").toString();
+	        int a = Integer.parseInt(aa);
+	        String bb = cate.get(0).get("b").toString();
+	        int b = Integer.parseInt(bb);
+	        String cc = cate.get(0).get("c").toString();
+	        int c = Integer.parseInt(cc);
+	        String dd = cate.get(0).get("d").toString();
+	        int d = Integer.parseInt(dd);
+	        String ee = cate.get(0).get("e").toString();
+	        int e = Integer.parseInt(ee);
+
+	        model.addAttribute("a", a);
+	        model.addAttribute("b", b);
+	        model.addAttribute("c", c);
+	        model.addAttribute("d", d);
+	        model.addAttribute("e", e);
 	  return "main/index"; 
 	  }
 	

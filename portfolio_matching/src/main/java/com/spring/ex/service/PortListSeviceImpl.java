@@ -20,7 +20,22 @@ public class PortListSeviceImpl implements PortListService {
 	    public List<PortListVO> list(SearchCriteria cri) {
 	        return dao.list(cri);
 	    }
-	 
+	 @Override
+	    public List<PortListVO> Mainlist() {
+	        return dao.Mainlist();
+	    }
+	 @Override
+	    public List<PortListVO> Mainlist2() {
+	        return dao.Mainlist2();
+	    }
+	 @Override
+	    public List<PortListVO> Mainlist3() {
+	        return dao.Mainlist3();
+	    }
+	 @Override
+	    public List<PortListVO> Mainlist4() {
+	        return dao.Mainlist4();
+	    }
 	 @Override
 	    public Integer Count(SearchCriteria cri) {
 	        return dao.Count(cri);

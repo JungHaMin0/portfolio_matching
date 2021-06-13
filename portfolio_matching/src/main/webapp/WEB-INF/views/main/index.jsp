@@ -14,11 +14,12 @@
 <%@ include file="../../include/header.jsp"%>
 
 <section class="hero-area bg-1 text-center overly">
-  <!-- Container Start -->
+
+  <!--
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <!-- Advance Search -->
+       
         <div class="advance-search">
           <div class="container">
             <div class="row justify-content-center">
@@ -58,20 +59,19 @@
       </div>
     </div>
   </div>
-  <!-- Container End -->
+  -->
 </section>
 
 <!-------------------------       client slide         ------------------------->
 
 
 <!-------------------------       포트폴리오 목록                        ------------------------->
-
 <section class="popular-deals section bg-gray">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="section-title">
-          <h1>추천 포트폴리오</h1>
+          <h1>최신 포트폴리오</h1>
         </div>
       </div>
     </div>
@@ -81,31 +81,123 @@
         <div class="trending-ads-slide">
           <div class="col-sm-12 col-lg-4">
             <!-- product card -->
+          <c:forEach items="${portlist}" var = "portlist">
             <div class="product-item bg-light">
-              <c:forEach items="${main}" var = "main">
               <div class="card">
                 <div class="thumb-content">
-                  <!-- <div class="price">$200</div> -->
-                  <a href="category.do"> <img class="card-img-top img-fluid" src="${main.portfolio_thumbUrl}" alt="Card image cap" width="600px" height="400px">
+                 
+                  <a href="portlist.do"> 
+                  <img class="card-img-top img-fluid" src="${portlist.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title"><a href="category.do"><c:out value="${main.portfolio_title}"/></a></h4>
+                  <h4 class="card-title"><a href="portlist.do">${portlist.portfolio_bCat}</a></h4>
                   <ul class="list-inline product-meta">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i><c:out value="${main.portfolio_sCat}"/></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i><c:out value="${main.portfolio_term}"/></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>${portlist.portfolio_sCat}</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>${portlist.portfolio_term}</a></li>
                   </ul>
-                  <p class="card-text"><c:out value="${main.portfolio_content}"/></p>
+                  <p class="card-text">${portlist.portfolio_content}</p>
                   <div class="product-ratings">
                     <ul class="list-inline">
-                      <li class="list-inline-item selected"><i class="fa fa-star"></i><c:out value="${main.portfolio_rating}"/></li>
+                    <li class="list-inline-item selected"><i class="fa fa-star"></i>${portlist.portfolio_rating}</li>
                     </ul>
                   </div>
                 </div>
-                </c:forEach>
               </div>
             </div>
+    </c:forEach> 
           </div>
+          
+             <div class="col-sm-12 col-lg-4">
+            <!-- product card -->
+          <c:forEach items="${portlist2}" var = "portlist2">
+            <div class="product-item bg-light">
+              <div class="card">
+                <div class="thumb-content">
+               
+                  <a href="portlist.do"> 
+                  <img class="card-img-top img-fluid" src="${portlist2.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title"><a href="portlist.do">${portlist2.portfolio_bCat}</a></h4>
+                  <ul class="list-inline product-meta">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>${portlist2.portfolio_sCat}</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>${portlist2.portfolio_term}</a></li>
+                  </ul>
+                  <p class="card-text">${portlist2.portfolio_content}</p>
+                  <div class="product-ratings">
+                    <ul class="list-inline">
+                    <li class="list-inline-item selected"><i class="fa fa-star"></i>${portlist2.portfolio_rating}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </c:forEach> 
+          </div>
+          
+             <div class="col-sm-12 col-lg-4">
+            <!-- product card -->
+          <c:forEach items="${portlist3}" var = "portlist3">
+            <div class="product-item bg-light">
+              <div class="card">
+                <div class="thumb-content">
+                
+                  <a href="portlist.do"> 
+                  <img class="card-img-top img-fluid" src="${portlist3.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title"><a href="portlist.do">${portlist3.portfolio_bCat}</a></h4>
+                  <ul class="list-inline product-meta">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>${portlist3.portfolio_sCat}</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>${portlist3.portfolio_term}</a></li>
+                  </ul>
+                  <p class="card-text">${portlist3.portfolio_content}</p>
+                  <div class="product-ratings">
+                    <ul class="list-inline">
+                    <li class="list-inline-item selected"><i class="fa fa-star"></i>${portlist3.portfolio_rating}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </c:forEach> 
+          </div>
+              <div class="col-sm-12 col-lg-4">
+            <!-- product card -->
+          <c:forEach items="${portlist4}" var = "portlist4">
+            <div class="product-item bg-light">
+              <div class="card">
+                <div class="thumb-content">
+                  <!-- <div class="price">$200</div> -->
+                  <a href="portlist.do"> 
+                  <img class="card-img-top img-fluid" src="${portlist4.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h4 class="card-title"><a href="portlist.do">${portlist4.portfolio_bCat}</a></h4>
+                  <ul class="list-inline product-meta">
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-folder-open-o"></i>${portlist4.portfolio_sCat}</a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fa fa-calendar"></i>${portlist4.portfolio_term}</a></li>
+                  </ul>
+                  <p class="card-text">${portlist4.portfolio_content}</p>
+                  <div class="product-ratings">
+                    <ul class="list-inline">
+                    <li class="list-inline-item selected"><i class="fa fa-star"></i>${portlist4.portfolio_rating}</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </c:forEach> 
+          </div>
+            
+          
+          
+          
+          
         </div>
       </div>
     </div>
@@ -126,20 +218,7 @@
         </div>
         <div class="row">
           <!-- Category list -->
-          <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
-            <div class="category-block">
-              <div class="header">
-                <i class="fa fa-paint-brush icon-bg-1" aria-hidden="true"></i>
-                <h4>디자인</h4>
-              </div>
-              <ul class="category-list">
-                <li><a href="#">로고·브랜딩<span>0</span></a></li>
-                <li><a href="#">상세·이벤트 페이지<span>0</span></a></li>
-                <li><a href="#">인쇄·홍보물 <span>0</span></a></li>
-                <li><a href="#">제품·패키지<span>0</span></a></li>
-              </ul>
-            </div>
-          </div>
+        
           <!-- /Category List -->
           <!-- Category list -->
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
@@ -149,26 +228,34 @@
                 <h4>IT·프로그래밍</h4>
               </div>
               <ul class="category-list">
-                <li><a href="webCategory.do">웹사이트 개발<span>3</span></a></li>
-                <li><a href="appCategory.do">앱 프로그래밍<span>1</span></a></li>
-                <li><a href="#">모바일 앱<span>0</span></a></li>
-                <li><a href="#">프로그램 개발<span>0</span></a></li>
+                <li><a href="webCategory.do">web<span>${a}</span></a></li>
+            
               </ul>
             </div>
           </div>
+          
           <!-- /Category List -->
           <!-- Category list -->
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
             <div class="category-block">
               <div class="header">
                 <i class="fa fa-camera icon-bg-3" aria-hidden="true"></i>
-                <h4>영상·사진</h4>
+                <h4>모바일앱</h4>
               </div>
               <ul class="category-list">
-                <li><a href="#">영상찰영·편집<span>0</span></a></li>
-                <li><a href="#">유튜브 제작 <span>0</span></a></li>
-                <li><a href="#">애니메이션 <span>0</span></a></li>
-                <li><a href="#">사진촬영<span>0</span></a></li>
+                <li><a href="appCategory.do">app<span>${b}</span></a></li>
+               
+              </ul>
+            </div>
+          </div>
+            <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
+            <div class="category-block">
+              <div class="header">
+                <i class="fa fa-paint-brush icon-bg-1" aria-hidden="true"></i>
+                <h4>디자인</h4>
+              </div>
+              <ul class="category-list">
+                <li><a href="designCategory.do">design<span>${c}</span></a></li>      
               </ul>
             </div>
           </div>
@@ -179,19 +266,17 @@
               <div class="header">
                 <i class="fa fa-shopping-basket icon-bg-4"></i>
                 <!-- 아이콘 -->
-                <h4>마케팅</h4>
+                <h4>사진</h4>
               </div>
               <ul class="category-list">
-                <li><a href="#">종합광고대행 <span>0</span></a></li>
-                <li><a href="#">블로그·카페<span>0</span></a></li>
-                <li><a href="#">SNS 마케팅<span>0</span></a></li>
-                <li><a href="#">쇼핑몰·스토어<span>0</span></a></li>
+                <li><a href="photoCategory.do">photo <span>${d}</span></a></li>
+              
 
               </ul>
             </div>
           </div>
           <!-- /Category List -->
-          <!-- Category list -->
+        <!--   
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
             <div class="category-block">
               <div class="header">
@@ -206,8 +291,8 @@
               </ul>
             </div>
           </div>
-          <!-- /Category List -->
-          <!-- Category list -->
+          /Category List
+          Category list
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
             <div class="category-block">
               <div class="header">
@@ -222,8 +307,8 @@
               </ul>
             </div>
           </div>
-          <!-- /Category List -->
-          <!-- Category list -->
+          /Category List
+          Category list
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
             <div class="category-block">
               <div class="header">
@@ -238,8 +323,8 @@
               </ul>
             </div>
           </div>
-          <!-- /Category List -->
-          <!-- Category list -->
+          /Category List
+          Category list
           <div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 col-6">
             <div class="category-block">
 
@@ -255,8 +340,8 @@
               </ul>
             </div>
           </div>
-          <!-- /Category List -->
-
+          /Category List
+ -->
 
         </div>
       </div>

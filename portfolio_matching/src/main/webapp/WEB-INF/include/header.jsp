@@ -17,9 +17,15 @@
               <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
 
               <li class="nav-item active"><a class="nav-link dropdown-toggle" href="portlist.do">포트폴리오 </a></li>
-
-              <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
-
+ 			<c:if test="${member == null}">
+              <li class="nav-item active">
+              	<a class="nav-link" href="#" onclick="dd();">등록하기</a></li>
+         
+  			</c:if>
+   			 <c:if test="${member != null}">
+                 <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
+             </c:if>
+  
             </ul>
             <ul class="navbar-nav ml-auto mt-10">
               <c:if test="${member == null}">
@@ -41,3 +47,11 @@
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+
+function dd(){
+	alert("로그인후 이용해 주세요.");
+}
+
+</script>

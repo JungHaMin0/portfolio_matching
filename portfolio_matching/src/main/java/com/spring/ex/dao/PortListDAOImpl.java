@@ -21,7 +21,23 @@ public class PortListDAOImpl implements PortListDAO {
 		 return sqlSession.selectList("portlistMapper.list", cri);
 	}
 	
-
+	@Override
+	public List<PortListVO> Mainlist() {
+		 return sqlSession.selectList("portlistMapper.main");
+	}
+	@Override
+	public List<PortListVO> Mainlist2() {
+		 return sqlSession.selectList("portlistMapper.main2");
+	}
+	@Override
+	public List<PortListVO> Mainlist3() {
+		 return sqlSession.selectList("portlistMapper.main3");
+	}
+	@Override
+	public List<PortListVO> Mainlist4() {
+		 return sqlSession.selectList("portlistMapper.main4");
+	}
+	
 	@Override
 	public Integer Count(SearchCriteria cri) {
 		 return sqlSession.selectOne("portlistMapper.Count", cri);

@@ -12,6 +12,10 @@ public interface PortListService {
 
 	public Integer Count(SearchCriteria cri);
 	public  List<Map<String,Object>> selectlist();
+	 public List<PortListVO> Mainlist();
+	 public List<PortListVO> Mainlist2();
+	 public List<PortListVO> Mainlist3();
+	 public List<PortListVO> Mainlist4();
 	 public List<PortListVO> listWeb(SearchCriteria cri);
 	 public List<PortListVO> listApp(SearchCriteria cri);
 	 public List<PortListVO> listDesign(SearchCriteria cri);
