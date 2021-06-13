@@ -132,8 +132,7 @@
 
           <div class="col-md-4">
             <div class=" p-2">
-              <button type="button" class="btn btn-main-sm" href='#'>스크랩</button>
-              <i class="fa fa-share-alt"></i>
+              <a class="btn btn-main-sm" href="pmScarp.do?num=${result.portfolio_id}">스크랩</a> <i class="fa fa-share-alt"></i>
             </div>
 
             <div class="widget user text-center">

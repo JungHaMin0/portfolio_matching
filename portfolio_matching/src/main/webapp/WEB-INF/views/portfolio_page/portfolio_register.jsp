@@ -80,15 +80,7 @@ request.setCharacterEncoding("UTF-8");
                 </div>
                 <br> <br> <br>
                 <div class="col-lg-12 py-2">
-                  <p class="pt-3">포트폴리오 관련 자료*</p>
-                  <input type="file" id="file" name="file" accept="image/*" onchange="setThumbnail(event);" />
-                  <div id="image_container"></div>
-                </div>
-
-
-                <br> <br> <br>
-                <div class="col-lg-12 py-2">
-                  <h3 style="margin-top: 20px">포트폴리오 판매 정보 등록</h3>
+                  <h3 style="margin-top: 20px">포트폴리오 판매 정보</h3>
                   <hr>
                 </div>
 
