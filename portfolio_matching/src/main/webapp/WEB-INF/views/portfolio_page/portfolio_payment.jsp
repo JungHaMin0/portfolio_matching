@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
 <%
-String name = (String)request.getParameter("name");
+request.setCharacterEncoding("UTF-8");
 
+String sprice = request.getParameter("price");
+String title = request.getParameter("title");
+int price = Integer.parseInt(sprice);
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<%@ include file="../../include/style_css.jsp"%>
+<title>Insert title here</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 </head>
@@ -25,9 +25,9 @@ String name = (String)request.getParameter("name");
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : 'aa',
-            amount : '100',  
-            buyer_name : '홍길동',
+            name : '<%=title %>',
+            amount : '<%=price %>',
+            buyer_name : '${member.user_name}',
             buyer_postcode : '123-456',
         }, function(rsp) {
             if ( rsp.success ) {
@@ -37,9 +37,9 @@ String name = (String)request.getParameter("name");
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                    	"title" : rsp.name,
-                
-                        "name" :  rsp.buyer_name
+                    	"portfolio_title" : rsp.name,
+                    	"portfolio_price" : rsp.paid_amount,
+                        "user_name" :  rsp.buyer_name
                         //기타 필요한 데이터가 있으면 추가 전달
                     }
                     
@@ -60,6 +60,7 @@ String name = (String)request.getParameter("name");
                 });
                 //성공시 이동할 페이지
                 location.href="<%=request.getContextPath()%>/portfolio_payment_success";
+               
              	
             } else {
                 msg = '결제에 실패하였습니다.';
@@ -69,6 +70,7 @@ String name = (String)request.getParameter("name");
                 alert(msg);
             }
         });
+        
     });
     </script>
 

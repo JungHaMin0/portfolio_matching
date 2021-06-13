@@ -138,7 +138,7 @@
               <p>STANDARD(VAT포함가)</p>
 
               <ul class="list-inline mt-20">
-                <li class="list-inline-item"><a href="portfolio_pur.do?portfolio_id=${result.portfolio_id}" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">구매하기</a></li>
+                <li class="list-inline-item"><a href="detailport.do?portfolio_id=${result.portfolio_id}" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">구매하기</a></li>
               </ul>
             </div>
 
