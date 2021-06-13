@@ -42,7 +42,17 @@ public class MyPageDAOImpl implements MyPageDAO {
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception {
 		sqlSession.insert("mypageMapper.pmPurchaseReview", reviewVO);
 	}
+	
+	@Override // 구매 내역 - 첨부파일 조회
+	public List<Map<String, Object>> selectFileList(int file_portfolio_id) throws Exception {
+		return sqlSession.selectList("mypageMapper.selectFileList", file_portfolio_id);
+	}
 
+	@Override // 구매 내역 - 첨부파일 다운로드
+	public Map<String, Object> selectFileInfo(Map<String, Object> map) throws Exception {
+		return sqlSession.selectOne("mypageMapper.selectFileInfo", map);
+	}
+	
 	@Override // 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
 		return sqlSession.selectList("mypageMapper.pmInterestList", user_id);

@@ -1,11 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-request.setCharacterEncoding("UTF-8");
-
-String sprice = request.getParameter("price");
-String title = request.getParameter("title");
-int price = Integer.parseInt(sprice);
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +18,9 @@ int price = Integer.parseInt(sprice);
             pg : 'kakaopay',
             pay_method : 'card',
             merchant_uid : 'merchant_' + new Date().getTime(),
-            name : '<%=title %>',
-            amount : '<%=price %>',
-            buyer_name : '${member.user_name}',
+            name : '${vo.portfolio_title}',
+            amount : '${vo.portfolio_price}',
+            buyer_name : '${userId}',
             buyer_postcode : '123-456',
         }, function(rsp) {
             if ( rsp.success ) {
@@ -37,9 +30,9 @@ int price = Integer.parseInt(sprice);
                     type: 'POST',
                     dataType: 'json',
                     data: {
-                    	"portfolio_title" : rsp.name,
-                    	"portfolio_price" : rsp.paid_amount,
-                        "user_name" :  rsp.buyer_name
+                    	"deal_portfolio_id" : ${vo.portfolio_id},
+                    	"deal_price" : rsp.paid_amount,
+                        "deal_purUser" :  rsp.buyer_name
                         //기타 필요한 데이터가 있으면 추가 전달
                     }
                     

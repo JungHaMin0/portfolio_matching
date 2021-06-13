@@ -33,7 +33,7 @@
               
                 <c:forEach items="${pmInterestList}" var="pmInterList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${pmInterList.portfolio_thumbUrl}"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmInterList.portfolio_Img }'/>" ></td>
                     <td class="product-details">
                       <h3 class="title">${pmInterList.portfolio_title}</h3>
                       <span><strong>판매자</strong>${pmInterList.portfolio_userId}</span>

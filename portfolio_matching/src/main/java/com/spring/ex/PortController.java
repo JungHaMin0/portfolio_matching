@@ -23,7 +23,6 @@ import com.spring.ex.service.OrderService;
 import com.spring.ex.service.PortRegService;
 import com.spring.ex.vo.MemberVO;
 import com.spring.ex.vo.OrderVO;
-import com.spring.ex.vo.PortListVO;
 import com.spring.ex.vo.PortRegVO;
 
 @Controller
@@ -31,7 +30,7 @@ public class PortController {
 
 	@Autowired
 	private PortRegService portRegServiceImpl;
-	
+
 	@Autowired
 	private OrderService orderService;
 
@@ -62,14 +61,6 @@ public class PortController {
 		return "portfolio_page/portfolio_detail";
 	}
 
-	@RequestMapping(value = "portfolio_pur.do", method = RequestMethod.GET)
-	public String portfolio_pur(HttpServletRequest req, PortRegVO vo, Model model) throws Exception {
-		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
-		vo = portRegServiceImpl.selectPortByCode(portfolio_id);
-		model.addAttribute("portfolio", vo);
-		return "portfolio_page/portfolio_pur";
-	}
-
 	@RequestMapping(value = "port.do", method = RequestMethod.GET)
 	public String port(HttpServletRequest request, HttpServletResponse response, Model model) throws Exception {
 		return "main/port";
@@ -83,7 +74,13 @@ public class PortController {
 	}
 
 	@RequestMapping(value = "portfolio_payment.do", method = RequestMethod.GET)
-	public String portfolio_payment() throws Exception {
+	public String portfolio_payment(HttpServletRequest req, Model model, HttpSession session) throws Exception {
+		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
+		PortRegVO vo = orderService.detailPort(portfolio_id);
+		MemberVO memberVO = (MemberVO) session.getAttribute("member");
+		model.addAttribute("userId", memberVO.getUser_id());
+		model.addAttribute("vo", vo);
+
 		return "portfolio_page/portfolio_payment";
 	}
 
@@ -101,28 +98,27 @@ public class PortController {
 	@RequestMapping(value = "portfolio_order")
 	@ResponseBody
 	public OrderVO order(HttpServletRequest request, HttpServletResponse response, OrderVO vo) throws Exception {
+		PortRegVO portRegVO = orderService.detailPort(vo.getDeal_portfolio_id());
+		vo.setDeal_saleUser(portRegVO.getPortfolio_userId());
+		System.out.println(vo.getDeal_portfolio_id());
+		System.out.println(vo.getDeal_price());
+		System.out.println(vo.getDeal_purUser());
+		System.out.println(vo.getDeal_saleUser());
 		OrderVO vo1 = orderService.order(vo);
 		return vo1;
 	}
 
 	@RequestMapping(value = "detailport.do", method = RequestMethod.GET)
-	public String detailport(HttpServletRequest req, Model model) throws Exception {
+	public String detailport(HttpServletRequest req, Model model, HttpSession session) throws Exception {
 
 		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
 		PortRegVO vo = orderService.detailPort(portfolio_id);
+
+		MemberVO memberVO = (MemberVO) session.getAttribute("member");
+
+		model.addAttribute("userId", memberVO.getUser_id());
 		model.addAttribute("vo", vo);
 
 		return "portfolio_page/portfolio_pur";
-	}
-
-	@RequestMapping(value = "detail.do", method = RequestMethod.GET)
-	public String detail(HttpSession session, Model model) throws Exception {
-
-		PortRegVO vo = new PortRegVO();
-		int portnum = vo.getPortfolio_id();
-
-		model.addAttribute("vo", orderService.detail(portnum));
-
-		return "portfolio_page/portfolio_detail";
 	}
 }

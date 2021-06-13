@@ -38,7 +38,12 @@ public class FileUtils {
 			file.mkdirs();
 		}
 		
+		int i = 0;
 		while(iterator.hasNext()) {
+			if(i==0) {
+				i++;
+				continue;
+			}
 			multipartFile = mpRequest.getFile(iterator.next());
 			if(multipartFile.isEmpty() == false) {
 				originalFileName = multipartFile.getOriginalFilename();

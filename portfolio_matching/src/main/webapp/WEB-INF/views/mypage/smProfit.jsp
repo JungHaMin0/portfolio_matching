@@ -40,7 +40,7 @@
               <tbody>
                 <c:forEach items="${smProfitList}" var="smProfitList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${smProfitList.portfolio_thumbUrl}" alt="image description"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smProfitList.portfolio_Img }'/>" alt="image description"></td>
                     <td class="product-details">
                       <h3 class="title">웹사이트 제작</h3> <span class="add-id"><strong>구매자</strong>${smProfitList.deal_purUser}</span><span><strong>구매일</strong>${smProfitList.deal_date}</span><span><strong>가격</strong>${smProfitList.deal_price}</span>
                     </td>

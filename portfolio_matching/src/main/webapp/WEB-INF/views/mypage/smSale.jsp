@@ -30,7 +30,7 @@
               <tbody>
                 <c:forEach items="${smSaleList}" var="smSaleList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${smSaleList.portfolio_thumbUrl}"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smSaleList.portfolio_Img }'/>"></td>
                     <td class="product-details">
                       <h3 class="title">${smSaleList.portfolio_title}</h3> <span><strong>가격</strong>${smSaleList.portfolio_price} 원</span><span><strong>등록일</strong>${smSaleList.portfolio_regDate}</span>
                     </td>

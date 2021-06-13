@@ -25,6 +25,12 @@ public interface MyPageService {
 	// 구매 내역 - 리뷰 작성 기능
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception;
 
+	// 구매 내역 - 첨부파일 조회
+	public List<Map<String, Object>> selectFileList(int file_portfolio_id) throws Exception;
+
+	// 구매 내역 - 첨부파일 다운로드
+	public Map<String, Object> selectFileInfo(Map<String, Object> map) throws Exception;
+
 	// 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception;
 

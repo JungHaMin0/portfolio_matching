@@ -42,7 +42,17 @@ public class MyPageServiceImpl implements MyPageService {
 	public void pmPurchaseReview(ReviewVO reviewVO) throws Exception {
 		dao.pmPurchaseReview(reviewVO);
 	}
+	
+	@Override // 구매 내역 - 첨부파일 조회
+	public List<Map<String, Object>> selectFileList(int file_portfolio_id) throws Exception {
+		return dao.selectFileList(file_portfolio_id);
+	}
 
+	@Override // 구매 내역 - 첨부파일 다운로드
+	public Map<String, Object> selectFileInfo(Map<String, Object> map) throws Exception {
+		return dao.selectFileInfo(map);
+	}
+	
 	@Override // 관심 상품
 	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
 		return dao.pmInterestList(user_id);

@@ -23,6 +23,9 @@ function agreeCheck(frm)
     <!-- Container Start -->
     <div class="container">
     <form action="portfolio_payment.do" method="get" name="form">
+      <input type="hidden" name="portfolio_id" value="${vo.portfolio_id}">
+      <input type="hidden" name="userId" value="${userId}">
+      
       <div class="row">
 
         <!-- Left sidebar -->
@@ -34,10 +37,8 @@ function agreeCheck(frm)
                 <h3 class="tab-title">주문 내역</h3>
 
                 <div class="col-md-12">
-                  <div style="float: left; margin-right:20px;"><img width="120px" height="auto" src="resources/images/item_image1.PNG" alt="image description"></div>
-                  <div style="float: left;"><h4 id="title">${vo.portfolio_title}</h4></div>
-                  <input type="hidden" name="title" value="${vo.portfolio_title}"><br/>
-                  <p>${vo.portfolio_content}</p>
+                  <div style="float: left; margin-right:20px;"><img width="120px" height="auto" src="data:image/jpeg;base64,<c:out value='${vo.portfolio_Img }'/>" alt="image description"></div>
+                  <div style="float: left;"><h4 id="title">${vo.portfolio_title}</h4><p>${vo.portfolio_content}</p></div>
                
                   <div style="clear:both;"></div>
                 </div>
@@ -78,7 +79,6 @@ function agreeCheck(frm)
             <div class="widget user text-center">
               <h3>결제 금액</h3>
               <p class="member-time"><fmt:formatNumber value="${vo.portfolio_price}" pattern="###,###,###"/></p>
-                 <input type="hidden" name="price" value="${vo.portfolio_price}">
               
               <div class="loggedin-forgot d-inline-flex my-3">
                   <input type="checkbox" id="agree" name="agree" class="mt-1" onClick="agreeCheck(this.form)" > <label for="registering" class="px-2">결제에 동의합니다.</label>

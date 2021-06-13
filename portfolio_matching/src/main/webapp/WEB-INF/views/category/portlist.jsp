@@ -8,28 +8,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
  <%@ include file="../../include/header.jsp"%>
 <%@ include file="../../include/style_css.jsp"%>
-
-
-
-<script>
-$(function(){   
-    $('.disabled').on('click', function(event){
-        event.preventDefault();
-    }); 
-    /* 검색 버튼 클릭 이벤트 핸들러 */
-    $('#searchBtn').on("click", function(event){        
-        // 검색옵션 값 가져오고
-        var searchType = $("select[name=searchType]").val();        
-        // 키워드 값 가져와서
-        var keyword = $("input[name=keyword]").val();       
-        self.location = "portlist.do${pageMaker.makeQuery(1)}&searchType=" + searchType + "&keyword=" + encodeURI(keyword);
-    });//on()       
-});
-</script>
-
-
-
-
 </head>
 
 <body class="body-wrapper">
@@ -156,7 +134,7 @@ $(function(){
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${portlist.portfolio_Img}">
+												<img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist.portfolio_Img }'/>" />
 											</a>
 										</div>
 										<a href="#" onClick='fn_view()'>
@@ -261,6 +239,22 @@ $(function(){
 <!-- JAVASCRIPTS -->
 <%@ include file="../../include/footer.jsp"%>
 <%@ include file="../../include/style_js.jsp"%>
+
+<script>
+$(function(){   
+    $('.disabled').on('click', function(event){
+        event.preventDefault();
+    }); 
+    /* 검색 버튼 클릭 이벤트 핸들러 */
+    $('#searchBtn').on("click", function(event){        
+        // 검색옵션 값 가져오고
+        var searchType = $("select[name=searchType]").val();        
+        // 키워드 값 가져와서
+        var keyword = $("input[name=keyword]").val();       
+        self.location = "portlist.do${pageMaker.makeQuery(1)}&searchType=" + searchType + "&keyword=" + encodeURI(keyword);
+    });//on()       
+});
+</script>
 
 
 </body>

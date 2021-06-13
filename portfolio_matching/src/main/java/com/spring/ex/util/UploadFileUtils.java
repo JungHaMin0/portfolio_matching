@@ -16,7 +16,7 @@ import com.spring.ex.vo.PortRegVO;
 
 @Component("UploadFileUtils") 
 public class UploadFileUtils {
-	private static final String filePath = "C:\\Users\\jeong\\git\\portfolio_matching\\portfolio_matching\\src\\main\\webapp\\resources\\upload"; // 파일이 저장될 위치
+	private static final String filePath = "C:\\Users\\jeong\\git\\portfolio_matching\\portfolio_matching\\src\\main\\webapp\\resources\\upload\\"; // 파일이 저장될 위치
 
 	public List<Map<String, Object>> parseInsertFileInfo(PortRegVO portRegVO, 
 			MultipartHttpServletRequest mpRequest) throws Exception{

@@ -41,6 +41,22 @@
 			#{review_content}
 		)
 	</insert>
+	
+	<!-- 첨부파일 조회 -->
+	<select id="selectFileList" parameterType="int" resultType="hashMap">
+		SELECT file_id, file_org_name, round(file_size/1024, 1) AS file_size
+		FROM file
+		WHERE file_portfolio_id = #{file_portfolio_id}
+		AND file_del_GB = 'N'
+	</select>
+	
+	<!-- 첨부파일 다운 -->
+	<select id="selectFileInfo" parameterType="hashMap" resultType="hashMap">
+		SELECT file_stored_name, file_org_name
+		FROM file
+		WHERE file_id = #{file_id}
+	</select>
+	
 	<!-- 관심 상품 -->
 	<select id="pmInterestList" parameterType="String" resultType="com.spring.ex.vo.PortfolioVO">
 		SELECT portfolio.* FROM scrap, portfolio
@@ -193,5 +209,4 @@
 		WHERE user_id = #{user_id}
 	</delete>
 	
-	<!-- 페이징 -->
 </mapper>
