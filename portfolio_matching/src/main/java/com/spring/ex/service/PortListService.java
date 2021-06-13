@@ -1,15 +1,23 @@
 package com.spring.ex.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.ex.vo.PortListVO;
+import com.spring.ex.vo.SearchCriteria;
 
 public interface PortListService {
 
-	public List<PortListVO> list() throws Exception;
-	public List<PortListVO> listWeb() throws Exception;
-	public List<PortListVO> listApp() throws Exception;
-	public List<PortListVO> listDesign() throws Exception;
-	public List<PortListVO> listPhoto() throws Exception;
-	
+	public List<PortListVO> list(SearchCriteria cri);
+
+	public Integer Count(SearchCriteria cri);
+	public  List<Map<String,Object>> selectlist();
+	 public List<PortListVO> listWeb(SearchCriteria cri);
+	 public List<PortListVO> listApp(SearchCriteria cri);
+	 public List<PortListVO> listDesign(SearchCriteria cri);
+	 public List<PortListVO> listPhoto(SearchCriteria cri);
+	 public Integer CountWeb(SearchCriteria cri);
+	 public Integer CountApp(SearchCriteria cri) ;
+	 public Integer CountDesign(SearchCriteria cri) ;
+	 public Integer CountPhoto(SearchCriteria cri) ;
 }

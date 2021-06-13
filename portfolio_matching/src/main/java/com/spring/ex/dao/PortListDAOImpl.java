@@ -1,45 +1,85 @@
 package com.spring.ex.dao;
 
 import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.spring.ex.dao.PortListDAO;
+
 import com.spring.ex.vo.PortListVO;
+import com.spring.ex.vo.SearchCriteria;
 
 @Repository
 public class PortListDAOImpl implements PortListDAO {
 
 	@Autowired
 	private SqlSession sqlSession;
+	
+	@Override
+	public List<PortListVO> list(SearchCriteria cri) {
+		 return sqlSession.selectList("portlistMapper.list", cri);
+	}
+	
 
 	@Override
-	public List<PortListVO> list() throws Exception {
-		return sqlSession.selectList("portlistMapper.portlist");
-	}
-	
+	public Integer Count(SearchCriteria cri) {
+		 return sqlSession.selectOne("portlistMapper.Count", cri);
+		} 
 	@Override
-	public List<PortListVO> listWeb() throws Exception {
-		return sqlSession.selectList("portlistMapper.webcg");
-	}
-	
+	public List<Map<String,Object>> selectlist() {
+		 return sqlSession.selectList("portlistMapper.selectMap");
+		}
+
 	@Override
-	public List<PortListVO> listApp() throws Exception {
-		return sqlSession.selectList("portlistMapper.appcg");
-		
+	public List<PortListVO> listWeb(SearchCriteria cri) {
+		return sqlSession.selectList("portlistMapper.web", cri);
 	}
-	
+
+
+
 	@Override
-	public List<PortListVO> listDesign() throws Exception {
-		return sqlSession.selectList("portlistMapper.designcg");
-		
+	public List<PortListVO> listApp(SearchCriteria cri) {
+		return sqlSession.selectList("portlistMapper.app", cri);
 	}
-		
+
+
+
 	@Override
-	public List<PortListVO> listPhoto() throws Exception {
-		return sqlSession.selectList("portlistMapper.photocg");
-		
+	public List<PortListVO> listDesign(SearchCriteria cri) {
+		return sqlSession.selectList("portlistMapper.design", cri);
 	}
+
+
+
+	@Override
+	public List<PortListVO> listPhoto(SearchCriteria cri) {
+		return sqlSession.selectList("portlistMapper.photo", cri);
+	}
+
+	@Override
+	public Integer CountWeb(SearchCriteria cri) {
+		return sqlSession.selectOne("portlistMapper.CountWeb", cri);
+	}
+
+	@Override
+	public Integer CountApp(SearchCriteria cri) {
+		return sqlSession.selectOne("portlistMapper.CountApp", cri);
+	}
+
+	@Override
+	public Integer CountDesign(SearchCriteria cri) {
+		return sqlSession.selectOne("portlistMapper.CountDesign", cri);
+	}
+
+	@Override
+	public Integer CountPhoto(SearchCriteria cri) {
+		return sqlSession.selectOne("portlistMapper.CountPhoto", cri);
+	}
+
+
+
+
 		
 }
 

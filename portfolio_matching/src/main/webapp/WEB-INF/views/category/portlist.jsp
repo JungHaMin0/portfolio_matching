@@ -6,11 +6,34 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+ <%@ include file="../../include/header.jsp"%>
 <%@ include file="../../include/style_css.jsp"%>
+
+
+
+<script>
+$(function(){   
+    $('.disabled').on('click', function(event){
+        event.preventDefault();
+    }); 
+    /* 검색 버튼 클릭 이벤트 핸들러 */
+    $('#searchBtn').on("click", function(event){        
+        // 검색옵션 값 가져오고
+        var searchType = $("select[name=searchType]").val();        
+        // 키워드 값 가져와서
+        var keyword = $("input[name=keyword]").val();       
+        self.location = "portlist.do${pageMaker.makeQuery(1)}&searchType=" + searchType + "&keyword=" + encodeURI(keyword);
+    });//on()       
+});
+</script>
+
+
+
+
 </head>
 
 <body class="body-wrapper">
-  <%@ include file="../../include/header.jsp"%>
+ 
 
 	<section class="page-search">
 		<div class="container">
@@ -20,22 +43,24 @@
 					<div class="advance-search">
 						<form>
 							<div class="form-row">
-								<div class="form-group col-md-4">
-									<input type="text" class="form-control my-2 my-lg-0" id="inputtext4"
-										placeholder="주제">
-								</div>
-								<div class="form-group col-md-3">
-									<input type="text" class="form-control my-2 my-lg-0" id="inputCategory4"
-										placeholder="카테고리">
-								</div>
-								<div class="form-group col-md-3">
-									<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4"
-										placeholder="팀 규모">
-								</div>
+								&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+								&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 								<div class="form-group col-md-2">
+									<select id="searchType" name="searchType">
+										<option value="t">포트폴리오 제목</option>
+											<option value="C">내용</option>
+											<option value="id">작성자</option>
+										</select>
+								</div>	
+								<div class="form-group col-md-2">
+									<input class="form-control my-2 my-lg-0" type="text" id="keyword" name="keyword" 
+										value="${pageMaker.cri.keyword}" placeholder="검색어를 입력하세요"/>
+								</div>
+								<div class="form-group col-md-3">
 
 									<button type="submit" class="btn btn-primary">검색하기</button>
 								</div>
+								
 							</div>
 						</form>
 					</div>
@@ -43,6 +68,9 @@
 			</div>
 		</div>
 	</section>
+	
+	
+	
 	<section class="section-sm">
 		<div class="container">
 			<div class="row">
@@ -59,36 +87,17 @@
 						<div class="widget category-list">
 							<h4 class="widget-header">전체 카테고리</h4>
 							<ul class="category-list">
-								<li><a href="category.html">전체 <span>200</span></a></li>
-								<li><a href="category.html">웹사이트 개발 <span>100</span></a></li>
-								<li><a href="category.html">모바일 앱 <span>50</span></a></li>
-								<li><a href="category.html">디자인 <span>30</span></a></li>
-								<li><a href="category.html">사진 <span>20</span></a></li>
+							
+								<li><a href="portlist.do">전체 <span>${a}</span></a></li>
+								<li><a href="webCategory.do">웹사이트 개발 <span>${b}</span></a></li>
+								<li><a href="appCategory.do">모바일 앱 <span>${c}</span></a></li>
+								<li><a href="designCategory.do">디자인 <span>${d}</span></a></li>
+								<li><a href="photoCategory.do">사진 <span>${e}</span></a></li>
+								
 							</ul>
 						</div>
 
-
-
-						<!-- <div class="widget filter">
-	<h4 class="widget-header">Show Produts</h4>
-	<select>
-		<option>Popularity</option>
-		<option value="1">Top rated</option>
-		<option value="2">Lowest Price</option>
-		<option value="4">Highest Price</option>
-	</select>
-</div> -->
-
-						<!-- <div class="widget price-range w-100">
-	<h4 class="widget-header">Price Range</h4>
-	<div class="block">
-						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="10000000" data-slider-step="5"
-						data-slider-value="[0,10000000]">
-				<div class="d-flex justify-content-between mt-2">
-						<span class="value">0원 - 10,000,000원</span>
-				</div>
-	</div>
-</div> -->
+<!--  
 
 						<div class="widget product-shorting">
 							<h4 class="widget-header">팀 규모</h4>
@@ -117,7 +126,7 @@
 								</label>
 							</div>
 						</div>
-
+-->
 					</div>
 				</div>
 				<div class="col-md-9">
@@ -126,24 +135,11 @@
 							<div class="col-md-6">
 								<strong>필터</strong>
 								<select>
-									<option>가장 인기 있는</option>
-									<option value="1">가장 가격 낮은</option>
-									<option value="2">가장 많이 참여한</option>
+									<option>별점순</option>
+									<!--  <option value="1">가장 가격 낮은</option>
+									<option value="2">가장 많이 참여한</option>-->
 								</select>
 							</div>
-							<!-- <div class="col-md-6">
-							<div class="view">
-								<strong>Views</strong>
-								<ul class="list-inline view-switcher">
-									<li class="list-inline-item">
-										<a href="#" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="ad-list-view.html"><i class="fa fa-reorder"></i></a>
-									</li>
-								</ul>
-							</div>
-						</div> -->
 						</div>
 					</div>
 					
@@ -160,7 +156,7 @@
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${portlist.portfolio_thumbUrl}">
+												<img class="card-img-top img-fluid" src="${portlist.portfolio_Img}">
 											</a>
 										</div>
 										<a href="#" onClick='fn_view()'>
@@ -190,27 +186,55 @@
 								</c:forEach>
 							</div>
 					
-					<div class="pagination justify-content-center">
+							<div class="pagination justify-content-center">
 						<nav aria-label="Page navigation example">
 							<ul class="pagination">
+	
+							<!-- 이전 -->
 								<li class="page-item">
-									<a class="page-link" href="#" aria-label="Previous">
+								 <c:choose>
+              							 <c:when test="${pageMaker.prev} ">    
+									<a class="page-link" href="portlist.do${pageMaker.makeSearch(pageMaker.startPage-1)}" aria-label="Previous">
 										<span aria-hidden="true">&laquo;</span>
 										<span class="sr-only">Previous</span>
 									</a>
-								</li>
-								<li class="page-item"><a class="page-link" href="#">1</a></li>
-								<li class="page-item active"><a class="page-link" href="#">2</a></li>
-								<li class="page-item"><a class="page-link" href="#">3</a></li>
+									 </c:when>
+									  <c:otherwise>                   
+                        			<a class="page-link" href="portlist.do${pageMaker.makeSearch(pageMaker.startPage-1)}" aria-label="Previous">
+                        				<span aria-hidden="true">&laquo;</span>
+										<span class="sr-only">Previous</span>
+                       				 </a>
+                					</c:otherwise>
+            					</c:choose>
+								</li>	
+								    <!-- 페이지 번호 -->
+								 <c:forEach var="idx" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+                   					<li class="page-item"> <a class="page-link"href="portlist.do${pageMaker.makeSearch(idx)}"> ${idx} </a> </li>
+                   								      
+            					</c:forEach>
+
+     								<!-- 이후 -->
 								<li class="page-item">
-									<a class="page-link" href="#" aria-label="Next">
-										<span aria-hidden="true">&raquo;</span>
-										<span class="sr-only">Next</span>
-									</a>
+								 <c:choose>
+               						 <c:when test="${pageMaker.next}">
+                        				<a class="page-link" href="portlist.do${pageMaker.makeSearch(pageMaker.endPage+1)}" aria-label="Next">
+                        					<span aria-hidden="true">&raquo;</span>
+											<span class="sr-only">Next</span>
+                      					</a>
+                      				</c:when>
+                      				<c:otherwise>
+                      					<a class="page-link" href="portlist.do${pageMaker.makeSearch(pageMaker.endPage+1)}" aria-label="Next">
+                        					<span aria-hidden="true">&raquo;</span>
+											<span class="sr-only">Next</span>
+                      					</a>
+                      				</c:otherwise>
+                      			</c:choose>
 								</li>
 							</ul>
 						</nav>
 					</div>
+					
+					
 				</div>
 			</div>
 			

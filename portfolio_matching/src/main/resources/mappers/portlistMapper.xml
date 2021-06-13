@@ -55,6 +55,125 @@
 	LIMIT 0, 3
    
    </select>
+   
+   
+    <sql id="searchCondition">
+    <if test="searchType != null">
+        <if test="searchType == 't'.toString()">
+        where portfolio_title like CONCAT("%", #{keyword} ,"%") 
+        </if>
+ 		 <if test="searchType == 'C'.toString()">
+        where portfolio_content like CONCAT("%", #{keyword} ,"%") 
+        </if>
+         <if test="searchType == 'id'.toString()">
+        where portfolio_userId like CONCAT("%", #{keyword} ,"%") 
+        </if>
+    </if>   
+    </sql>
+    
+    <select id="list" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT *
+    FROM portfolio
+    <include refid="searchCondition"></include>
+    order by  portfolio_rating DESC
+    limit #{pageStart}, #{perPageNum}
+    </select>
+    
+
+ 
+     <select id="web" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT *
+    FROM portfolio
+    WHERE portfolio_sCat LIKE 'web'
+    <include refid="searchCondition"></include>
+    limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+ 
+ 
+    <select id="app" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT *
+    FROM portfolio
+    WHERE portfolio_sCat LIKE 'app'
+    <include refid="searchCondition"></include>
+    order by portfolio_rating DESC
+    limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+ 
+ 
+    <select id="design" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT *
+    FROM portfolio
+     WHERE portfolio_sCat LIKE 'design'
+    <include refid="searchCondition"></include>
+    order by portfolio_rating DESC
+    limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+ 
+ 
+    <select id="photo" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT *
+    FROM portfolio
+    WHERE portfolio_sCat LIKE 'photo'
+    <include refid="searchCondition"></include>
+    order by portfolio_rating DESC
+    limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+ 
+ 
+ 
+    <select id="CountWeb" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT COUNT(*) FROM portfolio 
+    WHERE portfolio_sCat LIKE 'web'
+ <include refid="searchCondition"></include>
+    </select>
+    <select id="CountApp" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT COUNT(*) FROM portfolio 
+    WHERE portfolio_sCat LIKE 'app'
+ <include refid="searchCondition"></include>
+    </select>
+    <select id="CountDesign" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT COUNT(*) FROM portfolio 
+    WHERE portfolio_sCat LIKE 'design'
+ <include refid="searchCondition"></include>
+    </select>
+    
+    <select id="CountPhoto" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT COUNT(*) FROM portfolio 
+      WHERE portfolio_sCat LIKE 'photo'
+ <include refid="searchCondition"></include>
+    </select>
+    
+    <select id="Count" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    SELECT COUNT(*) FROM portfolio 
+ <include refid="searchCondition"></include>
+    </select>
+   
+ 
+   <select id="selectMap" resultMap="selectMapList">    
+        SELECT
+	COUNT(portfolio_bCat) as a,
+	COUNT(CASE WHEN portfolio_sCat='web' THEN 1 END)as b,
+	COUNT(CASE WHEN portfolio_sCat='app' THEN 1 END)as c,
+	COUNT(CASE WHEN portfolio_sCat='design' THEN 1 END)as d,
+	COUNT(CASE WHEN portfolio_sCat='photo' THEN 1 END)as e
+from portfolio
+    </select>
+ 
+    <resultMap type="HashMap" id="selectMapList">
+        <result column="a" property="a"/>
+        <result column="b" property="b"/>
+        <result column="c" property="c"/>
+        <result column="d" property="d"/>
+        <result column="e" property="e"/>
+       
+    </resultMap>
+   
+   
+   
   
 <!--    <select id="countAll" resultType="com.spring.ex.vo.PortfolioVO">
   
