@@ -14,52 +14,7 @@
 <%@ include file="../../include/header.jsp"%>
 
 <section class="hero-area bg-1 text-center overly">
-
-  <!--
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-       
-        <div class="advance-search">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-12 col-md-12 align-content-center">
-                <form>
-                  <div class="form-row">
-                    <div class="form-group col-md-4">
-                      <input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="포트폴리오 주제">
-                    </div>
-                    <div class="form-group col-md-3">
-                      <select class="w-100 form-control mt-lg-1 mt-md-2">
-                        <option>필터</option>
-                        <option value="1">별점순</option>
-                        <option value="2">가격 높은순</option>
-                        <option value="3">가격 낮은순</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-3">
-                      <select class="w-100 form-control mt-lg-1 mt-md-2">
-                        <option>카테고리</option>
-                        <option value="1">Web</option>
-                        <option value="2">App</option>
-                        <option value="3">Photo</option>
-                        <option value="4">Design</option>
-                        <option value="5">Movie</option>
-                      </select>
-                    </div>
-                    <div class="form-group col-md-2 align-self-center">
-                      <button type="submit" class="btn btn-primary">검색하기</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
+	<img src="resources/images/port_banner.png" class="asdasd">
 </section>
 
 <!-------------------------       client slide         ------------------------->
