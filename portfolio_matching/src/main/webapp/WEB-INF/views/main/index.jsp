@@ -71,7 +71,7 @@
                 <div class="thumb-content">
                
                   <a href="portlist.do"> 
-                  <img class="card-img-top img-fluid" src="${portlist2.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist2.portfolio_Img }'/>" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">
@@ -100,7 +100,7 @@
                 <div class="thumb-content">
                 
                   <a href="portlist.do"> 
-                  <img class="card-img-top img-fluid" src="${portlist3.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist3.portfolio_Img }'/>" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">
@@ -128,7 +128,7 @@
                 <div class="thumb-content">
                   <!-- <div class="price">$200</div> -->
                   <a href="portlist.do"> 
-                  <img class="card-img-top img-fluid" src="${portlist4.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist4.portfolio_Img }'/>" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">
@@ -183,7 +183,7 @@
                 <h4>IT·프로그래밍</h4>
               </div>
               <ul class="category-list">
-                <li><a href="webCategory.do">web<span>${a}</span></a></li>
+                <li><a href="webCategory.do">web<span>${b}</span></a></li>
             
               </ul>
             </div>
@@ -198,7 +198,7 @@
                 <h4>모바일앱</h4>
               </div>
               <ul class="category-list">
-                <li><a href="appCategory.do">app<span>${b}</span></a></li>
+                <li><a href="appCategory.do">app<span>${c}</span></a></li>
                
               </ul>
             </div>
@@ -210,7 +210,7 @@
                 <h4>디자인</h4>
               </div>
               <ul class="category-list">
-                <li><a href="designCategory.do">design<span>${c}</span></a></li>      
+                <li><a href="designCategory.do">design<span>${d}</span></a></li>      
               </ul>
             </div>
           </div>
@@ -224,7 +224,7 @@
                 <h4>사진</h4>
               </div>
               <ul class="category-list">
-                <li><a href="photoCategory.do">photo <span>${d}</span></a></li>
+                <li><a href="photoCategory.do">photo <span>${e}</span></a></li>
               
 
               </ul>

@@ -15,22 +15,28 @@
         <div class="col-md-12">
           <!-- Advance Search -->
           <div class="advance-search">
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-                </div>
-                <div class="form-group col-md-3">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputCategory4" placeholder="Category">
-                </div>
-                <div class="form-group col-md-3">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-                </div>
-                <div class="form-group col-md-2">
-                  <button type="submit" class="btn btn-primary">Search Now</button>
-                </div>
-              </div>
-            </form>
+			<form>
+				<div class="form-row">
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+					<div class="form-group col-md-2">
+						<select id="searchType" name="searchType">
+							<option value="t">포트폴리오 제목</option>
+								<option value="C">내용</option>
+								<option value="id">작성자</option>
+							</select>
+					</div>	
+					<div class="form-group col-md-2">
+						<input class="form-control my-2 my-lg-0" type="text" id="keyword" name="keyword" 
+							value="${pageMaker.cri.keyword}" placeholder="검색어를 입력하세요"/>
+					</div>
+					<div class="form-group col-md-3">
+
+						<button type="submit" class="btn btn-primary">검색하기</button>
+					</div>
+					
+				</div>
+			</form>
           </div>
         </div>
       </div>

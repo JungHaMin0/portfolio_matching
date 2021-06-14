@@ -439,6 +439,7 @@ button {
 .btn-main, .btn-main-sm {
   background: #5672f9;
   color: #fff;
+  width: 500px;
 }
 
 .btn-main:hover, .btn-main-sm:hover {
@@ -637,6 +638,22 @@ ul.pagination .active a {
   background: #F5F5F5;
 }
 
+#asdqwe {
+  margin: 0;
+  padding: 0;
+  margin-top: 200px;
+}
+
+#dddasd  {
+  margin: 0;
+  padding: 0;
+}
+
+#dasd {
+  margin: 0;
+  padding: 0;
+}
+
 .quick-menu {
 }
 .quick-box {
@@ -666,7 +683,7 @@ ul.pagination .active a {
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  height: 400px;
+  height: 800px;
   width: 100%;
 }
 
@@ -1694,6 +1711,7 @@ ul.pagination .active a {
 .product-slider .slick-dots li img {
   max-width: 100%;
   height: auto;
+  display: none;
 }
 
 .product-table {
@@ -1754,6 +1772,7 @@ ul.pagination .active a {
   padding: 25px 30px 30px;
   margin-bottom: 30px;
   border-radius: 2px;
+  margin-top: 100px;
 }
 
 .widget .widget-header {
@@ -2573,6 +2592,7 @@ article.single-post p {
 
 .ad-listing-list {
   transition: all linear 0.3s;
+  margin-top: 200px;
 }
 
 .ad-listing-list:hover {

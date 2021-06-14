@@ -19,7 +19,7 @@ request.setCharacterEncoding("UTF-8");
   <!-- contact us start-->
   <div class="container" style="margin-top: 5px">
     <div class="row">
-      <div class="col-md-4 bg-gray">
+      <div class="col-md-4 bg-gray" id="asdqwe">
         <div class="contact-us-content p-4">
           <h5>포트폴리오 등록</h5>
           <hr>

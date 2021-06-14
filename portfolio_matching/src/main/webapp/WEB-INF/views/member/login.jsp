@@ -17,7 +17,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-8 align-item-center">
           <div class="border">
-            <h3 class="bg-gray p-4">로그인</h3>
+            <h3 class="bg-gray p-4" id="dddasd">로그인</h3>
             <form action="login.do" method="post">
               <fieldset class="p-4">
                 <input type="text" id="user_id" name="user_id" placeholder="아이디" class="border p-3 w-100 my-2"> <input type="password" id="user_pw" name="user_pw" placeholder="비밀번호" class="border p-3 w-100 my-2">

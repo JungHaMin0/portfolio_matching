@@ -36,7 +36,7 @@
             </div>
           </div>
           <label>문의 내용</label>
-          <textarea class="border w-100 p-3 bg-gray" readonly>${pmInquiryRead.inq_content}</textarea>
+          <textarea class="border w-100 p-3 bg-gray" id="dasd" readonly>${pmInquiryRead.inq_content}</textarea>
           <br /> <br />
           <hr />
           <c:choose>
