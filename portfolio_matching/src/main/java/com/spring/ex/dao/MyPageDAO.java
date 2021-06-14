@@ -87,4 +87,7 @@ public interface MyPageDAO {
 
 	// 회원 탈퇴 - 탈퇴 기능
 	public void userDelete(MemberVO vo) throws Exception;
+	
+	// 별점 총점
+	public double totalRating(int portfolio_id) throws Exception;
 }

@@ -87,7 +87,7 @@
                 <div class="thumb-content">
                  
                   <a href="portlist.do"> 
-                  <img class="card-img-top img-fluid" src="${portlist.portfolio_Img}" alt="Card image cap" width="600px" height="400px">
+                  <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist.portfolio_Img }'/>" alt="Card image cap" width="600px" height="400px">
                   </a>
                 </div>
                 <div class="card-body">

@@ -45,7 +45,7 @@
                       <div>
                         <ul class="list-inline justify-content-center">
                           <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="보기" class="view" href="portfolio_detail.do"> <i class="fa fa-eye"></i></a>
+                            <a data-toggle="tooltip" data-placement="top" title="보기" class="view" href="PortContent.do?portfolio_id=${pmInterList.portfolio_id}"> <i class="fa fa-eye"></i></a>
                           </li>
                           <li class="list-inline-item">
                             <a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href="pmInterestDelete.do?portfolio_id=${pmInterList.portfolio_id}"> <i class="fa fa-trash"></i></a>

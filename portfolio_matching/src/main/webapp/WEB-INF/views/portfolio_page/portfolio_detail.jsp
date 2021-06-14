@@ -147,12 +147,11 @@
               <h5 class="widget-header text-center">총 평점 <br></h5> <i class="fa fa-star"></i> ${result.portfolio_rating}
             </div>
 
-            <div class="widget coupon text-center">
+            <!-- <div class="widget coupon text-center">
               <p>로그인 후 문의하실 수 있습니다.</p>
               <a href="" class="btn btn-transparent-white">전문가에게 문의 남기기</a>
-            </div>
+            </div> -->
 
-            <a href='#' onClick='fn_list()'>목록</a>
           </div>
         </div>
       </form>

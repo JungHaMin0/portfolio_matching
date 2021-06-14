@@ -115,7 +115,7 @@ $(function(){
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
 											<a href="portfolio_detail.do">
-												<img class="card-img-top img-fluid" src="${designcg.portfolio_Img}">
+												<img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${designcg.portfolio_Img }'/>">
 											</a>
 										</div>
 										<div class="card-body">

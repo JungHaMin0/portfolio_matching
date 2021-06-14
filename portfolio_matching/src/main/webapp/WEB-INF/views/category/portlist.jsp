@@ -133,7 +133,7 @@
 									<div class="card">
 										<div class="thumb-content">
 											<!-- <div class="price">$200</div> -->
-											<a href="portfolio_detail.do">
+											<a href="PortContent.do?portfolio_id=${portlist.portfolio_id}">
 												<img class="card-img-top img-fluid" src="data:image/jpeg;base64,<c:out value='${portlist.portfolio_Img }'/>" />
 											</a>
 										</div>

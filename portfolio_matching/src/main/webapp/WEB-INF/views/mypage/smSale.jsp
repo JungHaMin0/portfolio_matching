@@ -43,7 +43,7 @@
                     <td class="action" data-title="Action">
                       <div>
                         <ul class="list-inline justify-content-center">
-                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="보기" class="view" href="category.html"> <i class="fa fa-eye"></i>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="보기" class="view" href="PortContent.do?portfolio_id=${smSaleList.portfolio_id}"> <i class="fa fa-eye"></i>
                           </a></li>
                           <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="수정" class="edit" href=""> <i class="fa fa-pencil"></i>
                           </a></li>

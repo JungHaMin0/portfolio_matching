@@ -147,4 +147,9 @@ public class MyPageDAOImpl implements MyPageDAO {
 	public void userDelete(MemberVO vo) throws Exception {
 		sqlSession.delete("mypageMapper.userDelete", vo);
 	}
+	
+	@Override // 별점 총점
+	public double totalRating(int portfolio_id) throws Exception {
+		return sqlSession.selectOne("mypageMapper.totalRating", portfolio_id);
+	}
 }

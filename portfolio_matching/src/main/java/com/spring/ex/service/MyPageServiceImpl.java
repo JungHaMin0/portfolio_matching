@@ -147,4 +147,9 @@ public class MyPageServiceImpl implements MyPageService {
 	public void userDelete(MemberVO vo) throws Exception {
 		dao.userDelete(vo);
 	}
+	
+	@Override // 별점 총점
+	public double totalRating(int portfolio_id) throws Exception {
+		return dao.totalRating(portfolio_id);
+	}
 }

@@ -209,4 +209,10 @@
 		WHERE user_id = #{user_id}
 	</delete>
 	
+	<!-- 별점 총점 -->
+	<select id="totalRating" parameterType="int" resultType="double">
+		SELECT ROUND(AVG(review_rating),1) AS total_rating FROM review
+		WHERE review_portfolio_id = #{review_portfolio_id}
+		GROUP BY review_portfolio_id;
+	</select>
 </mapper>
