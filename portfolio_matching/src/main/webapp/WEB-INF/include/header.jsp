@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<section>
+<section class="header">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -16,7 +16,7 @@
             <ul class="navbar-nav ml-auto main-nav ">
               <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
 
-              <li class="nav-item active"><a class="nav-link dropdown-toggle" href="portlist.do">포트폴리오 </a></li>
+              <li class="nav-item active"><a class="nav-link" href="portlist.do">포트폴리오 </a></li>
  			<c:if test="${member == null}">
               <li class="nav-item active">
               	<a class="nav-link" href="#" onclick="dd();">등록하기</a></li>

@@ -48,6 +48,16 @@ label {
   color: #848484;
 }
 
+.header {
+  position: fixed;
+  width: 100%;
+  transition: 0.3s;
+  z-index: 10000;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
 .nav-pills .nav-link {
   font-size: 16px;
 }
@@ -524,8 +534,9 @@ button {
   margin-top: 30px;
 }
 
-.border-bottom {
+.border {
   border-bottom: 1px solid #dedede;
+  margin-top: 80px;
 }
 
 .bl-none {
@@ -585,7 +596,8 @@ ul.pagination .active a {
 
 .page-search {
   background: #5672f9;
-  padding: 30px 0;
+  padding: 110px 0;
+    padding-bottom: 10px;
 }
 
 .page-search .advance-search .form-group {
@@ -641,12 +653,20 @@ ul.pagination .active a {
 	margin-top: 10px;
 }
 
-.bg-1 {
+/* .bg-1 {
   background: url("../images/port_banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
   height: 620px;
+  width: 100%;
+} */
+
+.asdasd {
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 400px;
   width: 100%;
 }
 
@@ -667,7 +687,7 @@ ul.pagination .active a {
 }
 
 .navigation {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .navigation .navbar-nav {
@@ -678,6 +698,10 @@ ul.pagination .active a {
   border: 2px solid #dedede;
   margin-right: 8px;
   padding: 6px 20px !important;
+}
+
+.login-button:hover {
+	background-color: #FF8868;
 }
 
 @media (max-width: 400px) {
@@ -737,6 +761,18 @@ ul.pagination .active a {
   padding: 0 20px;
 }
 
+.main-nav .nav-item .nav-link:after {
+   display:block;
+   width:90px;
+   content: '';
+   border-bottom: solid 2px #FF8868;
+   transform: scaleX(0);
+   transition: transform 250ms ease-in-out;
+}
+
+.main-nav .nav-item .nav-link:hover:after{
+  transform: scaleX(1);
+}
 .main-nav .nav-item .nav-link span {
   margin-left: 4px;
 }
@@ -750,7 +786,8 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item.active .nav-link {
-  color: #5672f9;
+  color: #FF8868;
+  font-weight: bold;
 }
 
 .main-nav .search .nav-link i {
