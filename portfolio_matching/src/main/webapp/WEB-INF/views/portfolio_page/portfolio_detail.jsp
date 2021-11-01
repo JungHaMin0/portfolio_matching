@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@
 <%@ include file="../../include/style_css.jsp"%>
 </head>
 
-<body>
+<body class="body-wrapper">
   <%@ include file="../../include/header.jsp"%>
   <section class="page-search">
     <div class="container">
@@ -15,28 +16,22 @@
         <div class="col-md-12">
           <!-- Advance Search -->
           <div class="advance-search">
-			<form>
-				<div class="form-row">
-					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-					&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-					<div class="form-group col-md-2">
-						<select id="searchType" name="searchType">
-							<option value="t">포트폴리오 제목</option>
-								<option value="C">내용</option>
-								<option value="id">작성자</option>
-							</select>
-					</div>	
-					<div class="form-group col-md-2">
-						<input class="form-control my-2 my-lg-0" type="text" id="keyword" name="keyword" 
-							value="${pageMaker.cri.keyword}" placeholder="검색어를 입력하세요"/>
-					</div>
-					<div class="form-group col-md-3">
-
-						<button type="submit" class="btn btn-primary">검색하기</button>
-					</div>
-					
-				</div>
-			</form>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control my-2 my-lg-0" id="inputCategory4" placeholder="Category">
+                </div>
+                <div class="form-group col-md-3">
+                  <input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
+                </div>
+                <div class="form-group col-md-2">
+                  <button type="submit" class="btn btn-primary">Search Now</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -45,87 +40,134 @@
   <!--===================================
 =            Store Section            =
 ====================================-->
-  <section class="section">
+  <section class="section bg-gray">
     <!-- Container Start -->
     <div class="container">
-      <form id="viewForm" name="viewForm" method="post">
-        <div class="row">
-          <input type='hidden' id='portfolio_id' name='portfolio_id' value='${result.portfolio_id}' />
-          <!-- Left sidebar -->
-          <div class="col-md-8">
-            <div class="product-details">
-              <h1 class="product-title"><c:out value="${result.portfolio_title}" /></h1>
-              <div class="product-meta">
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fa fa-user-o"></i> By | ${result.portfolio_userId}</a></li>
-                  <li class="list-inline-item"><i class="fa fa-folder-open-o"></i>카테고리 | ${result.portfolio_sCat}</a></li>
-                  <li class="list-inline-item"><i class="fa fa-calendar-o"></i> 기간 | <c:out value="${result.portfolio_term }일" /></a></li>
-                </ul>
+      <div class="row">
+        <!-- Left sidebar -->
+        <div class="col-md-8">
+          <div class="product-details">
+            <h1 class="product-title">${portfolio.portfolio_title}</h1>
+            <div class="product-meta">
+              <ul class="list-inline">
+                <li class="list-inline-item"><i class="fa fa-user-o"></i> <a>${portfolio.portfolio_userId}</a></li>
+                <li class="list-inline-item"><i class="fa fa-folder-open-o"></i> <a href="portlist.do?main_id=${portfolio.portfolio_category_main.id}&id=0">${portfolio.portfolio_category_main.name}</a> ><a href="portlist.do?main_id=${portfolio.portfolio_category_main.id}&id=${portfolio.portfolio_category_sub.id}">${portfolio.portfolio_category_sub.name}</a></li>
+                <li class="list-inline-item"><i class="fa fa-calendar"></i> <a><fmt:formatDate pattern="yyyy년 mm월 dd일" value="${portfolio.portfolio_regDate}" /></a></li>
+              </ul>
+            </div>
+
+            <!-- product slider -->
+            <div class="product-slider slick-initialized slick-slider slick-dotted">
+              <div class="slick-list draggable">
+                <img class="d-block img-fluid w-100" src="data:image/jpeg;base64,<c:out value='${portfolio.portfolio_Img }'/>" alt="img">
               </div>
-              <!-- product slider -->
-              <div class="product-slider">
-                <div class="product-slider-item my-4" data-image="./resources/images/item_image1.PNG">
-                  <c:if test="${result.portfolio_Img != null && result.portfolio_Img != ''}">
-                    <img class="img-fluid w-100" src="data:image/jpeg;base64,<c:out value='${result.portfolio_Img }'/>" />
-                  </c:if>
+            </div>
+
+            <!-- product slider -->
+            <div class="content mt-1 pt-1">
+              <ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
+                <li class="nav-item"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">서비스 설명</a></li>
+                <li class="nav-item"><a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">서비스 정보</a></li>
+                <li class="nav-item"><a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">서비스 리뷰</a></li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <h3 class="tab-title">서비스 설명</h3>
+                  <p>${portfolio.portfolio_content}</p>
                 </div>
-              </div>
-
-              <!-- 하단 탭 부분 -->
-              <div class="content mt-5 pt-5">
-                <ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
-                  <li class="nav-item"><a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">상세설명</a></li>
-                  <li class="nav-item"><a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">가격정보</a></li>
-                  <li class="nav-item"><a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">서비스 평가</a></li>
-                </ul>
-
-
-                <div class="tab-content" id="pills-tabContent">
-                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <h3 class="tab-title">포트폴리오 설명</h3>
-                    <p>
-                      <c:out value="${result.portfolio_content }" />
-                    </p>
-                  </div>
-                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <h3 class="tab-title">포트폴리오 정보</h3>
-                    <table class="table table-bordered product-table">
-                      <tbody>
-                        <tr>
-                          <td>가격</td>
-                          <td><c:out value="${result.portfolio_price }" /></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-
-
-                  <!--  리뷰(댓글)  -->
-                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                    <h3 class="tab-title">서비스 평가</h3>
-                    <div class="product-review">
-                      <div class="media">
-                        <c:forEach items="${review}" var="review">
-                          <div class="media-body">
-                            <!-- Ratings -->
-                            <div class="product-ratings">
-                              <ul class="list-inline">
-                                <c:forEach var="i" begin="0" end="${review.review_rating-1}">
-                                  <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                                </c:forEach>
-                              </ul>
-                            </div>
-                            <div class="name">
-                              <h5>${review.review_userId}</h5>
-                            </div>
-                            <div class="date">
-                              <p>${review.regDate}</p>
-                            </div>
-                            <div class="review-comment">
-                              <p>${review.review_content}</p>
-                            </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <h3 class="tab-title">서비스 정보</h3>
+                  <table class="table table-bordered product-table">
+                    <tbody>
+                      <tr>
+                        <td>서비스 가격</td>
+                        <td>${portfolio.portfolio_price}원</td>
+                      </tr>
+                      <tr>
+                        <td>서비스 작업일</td>
+                        <td>${portfolio.portfolio_term}일</td>
+                      </tr>
+                      <tr>
+                        <td>서비스 평점</td>
+                        <td>${portfolio.portfolio_rating} 점</td>
+                      </tr>
+                      <tr>
+                        <td>서비스 등록일</td>
+                        <td><fmt:formatDate pattern="yyyy년 mm월 dd일" value="${portfolio.portfolio_regDate}" /></td>
+                      </tr>
+                      <tr>
+                        <td>카테고리(대)</td>
+                        <td>${portfolio.portfolio_category_main.name}</td>
+                      </tr>
+                      <tr>
+                        <td>카테고리(소)</td>
+                        <td>${portfolio.portfolio_category_sub.name}</td>
+                      </tr>
+                      <tr>
+                        <td>판매자</td>
+                        <td>${seller.user_id}</td>
+                      </tr>
+                      <tr>
+                        <td>판매자 연락처</td>
+                        <td>${seller.user_phone}</td>
+                      </tr>
+                      <tr>
+                        <td>판매자 이메일</td>
+                        <td>${seller.user_email}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                  <h3 class="tab-title">서비스 리뷰</h3>
+                  <div class="product-review">
+                    <div class="media">
+                      <!-- Avater -->
+                      <div class="media-body">
+                        <!-- Ratings -->
+                        <div class="ratings">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                          </ul>
+                        </div>
+                        <div class="name">
+                          <h5>Jessica Brown</h5>
+                        </div>
+                        <div class="date">
+                          <p>Mar 20, 2018</p>
+                        </div>
+                        <div class="review-comment">
+                          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqe laudant tota rem ape riamipsa eaque.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="review-submission">
+                      <h3 class="tab-title">Submit your review</h3>
+                      <!-- Rate -->
+                      <div class="rate">
+                        <div class="starrr">
+                          <i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i>
+                        </div>
+                      </div>
+                      <div class="review-submit">
+                        <form action="#" class="row">
+                          <div class="col-lg-6">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name">
                           </div>
-                        </c:forEach>
+                          <div class="col-lg-6">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                          </div>
+                          <div class="col-12">
+                            <textarea name="review" id="review" rows="10" class="form-control" placeholder="Message"></textarea>
+                          </div>
+                          <div class="col-12">
+                            <button type="submit" class="btn btn-main">Sumbit</button>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -133,35 +175,64 @@
               </div>
             </div>
           </div>
-
-          <div class="col-md-4">
-            <div class=" p-2">
-              <a class="btn btn-main-sm" href="pmScarp.do?num=${result.portfolio_id}">스크랩</a> <i class="fa fa-share-alt"></i>
+        </div>
+        <div class="col-md-4">
+          <div class="sidebar">
+            <div class="widget price text-center">
+              <p>${portfolio.portfolio_price}원</p>
+              <a href="detailport.do?portfolio_id=${portfolio.portfolio_id}" class="btn btn-transparent-white mt-4">구매하기</a><br>
             </div>
-
+            <!-- User Profile widget -->
             <div class="widget user text-center">
-              <a href=""><c:out value="${result.portfolio_price }" /></a>
-              <p>STANDARD(VAT포함가)</p>
-
+              <h4><a>${seller.user_id}</a></h4>
+              <p class="member-time">활동 시작일 Jun 27, 2017</p>
               <ul class="list-inline mt-20">
-                <li class="list-inline-item"><a href="detailport.do?portfolio_id=${result.portfolio_id}" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">구매하기</a></li>
+                <li class="list-item"><a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">문의하기</a></li>
               </ul>
             </div>
-
-            <!--  별점    -->
-            <div class="widget rate text-center">
-              <h5 class="widget-header text-center">총 평점 <br></h5> <i class="fa fa-star"></i> ${result.portfolio_rating}
+            <!-- Rate Widget -->
+            <div class="widget rate">
+              <!-- Heading -->
+              <h5 class="text-center">서비스 평점</h5>
+              <p class="widget-header text-center">실제 포매를 통해 구매한 <br> 이용자들의 평점입니다.</p>
+              <!-- Rate -->
+              <div class="product-ratings text-center">
+                <ul class="list-inline">
+                  <c:forEach begin="1" end="5" varStatus="stat">
+                    <c:choose>
+                      <c:when test="${stat.current le portfolio.portfolio_rating}">
+                        <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
+                      </c:when>
+                      <c:otherwise>
+                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                      </c:otherwise>
+                    </c:choose>
+                  </c:forEach>
+                </ul>
+              </div>
             </div>
-
-            <!-- <div class="widget coupon text-center">
-              <p>로그인 후 문의하실 수 있습니다.</p>
-              <a href="" class="btn btn-transparent-white">전문가에게 문의 남기기</a>
-            </div> -->
+            <!-- Safety tips widget -->
+            <div class="widget disclaimer">
+              <h5 class="widget-header text-center"><i class="fa fa-user"></i> 안심하세요 !</h5>
+              <ul class="text-center">
+                <li>서비스 제공이 완료된 이후,</li>
+                <li>전문가에게 결제 대금이 전달됩니다.</li>
+              </ul>
+            </div>
+            <!-- Coupon Widget -->
+            <div class="widget coupon text-center">
+              <!-- Coupon description -->
+              <p>구매가 망설여진다면 찜해보세요 !</p>
+              <!-- Submii button -->
+              <a href="" class="btn btn-transparent-white">찜하기</a>
+            </div>
 
           </div>
         </div>
-      </form>
+
+      </div>
     </div>
+    <!-- Container End -->
   </section>
 
 

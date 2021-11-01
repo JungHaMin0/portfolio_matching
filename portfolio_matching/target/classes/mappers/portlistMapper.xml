@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portlistMapper">
-   <select id="portlist" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="portlist" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    
    SELECT *
    FROM portfolio
@@ -11,64 +11,64 @@
    
    </select>
    
-   <select id="webcg" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="webcg" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
+   SELECT portfolio_category_sub, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
-   WHERE portfolio_sCat LIKE 'web'
+   WHERE portfolio_category_sub LIKE 'web'
    ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="appcg" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="appcg" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
+   SELECT portfolio_category_sub, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
-   WHERE portfolio_sCat LIKE 'app'
+   WHERE portfolio_category_sub LIKE 'app'
    ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="designcg" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="designcg" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
+   SELECT portfolio_category_sub, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
-   WHERE portfolio_sCat LIKE 'design'
+   WHERE portfolio_category_sub LIKE 'design'
    ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="photocg" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="photocg" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    
-   SELECT portfolio_sCat, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
+   SELECT portfolio_category_sub, portfolio_title, portfolio_content, portfolio_term, portfolio_thumbUrl, portfolio_rating
    FROM portfolio
-   WHERE portfolio_sCat LIKE 'photo'
+   WHERE portfolio_category_sub LIKE 'photo'
    ORDER BY portfolio_rating DESC
    
    </select>
    
-   <select id="main" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="main" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
    SELECT *
 	FROM portfolio
 	ORDER BY portfolio_regDate DESC
 	LIMIT 0, 1
    </select>
    
-   <select id="main2" resultType="com.spring.ex.vo.PortfolioVO">
+   <select id="main2" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
 	SELECT * FROM portfolio
 	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
 	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=2 FROM portfolio as e2
 	WHERE e1.portfolio_regDate <![CDATA[<=]]> e2.portfolio_regDate)) ORDER BY portfolio_title
 	LIMIT 0, 1
    </select>
-    <select id="main3" resultType="com.spring.ex.vo.PortfolioVO">
+    <select id="main3" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
 	SELECT * FROM portfolio
 	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
 	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=3 FROM portfolio as e2
 	WHERE e1.portfolio_regDate <![CDATA[<=]]> e2.portfolio_regDate)) ORDER BY portfolio_title
 	LIMIT 0, 1
    </select>
-    <select id="main4" resultType="com.spring.ex.vo.PortfolioVO">
+    <select id="main4" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
 	SELECT * FROM portfolio
 	WHERE portfolio_regDate = (SELECT DISTINCT(portfolio_regDate) FROM portfolio as e1
 	WHERE (SELECT COUNT(DISTINCT(portfolio_regDate))=4 FROM portfolio as e2
@@ -90,7 +90,7 @@
     </if>   
     </sql>
     
-    <select id="list" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="list" resultType="com.spring.ex.portfolio.domain.PortfolioVO" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT *
     FROM portfolio
     <include refid="searchCondition"></include>
@@ -100,31 +100,20 @@
     
 
  
-     <select id="web" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+     <select id="web" resultType="com.spring.ex.portfolio.domain.PortfolioVO" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT *
     FROM portfolio
-    WHERE portfolio_sCat LIKE 'web'
+    WHERE portfolio_category_sub LIKE 'web'
     <include refid="searchCondition"></include>
     limit #{pageStart}, #{perPageNum}
     </select>
  
  
  
-    <select id="app" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="app" resultType="com.spring.ex.portfolio.domain.PortfolioVO" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT *
     FROM portfolio
-    WHERE portfolio_sCat LIKE 'app'
-    <include refid="searchCondition"></include>
-    order by portfolio_rating DESC
-    limit #{pageStart}, #{perPageNum}
-    </select>
- 
- 
- 
-    <select id="design" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
-    SELECT *
-    FROM portfolio
-     WHERE portfolio_sCat LIKE 'design'
+    WHERE portfolio_category_sub LIKE 'app'
     <include refid="searchCondition"></include>
     order by portfolio_rating DESC
     limit #{pageStart}, #{perPageNum}
@@ -132,10 +121,21 @@
  
  
  
-    <select id="photo" resultType="com.spring.ex.vo.PortfolioVO" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="design" resultType="com.spring.ex.portfolio.domain.PortfolioVO" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT *
     FROM portfolio
-    WHERE portfolio_sCat LIKE 'photo'
+     WHERE portfolio_category_sub LIKE 'design'
+    <include refid="searchCondition"></include>
+    order by portfolio_rating DESC
+    limit #{pageStart}, #{perPageNum}
+    </select>
+ 
+ 
+ 
+    <select id="photo" resultType="com.spring.ex.portfolio.domain.PortfolioVO" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
+    SELECT *
+    FROM portfolio
+    WHERE portfolio_category_sub LIKE 'photo'
     <include refid="searchCondition"></include>
     order by portfolio_rating DESC
     limit #{pageStart}, #{perPageNum}
@@ -144,29 +144,29 @@
  
  
  
-    <select id="CountWeb" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="CountWeb" resultType="java.lang.Integer" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT COUNT(*) FROM portfolio 
-    WHERE portfolio_sCat LIKE 'web'
+    WHERE portfolio_category_sub LIKE 'web'
  <include refid="searchCondition"></include>
     </select>
-    <select id="CountApp" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="CountApp" resultType="java.lang.Integer" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT COUNT(*) FROM portfolio 
-    WHERE portfolio_sCat LIKE 'app'
+    WHERE portfolio_category_sub LIKE 'app'
  <include refid="searchCondition"></include>
     </select>
-    <select id="CountDesign" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="CountDesign" resultType="java.lang.Integer" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT COUNT(*) FROM portfolio 
-    WHERE portfolio_sCat LIKE 'design'
+    WHERE portfolio_category_sub LIKE 'design'
  <include refid="searchCondition"></include>
     </select>
     
-    <select id="CountPhoto" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="CountPhoto" resultType="java.lang.Integer" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT COUNT(*) FROM portfolio 
-      WHERE portfolio_sCat LIKE 'photo'
+      WHERE portfolio_category_sub LIKE 'photo'
  <include refid="searchCondition"></include>
     </select>
     
-    <select id="Count" resultType="java.lang.Integer" parameterType="com.spring.ex.vo.SearchCriteria">
+    <select id="Count" resultType="java.lang.Integer" parameterType="com.spring.ex.portfolio.domain.SearchCriteria">
     SELECT COUNT(*) FROM portfolio 
  <include refid="searchCondition"></include>
     </select>
@@ -174,11 +174,11 @@
  
    <select id="selectMap" resultMap="selectMapList">    
         SELECT
-	COUNT(portfolio_bCat) as a,
-	COUNT(CASE WHEN portfolio_sCat='web' THEN 1 END)as b,
-	COUNT(CASE WHEN portfolio_sCat='app' THEN 1 END)as c,
-	COUNT(CASE WHEN portfolio_sCat='design' THEN 1 END)as d,
-	COUNT(CASE WHEN portfolio_sCat='photo' THEN 1 END)as e
+	COUNT(portfolio_category_main) as a,
+	COUNT(CASE WHEN portfolio_category_sub='web' THEN 1 END)as b,
+	COUNT(CASE WHEN portfolio_category_sub='app' THEN 1 END)as c,
+	COUNT(CASE WHEN portfolio_category_sub='design' THEN 1 END)as d,
+	COUNT(CASE WHEN portfolio_category_sub='photo' THEN 1 END)as e
 from portfolio
     </select>
  
@@ -198,7 +198,7 @@ from portfolio
   
  	SELECT COUNT(*)
 	FROM portfolio
-	GROUP BY portfolio_sCat DESC
+	GROUP BY portfolio_category_sub DESC
   
   </select>
   
@@ -206,7 +206,7 @@ from portfolio
   
  	SELECT COUNT(*)
 	FROM portfolio
-	WHERE portfolio_sCat = 'web'
+	WHERE portfolio_category_sub = 'web'
   
   </select>
   
@@ -214,7 +214,7 @@ from portfolio
   
  	SELECT COUNT(*)
 	FROM portfolio
-	WHERE portfolio_sCat = 'app'
+	WHERE portfolio_category_sub = 'app'
   
   </select>
   
@@ -222,7 +222,7 @@ from portfolio
   
  	SELECT COUNT(*)
 	FROM portfolio
-	WHERE portfolio_sCat = 'design'
+	WHERE portfolio_category_sub = 'design'
   
   </select>
   
@@ -230,7 +230,7 @@ from portfolio
   
  	SELECT COUNT(*)
 	FROM portfolio
-	WHERE portfolio_sCat = 'photo'
+	WHERE portfolio_category_sub = 'photo'
   
   </select> -->
   

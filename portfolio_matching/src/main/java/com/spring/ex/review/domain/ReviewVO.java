@@ -1,0 +1,69 @@
+package com.spring.ex.review.domain;
+
+import java.util.Date;
+
+public class ReviewVO {
+	private int review_id;
+	private int review_portfolio_id;
+	private int review_rating;
+	private String review_userId;
+	private String review_title;
+	private String review_content;
+	private Date regDate;
+
+	public int getReview_id() {
+		return review_id;
+	}
+
+	public void setReview_id(int review_id) {
+		this.review_id = review_id;
+	}
+
+	public int getReview_portfolio_id() {
+		return review_portfolio_id;
+	}
+
+	public void setReview_portfolio_id(int review_portfolio_id) {
+		this.review_portfolio_id = review_portfolio_id;
+	}
+	
+	public int getReview_rating() {
+		return review_rating;
+	}
+
+	public void setReview_rating(int review_rating) {
+		this.review_rating = review_rating;
+	}
+
+	public String getReview_userId() {
+		return review_userId;
+	}
+
+	public void setReview_userId(String review_userId) {
+		this.review_userId = review_userId;
+	}
+
+	public String getReview_title() {
+		return review_title;
+	}
+
+	public void setReview_title(String review_title) {
+		this.review_title = review_title;
+	}
+
+	public String getReview_content() {
+		return review_content;
+	}
+
+	public void setReview_content(String review_content) {
+		this.review_content = review_content;
+	}
+
+	public Date getRegDate() {
+		return regDate;
+	}
+
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
+	}
+}

@@ -4,31 +4,69 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portRegMapper">
 
-	<!-- 리스트조회 -->
-	<select id="portList" parameterType="com.spring.ex.vo.PortRegVO">
-		SELECT *
-		FROM portfolio
-		ORDER BY
-		portfolio_id DESC
-
+	<!-- category 조회 -->
+	<select id="categoryMainList" resultType="com.spring.ex.portfolio.domain.CategoryMainVO">
+		SELECT * FROM category_main ORDER BY id
 	</select>
 
-	<!-- 상세 조회 -->
-	<select id="portSelect"
-		parameterType="com.spring.ex.vo.PortRegVO"
-		resultType="com.spring.ex.vo.PortRegVO">
-		Select * from portfolio where portfolio_id= #{portfolio_id}
+	<select id="categoryMainGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategoryMainVO">
+		SELECT * FROM category_main WHERE id = #{id}
+	</select>
+	
+	<select id="categorySubList" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
+		SELECT * FROM category_sub ORDER BY id
+	</select>
+	
+	<select id="categorySubListById" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
+		SELECT * FROM category_sub WHERE main_id = #{main_id} ORDER BY id
+	</select>
+
+	<select id="categorySubGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
+		SELECT * FROM category_sub WHERE id = #{id}
+	</select>
+	
+	<!-- 카테고리 별 게시글 검색 -->
+	<select id="portfolioAll" parameterType="com.spring.ex.portfolio.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT * FROM (
+			SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS RNUM FROM portfolio WHERE portfolio_category_main = #{main_id}) portfolio
+		WHERE rNum BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY portfolio_id DESC
+	</select>
+	
+	<select id="portfolioAllCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id}
+	</select>
+	
+	<select id="portfolioList" parameterType="com.spring.ex.portfolio.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT * FROM (
+			SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS RNUM FROM portfolio 
+			WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id}) portfolio
+		WHERE rNum BETWEEN #{rowStart} AND #{rowEnd}
+		ORDER BY portfolio_id DESC
+	</select>
+	
+	<select id="portfolioListCount" parameterType="com.spring.ex.portfolio.domain.CategorySubVO" resultType="int">
+		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id}
+	</select>
+	
+	<!-- 포트폴리오 상세 보기 -->
+	<select id="portfolioSelect" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT * FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="portfolioSeller" parameterType="string" resultType="com.spring.ex.member.domain.MemberVO">
+		SELECT * FROM user WHERE user_id = #{user_id}
 	</select>
 
 	<!-- 포트폴리오 등록 -->
 	<insert id="portInsert" useGeneratedKeys="true"
-		keyProperty="portfolio_id" parameterType="com.spring.ex.vo.PortRegVO">
+		keyProperty="portfolio_id" parameterType="com.spring.ex.portfolio.domain.PortRegVO">
 		INSERT INTO portfolio(
 		portfolio_id,
 		portfolio_userId,
 		portfolio_title,
-		portfolio_bCat,
-		portfolio_sCat,
+		portfolio_category_main,
+		portfolio_category_sub,
 		portfolio_thumbUrl,
 		portfolio_Img,
 		portfolio_content,
@@ -39,8 +77,8 @@
 		#{portfolio_id},
 		#{portfolio_userId},
 		#{portfolio_title},
-		#{portfolio_bCat},
-		#{portfolio_sCat},
+		#{portfolio_category_main},
+		#{portfolio_category_sub},
 		#{portfolio_thumbUrl},
 		#{portfolio_Img},
 		#{portfolio_content},
@@ -65,7 +103,7 @@
 	</insert>
 
 	<select id="selectPortByCode" parameterType="int"
-		resultType="com.spring.ex.vo.PortRegVO">
+		resultType="com.spring.ex.portfolio.domain.PortRegVO">
 		SELECT *
 		FROM portfolio
 		WHERE portfolio_id = #{portfolio_id}
@@ -73,7 +111,7 @@
 
 	<!-- 리뷰 조회 -->
 	<select id="selectReview" parameterType="int"
-		resultType="com.spring.ex.vo.ReviewVO">
+		resultType="com.spring.ex.review.domain.ReviewVO">
 		SELECT * FROM review
 		WHERE review_portfolio_id = #{portfolio_id}
 	</select>

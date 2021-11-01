@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	xsi:schemaLocation="http://Java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
@@ -34,7 +34,32 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<error-page>
+      <error-code>404</error-code>
+      <location>/WEB-INF/views/admin/404error.jsp</location>
+  </error-page>
+  
+  	<error-page>
+      <error-code>405</error-code>
+      <location>/WEB-INF/views/admin/404error.jsp</location>
+  </error-page>
+  
+  	<error-page>
+      <error-code>406</error-code>
+      <location>/WEB-INF/views/admin/404error.jsp</location>
+  </error-page>
 
+	<error-page>
+      <error-code>407</error-code>
+      <location>/WEB-INF/views/admin/404error.jsp</location>
+  </error-page>
+  
+  <error-page>
+      <error-code>500</error-code>
+      <location>/WEB-INF/views/admin/404error.jsp</location>
+  </error-page>
+  
 	<filter> <!-- filter안에는 filter-name, filter-class, init-param을 추가해 준다. filter-name은 
 			원하는대로 지정해도됨 -->
 		<filter-name>encodingFilter</filter-name>

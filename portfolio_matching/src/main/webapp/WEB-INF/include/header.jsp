@@ -7,16 +7,20 @@
       <div class="col-md-12">
         <nav class="navbar navbar-expand-lg navbar-light navigation">
 
-          <a class="navbar-brand" href="index.do"> <img src="resources/images/logo.png" alt="logo" width="40" height="50">
-            <h3>포매</h3>
-          </a>
+          <a class="navbar-brand" href="index.do"> <img src="resources/images/logo2.png" style="height: 38px;" alt="logo"></a>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav ml-auto main-nav ">
               <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
-
-              <li class="nav-item active"><a class="nav-link" href="portlist.do">포트폴리오 </a></li>
+              <li class="nav-item dropdown dropdown-slide">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오<span><i class="fa fa-angle-down"></i></span>
+                </a>
+                <!-- Dropdown list -->
+                <div id="dropdown-category" class="dropdown-menu">
+                    <a class="dropdown-item" href="dashboard.html"></a>
+                </div>
+              </li>
  			<c:if test="${member == null}">
               <li class="nav-item active">
               	<a class="nav-link" href="#" onclick="dd();">등록하기</a></li>
@@ -47,11 +51,26 @@
     </div>
   </div>
 </section>
-
+<script src="./resources/plugins/jQuery/jquery.min.js"></script>
 <script type="text/javascript">
-
+$(document).ready(function() {
+	$.ajax({
+		url: "headerCategory.do",
+		success: function(res) {
+			var categoryList = eval(res.result);
+			var categoryListCnt = res.cnt;
+			
+			var str = "";
+			for(var i=0; i<categoryListCnt; i++) {
+				var list = categoryList[i];
+				str += '<a class="dropdown-item" href="portlist.do?id=' + list.id + '">' + list.name + '</a>';
+			}
+			
+			$("#dropdown-category").html(str);
+		}
+	});
+});
 function dd(){
 	alert("로그인후 이용해 주세요.");
 }
-
 </script>

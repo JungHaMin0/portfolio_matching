@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.portfolio.domain.PortRegVO;
 
 @Component("fileUtils") 
 public class FileUtils {

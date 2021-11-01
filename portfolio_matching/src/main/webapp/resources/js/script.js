@@ -28,7 +28,6 @@
       });
     }
   }
-  
   $(window).on('scroll', function () {
     counter();
   });
@@ -228,8 +227,4 @@
   });
 
 
-  //rating
-  $('')
-  
-  
 })(jQuery);

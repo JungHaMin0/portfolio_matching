@@ -27,7 +27,7 @@
 	</select>
 	
 	<!-- 로그인 -->
-	<select id="login" resultType="com.spring.ex.vo.MemberVO">
+	<select id="login" resultType="com.spring.ex.member.domain.MemberVO">
 		SELECT * FROM user
 		WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>

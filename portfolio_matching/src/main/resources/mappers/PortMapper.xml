@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="portMapper">
 
-	<insert id="order" parameterType="com.spring.ex.vo.OrderVO">
+	<insert id="order" parameterType="com.spring.ex.deal.domain.OrderVO">
 		INSERT INTO deal (
 			deal_portfolio_id,
 			deal_purUser,
@@ -21,13 +21,13 @@
 		)
 	</insert>
 
-	<select id="Detail" parameterType="int" resultType="com.spring.ex.vo.PortRegVO">
+	<select id="Detail" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 
 		SELECT * FROM portfolio
 		WHERE portfolio_id = #{portfolio_id}
 	</select>
 
-	<select id="port" resultType="com.spring.ex.vo.PortRegVO">
+	<select id="port" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 
 		SELECT portfolio_title,portfolio_content,portfolio_price
 		FROM portfolio
