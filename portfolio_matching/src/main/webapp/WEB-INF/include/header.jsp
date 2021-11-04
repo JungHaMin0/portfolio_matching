@@ -29,6 +29,11 @@
 
             </ul>
             <ul class="navbar-nav ml-auto mt-10">
+            <c:if test="${member.user_ref == 1}">
+				<li>
+				 <a href="adminIndex.do">관리자 화면</a> 
+				</li> 
+			</c:if>
               <c:if test="${member == null}">
                 <li class="nav-item"><a class="nav-link login-button" href="login.do">로그인</a></li>
               </c:if>

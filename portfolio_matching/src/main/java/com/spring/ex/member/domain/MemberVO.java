@@ -6,6 +6,15 @@ public class MemberVO {
 	private String user_email;
 	private String user_name;
 	private String user_phone;
+	private int user_ref;
+
+	public int getUser_ref() {
+		return user_ref;
+	}
+
+	public void setUser_ref(int user_ref) {
+		this.user_ref = user_ref;
+	}
 
 	public String getUser_id() {
 		return user_id;

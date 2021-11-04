@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AdminController {
-	@RequestMapping(value = "adminIndex.do", method = RequestMethod.GET)
+	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
 	public String index() throws Exception {
 
-		return "admin/index";
+		return "admin/aindex";
 	}
 	
 	@RequestMapping(value = "adminMember.do", method = RequestMethod.GET)
