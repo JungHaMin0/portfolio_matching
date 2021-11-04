@@ -1,6 +1,6 @@
 package com.spring.ex;
 
-import com.spring.ex.vo.MemberVO;
+import com.spring.ex.member.domain.MemberVO;
 
 public class LoginContext {
 	private static ThreadLocal<MemberVO> context;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.spring.ex.vo.PortRegVO;
+import com.spring.ex.portfolio.domain.PortRegVO;
 
 @Component("fileUtils") 
 public class FileUtils {
@@ -38,7 +38,12 @@ public class FileUtils {
 			file.mkdirs();
 		}
 		
+		int i = 0;
 		while(iterator.hasNext()) {
+			if(i==0) {
+				i++;
+				continue;
+			}
 			multipartFile = mpRequest.getFile(iterator.next());
 			if(multipartFile.isEmpty() == false) {
 				originalFileName = multipartFile.getOriginalFilename();

@@ -21,6 +21,15 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
+  		<context:component-scan base-package="com.spring.ex.admin.controller" />
+	
+		<beans:bean id="AdminInterceptor" class="com.spring.ex.admin.interceptor.AdminInterceptor" />
+	 	<interceptors>
+		 <interceptor>
+		  <mapping path="/aindex.do" />
+		  <beans:ref bean="AdminInterceptor" />
+		 </interceptor>
+		</interceptors>
   	
   <beans:bean id="multipartResolver"
 	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

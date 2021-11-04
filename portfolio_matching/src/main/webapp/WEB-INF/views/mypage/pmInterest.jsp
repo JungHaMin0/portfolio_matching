@@ -33,7 +33,7 @@
               
                 <c:forEach items="${pmInterestList}" var="pmInterList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${pmInterList.portfolio_thumbUrl}"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmInterList.portfolio_Img }'/>" ></td>
                     <td class="product-details">
                       <h3 class="title">${pmInterList.portfolio_title}</h3>
                       <span><strong>판매자</strong>${pmInterList.portfolio_userId}</span>
@@ -45,7 +45,7 @@
                       <div>
                         <ul class="list-inline justify-content-center">
                           <li class="list-inline-item">
-                            <a data-toggle="tooltip" data-placement="top" title="보기" class="view" href=""> <i class="fa fa-eye"></i></a>
+                            <a data-toggle="tooltip" data-placement="top" title="보기" class="view" href="PortContent.do?portfolio_id=${pmInterList.portfolio_id}"> <i class="fa fa-eye"></i></a>
                           </li>
                           <li class="list-inline-item">
                             <a data-toggle="tooltip" data-placement="top" title="삭제" class="delete" href="pmInterestDelete.do?portfolio_id=${pmInterList.portfolio_id}"> <i class="fa fa-trash"></i></a>

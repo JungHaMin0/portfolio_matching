@@ -28,7 +28,6 @@
       });
     }
   }
-  
   $(window).on('scroll', function () {
     counter();
   });
@@ -161,13 +160,13 @@
 
   // trending-ads-slide 
 
-  $('.trending-ads-slide').slick({
+  $('.trending-ads-slide').not('.slick-initialized').slick({
     dots: false,
     arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 800,
+    autoplaySpeed: 2000,
     responsive: [{
         breakpoint: 1024,
         settings: {
@@ -227,9 +226,4 @@
     $('.value').text('$' + slideEvt.value[0] + ' - ' + '$' + slideEvt.value[1]);
   });
 
-
-  //rating
-  $('')
-  
-  
 })(jQuery);

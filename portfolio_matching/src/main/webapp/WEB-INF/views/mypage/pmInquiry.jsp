@@ -30,7 +30,7 @@
               <tbody>
                 <c:forEach items="${pmInquiryList}" var="pmInqList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${pmInqList.portfolio_thumbUrl}"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmInqList.portfolio_Img }'/>" /></td>
                     <td class="product-details">
                       <h3 class="title">${pmInqList.portfolio_title}</h3> <span><strong>문의 제목</strong>${pmInqList.inq_title}</span> <span><strong>문의 일자</strong>${pmInqList.inq_regDate}</span>
                     </td>

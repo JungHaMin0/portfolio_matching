@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="scrapMapper">
+<select id="scrapList" parameterType="com.spring.ex.scrap.domain.ScrapVO">
+SELECT scrap.*, user.*, portfolio.*
+FROM scrap, user, portfolio
+WHERE scrap.scrap_userId = user.user_id 
+AND scrap.scrap_portfolio_id = scrap.scrap_portfolio_id
+AND scrap.scrap_userId = #{user_id}
+</select>
+
+<insert id="scrapInsert">
+	INSERT INTO scrap(scrap_userId, scrap_portfolio_id)
+	VALUES (#{scrap_userId}, #{scrap_portfolio_id})
+</insert>
+
+<delete id="scrapDelete">
+DELETE FROM scrap 
+WHERE scrap_id = #{scrap_id}
+AND scrap_userId = #{scrap_userId}
+
+</delete>
+</mapper>

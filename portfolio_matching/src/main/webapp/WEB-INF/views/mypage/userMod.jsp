@@ -56,7 +56,7 @@
                   <div class="form-group">
                     <label for="confirm-pw">새 비밀번호 확인</label> <input type="password" class="form-control" id="confirm_pw" name="confirm_pw">
                   </div>
-                  <button class="btn btn-transparent" id="pwSubmit">비밀번호 변경</button>
+                  <button class="btn btn-transparent" id="pwSubmit">변경</button>
                 </form>
               </div>
             </div>

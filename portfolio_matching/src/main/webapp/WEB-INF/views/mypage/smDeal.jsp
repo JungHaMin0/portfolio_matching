@@ -24,7 +24,7 @@
         
           <c:forEach items="${smDealList}" var="smDealList">
             <tr>
-              <td class="product-thumb"><img width="80px" height="auto" src="${smDealList.portfolio_thumbUrl}"></td>
+              <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smDealList.portfolio_Img }'/>" /></td>
               <td class="product-details">
                 <h3 class="title">${smDealList.portfolio_title}</h3> <span><strong>가격</strong>${smDealList.deal_price}</span><span><strong>구매일</strong>${smDealList.deal_date}</span><span><strong>구매자</strong>${smDealList.deal_purUser}</span>
               </td>
@@ -35,7 +35,7 @@
                     <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 중" class="view" href="smDealWorking.do?deal_id=${smDealList.deal_id}&portfolio_id=${smDealList.portfolio_id}"> <i class="fa fa-hourglass-half"></i>
                     </a></li>
                     <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="작업 완료" class="edit" href="smDealComplete.do?deal_id=${smDealList.deal_id}&portfolio_id=${smDealList.portfolio_id}"><i class="fa fa-hourglass-end"></i></a></li>
-                    <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="환불/취소" class="delete" href=""><i class="fa fa-undo"></i></a></li>
+                    <li></li>
                   </ul>
                 </div>
               </td>

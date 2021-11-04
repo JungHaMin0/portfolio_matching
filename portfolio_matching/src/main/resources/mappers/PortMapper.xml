@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="portMapper">
+
+	<insert id="order" parameterType="com.spring.ex.deal.domain.OrderVO">
+		INSERT INTO deal (
+			deal_portfolio_id,
+			deal_purUser,
+			deal_saleUser,
+			deal_price,
+			deal_status
+		)
+		VALUES (
+			#{deal_portfolio_id},
+			#{deal_purUser},
+			#{deal_saleUser},
+			#{deal_price},
+			"결제 완료"
+		)
+	</insert>
+
+	<select id="Detail" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+
+		SELECT * FROM portfolio
+		WHERE portfolio_id = #{portfolio_id}
+	</select>
+
+	<select id="port" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+
+		SELECT portfolio_title,portfolio_content,portfolio_price
+		FROM portfolio
+		WHERE portfolio_id = #{portfolio_id}
+	</select>
+</mapper>

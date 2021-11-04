@@ -30,7 +30,7 @@
               <tbody>
                 <c:forEach items="${pmPurchaseList}" var="pmPurList">
                   <tr>
-                    <td class="product-thumb"><img width="80px" height="auto" src="${pmPurList.portfolio_thumbUrl}"></td>
+                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmPurList.portfolio_Img }'/>"/></td>
                     <td class="product-details">
                       <h3 class="title">${pmPurList.portfolio_title}</h3> <span><strong>가격</strong>${pmPurList.portfolio_price} 원</span><span><strong>구매일</strong>${pmPurList.deal_date}</span><span><strong>판매자</strong>${pmPurList.deal_saleUser}</span>
                     </td>
@@ -47,6 +47,7 @@
                               <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="구매 확정" class="edit" href="pmPurchaseConfirm.do?deal_id=${pmPurList.deal_id}" onclick="pur_confirm();"> <i class="fa fa-check"></i></a></li>
                             </c:otherwise>
                           </c:choose>
+                          <li class="list-inline-item"><a data-toggle="tooltip" data-placement="top" title="첨부 파일" class="view" href="" onclick="pmFile('${pmPurList.portfolio_id}');"> <i class="fa fa-file-o"></i></a></li>
                         </ul>
                       </div>
                     </td>
@@ -84,6 +85,18 @@
 		var popupY = (window.screen.height / 2) - (popupHeight / 2);
 		
 		url = "pmReview.do?portfolio_id=" + portfolio_id;
+		specs = "width=" + popupWidth + ", height= " + popupHeight + ", top=" + popupY + ", left=" + popupX;
+		window.open(url, name, specs);
+		
+		return false;
+	}
+	function pmFile(portfolio_id) {
+		var popupWidth = 1000;
+		var popupHeight = 585;
+		var popupX = (window.screen.width / 2) - (popupWidth / 2);
+		var popupY = (window.screen.height / 2) - (popupHeight / 2);
+		
+		url = "pmFile.do?portfolio_id=" + portfolio_id;
 		specs = "width=" + popupWidth + ", height= " + popupHeight + ", top=" + popupY + ", left=" + popupX;
 		window.open(url, name, specs);
 		
