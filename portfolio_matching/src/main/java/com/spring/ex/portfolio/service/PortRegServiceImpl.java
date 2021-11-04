@@ -16,6 +16,7 @@ import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.portfolio.repository.PortRegDAO;
 import com.spring.ex.review.domain.ReviewVO;
 import com.spring.ex.util.UploadFileUtils;
@@ -54,10 +55,10 @@ public class PortRegServiceImpl implements PortRegService {
 	}
 
 	@Override
-	public List<PortfolioDTO> portfolioAll(Criteria cri, int main_id) throws Exception {
-		cri.setMain_id(main_id);
-		cri.setId(0);
-		List<PortRegVO> portRegVOList = dao.portfolioAll(cri);
+	public List<PortfolioDTO> portfolioAll(SearchCriteria scri, int main_id) throws Exception {
+		scri.setMain_id(main_id);
+		scri.setId(0);
+		List<PortRegVO> portRegVOList = dao.portfolioAll(scri);
 
 		List<PortfolioDTO> portfolioDTOList = new ArrayList<PortfolioDTO>();
 		for (int i = 0; i < portRegVOList.size(); i++) {
@@ -70,15 +71,16 @@ public class PortRegServiceImpl implements PortRegService {
 	}
 
 	@Override
-	public int portfolioAllCount(int main_id) throws Exception {
-		return dao.portfolioAllCount(main_id);
+	public int portfolioAllCount(SearchCriteria scri, int main_id) throws Exception {
+		scri.setMain_id(main_id);
+		return dao.portfolioAllCount(scri);
 	}
 
 	@Override
-	public List<PortfolioDTO> portfolioList(Criteria cri, int main_id, int id) throws Exception {
-		cri.setMain_id(main_id);
-		cri.setId(id);
-		List<PortRegVO> portRegVOList = dao.portfolioList(cri);
+	public List<PortfolioDTO> portfolioList(SearchCriteria scri, int main_id, int id) throws Exception {
+		scri.setMain_id(main_id);
+		scri.setId(id);
+		List<PortRegVO> portRegVOList = dao.portfolioList(scri);
 
 		List<PortfolioDTO> portfolioDTOList = new ArrayList<PortfolioDTO>();
 		for (int i = 0; i < portRegVOList.size(); i++) {
@@ -91,8 +93,10 @@ public class PortRegServiceImpl implements PortRegService {
 	}
 
 	@Override
-	public int portfolioListCount(int main_id, int id) throws Exception {
-		return dao.portfolioListCount(main_id, id);
+	public int portfolioListCount(SearchCriteria scri, int main_id, int id) throws Exception {
+		scri.setMain_id(main_id);
+		scri.setId(id);
+		return dao.portfolioListCount(scri);
 	}
 
 	@Override
@@ -129,8 +133,24 @@ public class PortRegServiceImpl implements PortRegService {
 		return dao.selectReivew(portfolio_id);
 	}
 
-	public PortfolioDTO convertToDto(PortRegVO vo) throws Exception {
 
+	@Override
+	public List<PortfolioDTO> trendPortfolio() throws Exception {
+		List<PortRegVO> portRegVOList = dao.trendPortfolio();
+
+		List<PortfolioDTO> portfolioDTOList = new ArrayList<PortfolioDTO>();
+		for (int i = 0; i < portRegVOList.size(); i++) {
+			PortRegVO vo = portRegVOList.get(i);
+
+			PortfolioDTO dto = convertToDto(vo);
+			portfolioDTOList.add(dto);
+		}
+		
+		return portfolioDTOList;
+	}
+
+	public PortfolioDTO convertToDto(PortRegVO vo) throws Exception {
+		
 		PortfolioDTO dto = new PortfolioDTO();
 		dto.setPortfolio_id(vo.getPortfolio_id());
 		dto.setPortfolio_userId(vo.getPortfolio_userId());
@@ -141,11 +161,10 @@ public class PortRegServiceImpl implements PortRegService {
 		dto.setPortfolio_term(vo.getPortfolio_term());
 		dto.setPortfolio_rating(vo.getPortfolio_rating());
 		dto.setPortfolio_regDate(vo.getPortfolio_regDate());
-
+		
 		dto.setPortfolio_category_main(dao.categoryMainGetOne(Integer.parseInt(vo.getPortfolio_category_main())));
 		dto.setPortfolio_category_sub(dao.categorySubGetOne(Integer.parseInt(vo.getPortfolio_category_sub())));
-
+		
 		return dto;
 	}
-
 }

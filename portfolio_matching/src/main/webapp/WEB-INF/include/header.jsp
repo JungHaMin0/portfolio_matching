@@ -13,23 +13,20 @@
 
             <ul class="navbar-nav ml-auto main-nav ">
               <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
-              <li class="nav-item dropdown dropdown-slide">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오<span><i class="fa fa-angle-down"></i></span>
-                </a>
-                <!-- Dropdown list -->
+              <li class="nav-item dropdown dropdown-slide"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오<span><i class="fa fa-angle-down"></i></span>
+              </a> <!-- Dropdown list -->
                 <div id="dropdown-category" class="dropdown-menu">
-                    <a class="dropdown-item" href="dashboard.html"></a>
-                </div>
-              </li>
- 			<c:if test="${member == null}">
-              <li class="nav-item active">
-              	<a class="nav-link" href="#" onclick="dd();">등록하기</a></li>
-         
-  			</c:if>
-   			 <c:if test="${member != null}">
-                 <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
-             </c:if>
-  
+                  <ul class="main2">
+                  </ul>
+                </div></li>
+              <c:if test="${member == null}">
+                <li class="nav-item active"><a class="nav-link" href="" onclick="dd();">등록하기</a></li>
+
+              </c:if>
+              <c:if test="${member != null}">
+                <li class="nav-item active"><a class="nav-link" href="PwriteForm.do">등록하기</a></li>
+              </c:if>
+
             </ul>
             <ul class="navbar-nav ml-auto mt-10">
               <c:if test="${member == null}">
@@ -59,14 +56,23 @@ $(document).ready(function() {
 		success: function(res) {
 			var categoryList = eval(res.result);
 			var categoryListCnt = res.cnt;
+			var categorySubList = eval(res.resultSub);
+			var categorySubListCnt = res.cntSub;
 			
 			var str = "";
 			for(var i=0; i<categoryListCnt; i++) {
 				var list = categoryList[i];
-				str += '<a class="dropdown-item" href="portlist.do?id=' + list.id + '">' + list.name + '</a>';
+				str += '<li><a class="dropdown-item" href="portlist.do?main_id=' + list.id + '&id=0">' + list.name + '</a>'
+						+ '<div class="main3"><ul>';
+				for(var j=0; j<categorySubListCnt; j++) {
+					var listSub = categorySubList[j];
+					if(listSub.main_id == list.id) {
+						str += '<li><a class="dropdown-item" href="portlist.do?main_id=' + listSub.main_id + '&id=' + listSub.id + '">' + listSub.name + '</a></li>'
+					}
+				}
+				str += '</ul></div>'
 			}
-			
-			$("#dropdown-category").html(str);
+			$(".main2").html(str);
 		}
 	});
 });

@@ -16,22 +16,39 @@
         <div class="col-md-12">
           <!-- Advance Search -->
           <div class="advance-search">
-            <form>
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-                </div>
-                <div class="form-group col-md-3">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputCategory4" placeholder="Category">
-                </div>
-                <div class="form-group col-md-3">
-                  <input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-                </div>
-                <div class="form-group col-md-2">
-                  <button type="submit" class="btn btn-primary">Search Now</button>
-                </div>
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <select id="portfolio_category_main" class="w-100 form-control my-2 my-lg-0" style="display: none;" onchange="catChange(this)">
+                  <c:forEach items="${categoryMainList}" var="categoryMainList">
+                    <c:if test="${categoryMainList.id eq scri.main_id}">
+                      <option value="${categoryMainList.id}" selected>${categoryMainList.name}</option>
+                    </c:if>
+                    <c:if test="${categoryMainList.id ne scri.main_id}">
+                      <option value="${categoryMainList.id}">${categoryMainList.name}</option>
+                    </c:if>
+                  </c:forEach>
+                </select>
               </div>
-            </form>
+              <div class="form-group col-md-3">
+                <select id="portfolio_category_sub" class="w-100 form-control my-2 my-lg-0" style="display: none;">
+                  <option value="0" class="0">전체</option>
+                  <c:forEach items="${categorySubListById}" var="categorySubListById">
+                    <c:if test="${categorySubListById.id eq scri.id}">
+                      <option value="${categorySubListById.id}" class="${categorySubListById.main_id}" selected>${categorySubListById.name}</option>
+                    </c:if>
+                    <c:if test="${categorySubListById.id ne scri.id}">
+                      <option value="${categorySubListById.id}" class="${categorySubListById.main_id}">${categorySubListById.name}</option>
+                    </c:if>
+                  </c:forEach>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <input type="text" id="keywordInput" name="keyword" value="${scri.keyword}" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="검색할 키워드를 입력하세요.">
+              </div>
+              <div class="form-group col-md-2">
+                <button type="button" id="searchBtn" class="btn btn-primary">검색하기</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -89,7 +106,7 @@
                       </tr>
                       <tr>
                         <td>서비스 평점</td>
-                        <td>${portfolio.portfolio_rating} 점</td>
+                        <td>${portfolio.portfolio_rating}점</td>
                       </tr>
                       <tr>
                         <td>서비스 등록일</td>
@@ -180,7 +197,16 @@
           <div class="sidebar">
             <div class="widget price text-center">
               <p>${portfolio.portfolio_price}원</p>
-              <a href="detailport.do?portfolio_id=${portfolio.portfolio_id}" class="btn btn-transparent-white mt-4">구매하기</a><br>
+              <c:choose>
+                <c:when test="${empty member}">
+                  <a href="" class="btn btn-transparent-white mt-4" onclick="fn_alert()">구매하기</a>
+                  <br>
+                </c:when>
+                <c:otherwise>
+                  <a href="detailport.do?portfolio_id=${portfolio.portfolio_id}" class="btn btn-transparent-white mt-4">구매하기</a>
+                  <br>
+                </c:otherwise>
+              </c:choose>
             </div>
             <!-- User Profile widget -->
             <div class="widget user text-center">
@@ -194,7 +220,9 @@
             <div class="widget rate">
               <!-- Heading -->
               <h5 class="text-center">서비스 평점</h5>
-              <p class="widget-header text-center">실제 포매를 통해 구매한 <br> 이용자들의 평점입니다.</p>
+              <p class="widget-header text-center">
+                실제 포매를 통해 구매한 <br> 이용자들의 평점입니다.
+              </p>
               <!-- Rate -->
               <div class="product-ratings text-center">
                 <ul class="list-inline">
@@ -236,6 +264,9 @@
   </section>
 
 
+  <!-- JAVASCRIPTS -->
+  <%@ include file="../../include/footer.jsp"%>
+  <%@ include file="../../include/style_js.jsp"%>
 
   <script>
 			function fn_list() {
@@ -243,9 +274,7 @@
 				form.action = "<c:url value='/portlist.do'/>";
 				form.submit();
 			}
-		</script>
 
-  <script>
 			function fn_content(portfolio_id) {
 				var form = document.getElementById("viewForm");
 				var url = "<c:url value='/pmInterest.do'/>";
@@ -254,13 +283,45 @@
 				form.action = url;
 				form.submit();
 			}
+
+			function fn_alert() {
+				alert('로그인 후 이용 가능합니다.');
+			}
+
+			function catChange(o) {
+				var mainId = o.value;
+
+				$.ajax({
+					url : "findCategorySub.do",
+					data : {
+						"param" : mainId
+					},
+					success : function(res) {
+						var subList = eval(res.result);
+						var cnt = res.cnt;
+
+						var str = "";
+						var niceStr = ""
+						for (var i = 0; i < cnt; i++) {
+							var list = subList[i];
+							str += '<option value="' + list.id + '">'
+									+ list.name + '</option>';
+						}
+
+						$("#portfolio_category_sub").html(str);
+						$("#portfolio_category_sub").niceSelect('update');
+					}
+				});
+			}
+			
+			$(function(){
+		          $('#searchBtn').click(function() {
+		        	  var selectMain = $("#portfolio_category_main option:selected").val();
+		        	  var selectSub = $("#portfolio_category_sub option:selected").val();
+		            self.location = "portlist.do?page=1&perPageNum=9" + "&main_id=" + selectMain + "&id=" + selectSub + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+		          });
+		        });
 		</script>
-
-
-  <!-- JAVASCRIPTS -->
-  <%@ include file="../../include/footer.jsp"%>
-  <%@ include file="../../include/style_js.jsp"%>
-
 
 </body>
 </html>

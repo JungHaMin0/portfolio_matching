@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.reflection.SystemMetaObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.spring.ex.deal.domain.OrderVO;
 import com.spring.ex.deal.service.OrderService;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
-import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PageMaker;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.portfolio.service.PortRegService;
 
 @Controller
@@ -44,25 +44,24 @@ public class PortController {
 	
 	// 포트폴리오 리스트
 	@RequestMapping(value="portlist.do")
-    public String list(@RequestParam int main_id, @RequestParam int id, Criteria cri, Model model) throws Exception{
+    public String list(@RequestParam int main_id, @RequestParam int id, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		model.addAttribute("categoryMainList", portRegServiceImpl.categoryMainList());
 		model.addAttribute("categoryMainGetOne", portRegServiceImpl.categoryMainGetOne(main_id));
 		model.addAttribute("categorySubGetOne", portRegServiceImpl.categorySubGetOne(id));
 		model.addAttribute("categorySubListById", portRegServiceImpl.categorySubListById(main_id));
 		
 		if(id == 0) {
-			model.addAttribute("portfolioList", portRegServiceImpl.portfolioAll(cri, main_id));
+			model.addAttribute("portfolioList", portRegServiceImpl.portfolioAll(scri, main_id));
 			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCri(cri);
-			pageMaker.setTotalCount(portRegServiceImpl.portfolioAllCount(main_id));
+			pageMaker.setCri(scri);
+			pageMaker.setTotalCount(portRegServiceImpl.portfolioAllCount(scri, main_id));
 			model.addAttribute("pageMaker", pageMaker);
 		} else {
-			model.addAttribute("portfolioList", portRegServiceImpl.portfolioList(cri,main_id, id));
+			model.addAttribute("portfolioList", portRegServiceImpl.portfolioList(scri,main_id, id));
 			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCri(cri);
-			pageMaker.setTotalCount(portRegServiceImpl.portfolioListCount(main_id, id));
+			pageMaker.setCri(scri);
+			pageMaker.setTotalCount(portRegServiceImpl.portfolioListCount(scri, main_id, id));
 			model.addAttribute("pageMaker", pageMaker);
-			
 		}
         return "portfolio_page/portlist";
     }
@@ -119,58 +118,12 @@ public class PortController {
 	public String viewForm(@RequestParam int portfolio_id, Model model) throws Exception {
 		PortfolioDTO portfolioDTO = portRegServiceImpl.portfolioSelect(portfolio_id);
 		
+		model.addAttribute("categoryMainList", portRegServiceImpl.categoryMainList());
+		model.addAttribute("categorySubListById", portRegServiceImpl.categorySubListById(1));
 		model.addAttribute("portfolio", portfolioDTO);
 		model.addAttribute("review", portRegServiceImpl.selectReivew(portfolio_id));
 		model.addAttribute("seller", portRegServiceImpl.portfolioSeller(portfolioDTO.getPortfolio_userId()));
 		return "portfolio_page/portfolio_detail";
 	}
-
-	@RequestMapping(value = "portfolio_payment.do", method = RequestMethod.GET)
-	public String portfolio_payment(HttpServletRequest req, Model model, HttpSession session) throws Exception {
-		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
-		PortRegVO vo = orderService.detailPort(portfolio_id);
-		MemberVO memberVO = (MemberVO) session.getAttribute("member");
-		model.addAttribute("userId", memberVO.getUser_id());
-		model.addAttribute("vo", vo);
-
-		return "portfolio_page/portfolio_payment";
-	}
-
-	@RequestMapping(value = "portfolio_payment_success")
-	public String portfolio_payment_success() {
-
-		return "portfolio_page/portfolio_payment_success";
-	}
-
-	@RequestMapping(value = "portfolio_payment_fail")
-	public String portfolio_payment_fail() {
-		return "portfolio_page/portfolio_payment_fail";
-	}
-
-	@RequestMapping(value = "portfolio_order")
-	@ResponseBody
-	public OrderVO order(HttpServletRequest request, HttpServletResponse response, OrderVO vo) throws Exception {
-		PortRegVO portRegVO = orderService.detailPort(vo.getDeal_portfolio_id());
-		vo.setDeal_saleUser(portRegVO.getPortfolio_userId());
-		System.out.println(vo.getDeal_portfolio_id());
-		System.out.println(vo.getDeal_price());
-		System.out.println(vo.getDeal_purUser());
-		System.out.println(vo.getDeal_saleUser());
-		OrderVO vo1 = orderService.order(vo);
-		return vo1;
-	}
 	
-	@RequestMapping(value = "detailport.do", method = RequestMethod.GET)
-	public String detailport(HttpServletRequest req, Model model, HttpSession session) throws Exception {
-
-		int portfolio_id = Integer.parseInt(req.getParameter("portfolio_id"));
-		PortRegVO vo = orderService.detailPort(portfolio_id);
-
-		MemberVO memberVO = (MemberVO) session.getAttribute("member");
-
-		model.addAttribute("userId", memberVO.getUser_id());
-		model.addAttribute("vo", vo);
-		
-		return "portfolio_page/portfolio_pur";
-	}
 }

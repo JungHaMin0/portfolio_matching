@@ -7,8 +7,7 @@
    <script src="./resources/plugins/tether/js/tether.min.js"></script>
    <script src="./resources/plugins/raty/jquery.raty-fa.js"></script>
   <script src="./resources/plugins/slick-carousel/slick/slick.min.js"></script>
-   <script
-      src="./resources/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+   <script src="./resources/plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
    <script src="./resources/plugins/fancybox/jquery.fancybox.pack.js"></script>
    <script src="./resources/plugins/smoothscroll/SmoothScroll.min.js"></script>
    <!-- google map -->

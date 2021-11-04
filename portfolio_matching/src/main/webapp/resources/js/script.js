@@ -160,13 +160,13 @@
 
   // trending-ads-slide 
 
-  $('.trending-ads-slide').slick({
+  $('.trending-ads-slide').not('.slick-initialized').slick({
     dots: false,
     arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 800,
+    autoplaySpeed: 2000,
     responsive: [{
         breakpoint: 1024,
         settings: {
@@ -225,6 +225,5 @@
   $('.range-track').on('slide', function (slideEvt) {
     $('.value').text('$' + slideEvt.value[0] + ' - ' + '$' + slideEvt.value[1]);
   });
-
 
 })(jQuery);

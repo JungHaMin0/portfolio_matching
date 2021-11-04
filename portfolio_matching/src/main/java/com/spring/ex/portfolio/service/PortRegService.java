@@ -10,6 +10,7 @@ import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.review.domain.ReviewVO;
 
 public interface PortRegService {
@@ -19,10 +20,10 @@ public interface PortRegService {
 	public List<CategorySubVO> categorySubListById(int main_id) throws Exception;
 	public CategorySubVO categorySubGetOne(int id) throws Exception;
 	
-	public List<PortfolioDTO> portfolioAll(Criteria cri, int main_id) throws Exception;
-	public int portfolioAllCount(int main_id) throws Exception;
-	public List<PortfolioDTO> portfolioList(Criteria cri, int main_id, int id) throws Exception;
-	public int portfolioListCount(int main_id, int id) throws Exception;
+	public List<PortfolioDTO> portfolioAll(SearchCriteria scri, int main_id) throws Exception;
+	public int portfolioAllCount(SearchCriteria scri, int main_id) throws Exception;
+	public List<PortfolioDTO> portfolioList(SearchCriteria scri, int main_id, int id) throws Exception;
+	public int portfolioListCount(SearchCriteria scri, int main_id, int id) throws Exception;
 	
 	public void portInsert(PortRegVO vo, MultipartHttpServletRequest req) throws Exception;
 	
@@ -31,4 +32,6 @@ public interface PortRegService {
 	
 	public PortRegVO selectPortByCode(int portfolio_id) throws Exception;
 	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception;
+	
+	public List<PortfolioDTO> trendPortfolio() throws Exception;
 }

@@ -8,6 +8,8 @@ import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
+import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.review.domain.ReviewVO;
 
 public interface PortRegDAO {
@@ -20,10 +22,10 @@ public interface PortRegDAO {
 	public CategorySubVO categorySubGetOne(int id) throws Exception;
 	
 	// category별 게시물 검색
-	public List<PortRegVO> portfolioAll(Criteria cri) throws Exception;
-	public int portfolioAllCount(int main_id) throws Exception;
-	public List<PortRegVO> portfolioList(Criteria cri) throws Exception;
-	public int portfolioListCount(int main_id, int id) throws Exception;
+	public List<PortRegVO> portfolioAll(SearchCriteria scri) throws Exception;
+	public int portfolioAllCount(SearchCriteria scri) throws Exception;
+	public List<PortRegVO> portfolioList(SearchCriteria scri) throws Exception;
+	public int portfolioListCount(SearchCriteria scri) throws Exception;
 	
 	// Insert 
 	public void portInsert(PortRegVO vo) throws Exception;
@@ -38,4 +40,6 @@ public interface PortRegDAO {
 	public void insertFile(Map<String, Object> map) throws Exception;
 	
 	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception;
+	
+	public List<PortRegVO> trendPortfolio() throws Exception;
 }

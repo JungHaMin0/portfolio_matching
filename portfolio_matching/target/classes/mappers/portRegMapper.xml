@@ -26,27 +26,28 @@
 	</select>
 	
 	<!-- 카테고리 별 게시글 검색 -->
-	<select id="portfolioAll" parameterType="com.spring.ex.portfolio.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	<select id="portfolioAll" parameterType="com.spring.ex.portfolio.domain.SearchCriteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 		SELECT * FROM (
-			SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS RNUM FROM portfolio WHERE portfolio_category_main = #{main_id}) portfolio
+			SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS RNUM FROM portfolio
+			WHERE portfolio_category_main = #{main_id} <include refid="search"></include>) portfolio
 		WHERE rNum BETWEEN #{rowStart} AND #{rowEnd}
 		ORDER BY portfolio_id DESC
 	</select>
 	
-	<select id="portfolioAllCount" parameterType="int" resultType="int">
-		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id}
+	<select id="portfolioAllCount" parameterType="com.spring.ex.portfolio.domain.SearchCriteria" resultType="int">
+		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id} <include refid="search"></include>
 	</select>
 	
-	<select id="portfolioList" parameterType="com.spring.ex.portfolio.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	<select id="portfolioList" parameterType="com.spring.ex.portfolio.domain.SearchCriteria" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 		SELECT * FROM (
 			SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS RNUM FROM portfolio 
-			WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id}) portfolio
+			WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id} AND portfolio_title LIKE CONCAT('%', #{keyword}, '%')) portfolio 
 		WHERE rNum BETWEEN #{rowStart} AND #{rowEnd}
 		ORDER BY portfolio_id DESC
 	</select>
 	
-	<select id="portfolioListCount" parameterType="com.spring.ex.portfolio.domain.CategorySubVO" resultType="int">
-		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id}
+	<select id="portfolioListCount" parameterType="com.spring.ex.portfolio.domain.SearchCriteria" resultType="int">
+		SELECT COUNT(*) FROM portfolio WHERE portfolio_category_main = #{main_id} AND portfolio_category_sub = #{id} AND portfolio_title LIKE CONCAT('%', #{keyword}, '%')
 	</select>
 	
 	<!-- 포트폴리오 상세 보기 -->
@@ -115,4 +116,15 @@
 		SELECT * FROM review
 		WHERE review_portfolio_id = #{portfolio_id}
 	</select>
+	
+	<select id="trendPortfolio" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT * FROM (SELECT COUNT(*), deal_portfolio_id FROM deal GROUP BY deal_portfolio_id ORDER BY COUNT(*) DESC)d, portfolio p 
+		WHERE d.deal_portfolio_id = p.portfolio_id LIMIT 5
+	</select>
+	
+	<sql id="search">
+		<if test="keyword != ''">
+			AND portfolio_title LIKE CONCAT('%', #{keyword}, '%')
+		</if>
+	</sql>
 </mapper>

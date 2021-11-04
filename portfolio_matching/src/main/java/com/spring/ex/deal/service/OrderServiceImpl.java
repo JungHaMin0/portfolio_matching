@@ -5,18 +5,21 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.deal.domain.OrderVO;
 import com.spring.ex.deal.repository.OrderDAO;
+import com.spring.ex.portfolio.domain.CategoryMainVO;
+import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
+import com.spring.ex.portfolio.domain.PortfolioDTO;
 
 @Service
 public class OrderServiceImpl implements OrderService {
 	@Autowired
-	private OrderDAO order;
+	private OrderDAO dao;
 
 	@Override
 	public OrderVO order(OrderVO vo) throws Exception {
 		OrderVO vo1 = new OrderVO();
 
-		int insertCnt = order.order(vo);
+		int insertCnt = dao.order(vo);
 
 		if (insertCnt > 0) {
 			vo1.setResult("SUCCESS");
@@ -25,16 +28,6 @@ public class OrderServiceImpl implements OrderService {
 		}
 
 		return vo1;
-	}
-
-	@Override
-	public PortRegVO detailPort(int portfolio_id) {
-		return order.detailPort(portfolio_id);
-	}
-
-	@Override
-	public PortRegVO detail(int portlist_id) {
-		return order.detail(portlist_id);
 	}
 
 }

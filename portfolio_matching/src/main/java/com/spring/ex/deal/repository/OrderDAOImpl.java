@@ -6,7 +6,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.deal.domain.OrderVO;
-import com.spring.ex.portfolio.domain.PortRegVO;
 
 @Repository
 public class OrderDAOImpl implements OrderDAO {
@@ -15,15 +14,7 @@ public class OrderDAOImpl implements OrderDAO {
     
 	@Override
 	public int order(OrderVO vo) throws Exception {
-		return sqlSession.insert("portMapper.order", vo);
+		return sqlSession.insert("dealMapper.order", vo);
 	}
 
-	@Override
-	public PortRegVO detail(int portlist_id) {
-		return sqlSession.selectOne("portMapper.port", portlist_id);
-	}
-	@Override
-	public PortRegVO detailPort(int portfolio_id) {
-		return sqlSession.selectOne("portMapper.Detail", portfolio_id);
-	}
 }

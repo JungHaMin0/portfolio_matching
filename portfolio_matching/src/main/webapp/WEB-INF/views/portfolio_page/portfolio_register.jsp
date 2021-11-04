@@ -8,6 +8,7 @@
 <html>
 <head>
 <%@ include file="../../include/style_css.jsp"%>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.css" rel="stylesheet">
 </head>
 
 <body>
@@ -65,7 +66,9 @@
                 <br>
                 <div class="col-lg-12 py-2">
                   <p class="pt-3">포트폴리오 상세 내용 작성 *</p>
-                  <textarea name="portfolio_content" id="portfolio_content" placeholder="상세 내용을 입력하세요." class="border w-100 p-3"></textarea>
+                  <div>
+                    <textarea name="portfolio_content" id="portfolio_content"></textarea>
+                  </div>
                 </div>
                 <br> <br> <br>
                 <div class="col-lg-12 py-2">
@@ -104,8 +107,29 @@
   <!-- JAVASCRIPTS -->
   <%@ include file="../../include/footer.jsp"%>
   <%@ include file="../../include/style_js.jsp"%>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-lite.js"></script>
+  <script src="./resources/plugins/summernote/summernote-ko-KR.js"></script>
 
   <script type="text/javascript">
+  $(document).ready(function() {
+	  $('#portfolio_content').summernote({
+		placeholder: '상세 내용을 입력하세요.',
+		height: 370,
+  	    lang: "ko-KR",
+  	    focus : true,
+  	    toolbar: [
+  		      ['fontname', ['fontname']],
+  		      ['fontsize', ['fontsize']],
+  		      ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+  		      ['color', ['forecolor','color']],
+  		      ['para', ['ul', 'ol', 'paragraph']],
+  		      ['insert',['picture','link','video']],
+  		      ['view', ['help']]
+  		],
+  		fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋음체','바탕체'],
+  		fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+	  });
+  });
 			function setThumbnail(event) {
 				var reader = new FileReader();
 				reader.onload = function(event) {

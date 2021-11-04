@@ -1,6 +1,5 @@
 package com.spring.ex.portfolio.repository;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -14,6 +13,8 @@ import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
+import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.review.domain.ReviewVO;
 
 @Repository
@@ -48,26 +49,23 @@ public class PortRegDAOImpl implements PortRegDAO {
 	}
 	
 	@Override
-	public List<PortRegVO> portfolioAll(Criteria cri) throws Exception {
-		return sqlSession.selectList("portRegMapper.portfolioAll", cri);
+	public List<PortRegVO> portfolioAll(SearchCriteria scri) throws Exception {
+		return sqlSession.selectList("portRegMapper.portfolioAll", scri);
 	}
 	
 	@Override
-	public int portfolioAllCount(int main_id) throws Exception {
-		return sqlSession.selectOne("portRegMapper.portfolioAllCount", main_id);
+	public int portfolioAllCount(SearchCriteria scri) throws Exception {
+		return sqlSession.selectOne("portRegMapper.portfolioAllCount", scri);
 	}
 
 	@Override
-	public List<PortRegVO> portfolioList(Criteria cri) throws Exception {
-		return sqlSession.selectList("portRegMapper.portfolioList", cri);
+	public List<PortRegVO> portfolioList(SearchCriteria scri) throws Exception {
+		return sqlSession.selectList("portRegMapper.portfolioList", scri);
 	}
 	
 	@Override
-	public int portfolioListCount(int main_id, int id) throws Exception {
-		Map<String, Object> parameters = new HashMap<String, Object>();
-		parameters.put("main_id", main_id);
-		parameters.put("id", id);
-		return sqlSession.selectOne("portRegMapper.portfolioListCount", parameters);
+	public int portfolioListCount(SearchCriteria scri) throws Exception {
+		return sqlSession.selectOne("portRegMapper.portfolioListCount", scri);
 	}
 
 	@Override
@@ -98,6 +96,11 @@ public class PortRegDAOImpl implements PortRegDAO {
 	@Override
 	public List<ReviewVO> selectReivew(int portfolio_id) throws Exception {
 		return sqlSession.selectList("portRegMapper.selectReview", portfolio_id);
+	}
+
+	@Override
+	public List<PortRegVO> trendPortfolio() throws Exception {
+		return sqlSession.selectList("portRegMapper.trendPortfolio");
 	}
 
 }
