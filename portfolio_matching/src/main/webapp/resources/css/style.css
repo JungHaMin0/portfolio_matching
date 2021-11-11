@@ -637,7 +637,11 @@ ul.pagination .active a {
 
 .bg-1 {
   background: url("../images/port_banner2.png");
+<<<<<<< HEAD
   background-size: 100% auto;;
+=======
+  background-size: auto 100%;;
+>>>>>>> refs/heads/hamin
   background-repeat: no-repeat;
   background-position: center top;
   
