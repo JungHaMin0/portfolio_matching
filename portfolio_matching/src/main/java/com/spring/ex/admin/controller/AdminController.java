@@ -1,11 +1,21 @@
 package com.spring.ex.admin.controller;
 
+import javax.inject.Inject;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.spring.ex.member.domain.MemberVO;
+import com.spring.ex.member.service.MemberService;
+
 @Controller
 public class AdminController {
+	
+	@Inject
+	MemberService service;
+	
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
 	public String index() throws Exception {
 
@@ -13,8 +23,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value = "adminMember.do", method = RequestMethod.GET)
-	public String adminMember() throws Exception {
-
+	public String adminMember(Model model) throws Exception {
+		model.addAttribute("mlist", service.view());
 		return "admin/member";
 	}
 	
