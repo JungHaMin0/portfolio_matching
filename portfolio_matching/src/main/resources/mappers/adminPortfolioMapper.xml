@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminPortfolioMapper">
+	<select id="portfolioList" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT portfolio_id, portfolio_title, portfolio_userId,
+		portfolio_category_main, portfolio_category_sub, portfolio_term, portfolio_price, portfolio_rating, portfolio_regDate
+		FROM portfolio ORDER BY portfolio_id DESC
+	</select>
+	
+	<select id="categoryMainGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategoryMainVO">
+		SELECT * FROM category_main WHERE id = #{id}
+	</select>
+	
+	<select id="categorySubGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
+		SELECT * FROM category_sub WHERE id = #{id}
+	</select>
+</mapper>
