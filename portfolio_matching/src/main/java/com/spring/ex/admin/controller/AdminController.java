@@ -12,15 +12,11 @@ import com.spring.ex.member.service.MemberService;
 
 @Controller
 public class AdminController {
-<<<<<<< HEAD
 	
 	@Inject
 	MemberService service;
 	
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
-=======
-	@RequestMapping(value = "adminIndex.do", method = RequestMethod.GET)
->>>>>>> branch 'jeongwon' of https://github.com/junhamin/portfolio_matching.git
 	public String index() throws Exception {
 
 		return "admin/aindex";
