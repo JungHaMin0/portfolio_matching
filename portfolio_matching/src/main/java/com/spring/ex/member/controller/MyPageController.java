@@ -31,8 +31,6 @@ import com.spring.ex.scrap.domain.ScrapVO;
 @Controller
 public class MyPageController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
 	@Inject
 	MyPageService service;
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class AdminController {
-	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
+	@RequestMapping(value = "adminIndex.do", method = RequestMethod.GET)
 	public String index() throws Exception {
 
 		return "admin/aindex";
@@ -34,12 +34,6 @@ public class AdminController {
 	public String sale() throws Exception {
 
 		return "admin/sale";
-	}
-	
-	@RequestMapping(value = "adminPortfolio.do", method = RequestMethod.GET)
-	public String portfolio() throws Exception {
-
-		return "admin/portfolio";
 	}
 	
 	@RequestMapping(value = "adminStat.do", method = RequestMethod.GET)

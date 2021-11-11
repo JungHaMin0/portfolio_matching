@@ -21,7 +21,18 @@ public class ScrapServiceImpl implements ScrapService{
 	}
 
 	@Override
-	public void scrapInsert(ScrapVO scrapVO) throws Exception {
+	public int scrapCheck(String userId, int portfolio_id) throws Exception {
+		ScrapVO scrapVO = new ScrapVO();
+		scrapVO.setScrap_portfolio_id(portfolio_id);
+		scrapVO.setScrap_userId(userId);
+		return dao.scrapCheck(scrapVO);
+	}
+
+	@Override
+	public void scrapInsert(String userId, int portfolio_id) throws Exception {
+		ScrapVO scrapVO = new ScrapVO();
+		scrapVO.setScrap_portfolio_id(portfolio_id);
+		scrapVO.setScrap_userId(userId);
 		dao.scrapInsert(scrapVO);
 	}
 
@@ -29,7 +40,5 @@ public class ScrapServiceImpl implements ScrapService{
 	public void scrapDelete(ScrapVO scrapVO) throws Exception {
 		dao.scrapDelete(scrapVO);
 	}
-	
-	
 
 }
