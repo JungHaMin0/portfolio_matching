@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <html>
@@ -66,7 +67,7 @@
                                             <td>${list.portfolio_title}</td>
                                             <td>${list.portfolio_userId}</td>
                                             <td>${list.portfolio_category_main.name} > ${list.portfolio_category_sub.name}</td>
-                                            <td>${list.portfolio_regDate}</td>
+                                            <td><fmt:formatDate pattern="yyyy-MM-dd kk:mm:ss" value="${list.portfolio_regDate}" /></td>
                                             <td class="text-center"><a href="#">보기</a></td>
                                         </tr>
                                       </c:forEach>

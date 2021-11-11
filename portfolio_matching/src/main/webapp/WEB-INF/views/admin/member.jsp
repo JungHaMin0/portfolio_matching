@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>포매 관리자 페이지</title>
+    <title>SB Admin 2 - Tables</title>
 
 </head>
 
@@ -35,7 +36,7 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
+					<!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">고객 정보 관리</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -46,36 +47,29 @@
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
-                                        <tr>
+										<tr>
                                             <th>ID</th>
                                             <th>PW</th>
                                             <th>Email</th>
                                             <th>Name</th>
                                             <th>Phone</th>
+                                            <th>보기</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                 			 <th>ID</th>
-                                            <th>PW</th>
-                                            <th>Email</th>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                        </tr>
-                                    </tfoot>
+                                    <tbody>
                                     <c:forEach items="${mlist}" var="mlist">
                                     <c:if test="${mlist.user_ref == 0}">
-                                    <tbody>
                                         <tr>
                                             <td>${mlist.user_id}</td>
                                             <td>${mlist.user_pw}</td>
                                             <td>${mlist.user_email}</td>
                                             <td>${mlist.user_name}</td>
                                             <td>${mlist.user_phone}</td>
+                                            <td><a href="#">보기</a></td>
                                         </tr>
-                                    </tbody>
                                     </c:if>
                                     </c:forEach>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -91,7 +85,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2021</span>
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
             </footer>

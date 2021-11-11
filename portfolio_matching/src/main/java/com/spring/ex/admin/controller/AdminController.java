@@ -52,4 +52,10 @@ public class AdminController {
 		return "admin/stat";
 	}
 	
+	@RequestMapping(value = "adminProtfolio.do", method = RequestMethod.GET)
+	public String portfolio() throws Exception {
+
+		return "admin/portfolio";
+	}
+	
 }
