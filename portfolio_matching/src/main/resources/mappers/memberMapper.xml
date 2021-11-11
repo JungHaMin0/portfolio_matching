@@ -32,4 +32,9 @@
 		WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
 	
+	<select id="mlist" resultType="com.spring.ex.member.domain.MemberVO">
+		SELECT user_id, user_pw, user_email, user_name, user_phone, user_ref FROM user
+		ORDER BY user_name DESC
+	</select>
+	
 </mapper>

@@ -162,31 +162,6 @@
                         </div>
                       </div>
                     </div>
-                    <div class="review-submission">
-                      <h3 class="tab-title">Submit your review</h3>
-                      <!-- Rate -->
-                      <div class="rate">
-                        <div class="starrr">
-                          <i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i><i class="fa-star-o fa"></i>
-                        </div>
-                      </div>
-                      <div class="review-submit">
-                        <form action="#" class="row">
-                          <div class="col-lg-6">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name">
-                          </div>
-                          <div class="col-lg-6">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
-                          </div>
-                          <div class="col-12">
-                            <textarea name="review" id="review" rows="10" class="form-control" placeholder="Message"></textarea>
-                          </div>
-                          <div class="col-12">
-                            <button type="submit" class="btn btn-main">Sumbit</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -213,7 +188,16 @@
               <h4><a>${seller.user_id}</a></h4>
               <p class="member-time">활동 시작일 Jun 27, 2017</p>
               <ul class="list-inline mt-20">
-                <li class="list-item"><a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">문의하기</a></li>
+                <li class="list-item"><c:choose>
+                    <c:when test="${empty member}">
+                      <a href="inquiryWrite.do?portfolio_id=${portfolio.portfolio_id}" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3" onclick="fn_alert()">문의하기</a>
+                      <br>
+                    </c:when>
+                    <c:otherwise>
+                      <a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">문의하기</a>
+                      <br>
+                    </c:otherwise>
+                  </c:choose></li>
               </ul>
             </div>
             <!-- Rate Widget -->
@@ -250,9 +234,18 @@
             <!-- Coupon Widget -->
             <div class="widget coupon text-center">
               <!-- Coupon description -->
-              <p>구매가 망설여진다면 찜해보세요 !</p>
+              <p>서비스가 마음에 드신다면 스크랩해보세요 !</p>
               <!-- Submii button -->
-              <a href="" class="btn btn-transparent-white">찜하기</a>
+              <c:choose>
+                <c:when test="${empty member}">
+                  <a href="" class="btn btn-transparent-white" onclick="fn_alert()">스크랩</a>
+                  <br>
+                </c:when>
+                <c:otherwise>
+                  <a href="#" class="btn btn-transparent-white" onclick="scrap(${portfolio.portfolio_id}); return false;">스크랩</a>
+                  <br>
+                </c:otherwise>
+              </c:choose>
             </div>
 
           </div>
@@ -310,6 +303,22 @@
 
 						$("#portfolio_category_sub").html(str);
 						$("#portfolio_category_sub").niceSelect('update');
+					}
+				});
+			}
+			
+			function scrap(portfolio_id) {
+				$.ajax({
+					url: "Scrap.do",
+					data: {"portfolio_id" : portfolio_id},
+					success: function(res) {
+						if(res == 1) {
+							alert("스크랩 하셨습니다. \n찜 목록은 마이페이지에서 확인 가능합니다.");
+						} else if(res == 2) {
+							alert("이미 스크랩 하셨습니다!")
+						} else {
+							alert("스크랩 진행 중 오류가 발생하였습니다. /n관리자에게 문의하세요.")
+						}
 					}
 				});
 			}
