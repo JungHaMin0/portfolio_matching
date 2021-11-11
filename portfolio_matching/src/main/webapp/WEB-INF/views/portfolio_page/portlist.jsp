@@ -156,11 +156,11 @@
                             </ul>
                             <p class="card-text">
                               <c:choose>
-                                <c:when test="${fn:length(list.portfolio_content) gt 18}">
-                                  <c:out value="${fn:substring(list.portfolio_content, 0, 15)}"></c:out>...
+                                <c:when test="${fn:length(list.portfolio_content) gt 20}">
+                                  ${fn:substring(list.portfolio_content, 0, 17)}...
                             </c:when>
                                 <c:otherwise>
-                                  <c:out value="${list.portfolio_content}"></c:out>
+                                  <div>${list.portfolio_content}</div>
                                 </c:otherwise>
                               </c:choose>
                             </p>
