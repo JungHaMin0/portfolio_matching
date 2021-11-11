@@ -1,11 +1,14 @@
 package com.spring.ex.member.repository;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.member.domain.MemberVO;
+import com.spring.ex.portfolio.domain.PortListVO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -29,5 +32,10 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public MemberVO login(MemberVO vo) throws Exception {
 		return sqlSession.selectOne("memberMapper.login", vo);
+	}
+	
+	@Override
+	public List<MemberVO> view() {
+		 return sqlSession.selectList("memberMapper.mlist");
 	}
 }

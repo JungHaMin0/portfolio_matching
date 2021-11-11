@@ -4,6 +4,7 @@
 eclipse.preferences.version=1
 encoding//src/main/java/com/spring/ex/portfolio/controller/PortController.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/admin/aindex.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/admin/member.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/main/index.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/member/login.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/mypage/nav.jsp=UTF-8
