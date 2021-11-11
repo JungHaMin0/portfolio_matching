@@ -10,7 +10,12 @@
 		AND deal_purUser = #{user_id}
 		ORDER BY deal_id DESC;
 	</select>
-	
+
+	<select id="reviewlist" parameterType="String" resultType="com.spring.ex.review.domain.ReviewVO">
+		SELECT * FROM review
+		ORDER BY review_rating DESC;
+	</select>
+
 	<!-- 구매 내역 - 구매 확정 기능 -->
 	<update id="pmPurchaseConfirm" parameterType="String">
 		UPDATE deal SET

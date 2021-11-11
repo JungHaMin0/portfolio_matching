@@ -1,5 +1,9 @@
 package com.spring.ex.admin.repository;
 
-public interface AdminDAO {
+import java.util.List;
 
+import com.spring.ex.review.domain.ReviewVO;
+
+public interface AdminDAO {
+	public List<ReviewVO> reviewlist();
 }
