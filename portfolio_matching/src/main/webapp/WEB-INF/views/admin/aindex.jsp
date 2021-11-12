@@ -3,6 +3,8 @@
 
 <!DOCTYPE html>
 <head>
+<<<<<<< HEAD
+=======
   <%@ include file="../../include/adminstyle_css.jsp"%>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+>>>>>>> refs/remotes/origin/develop
 <title>관리자 페이지</title>
 </head>
 

@@ -28,11 +28,12 @@ public class AdminController {
 		return "admin/member";
 	}
 	
-	@RequestMapping(value = "adminReview.do", method = RequestMethod.GET)
-	public String adminReview() throws Exception {
-
-		return "admin/review";
-	}
+	/*
+	 * @RequestMapping(value = "reviewlist.do", method = RequestMethod.GET) public
+	 * String adminReview() throws Exception {
+	 * 
+	 * return "admin/review"; }
+	 */
 	
 	@RequestMapping(value = "adminPur.do", method = RequestMethod.GET)
 	public String adminPur() throws Exception {
