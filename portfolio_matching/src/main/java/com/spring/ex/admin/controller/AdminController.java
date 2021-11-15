@@ -1,11 +1,26 @@
 package com.spring.ex.admin.controller;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.ex.admin.service.AdminService;
+import com.spring.ex.deal.domain.Deal_PortVO;
+import com.spring.ex.member.service.MyPageService;
+import com.spring.ex.portfolio.domain.Criteria;
+import com.spring.ex.portfolio.domain.PageMaker;
+
+import java.util.List;
 @Controller
 public class AdminController {
+	@Inject
+	AdminService service;
+	
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
 	public String index() throws Exception {
 
@@ -23,19 +38,56 @@ public class AdminController {
 
 		return "admin/review";
 	}
-	
+	// 구매내역
 	@RequestMapping(value = "adminPur.do", method = RequestMethod.GET)
-	public String adminPur() throws Exception {
+	public ModelAndView adminPur(Criteria cri) throws Exception {
+		List<Deal_PortVO> list = service.PurchaseList(cri);
+		PageMaker pageMaker =new PageMaker();
+		pageMaker.setCri(cri);
+		Integer totalNum = service.totalCount();
+		pageMaker.setTotalCount(totalNum);
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin/pur");
+		mav.addObject("list", list);
+		mav.addObject("pageMaker", pageMaker);
 
-		return "admin/pur";
+		return mav;
 	}
 	
+	// 구매내역 상세
+	@RequestMapping(value = "purUser.do", method = RequestMethod.GET)
+	public ModelAndView purUser(@RequestParam String purUser, HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(service.purUser(purUser));
+		mav.setViewName("admin/purUser");
+		mav.addObject("dto", service.purUser(purUser));
+		return mav;
+	}
+	// 판매내역 상세
+	@RequestMapping(value = "saleUser.do", method = RequestMethod.GET)
+	public ModelAndView saleUSer(@RequestParam String saleUser, HttpSession session) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin/saleUser");
+		mav.addObject("dto", service.saleUser(saleUser));
+		return mav;
+	}
+	// 판매내역
 	@RequestMapping(value = "adminSale.do", method = RequestMethod.GET)
-	public String sale() throws Exception {
+		public ModelAndView sale(Criteria cri) throws Exception {
+			List<Deal_PortVO> list = service.PurchaseList(cri);
+			PageMaker pageMaker =new PageMaker();
+			pageMaker.setCri(cri);
+			Integer totalNum = service.totalCount();
+			pageMaker.setTotalCount(totalNum);
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("admin/sale");
+			mav.addObject("list", list);
+			mav.addObject("pageMaker", pageMaker);
 
-		return "admin/sale";
-	}
+			return mav;
+		}
 	
+	// 포트폴리오
 	@RequestMapping(value = "adminPortfolio.do", method = RequestMethod.GET)
 	public String portfolio() throws Exception {
 
