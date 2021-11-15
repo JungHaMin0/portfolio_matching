@@ -11,7 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.admin.service.AdminService;
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.member.service.MyPageService;
 import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PageMaker;
 
