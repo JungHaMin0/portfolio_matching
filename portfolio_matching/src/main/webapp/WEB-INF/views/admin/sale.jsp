@@ -91,50 +91,6 @@
                 </div>
                 <!-- /.container-fluid -->
 		
-         <div class="pagination justify-content-center">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <c:if test="${pageMaker.prev}">
-                  <c:if test="${empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(pageMaker.startPage - 1)}" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span>
-                    </a></li>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(pageMaker.startPage - 1)}" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span>
-                    </a></li>
-                  </c:if>
-                </c:if>
-                <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-                  <c:if test="${empty categorySubGetOne}">
-                    <c:if test="${pageMaker.cri.page eq idx}">
-                      <li class="page-item active"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                    <c:if test="${pageMaker.cri.page ne idx}">
-                      <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <c:if test="${pageMaker.cri.page eq idx}">
-                      <li class="page-item active"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                    <c:if test="${pageMaker.cri.page ne idx}">
-                      <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                  </c:if>
-                </c:forEach>
-                <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                  <c:if test="${empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(pageMaker.endPage + 1)}" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span>
-                    </a></li>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminSale.do${pageMaker.makeQuery(pageMaker.endPage + 1)}" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span>
-                    </a></li>
-                  </c:if>
-                </c:if>
-              </ul>
-            </nav>
-          </div>
           
             </div>
             <!-- End of Main Content -->
@@ -153,21 +109,7 @@
         <!-- End of Content Wrapper -->
 
     </div>
-    <!-- End of Page Wrapper -->
-<!-- 
-<script>
-function fn_view(cb_num){
-    
-    var form = document.getElementById("boardForm");
-    var url = "<c:url value='admin_board_detail.do' />";
-    url = url + "?cb_num=" + cb_num;
-    fn_view
-    form.action = url;    
-    form.submit(); 
-}
-</script>
 
- -->
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
   </a>

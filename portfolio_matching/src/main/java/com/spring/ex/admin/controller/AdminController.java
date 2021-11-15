@@ -12,8 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.spring.ex.member.service.MemberService;
 import com.spring.ex.admin.service.AdminService;
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.portfolio.domain.Criteria;
-import com.spring.ex.portfolio.domain.PageMaker;
 
 import java.util.List;
 
@@ -61,7 +59,6 @@ public class AdminController {
 	@RequestMapping(value = "purUser.do", method = RequestMethod.GET)
 	public ModelAndView purUser(@RequestParam String purUser, HttpSession session) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		System.out.println(Aservice.purUser(purUser));
 		mav.setViewName("admin/purUser");
 		mav.addObject("dto", Aservice.purUser(purUser));
 		return mav;

@@ -8,8 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminDAO;
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.portfolio.domain.Criteria;
-import com.spring.ex.portfolio.domain.SearchCriteria;
 
 @Service
 public class AdminServiceImpl implements AdminService {

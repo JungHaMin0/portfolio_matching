@@ -3,7 +3,6 @@ package com.spring.ex.admin.service;
 import java.util.List;
 
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.portfolio.domain.Criteria;
 
 public interface AdminService {
 	// 관리자 구매내역

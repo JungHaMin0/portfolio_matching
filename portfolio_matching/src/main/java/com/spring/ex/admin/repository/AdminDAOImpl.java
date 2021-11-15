@@ -8,8 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.portfolio.domain.Criteria;
-import com.spring.ex.portfolio.domain.SearchCriteria;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO {
