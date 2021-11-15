@@ -21,12 +21,18 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-  		<context:component-scan base-package="com.spring.ex.admin.controller" />
+  
 	
 		<beans:bean id="AdminInterceptor" class="com.spring.ex.admin.interceptor.AdminInterceptor" />
 	 	<interceptors>
 		 <interceptor>
 		  <mapping path="/aindex.do" />
+		  <mapping path="/adminMember.do" />
+		  <mapping path="/adminReview.do" />
+		  <mapping path="/adminMember.do" />
+		  <mapping path="/adminSale.do" />
+		  <mapping path="/adminPortfolio.do" />
+		  <mapping path="/adminStat.do" />
 		  <beans:ref bean="AdminInterceptor" />
 		 </interceptor>
 		</interceptors>

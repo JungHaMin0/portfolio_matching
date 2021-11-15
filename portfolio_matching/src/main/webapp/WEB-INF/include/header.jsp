@@ -31,7 +31,7 @@
             <ul class="navbar-nav ml-auto mt-10">
             <c:if test="${member.user_ref == 1}">
 				<li>
-				 <a href="adminIndex.do">관리자 화면</a> 
+				 <a href="aindex.do">관리자 화면</a> 
 				</li> 
 			</c:if>
               <c:if test="${member == null}">
