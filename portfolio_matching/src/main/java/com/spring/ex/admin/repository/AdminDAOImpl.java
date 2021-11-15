@@ -18,8 +18,8 @@ public class AdminDAOImpl implements AdminDAO {
 
 	
 	@Override
-	public List<Deal_PortVO> PurchaseList(Criteria cri) throws Exception {
-		return sqlSession.selectList("adminMapper.purlist", cri);
+	public List<Deal_PortVO> PurchaseList() throws Exception {
+		return sqlSession.selectList("adminMapper.purlist");
 	}
 
 
@@ -35,23 +35,15 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 
-	@Override
-	public Integer TotalCount() throws Exception {
-		return sqlSession.selectOne("adminMapper.getTotalCount");
-		
-	}
 
 
 	@Override
-	public List<Deal_PortVO> SaleList(Criteria cri) throws Exception {
-		return sqlSession.selectList("adminMapper.Salelist", cri);
+	public List<Deal_PortVO> SaleList() throws Exception {
+		return sqlSession.selectList("adminMapper.Salelist");
 	}
 
 
-	@Override
-	public Integer TotalSaleCount() throws Exception {
-		return sqlSession.selectOne("adminMapper.getTotalSaleCount");
-	}
+
 	
 
 }

@@ -17,9 +17,9 @@ public class AdminServiceImpl implements AdminService {
 	AdminDAO dao;
 
 	@Override
-	public List<Deal_PortVO> PurchaseList(Criteria cri) throws Exception {
+	public List<Deal_PortVO> PurchaseList() throws Exception {
 		
-		return dao.PurchaseList(cri);
+		return dao.PurchaseList();
 	}
 
 
@@ -36,22 +36,15 @@ public class AdminServiceImpl implements AdminService {
 
 
 
-	@Override
-	public Integer totalCount() throws Exception {
-		return dao.TotalCount();
-	}
+
 
 
 	@Override
-	public List<Deal_PortVO> SaleList(Criteria cri) throws Exception {
-		return dao.SaleList(cri);
+	public List<Deal_PortVO> SaleList() throws Exception {
+		return dao.SaleList();
 	}
 
 
-	@Override
-	public Integer totalsaleCount() throws Exception {
-		return dao.TotalSaleCount();
-	}
 
 
 

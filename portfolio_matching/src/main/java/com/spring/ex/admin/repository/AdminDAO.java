@@ -8,12 +8,12 @@ import com.spring.ex.portfolio.domain.Criteria;
 public interface AdminDAO {
 
 	//관리자 구매내역
-		public List<Deal_PortVO> PurchaseList(Criteria cri) throws Exception;
-		public Integer TotalCount()throws Exception;
+		public List<Deal_PortVO> PurchaseList() throws Exception;
+
 	//관리자 구매내역 상세
 		public List<Deal_PortVO> purUser(String purUser) throws Exception;
 		public List<Deal_PortVO> saleUser(String saleUser) throws Exception;
 		
-		public List<Deal_PortVO> SaleList(Criteria cri) throws Exception;
-		public Integer TotalSaleCount()throws Exception;
+		public List<Deal_PortVO> SaleList() throws Exception;
+
 }

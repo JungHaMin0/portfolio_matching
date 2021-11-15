@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-
-import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.service.MemberService;
 import com.spring.ex.admin.service.AdminService;
 import com.spring.ex.deal.domain.Deal_PortVO;
@@ -51,16 +48,11 @@ public class AdminController {
 	// 구매내역
 
 	@RequestMapping(value = "adminPur.do", method = RequestMethod.GET)
-	public ModelAndView adminPur(Criteria cri) throws Exception {
-		List<Deal_PortVO> list = Aservice.PurchaseList(cri);
-		PageMaker pageMaker =new PageMaker();
-		pageMaker.setCri(cri);
-		Integer totalNum = Aservice.totalCount();
-		pageMaker.setTotalCount(totalNum);
+	public ModelAndView adminPur() throws Exception {
+		List<Deal_PortVO> list = Aservice.PurchaseList();
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("admin/pur");
 		mav.addObject("list", list);
-		mav.addObject("pageMaker", pageMaker);
 
 		return mav;
 	}
@@ -84,27 +76,16 @@ public class AdminController {
 	}
 	// 판매내역
 	@RequestMapping(value = "adminSale.do", method = RequestMethod.GET)
-		public ModelAndView sale(Criteria cri) throws Exception {
-			List<Deal_PortVO> list = Aservice.PurchaseList(cri);
-			PageMaker pageMaker =new PageMaker();
-			pageMaker.setCri(cri);
-			Integer totalNum = Aservice.totalCount();
-			pageMaker.setTotalCount(totalNum);
+		public ModelAndView sale() throws Exception {
+			List<Deal_PortVO> list = Aservice.PurchaseList();
 			ModelAndView mav = new ModelAndView();
 			mav.setViewName("admin/sale");
 			mav.addObject("list", list);
-			mav.addObject("pageMaker", pageMaker);
+	
 
 			return mav;
 		}
 	
-
-	// 포트폴리오
-	@RequestMapping(value = "adminPortfolio.do", method = RequestMethod.GET)
-	public String portfolio() throws Exception {
-
-		return "admin/portfolio";
-	}
 
 	@RequestMapping(value = "adminStat.do", method = RequestMethod.GET)
 	public String stat() throws Exception {
