@@ -11,4 +11,8 @@ public interface AdminPortfolioDAO {
 	public List<PortRegVO> portfolioList() throws Exception;
 	public CategoryMainVO categoryMainGetOne(int id) throws Exception;
 	public CategorySubVO categorySubGetOne(int id) throws Exception;
+	public PortRegVO adminPortfolioImage(int portfolio_id) throws Exception;
+	public PortRegVO adminPortfolioContent(int portfolio_id) throws Exception;
+	
+	public int adminPortfolioDelete(int portfolio_id) throws Exception;
 }
