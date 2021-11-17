@@ -28,6 +28,7 @@
 	<delete id="adminPortfolioDelete" parameterType="int">
 		DELETE FROM portfolio WHERE portfolio_id = #{portfolio_id}
 	</delete>
+	
 	<!-- 어드민 메인 페이지 백분율   -->
 	<select id="portcate" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 	select portfolio_category_main, ROUND(COUNT(*) * 100 / sum(count(*)) over(), 1) AS score
@@ -48,7 +49,7 @@
 	GROUP BY portfolio_category_main
 	</select>
 	
-	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	<select id="dealcnt" resultType="com.spring.ex.deal.domain.DealVO">
 	SELECT (SUM(deal_price)* 0.1) AS dcnt
 	FROM deal
 	</select>

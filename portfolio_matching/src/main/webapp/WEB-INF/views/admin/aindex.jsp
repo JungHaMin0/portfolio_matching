@@ -49,8 +49,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">수익현황(10월)</div>
-                      
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">${dealcnt.dcnt}</div>
+                      <c:forEach items="${dealcnt}" var="dealcnt">
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">${dealcnt.dcnt} 원</div>
+                      </c:forEach>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -211,14 +212,14 @@
                   <div class="progress mb-4">
                     <div class="progress-bar" role="progressbar" style="width: ${portcate.score}%; background-color:
                     <c:choose>
-               	   <c:when test="${portcate.portfolio_category_main eq 1}">red</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 2}">blue</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 3}">green</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 4}">orange</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 5}">yellow</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 6}">skyblue</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 7}">#000</c:when>
-               	   <c:when test="${portcate.portfolio_category_main eq 8}">purple</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 1}">#f6e58d</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 2}">#ff7979</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 3}">#686de0</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 4}">#bee3c5</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 5}">#7ed6df</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 6}">#e056fd</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 7}">#95afc0</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 8}">#eb4d4b</c:when>
                   </c:choose>;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                   </c:forEach>
@@ -234,14 +235,14 @@
                   <div class="card bg-primary text-white shadow">
                     <div class="card-body" style="background-color:
                    <c:choose>
-               	   <c:when test="${portcnt.portfolio_category_main eq 1}">red</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 2}">blue</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 3}">green</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 4}">orange</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 5}">yellow</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 6}">skyblue</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 7}">#000</c:when>
-               	   <c:when test="${portcnt.portfolio_category_main eq 8}">purple</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 1}">#f6e58d</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 2}">#ff7979</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 3}">#686de0</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 4}">#bee3c5</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 5}">#7ed6df</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 6}">#e056fd</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 7}">#95afc0</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 8}">#eb4d4b</c:when>
                   </c:choose>;">
                    	<c:choose>
 	               	   <c:when test="${portcnt.portfolio_category_main eq 1}">IT 프로그래밍</c:when>

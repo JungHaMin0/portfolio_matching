@@ -8,5 +8,4 @@ import com.spring.ex.deal.domain.OrderVO;
 public interface OrderService {
 
 	public OrderVO order(OrderVO vo) throws Exception;
-	public List<DealVO> dcntlist();
 }

@@ -28,10 +28,4 @@ public class OrderServiceImpl implements OrderService {
 
 		return vo1;
 	}
-
-	@Override
-	public List<DealVO> dcntlist() {
-		 return dao.dcntlist();
-	}
-	
 }

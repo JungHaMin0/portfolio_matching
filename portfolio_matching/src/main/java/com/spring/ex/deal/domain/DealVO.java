@@ -12,6 +12,14 @@ public class DealVO {
 	private Date deal_date;
 	private int dcnt;
 
+	public int getDcnt() {
+		return dcnt;
+	}
+
+	public void setDcnt(int dcnt) {
+		this.dcnt = dcnt;
+	}
+
 	public int getDeal_id() {
 		return deal_id;
 	}

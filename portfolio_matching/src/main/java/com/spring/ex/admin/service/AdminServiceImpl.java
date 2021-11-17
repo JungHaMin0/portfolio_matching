@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminDAO;
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.review.domain.ReviewVO;
@@ -41,20 +42,5 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public List<ReviewVO> reviewlist() {
 		return dao.reviewlist();
-	}
-
-	@Override
-	public List<PortRegVO> toplist() {
-		return dao.toplist();
-	}
-
-	@Override
-	public List<PortRegVO> catelist() {
-		return dao.catelist();
-	}
-
-	@Override
-	public List<PortRegVO> portcnt() {
-		return dao.portcnt();
 	}
 }

@@ -20,8 +20,4 @@ public class OrderDAOImpl implements OrderDAO {
 		return sqlSession.insert("dealMapper.order", vo);
 	}
 
-	@Override
-	public List<DealVO> dcntlist() {
-		return sqlSession.selectList("adminPortfolioMapper.dealcnt");
-	}
 }
