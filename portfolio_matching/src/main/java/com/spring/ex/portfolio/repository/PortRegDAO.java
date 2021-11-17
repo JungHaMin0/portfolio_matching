@@ -10,7 +10,7 @@ import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
 import com.spring.ex.portfolio.domain.SearchCriteria;
-import com.spring.ex.review.domain.ReviewVO;
+import com.spring.ex.review.ReviewVO;
 
 public interface PortRegDAO {
 	

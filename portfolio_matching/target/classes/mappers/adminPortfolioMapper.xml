@@ -37,8 +37,9 @@
 	GROUP BY portfolio_category_main
 	</select>
 	
-<!-- 	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
-	
-	</select> -->
+	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT (SUM(deal_price)* 0.1) AS dcnt
+	FROM deal
+	</select>
 	
 </mapper>

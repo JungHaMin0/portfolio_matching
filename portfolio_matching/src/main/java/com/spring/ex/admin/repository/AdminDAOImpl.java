@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.domain.ReviewVO;
+import com.spring.ex.review.ReviewVO;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO {

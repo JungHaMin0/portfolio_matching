@@ -15,7 +15,7 @@ import com.spring.ex.inquiry.domain.InquiryVO;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.repository.MyPageDAO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
-import com.spring.ex.review.domain.ReviewVO;
+import com.spring.ex.review.ReviewVO;
 import com.spring.ex.scrap.domain.ScrapVO;
 
 @Service

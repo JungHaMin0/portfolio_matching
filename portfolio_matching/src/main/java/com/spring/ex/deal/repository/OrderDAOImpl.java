@@ -1,10 +1,13 @@
 package com.spring.ex.deal.repository;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.OrderVO;
 
 @Repository
@@ -17,4 +20,8 @@ public class OrderDAOImpl implements OrderDAO {
 		return sqlSession.insert("dealMapper.order", vo);
 	}
 
+	@Override
+	public List<DealVO> dcntlist() {
+		return sqlSession.selectList("adminPortfolioMapper.dealcnt");
+	}
 }

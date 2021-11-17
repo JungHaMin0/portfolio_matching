@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminDAO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.domain.ReviewVO;
+import com.spring.ex.review.ReviewVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {

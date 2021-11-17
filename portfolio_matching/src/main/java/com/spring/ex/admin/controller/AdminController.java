@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.ex.admin.service.AdminService;
+import com.spring.ex.deal.service.OrderService;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.service.MemberService;
 
@@ -19,12 +20,15 @@ public class AdminController {
 	@Autowired
 	AdminService aservice;
 	
+	@Autowired
+	OrderService oservice;
+	
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
 	public String index(Model model) throws Exception {
 		model.addAttribute("topport", aservice.toplist());
 		model.addAttribute("portcate", aservice.catelist());
 		model.addAttribute("portcnt", aservice.portcnt());
-		System.out.println(aservice.catelist().get(0).getScore());
+		model.addAttribute("dealcnt", oservice.dcntlist());
 		return "admin/aindex";
 	}
 	

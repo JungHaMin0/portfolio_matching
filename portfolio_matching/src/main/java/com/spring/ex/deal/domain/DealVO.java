@@ -10,6 +10,7 @@ public class DealVO {
 	private int deal_price;
 	private String deal_status;
 	private Date deal_date;
+	private int dcnt;
 
 	public int getDeal_id() {
 		return deal_id;
