@@ -1,5 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!DOCTYPE html>
 <head>
@@ -191,116 +193,132 @@
                   <h6 class="m-0 font-weight-bold text-primary">카테고리</h6>
                 </div>
                 <div class="card-body">
-                  <h4 class="small font-weight-bold">Web <span class="float-right">60%</span></h4>
+                
+                  <c:forEach items="${portcate}" var="portcate">
+                  <h4 class="small font-weight-bold">
+                  <c:choose>
+               	   <c:when test="${portcate.portfolio_category_main eq 1}">IT 프로그래밍</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 2}">디자인</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 3}">영상, 사진, 음향</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 4}">마케팅</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 5}">번역 및 통역</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 6}">문서</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 7}">비지니스 컨설팅</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 8}">주문 제작</c:when>
+                  </c:choose>
+                  <span class="float-right">${portcate.score}%</span></h4>
                   <div class="progress mb-4">
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 60%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" style="width: ${portcate.score}%; background-color:
+                    <c:choose>
+               	   <c:when test="${portcate.portfolio_category_main eq 1}">red</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 2}">blue</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 3}">green</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 4}">orange</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 5}">yellow</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 6}">skyblue</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 7}">#000</c:when>
+               	   <c:when test="${portcate.portfolio_category_main eq 8}">purple</c:when>
+                  </c:choose>;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
-                  <h4 class="small font-weight-bold">App <span class="float-right">10%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 10%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">photo<span class="float-right">5%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar" role="progressbar" style="width: 5%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">ppt <span class="float-right">20%</span></h4>
-                  <div class="progress mb-4">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                  <h4 class="small font-weight-bold">etc <span class="float-right">5%</span></h4>
-                  <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
+                  </c:forEach>
+                  
                 </div>
               </div>
 
               <!-- Color System -->
               <h5>카테고리 별 게시글 수</h5>
               <div class="row">
+                <c:forEach items="${portcnt}" var="portcnt">
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-primary text-white shadow">
-                    <div class="card-body">
-                      Web
-                      <div class="text-white-50 small">1021</div>
+                    <div class="card-body" style="background-color:
+                   <c:choose>
+               	   <c:when test="${portcnt.portfolio_category_main eq 1}">red</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 2}">blue</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 3}">green</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 4}">orange</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 5}">yellow</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 6}">skyblue</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 7}">#000</c:when>
+               	   <c:when test="${portcnt.portfolio_category_main eq 8}">purple</c:when>
+                  </c:choose>;">
+                   	<c:choose>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 1}">IT 프로그래밍</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 2}">디자인</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 3}">영상, 사진, 음향</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 4}">마케팅</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 5}">번역 및 통역</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 6}">문서</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 7}">비지니스 컨설팅</c:when>
+	               	   <c:when test="${portcnt.portfolio_category_main eq 8}">주문 제작</c:when>
+                 	</c:choose>
+                      <div class="text-white-50 small">${portcnt.cnt}</div>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-success text-white shadow">
-                    <div class="card-body">
-                      App
-                      <div class="text-white-50 small">551</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-info text-white shadow">
-                    <div class="card-body">
-                      Photo
-                      <div class="text-white-50 small">31</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                  <div class="card bg-warning text-white shadow">
-                    <div class="card-body">
-                      ppt
-                      <div class="text-white-50 small">124</div>
-                    </div>
-                  </div>
-                </div>
-
+               </c:forEach>
               </div>
 
             </div>
 
             <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
-              <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">최신 거래 내역</h6>
+                     <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTable</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                    <thead>
+										<tr>
+                                            <th>작성자</th>
+                                            <th>제목</th>
+                                            <th>내   용</th>
+                                            <th>카테고리</th>
+                                            <th>가   격</th>
+                                            <th>별   점</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <c:forEach items="${topport}" var="topport">
+                                        <tr>
+                                            <td>${topport.portfolio_userId}</td>
+                                            <td>
+	                                            <c:choose>
+						                            <c:when test="${fn:length(topport.portfolio_title) gt 10}">
+						                                  <a href="PortContent.do?portfolio_id=${topport.portfolio_id}" target="_blank">${fn:substring(topport.portfolio_title, 0, 15)}...</a>
+						                            </c:when>
+						                            <c:otherwise>
+						                              <div><a href="PortContent.do?portfolio_id=${topport.portfolio_id}" target="_blank">${topport.portfolio_title}</a></div>
+						                            </c:otherwise>
+												</c:choose>
+				                          	</td>
+                                            <td>
+   		                                        <c:choose>
+						                            <c:when test="${fn:length(topport.portfolio_content) gt 5}">
+						                                  <div target="_blank" class="text-right">${fn:substring(topport.portfolio_content, 0, 10)}...</div>
+						                            </c:when>
+						                            <c:otherwise>
+						                            	<div class="text-right">${topport.portfolio_content}</div>
+						                            </c:otherwise>
+												</c:choose>
+                                            </td>
+                                            <td class="text-center">${topport.portfolio_category_main}</td>
+                                            <td class="text-right">${topport.portfolio_price} 원</td>
+                                            <td class="text-right">${topport.portfolio_rating}</td>
+                                        </tr>
+                                    </c:forEach>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <a href="adminPortfolio.do" style="margin-left: 795px; margin-bottom: 10px; margin-top: 0px;">더보기</a>
+                    </div>
+                    
                 </div>
-                <div class="card-body">
-                  <div class="card-item-first">
-                    <span style="margin-right: 50px; color: #000;">판매자</span> <span style="margin-right: 50px; color: #000;">판매자ID</span> <span style="margin-right: 50px; color: #000;">구매자</span> <span style="margin-right: 50px; color: #000;">구매자ID</span> <span style="margin-right: 50px; color: #000;">카테고리</span> <span style="margin-right: 50px; color: #000;">가격</span> <span style="margin-right: 50px; color: skyblue;">게시글</span> <span style="margin-right: 50px; color: #000;">수익(만원)</span>
-                  </div>
 
-                  <div class="card-item">
-                    <span style="margin-right: 50px;">정하민</span> <span style="margin-right: 48px;">gkals123</span> <span style="margin-right: 46px;">이정원</span> <span style="margin-right: 50px;">wjddnjs123</span> <span style="margin-right: 47px;">WEB</span> <span style="margin-right: 38px;">1000만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">50</span>
-                  </div>
-
-                  <div class="card-item">
-                    <span style="margin-right: 41px;">정하민2</span> <span style="margin-right: 48px;">gkals124</span> <span style="margin-right: 37px;">이정원2</span> <span style="margin-right: 50px;">wjddnjs124</span> <span style="margin-right: 61px;">APP</span> <span style="margin-right: 39px;">500만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">25</span>
-                  </div>
-
-                  <div class="card-item">
-                    <span style="margin-right: 40px;">정하민3</span> <span style="margin-right: 50px;">gkals125</span> <span style="margin-right: 37px;">이정원3</span> <span style="margin-right: 50px;">wjddnjs125</span> <span style="margin-right: 62px;">PPT</span> <span style="margin-right: 40px;">200만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">5</span>
-                  </div>
-
-                  <div class="card-item">
-                    <span style="margin-right: 50px;">정다윤</span> <span style="margin-right: 45px;">ekdbs123</span> <span style="margin-right: 48px;">김영우</span> <span style="margin-right: 50px;">duddn123</span> <span style="margin-right: 56px;">PHOTO</span> <span style="margin-right: 40px;">20만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">2</span>
-                  </div>
-
-                  <div class="card-item">
-                    <span style="margin-right: 40px;">정다윤2</span> <span style="margin-right: 46px;">ekdbs124</span> <span style="margin-right: 37px;">김영우2</span> <span style="margin-right: 60px;">duddn124</span> <span style="margin-right: 45px;">WEB</span> <span style="margin-right: 40px;">3000만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">100</span>
-                  </div>
-
-                  <div class="card-item">
-                    <span style="margin-right: 40px;">정다윤3</span> <span style="margin-right: 46px;">ekdbs125</span> <span style="margin-right: 37px;">김영우3</span> <span style="margin-right: 63px;">duddn125</span> <span style="margin-right: 70px;">PPT</span> <span style="margin-right: 40px;">10만원</span> <span style="margin-right: 65px; color: skyblue; cursor: pointer;">link</span> <span style="margin-right: 50px;">1</span>
-                  </div>
-
-
-                </div>
-              </div>
-
-              <!-- Approach -->
-
-
-            </div>
-          </div>
-
-        </div>
         <!-- /.container-fluid -->
 
       </div>
@@ -340,6 +358,11 @@
     </div>
   </div>
   <%@ include file="../../include/adminstyle_js.jsp"%>
+  <script>
+  $(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
+  </script>
 </body>
 
 </html>

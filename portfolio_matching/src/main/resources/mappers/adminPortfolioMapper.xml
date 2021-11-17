@@ -16,4 +16,29 @@
 	<select id="categorySubGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
 		SELECT * FROM category_sub WHERE id = #{id}
 	</select>
+	
+	<!-- 어드민 메인 페이지 백분율   -->
+	<select id="portcate" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	select portfolio_category_main, ROUND(COUNT(*) * 100 / sum(count(*)) over(), 1) AS score
+	from portfolio
+	group by portfolio_category_main 
+	ORDER by score DESC
+	</select>
+	
+	<select id="topport" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT * FROM portfolio
+	WHERE portfolio_regDate 
+	ORDER BY portfolio_regDate DESC LIMIT 5;
+	</select>
+	
+	<select id="portcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT portfolio_category_main, COUNT(*) AS cnt
+	FROM portfolio
+	GROUP BY portfolio_category_main
+	</select>
+	
+<!-- 	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	
+	</select> -->
+	
 </mapper>

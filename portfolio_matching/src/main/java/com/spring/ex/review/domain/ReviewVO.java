@@ -9,7 +9,15 @@ public class ReviewVO {
 	private String review_userId;
 	private String review_title;
 	private String review_content;
-	private Date regDate;
+	private Date review_regDate;
+
+	public Date getReview_regDate() {
+		return review_regDate;
+	}
+
+	public void setReview_regDate(Date review_regDate) {
+		this.review_regDate = review_regDate;
+	}
 
 	public int getReview_id() {
 		return review_id;
@@ -57,13 +65,5 @@ public class ReviewVO {
 
 	public void setReview_content(String review_content) {
 		this.review_content = review_content;
-	}
-
-	public Date getRegDate() {
-		return regDate;
-	}
-
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
 	}
 }

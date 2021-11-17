@@ -1,7 +1,6 @@
 package com.spring.ex.admin.controller;
 
-import javax.inject.Inject;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,15 +13,18 @@ import com.spring.ex.member.service.MemberService;
 @Controller
 public class AdminController {
 	
-	@Inject
+	@Autowired
 	MemberService service;
 	
-	@Inject
+	@Autowired
 	AdminService aservice;
 	
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
-	public String index() throws Exception {
-
+	public String index(Model model) throws Exception {
+		model.addAttribute("topport", aservice.toplist());
+		model.addAttribute("portcate", aservice.catelist());
+		model.addAttribute("portcnt", aservice.portcnt());
+		System.out.println(aservice.catelist().get(0).getScore());
 		return "admin/aindex";
 	}
 	

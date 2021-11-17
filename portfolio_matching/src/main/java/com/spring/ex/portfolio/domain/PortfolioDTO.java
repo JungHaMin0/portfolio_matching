@@ -13,7 +13,7 @@ public class PortfolioDTO {
 	private String portfolio_content;
 	private int portfolio_price;
 	private String portfolio_term;
-	private int portfolio_rating;
+	private double portfolio_rating;
 	private Timestamp portfolio_regDate;
 	private String portfolio_Img;
 
@@ -89,11 +89,11 @@ public class PortfolioDTO {
 		this.portfolio_term = portfolio_term;
 	}
 
-	public int getPortfolio_rating() {
+	public double getPortfolio_rating() {
 		return portfolio_rating;
 	}
 
-	public void setPortfolio_rating(int portfolio_rating) {
+	public void setPortfolio_rating(double portfolio_rating) {
 		this.portfolio_rating = portfolio_rating;
 	}
 
