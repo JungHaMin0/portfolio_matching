@@ -5,6 +5,7 @@ import java.util.Date;
 public class InquiryVO {
 	private int inq_id;
 	private int inq_deal_id;
+	private int inq_portfolio_id;
 	private String inq_purUser;
 	private String inq_title;
 	private String inq_content;
@@ -22,14 +23,22 @@ public class InquiryVO {
 		return inq_deal_id;
 	}
 
+	public int getInq_portfolio_id() {
+		return inq_portfolio_id;
+	}
+
+	public void setInq_portfolio_id(int inq_portfolio_id) {
+		this.inq_portfolio_id = inq_portfolio_id;
+	}
+
 	public void setInq_deal_id(int inq_deal_id) {
 		this.inq_deal_id = inq_deal_id;
 	}
-	
+
 	public String getInq_purUser() {
 		return inq_purUser;
 	}
-	
+
 	public void setInq_purUser(String inq_purUser) {
 		this.inq_purUser = inq_purUser;
 	}

@@ -5,7 +5,7 @@
 <mapper namespace="adminPortfolioMapper">
 	<select id="portfolioList" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 		SELECT portfolio_id, portfolio_title, portfolio_userId,
-		portfolio_category_main, portfolio_category_sub, portfolio_term, portfolio_price, portfolio_rating, portfolio_regDate
+		portfolio_category_main, portfolio_category_sub, portfolio_content, portfolio_term, portfolio_price, portfolio_rating, portfolio_regDate
 		FROM portfolio ORDER BY portfolio_id DESC
 	</select>
 	
@@ -16,4 +16,16 @@
 	<select id="categorySubGetOne" parameterType="int" resultType="com.spring.ex.portfolio.domain.CategorySubVO">
 		SELECT * FROM category_sub WHERE id = #{id}
 	</select>
+	
+	<select id="adminPortfolioImage" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT portfolio_Img FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioContent" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT portfolio_content FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+	
+	<delete id="adminPortfolioDelete" parameterType="int">
+		DELETE FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</delete>
 </mapper>

@@ -190,11 +190,11 @@
               <ul class="list-inline mt-20">
                 <li class="list-item"><c:choose>
                     <c:when test="${empty member}">
-                      <a href="inquiryWrite.do?portfolio_id=${portfolio.portfolio_id}" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3" onclick="fn_alert()">문의하기</a>
+                      <a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3" onclick="fn_alert()">문의하기</a>
                       <br>
                     </c:when>
                     <c:otherwise>
-                      <a href="" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">문의하기</a>
+                      <a href="inquiryWriteForm.do?portfolio_title=${portfolio.portfolio_title}&portfolio_id=${portfolio.portfolio_id}" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3" onclick="window.open(this.href, '', 'width=800, height=800'); return false">문의하기</a>
                       <br>
                     </c:otherwise>
                   </c:choose></li>

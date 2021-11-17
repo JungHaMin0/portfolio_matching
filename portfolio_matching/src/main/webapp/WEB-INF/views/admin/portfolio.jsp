@@ -7,20 +7,37 @@
 <html>
 
 <head>
-  <%@ include file="../../include/adminstyle_css.jsp"%>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<%@ include file="../../include/adminstyle_css.jsp"%>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-    <title>포매 어드민 페이지</title>
-
+<title>포매 어드민 페이지</title>
+<style>
+  #portfolio-category {
+    position: relative;
+  }
+  
+  #category-name {
+    position: absolute;
+    width: 150px;
+    background-color: white;
+    border: solid 1px black;
+    visibility: hidden;
+    z-index: 9999;
+  }
+  
+  #portfolio-category:hover #category-name{
+    visibility: visible;
+  }
+</style>
 </head>
 
 <body id="page-top">
 
-      <%@ include file="../../include/adminstyle_css.jsp"%>
+  <%@ include file="../../include/adminstyle_css.jsp"%>
   <!-- Page Wrapper -->
   <div id="wrapper">
     <!-- sidebar -->
@@ -35,69 +52,94 @@
         <!-- Topbar -->
         <%@ include file="../../include/adminTopbar.jsp"%>
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">포트폴리오 관리</h1>
-                    <p class="mb-4">등록된 포트폴리오를 관리하는 페이지입니다.</p>
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 text-gray-800">포트폴리오 관리</h1>
+          <p class="mb-4">등록된 포트폴리오를 관리하는 페이지입니다.</p>
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">등록된 포트폴리오 목록</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>번호</th>
-                                            <th>제목</th>
-                                            <th>작성자</th>
-                                            <th>카테고리</th>
-                                            <th>등록일</th>
-                                            <th class="text-center">보기</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                      <c:forEach items="${portfolio}" var="list">
-                                        <tr>
-                                            <td>${list.portfolio_id}</td>
-                                            <td>${list.portfolio_title}</td>
-                                            <td>${list.portfolio_userId}</td>
-                                            <td>${list.portfolio_category_main.name} > ${list.portfolio_category_sub.name}</td>
-                                            <td><fmt:formatDate pattern="yyyy-MM-dd kk:mm:ss" value="${list.portfolio_regDate}" /></td>
-                                            <td class="text-center"><a href="#">보기</a></td>
-                                        </tr>
-                                      </c:forEach>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.container-fluid -->
-
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">등록된 포트폴리오 목록</h6>
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr class="text-center">
+                      <th>번호</th>
+                      <th>제목</th>
+                      <th>작성자</th>
+                      <th>카테고리</th>
+                      <th>가격</th>
+                      <th>기간</th>
+                      <th>평점</th>
+                      <th>등록일</th>
+                      <th>삭제</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <c:forEach items="${portfolio}" var="list">
+                      <tr>
+                        <td class="text-center">${list.portfolio_id}</td>
+                        <td><c:choose>
+                            <c:when test="${fn:length(list.portfolio_title) gt 50}">
+                                  <a href="PortContent.do?portfolio_id=${list.portfolio_id}" target="_blank">${fn:substring(list.portfolio_title, 0, 47)}...</a>
+                            </c:when>
+                            <c:otherwise>
+                              <div><a href="PortContent.do?portfolio_id=${list.portfolio_id}" target="_blank">${list.portfolio_title}</a></div>
+                            </c:otherwise>
+                          </c:choose></td>
+                        <td>
+                          <c:choose>
+                            <c:when test="${fn:length(list.portfolio_userId) gt 13}">
+                                  <a href="#">${fn:substring(list.portfolio_userId, 0, 10)}...</a>
+                            </c:when>
+                            <c:otherwise>
+                              <div><a href="#">${list.portfolio_userId}</a></div>
+                            </c:otherwise>
+                          </c:choose>
+                        </td>
+                        <td id="portfolio-category" class="text-center">
+                          <div id="category-id">${list.portfolio_category_main.id} - ${list.portfolio_category_sub.id}</div>
+                          <div id="category-name">[${list.portfolio_category_main.name}]<br />${list.portfolio_category_sub.name}</div>
+                        </td>
+                        <td class="text-right">${list.portfolio_price} 원</td>
+                        <td class="text-right">${list.portfolio_term} 일</td>
+                        <td class="text-center">${list.portfolio_rating} 점</td>
+                        <td class="text-center"><fmt:formatDate pattern="yyyy-MM-dd / kk:mm" value="${list.portfolio_regDate}" /></td>
+                        <td class="text-center"><a href="javascript:adminPortfolioDelete(${list.portfolio_id});" style="color: red;">삭제</a></td>
+                      </tr>
+                    </c:forEach>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
 
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
 
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
@@ -121,8 +163,31 @@
       </div>
     </div>
   </div>
+
   <%@ include file="../../include/adminstyle_js.jsp"%>
   
+  <script type="text/javascript">
+  	function adminPortfolioDelete(portfolio_id) {
+  		if(confirm("정말 삭제하시겠습니까?") == true) {
+  			$.ajax({
+  	  			url: "adminPortfolioDelete.do",
+  	  			data: {"portfolio_id" : portfolio_id},
+  	  			success : function(res) {
+  	  				if(res == 1) {
+  	  					alert('삭제가 완료되었습니다.');
+    	  				location.reload();
+  	  				} else {
+  	  					alert('삭제에 실패하였습니다.');
+  	  				}
+  	  			}, error : function() {
+  	  				alert('AJAX ERROR');
+  	  			}
+  	  		});
+  		} else {
+  			return 0;
+  		}
+  	}
+  </script>
 </body>
 
 </html>
