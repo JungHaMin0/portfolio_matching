@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
@@ -152,4 +153,9 @@ public class MyPageServiceImpl implements MyPageService {
 	public double totalRating(int portfolio_id) throws Exception {
 		return dao.totalRating(portfolio_id);
 	}
+
+
+	
+
+
 }

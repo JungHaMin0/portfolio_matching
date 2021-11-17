@@ -39,7 +39,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">정보</h6> 
           <a class="collapse-item" href="adminMember.do">고객정보 </a> 
-          <a class="collapse-item" href="adminReview.do">리뷰</a> 
+          <a class="collapse-item" href="reviewlist.do">리뷰</a> 
           <a class="collapse-item" href="adminPur.do">구매 내역</a> 
           <a class="collapse-item" href="adminSale.do">판매 내역</a> 
           <a class="collapse-item" href="adminStat.do">수익 현황</a> 

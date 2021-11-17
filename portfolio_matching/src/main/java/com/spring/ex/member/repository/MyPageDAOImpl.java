@@ -152,4 +152,6 @@ public class MyPageDAOImpl implements MyPageDAO {
 	public double totalRating(int portfolio_id) throws Exception {
 		return sqlSession.selectOne("mypageMapper.totalRating", portfolio_id);
 	}
+
+	
 }

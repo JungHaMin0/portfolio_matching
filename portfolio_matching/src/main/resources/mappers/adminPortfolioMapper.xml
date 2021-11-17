@@ -5,7 +5,7 @@
 <mapper namespace="adminPortfolioMapper">
 	<select id="portfolioList" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 		SELECT portfolio_id, portfolio_title, portfolio_userId,
-		portfolio_category_main, portfolio_category_sub, portfolio_term, portfolio_price, portfolio_rating, portfolio_regDate
+		portfolio_category_main, portfolio_category_sub, portfolio_content, portfolio_term, portfolio_price, portfolio_rating, portfolio_regDate
 		FROM portfolio ORDER BY portfolio_id DESC
 	</select>
 	
@@ -17,6 +17,17 @@
 		SELECT * FROM category_sub WHERE id = #{id}
 	</select>
 	
+	<select id="adminPortfolioImage" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT portfolio_Img FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioContent" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT portfolio_content FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+	
+	<delete id="adminPortfolioDelete" parameterType="int">
+		DELETE FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</delete>
 	<!-- 어드민 메인 페이지 백분율   -->
 	<select id="portcate" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 	select portfolio_category_main, ROUND(COUNT(*) * 100 / sum(count(*)) over(), 1) AS score
@@ -37,9 +48,15 @@
 	GROUP BY portfolio_category_main
 	</select>
 	
+<<<<<<< HEAD
 	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 	SELECT (SUM(deal_price)* 0.1) AS dcnt
 	FROM deal
 	</select>
 	
+=======
+<!-- 	<select id="dealcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	
+	</select> -->
+>>>>>>> refs/remotes/origin/develop
 </mapper>

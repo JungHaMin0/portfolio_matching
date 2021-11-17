@@ -12,7 +12,6 @@ import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
-import com.spring.ex.portfolio.domain.SearchCriteria;
 
 @Service
 public class AdminPortfolioServiceImpl implements AdminPortfolioService {
@@ -42,6 +41,16 @@ public class AdminPortfolioServiceImpl implements AdminPortfolioService {
 		}
 		return portfolioDTOList;
 	}
+
+	@Override
+	public PortRegVO adminPortfolioImage(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioImage(portfolio_id);
+	}
+	
+	@Override
+	public PortRegVO adminPortfolioContent(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioContent(portfolio_id);
+	}
 	
 	public PortfolioDTO convertToDto(PortRegVO vo) throws Exception {
 
@@ -61,4 +70,11 @@ public class AdminPortfolioServiceImpl implements AdminPortfolioService {
 
 		return dto;
 	}
+
+	@Override
+	public int adminPortfolioDelete(int portfolio_id) throws Exception {
+		
+		return adminPortfolioDao.adminPortfolioDelete(portfolio_id);
+	}
+
 }

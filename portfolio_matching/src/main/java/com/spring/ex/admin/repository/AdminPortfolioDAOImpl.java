@@ -31,4 +31,19 @@ public class AdminPortfolioDAOImpl implements AdminPortfolioDAO {
 	public CategorySubVO categorySubGetOne(int id) throws Exception {
 		return sqlSession.selectOne("adminPortfolioMapper.categorySubGetOne", id);
 	}
+
+	@Override
+	public PortRegVO adminPortfolioImage(int portfolio_id) throws Exception {
+		return sqlSession.selectOne("adminPortfolioMapper.adminPortfolioImage", portfolio_id);
+	}
+
+	@Override
+	public PortRegVO adminPortfolioContent(int portfolio_id) throws Exception {
+		return sqlSession.selectOne("adminPortfolioMapper.adminPortfolioContent", portfolio_id);
+	}
+
+	@Override
+	public int adminPortfolioDelete(int portfolio_id) throws Exception {
+		return sqlSession.delete("adminPortfolioMapper.adminPortfolioDelete", portfolio_id);
+	}
 }

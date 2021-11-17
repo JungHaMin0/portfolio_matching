@@ -11,11 +11,6 @@
 		ORDER BY deal_id DESC;
 	</select>
 
-	<select id="reviewlist" parameterType="String" resultType="com.spring.ex.review.domain.ReviewVO">
-		SELECT * FROM review
-		ORDER BY review_rating DESC;
-	</select>
-
 	<!-- 구매 내역 - 구매 확정 기능 -->
 	<update id="pmPurchaseConfirm" parameterType="String">
 		UPDATE deal SET
@@ -46,6 +41,19 @@
 			#{review_content}
 		)
 	</insert>
+	
+	
+	<!-- 리뷰전체 보기 -->
+	<select id="reviewlist" resultType="com.spring.ex.review.domain.ReviewVO">
+	SELECT * FROM review ORDER BY review_userId DESC
+    </select>
+	
+	
+	<!-- 리뷰삭제 하기 -->
+	<delete id = "reviewDelete">
+	DELETE FROM review WHERE review_id= #{review_id};
+	</delete>
+	
 	
 	<!-- 첨부파일 조회 -->
 	<select id="selectFileList" parameterType="int" resultType="hashMap">
