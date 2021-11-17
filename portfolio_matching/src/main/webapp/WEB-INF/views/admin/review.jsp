@@ -43,6 +43,7 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
+                            <form id="review_id" name="review_id" method="post">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -53,6 +54,7 @@
                                             <th>제목</th>
                                             <th>내용</th>
                                             <th>날짜</th>
+                                            <th>삭제</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -64,6 +66,8 @@
                                             <th>제목</th>
                                             <th>내용</th>
                                             <th>날짜</th>
+                                            <th>삭제</th>
+                                            
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -76,11 +80,15 @@
                                             <td>${reviewlist.review_title}</td>
                                             <td>${reviewlist.review_content}</td>
                                             <td>${reviewlist.review_regDate}</td>
-                                            
-                                        </tr>
+                                            <td> 
+                                          <!--   <a href='#' onClick='fn_delete()'>삭제</a> -->
+                                          <a href="javascript:reviewDelete(${reviewlist.review_id});">삭제</a>
+                                            </td>
+											</tr>
                                         </c:forEach>
                                     </tbody>
                                 </table>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -130,6 +138,35 @@
     </div>
   </div>
   <%@ include file="../../include/adminstyle_js.jsp"%>
+  
+  <script type="text/javascript">
+   function reviewDelete(review_id) {
+     if(confirm("정말 삭제하시겠습니까?") == true) {
+        $.ajax({
+             url: "reviewDelete.do",
+             data: {"review_id" : review_id},
+             success : function(res) {
+                if(res == 1) {
+                   alert('삭제가 완료되었습니다.');
+                  location.reload();
+                } else {
+                   alert('삭제에 실패하였습니다.');
+                }
+             }, error : function() {
+                alert('AJAX ERROR');
+             }
+          });
+     } else {
+        return 0;
+     }
+  } 
+  
+	/* function fn_delete() {
+		var form = document.getElementById("reviewForm");
+		form.action = "<c:url value='/reviewDelete.do'/>";
+		form.submit();
+	} */
+</script>
 
 </body>
 
