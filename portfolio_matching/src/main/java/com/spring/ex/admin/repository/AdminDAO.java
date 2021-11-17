@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.ReviewVO;
+import com.spring.ex.review.domain.ReviewVO;
 
 public interface AdminDAO {
 	// 관리자 구매내역

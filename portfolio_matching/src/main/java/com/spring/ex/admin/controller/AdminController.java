@@ -14,12 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.admin.service.AdminService;
-<<<<<<< HEAD
-import com.spring.ex.deal.service.OrderService;
-import com.spring.ex.member.domain.MemberVO;
-=======
 import com.spring.ex.deal.domain.Deal_PortVO;
->>>>>>> refs/remotes/origin/develop
+import com.spring.ex.deal.service.OrderService;
 import com.spring.ex.member.service.MemberService;
 
 @Controller
@@ -44,10 +40,7 @@ public class AdminController {
 		model.addAttribute("topport", aservice.toplist());
 		model.addAttribute("portcate", aservice.catelist());
 		model.addAttribute("portcnt", aservice.portcnt());
-<<<<<<< HEAD
 		model.addAttribute("dealcnt", oservice.dcntlist());
-=======
->>>>>>> refs/remotes/origin/develop
 		return "admin/aindex";
 	}
 	

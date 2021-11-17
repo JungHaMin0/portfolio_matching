@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.ReviewVO;
+import com.spring.ex.review.domain.ReviewVO;
 
 @Repository
 public class AdminDAOImpl implements AdminDAO {

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ex.admin.repository.AdminDAO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.ReviewVO;
+import com.spring.ex.review.domain.ReviewVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {

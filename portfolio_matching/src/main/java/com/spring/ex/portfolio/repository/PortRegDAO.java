@@ -6,11 +6,9 @@ import java.util.Map;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
-import com.spring.ex.portfolio.domain.Criteria;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.portfolio.domain.PortfolioDTO;
 import com.spring.ex.portfolio.domain.SearchCriteria;
-import com.spring.ex.review.ReviewVO;
+import com.spring.ex.review.domain.ReviewVO;
 
 public interface PortRegDAO {
 	

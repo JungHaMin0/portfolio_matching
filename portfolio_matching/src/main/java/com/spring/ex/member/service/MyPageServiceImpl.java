@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
@@ -16,7 +14,7 @@ import com.spring.ex.inquiry.domain.InquiryVO;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.repository.MyPageDAO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
-import com.spring.ex.review.ReviewVO;
+import com.spring.ex.review.domain.ReviewVO;
 import com.spring.ex.scrap.domain.ScrapVO;
 
 @Service
