@@ -1,17 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-=======
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
->>>>>>> refs/remotes/origin/hamin
 
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/hamin
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +47,6 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-<<<<<<< HEAD
                                             <th>리뷰번호</th>
                                             <th>포트폴리오 번호</th>
                                             <th>사용자 아이디</th>
@@ -64,18 +55,8 @@
                                             <th>내용</th>
                                             <th>날짜</th>
                                             <th>삭제</th>
-=======
-                                            <th>리뷰 아이디</th>
-                                            <th>포폴 아이디</th>
-                                            <th>유저 아이디</th>
-                                            <th>별점</th>
-                                            <th>타이틀</th>
-                                            <th>내용</th>
-                                            <th>날짜</th>
->>>>>>> refs/remotes/origin/hamin
                                         </tr>
                                     </thead>
-<<<<<<< HEAD
                                     <tfoot>
                                         <tr>
                                              <th>리뷰번호</th>
@@ -89,14 +70,8 @@
                                             
                                         </tr>
                                     </tfoot>
-=======
->>>>>>> refs/remotes/origin/hamin
                                     <tbody>
-<<<<<<< HEAD
                                      <c:forEach items="${reviewlist}" var="reviewlist">
-=======
-                                    <c:forEach items="${reviewlist}" var="reviewlist">
->>>>>>> refs/remotes/origin/hamin
                                         <tr>
                                             <td>${reviewlist.review_id}</td>
                                             <td>${reviewlist.review_portfolio_id}</td>
@@ -105,17 +80,12 @@
                                             <td>${reviewlist.review_title}</td>
                                             <td>${reviewlist.review_content}</td>
                                             <td>${reviewlist.review_regDate}</td>
-<<<<<<< HEAD
                                             <td> 
                                           <!--   <a href='#' onClick='fn_delete()'>삭제</a> -->
                                           <a href="javascript:reviewDelete(${reviewlist.review_id});">삭제</a>
                                             </td>
-											</tr>
+                                 </tr>
                                         </c:forEach>
-=======
-                                        </tr>
-      	                           </c:forEach>
->>>>>>> refs/remotes/origin/hamin
                                     </tbody>
                                 </table>
                                 </form>
@@ -191,11 +161,11 @@
      }
   } 
   
-	/* function fn_delete() {
-		var form = document.getElementById("reviewForm");
-		form.action = "<c:url value='/reviewDelete.do'/>";
-		form.submit();
-	} */
+   /* function fn_delete() {
+      var form = document.getElementById("reviewForm");
+      form.action = "<c:url value='/reviewDelete.do'/>";
+      form.submit();
+   } */
 </script>
 
 </body>

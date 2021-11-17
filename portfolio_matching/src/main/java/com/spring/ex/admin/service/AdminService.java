@@ -2,12 +2,9 @@ package com.spring.ex.admin.service;
 
 import java.util.List;
 
-<<<<<<< HEAD
 import com.spring.ex.deal.domain.Deal_PortVO;
-=======
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.review.domain.ReviewVO;
->>>>>>> refs/remotes/origin/hamin
 
 public interface AdminService {
 	// 관리자 구매내역

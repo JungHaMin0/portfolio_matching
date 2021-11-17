@@ -1,29 +1,21 @@
 package com.spring.ex.admin.controller;
 
-<<<<<<< HEAD
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
-=======
 import org.springframework.beans.factory.annotation.Autowired;
->>>>>>> refs/remotes/origin/hamin
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-=======
 
-import com.spring.ex.admin.service.AdminService;
-import com.spring.ex.member.domain.MemberVO;
->>>>>>> refs/remotes/origin/hamin
-import com.spring.ex.member.service.MemberService;
 import com.spring.ex.admin.service.AdminService;
 import com.spring.ex.deal.domain.Deal_PortVO;
-
-import java.util.List;
+import com.spring.ex.member.service.MemberService;
 
 @Controller
 public class AdminController {
@@ -31,23 +23,19 @@ public class AdminController {
 	
 	@Autowired
 	MemberService service;
-<<<<<<< HEAD
 
 	@Inject
 	AdminService Aservice;
 
-=======
 	
 	@Autowired
 	AdminService aservice;
 	
->>>>>>> refs/remotes/origin/hamin
 	@RequestMapping(value = "aindex.do", method = RequestMethod.GET)
 	public String index(Model model) throws Exception {
 		model.addAttribute("topport", aservice.toplist());
 		model.addAttribute("portcate", aservice.catelist());
 		model.addAttribute("portcnt", aservice.portcnt());
-		System.out.println(aservice.catelist().get(0).getScore());
 		return "admin/aindex";
 	}
 	
