@@ -9501,6 +9501,7 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important;
+  margin: 0px;
 }
 
 @media (min-width: 576px) {
@@ -11279,4 +11280,3 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
-

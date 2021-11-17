@@ -1,6 +1,7 @@
 package com.spring.ex.admin.repository;
 
 import java.util.List;
+<<<<<<< HEAD
 
 import javax.inject.Inject;
 
@@ -43,5 +44,39 @@ public class AdminDAOImpl implements AdminDAO {
 
 
 	
+=======
+>>>>>>> refs/remotes/origin/hamin
 
+import javax.inject.Inject;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import com.spring.ex.portfolio.domain.PortRegVO;
+import com.spring.ex.review.domain.ReviewVO;
+
+@Repository
+public class AdminDAOImpl implements AdminDAO {
+	
+	@Inject SqlSession sqlSession;
+	
+	@Override
+	public List<ReviewVO> reviewlist() {
+		 return sqlSession.selectList("mypageMapper.reviewlist");
+	}
+	
+	@Override
+	public List<PortRegVO> toplist() {
+		return sqlSession.selectList("adminPortfolioMapper.topport");
+	}
+	
+	@Override
+	public List<PortRegVO> catelist() {
+		return sqlSession.selectList("adminPortfolioMapper.portcate");
+	}
+	
+	@Override
+	public List<PortRegVO> portcnt() {
+		return sqlSession.selectList("adminPortfolioMapper.portcnt");
+	}
 }

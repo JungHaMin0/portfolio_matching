@@ -1,11 +1,15 @@
 package com.spring.ex.admin.repository;
 
 import java.util.List;
+<<<<<<< HEAD
 
 import com.spring.ex.deal.domain.Deal_PortVO;
 
 public interface AdminDAO {
+=======
+>>>>>>> refs/remotes/origin/hamin
 
+<<<<<<< HEAD
 	//관리자 구매내역
 		public List<Deal_PortVO> PurchaseList() throws Exception;
 
@@ -15,4 +19,14 @@ public interface AdminDAO {
 		
 		public List<Deal_PortVO> SaleList() throws Exception;
 
+=======
+import com.spring.ex.portfolio.domain.PortRegVO;
+import com.spring.ex.review.domain.ReviewVO;
+
+public interface AdminDAO {
+	public List<ReviewVO> reviewlist();
+	public List<PortRegVO> toplist();
+	public List<PortRegVO> catelist();
+	public List<PortRegVO> portcnt();
+>>>>>>> refs/remotes/origin/hamin
 }

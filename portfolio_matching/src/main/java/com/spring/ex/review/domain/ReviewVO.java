@@ -10,7 +10,20 @@ public class ReviewVO {
 	private String review_userId;
 	private String review_title;
 	private String review_content;
+<<<<<<< HEAD
 	private Timestamp review_regDate;
+=======
+	private Date review_regDate;
+
+	public Date getReview_regDate() {
+		return review_regDate;
+	}
+
+	public void setReview_regDate(Date review_regDate) {
+		this.review_regDate = review_regDate;
+	}
+
+>>>>>>> refs/remotes/origin/hamin
 	public int getReview_id() {
 		return review_id;
 	}
@@ -47,6 +60,7 @@ public class ReviewVO {
 	public void setReview_content(String review_content) {
 		this.review_content = review_content;
 	}
+<<<<<<< HEAD
 	public Timestamp getReview_regDate() {
 		return review_regDate;
 	}
@@ -60,4 +74,6 @@ public class ReviewVO {
 				+ ", review_content=" + review_content + ", review_regDate=" + review_regDate + "]";
 	}
 	
+=======
+>>>>>>> refs/remotes/origin/hamin
 }
