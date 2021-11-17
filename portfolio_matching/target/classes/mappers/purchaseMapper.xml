@@ -10,4 +10,5 @@
 		AND deal_purUser = #{user_id}
 		ORDER BY deal_id DESC;
 	</select>
+
 </mapper>

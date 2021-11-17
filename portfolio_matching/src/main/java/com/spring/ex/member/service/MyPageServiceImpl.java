@@ -4,11 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
