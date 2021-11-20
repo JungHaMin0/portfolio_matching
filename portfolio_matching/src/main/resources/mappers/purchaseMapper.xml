@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="purchaseMapper">
+	<!-- 구매 내역 -->
+	<select id="pmPurchase_list" parameterType="String" resultType="com.spring.ex.deal.domain.Deal_PortVO">
+		SELECT * FROM deal, portfolio
+		WHERE deal_portfolio_id = portfolio_id
+		AND deal_purUser = #{user_id}
+		ORDER BY deal_id DESC;
+	</select>
+
+</mapper>

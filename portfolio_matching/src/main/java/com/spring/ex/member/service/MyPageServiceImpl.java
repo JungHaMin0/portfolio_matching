@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
@@ -152,4 +151,9 @@ public class MyPageServiceImpl implements MyPageService {
 	public double totalRating(int portfolio_id) throws Exception {
 		return dao.totalRating(portfolio_id);
 	}
+
+
+	
+
+
 }

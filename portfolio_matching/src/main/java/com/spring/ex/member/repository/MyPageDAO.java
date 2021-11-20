@@ -90,4 +90,6 @@ public interface MyPageDAO {
 	
 	// 별점 총점
 	public double totalRating(int portfolio_id) throws Exception;
+	
+	
 }

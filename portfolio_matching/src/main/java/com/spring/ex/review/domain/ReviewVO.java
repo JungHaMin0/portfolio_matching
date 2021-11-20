@@ -11,6 +11,7 @@ public class ReviewVO {
 	private String review_title;
 	private String review_content;
 	private Timestamp review_regDate;
+
 	public int getReview_id() {
 		return review_id;
 	}
@@ -59,5 +60,4 @@ public class ReviewVO {
 				+ review_rating + ", review_userId=" + review_userId + ", review_title=" + review_title
 				+ ", review_content=" + review_content + ", review_regDate=" + review_regDate + "]";
 	}
-	
 }
