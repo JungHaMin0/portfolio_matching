@@ -3,8 +3,8 @@ package com.spring.ex.admin.service;
 import java.util.List;
 
 import com.spring.ex.deal.domain.DealVO;
+import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.domain.ReviewVO;
 
 public interface AdminMainService {
 
@@ -12,5 +12,7 @@ public interface AdminMainService {
 	public List<PortRegVO> catelist();
 	public List<PortRegVO> portcnt();
 	public List<DealVO> dcntlist();
+	public List<PortRegVO> pcnt();
+	public List<AnswerVO> acntlist();
 	
 }

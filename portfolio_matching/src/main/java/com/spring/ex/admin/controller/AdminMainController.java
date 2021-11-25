@@ -23,6 +23,8 @@ public class AdminMainController {
 		model.addAttribute("portcate", aservice.catelist());
 		model.addAttribute("portcnt", aservice.portcnt());
 		model.addAttribute("dealcnt", aservice.dcntlist());
+		model.addAttribute("pcnt", aservice.pcnt());
+		model.addAttribute("acntlist", aservice.acntlist());
 		return "admin/aindex";
 	}
 	
