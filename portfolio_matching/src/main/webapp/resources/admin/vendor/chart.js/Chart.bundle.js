@@ -15633,7 +15633,7 @@ var moment = createCommonjsModule(function (module, exports) {
     // LOCALES
 
     var MONTHS_IN_FORMAT = /D[oD]?(\[[^\[\]]*\]|\s)+MMMM?/;
-    var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
+    var defaultLocaleMonths = '1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월'.split('_');
     function localeMonths (m, format) {
         if (!m) {
             return isArray(this._months) ? this._months :
@@ -15643,7 +15643,7 @@ var moment = createCommonjsModule(function (module, exports) {
             this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
     }
 
-    var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
+    var defaultLocaleMonthsShort = '1월_2월_3월_4월_5월_6월_7월_8월_9월_10월_11월_12월'.split('_');
     function localeMonthsShort (m, format) {
         if (!m) {
             return isArray(this._monthsShort) ? this._monthsShort :
@@ -16972,7 +16972,7 @@ var moment = createCommonjsModule(function (module, exports) {
     }
 
     // RFC 2822 regex: For details see https://tools.ietf.org/html/rfc2822#section-3.3
-    var rfc2822 = /^(?:(Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s)?(\d{1,2})\s(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
+    var rfc2822 = /^(?:(월|화|수|목|금|토|일),?\s)?(\d{1,2})\s(1월|2월|3월|4월|5월|6월|7월|8월|9월|10월|11월|12월)\s(\d{2,4})\s(\d\d):(\d\d)(?::(\d\d))?\s(?:(UT|GMT|[ECMP][SD]T)|([Zz])|([+-]\d{4}))$/;
 
     function extractFromRFC2822Strings(yearStr, monthStr, dayStr, hourStr, minuteStr, secondStr) {
         var result = [
@@ -17423,7 +17423,7 @@ var moment = createCommonjsModule(function (module, exports) {
         return Date.now ? Date.now() : +(new Date());
     };
 
-    var ordering = ['year', 'quarter', 'month', 'week', 'day', 'hour', 'minute', 'second', 'millisecond'];
+    var ordering = ['년', 'quarter', '달', '주', '일', '시', '분', '초', '밀리초'];
 
     function isDurationValid(m) {
         for (var key in m) {

@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 import com.spring.ex.admin.repository.AdminMainDAO;
 import com.spring.ex.deal.domain.DealVO;
+import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
 
 @Service
@@ -33,4 +34,13 @@ public class AdminMainServiceImpl implements AdminMainService {
 		return dao.dcntlist();
 	}
 
+	@Override
+	public List<PortRegVO> pcnt() {
+		return dao.pcnt();
+	}
+	
+	@Override
+	public List<AnswerVO> acntlist() {
+		return dao.acntlist();
+	}
 }

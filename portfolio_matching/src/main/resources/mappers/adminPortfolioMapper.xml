@@ -53,5 +53,15 @@
 	SELECT (SUM(deal_price)* 0.1) AS dcnt
 	FROM deal
 	</select>
+	
+	<select id="acnt" resultType="com.spring.ex.inquiry.domain.AnswerVO">
+	SELECT COUNT(*) as acnt
+	FROM answer
+	</select>
+	
+	<select id="pcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT COUNT(*) as pcnt
+	FROM portfolio
+	</select>
 
 </mapper>

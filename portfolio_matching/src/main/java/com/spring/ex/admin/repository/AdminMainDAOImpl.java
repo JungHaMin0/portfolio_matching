@@ -8,9 +8,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.deal.domain.DealVO;
-import com.spring.ex.deal.domain.Deal_PortVO;
+import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.review.domain.ReviewVO;
 
 @Repository
 public class AdminMainDAOImpl implements AdminMainDAO {
@@ -36,5 +35,15 @@ public class AdminMainDAOImpl implements AdminMainDAO {
 	@Override
 	public List<DealVO> dcntlist() {
 		return sqlSession.selectList("adminPortfolioMapper.dealcnt");
+	}
+	
+	@Override
+	public List<PortRegVO> pcnt() {
+		return sqlSession.selectList("adminPortfolioMapper.pcnt");
+	}
+	
+	@Override
+	public List<AnswerVO> acntlist() {
+		return sqlSession.selectList("adminPortfolioMapper.acnt");
 	}
 }

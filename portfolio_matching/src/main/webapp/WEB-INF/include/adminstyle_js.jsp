@@ -10,9 +10,11 @@
 
     <!-- Page level plugins -->
     <script src="./resources/admin/vendor/chart.js/Chart.min.js"></script>
+    <script src="./resources/admin/vendor/chart.js/Chart.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="./resources/admin/js/demo/chart-area-demo.js"></script>
+    <script src="./resources/admin/js/demo/chart-bar-demo.js"></script>
     <script src="./resources/admin/js/demo/chart-pie-demo.js"></script>
     
     <script src="./resources/admin/vendor/datatables/jquery.dataTables.min.js"></script>
