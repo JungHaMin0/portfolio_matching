@@ -6,7 +6,7 @@ import java.util.Date;
 public class ReviewVO {
 	private int review_id;
 	private int review_portfolio_id;
-	private int review_rating;
+	private double review_rating;
 	private String review_userId;
 	private String review_title;
 	private String review_content;
@@ -24,7 +24,7 @@ public class ReviewVO {
 	public void setReview_portfolio_id(int review_portfolio_id) {
 		this.review_portfolio_id = review_portfolio_id;
 	}
-	public int getReview_rating() {
+	public double getReview_rating() {
 		return review_rating;
 	}
 	public void setReview_rating(int review_rating) {

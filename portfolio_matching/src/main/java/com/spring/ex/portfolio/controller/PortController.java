@@ -31,6 +31,7 @@ import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
 import com.spring.ex.portfolio.domain.SearchCriteria;
 import com.spring.ex.portfolio.service.PortRegService;
+import com.spring.ex.review.service.ReviewServiceImpl;
 
 @Controller
 public class PortController {

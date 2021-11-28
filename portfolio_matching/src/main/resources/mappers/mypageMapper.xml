@@ -58,6 +58,29 @@
 	</delete>
 	
 	
+	<!-- 리뷰상세보기 -->
+	<select id = "selectReviewByCode" parameterType="com.spring.ex.review.domain.ReviewVO" resultType="com.spring.ex.review.domain.ReviewVO">
+	SELECT   review_id
+			   , review_portfolio_id
+			   , review_userId
+			   , review_rating
+			   , review_title
+			   , review_content
+			   , review_regDate
+		  FROM review
+		 WHERE review_id = #{review_id}
+		 </select>
+		 
+	<!-- 리뷰상세보기->원글이동 -->
+	<select id ="ReviewPort" parameterType="com.spring.ex.review.domain.ReviewPortVO" resultType="com.spring.ex.review.domain.ReviewPortVO">
+	SELECT *
+	FROM review, portfolio
+	WHERE review_portfolio_id = portfolio_id
+	AND portfolio_id = #{portfolio_id}
+
+	</select>
+	
+		 
 	<!-- 첨부파일 조회 -->
 	<select id="selectFileList" parameterType="int" resultType="hashMap">
 		SELECT file_id, file_org_name, round(file_size/1024, 1) AS file_size

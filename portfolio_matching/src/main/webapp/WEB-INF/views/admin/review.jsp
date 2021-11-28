@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+<c:set var="path" value="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +34,7 @@
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">리뷰관리</h1>
-                    <p class="mb-4">리뷰관리용^^<a target="_blank"
-                            href="https://datatables.net">다윤이가 하는 페이지~하트하트</a>.</p>
+                    
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -42,32 +43,53 @@
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <form id="review_id" name="review_id" method="post">
+                            <form id="review_id2" name="review_id2" method="post">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
+                                    <thead align="center">
                                         <tr>
-                                            <th>리뷰번호</th>
-                                            <th>포트폴리오 번호</th>
-                                            <th>사용자 아이디</th>
-                                            <th>별점</th>
-                                            <th>제목</th>
-                                            <th>내용</th>
-                                            <th>날짜</th>
-                                            <th>삭제</th>
+                                            <th>번호</th>
+                                            <!-- <th>포트폴리오 no.</th> -->
+                                            <th>ID</th>
+                                            <th>Title</th>
+                                            <th>Content</th>
+                                            <th>Rating</th>
+                                            <th>Date</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
-                                   
-                                    <tbody>
+
+                                    <tbody align="center">
+
                                      <c:forEach items="${reviewlist}" var="reviewlist">
-                                        <tr>
-                                            <td>${reviewlist.review_id}</td>
-                                            <td> <a href="adminPortfolioDetail.do?portfolio_id=${reviewlist.review_portfolio_id}">
-                                            <c:out value="${reviewlist.review_portfolio_id}"/></a></td>
-                                            <td><a href="A_Info.do?purUser=${reviewlist.review_userId}">
-                        					<c:out value="${reviewlist.review_userId}"/></a></td>
-                                            <td>${reviewlist.review_rating}</td>
-                                            <td>${reviewlist.review_title}</td>
+
+                                     
+                                     <tr>
+                                       <%--  <tr onclick="review_detail('${reviewlist.review_id}');"> --%>
+                                       <tr onClick='review_detail(${reviewlist.review_id})'>
+
+                                            <td>${reviewlist.review_id} </td>
+                                            <%-- <td>${reviewlist.review_portfolio_id}</td> --%>
+                                            <td>${reviewlist.review_userId}</td>
+                                           <td>${reviewlist.review_title}</td>
+
                                             <td>${reviewlist.review_content}</td>
+													<td><%-- <ul class="list-inline">
+															<c:forEach begin="1" end="5" varStatus="stat">
+																<c:choose>
+																	<c:when test="${stat.current le reviewlist.review_rating}">
+																		<li class="list-inline-item selected">
+																		<i class="fa fa-star"></i></li>
+																	</c:when>
+																	<c:otherwise>
+																		<li class="list-inline-item">
+																		<i class="fa fa-star"></i></li>
+																	</c:otherwise>
+																</c:choose>
+															</c:forEach>
+														</ul> --%>
+														
+														${reviewlist.review_rating}
+														</td>
                                             <td>${reviewlist.review_regDate}</td>
                                             <td> 
                                           <!--   <a href='#' onClick='fn_delete()'>삭제</a> -->
@@ -129,6 +151,29 @@
   <%@ include file="../../include/adminstyle_js.jsp"%>
   
   <script type="text/javascript">
+  
+  //상세보기 
+
+ 
+
+ 	 function review_detail(review_id){
+
+		
+		var form = document.review_id2;
+		var url = "<c:url value='/review_detail.do?review_id="+review_id+"'/>";
+		
+		var popup = window.open("","formopen", "width=600,height=800,location=no,status=no,scrollbars=yes");
+		
+		form.target = "formopen";
+		form.action = url;
+		form.method = "post";
+		form.submit();
+		
+	}
+	
+	
+  
+  //삭제
    function reviewDelete(review_id) {
      if(confirm("정말 삭제하시겠습니까?") == true) {
         $.ajax({
@@ -150,11 +195,7 @@
      }
   } 
   
-   /* function fn_delete() {
-      var form = document.getElementById("reviewForm");
-      form.action = "<c:url value='/reviewDelete.do'/>";
-      form.submit();
-   } */
+   
 </script>
 
 </body>
