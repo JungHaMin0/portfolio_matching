@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminDAO;
 import com.spring.ex.deal.domain.Deal_PortVO;
-import com.spring.ex.portfolio.domain.Criteria;
+import com.spring.ex.member.domain.MemberVO;
+import com.spring.ex.portfolio.domain.PortfolioVO;
 import com.spring.ex.portfolio.domain.SearchCriteria;
+import com.spring.ex.review.domain.ReviewVO;
 
 @Service
 public class AdminServiceImpl implements AdminService {
@@ -17,11 +19,10 @@ public class AdminServiceImpl implements AdminService {
 	AdminDAO dao;
 
 	@Override
-	public List<Deal_PortVO> PurchaseList(Criteria cri) throws Exception {
-		
-		return dao.PurchaseList(cri);
-	}
+	public List<Deal_PortVO> PurchaseList() throws Exception {
 
+		return dao.PurchaseList();
+	}
 
 	@Override
 	public List<Deal_PortVO> purUser(String purUser) throws Exception {
@@ -29,28 +30,24 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<Deal_PortVO> saleUser(String saleUser) throws Exception {
-		return dao.saleUser(saleUser);
-		
+	public List<Deal_PortVO> smSaleList(String saleUser) throws Exception {
+		return dao.smSaleList(saleUser);
+
 	}
 
-
-
 	@Override
-	public Integer totalCount() throws Exception {
-		return dao.TotalCount();
+	public  List<PortfolioVO> port(String user_id) throws Exception {
+		return dao.port(user_id);
 	}
 
-
 	@Override
-	public List<Deal_PortVO> SaleList(Criteria cri) throws Exception {
-		return dao.SaleList(cri);
+	public List<ReviewVO> reviewlist() {
+		return dao.reviewlist();
 	}
 
-
 	@Override
-	public Integer totalsaleCount() throws Exception {
-		return dao.TotalSaleCount();
+	public MemberVO user(String user_id) throws Exception {
+		return dao.user(user_id);
 	}
 
 

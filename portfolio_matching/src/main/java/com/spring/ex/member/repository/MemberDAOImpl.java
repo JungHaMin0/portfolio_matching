@@ -1,5 +1,7 @@
 package com.spring.ex.member.repository;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -30,4 +32,12 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO login(MemberVO vo) throws Exception {
 		return sqlSession.selectOne("memberMapper.login", vo);
 	}
-}
+	
+	@Override
+	public List<MemberVO> view() {
+		 return sqlSession.selectList("memberMapper.mlist");
+	}
+
+
+	}
+

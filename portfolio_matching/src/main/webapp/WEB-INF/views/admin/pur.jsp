@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
@@ -11,14 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<meta charset="utf-8">
+    <title>거래내역</title>
+    
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/jquery.tabpager.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.tabpager.js"></script>
 
-    <title>구매내역</title>
+  
+
+<script>
+$(document).ready $(function(){   
+	
+	var link = document.loaction.href;
+	var tab = link.split('/')pop();
+	$('a[href$='+tab+']').trigger("click");
+	$("#Pur").show();
+}); 
+
+</script>
 
 
 </head>
 
 <body id="page-top">
-
+  <%@ include file="../../include/adminUser_css.jsp"%>
       <%@ include file="../../include/adminstyle_css.jsp"%>
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -37,16 +58,29 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">회원 별구매내역</h1>
+                  
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">구매내역</h6>
+                       
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
+   <div class="container">
+
+  <div class="row">
+                <div class="col-lg-offset-3 col-lg-6">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" id ="dd">
+                            <li role="presentation" class="active"><a href="#Pur" aria-controls="home" role="tab" data-toggle="tab">거래내역</a></li>
+                     
+                        </ul>
+  <div class="tab-slider--container">
+         <div class="card-body">
+            <div class="tab-content tabs">
+                            <div role="tabpanel" class="tab-pane active" id="Pur">
+                              
+                                    <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -58,24 +92,15 @@
                                             <th>날짜</th>
                                         </tr>
                                     </thead>
-                                   <!--  <tfoot>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                        </tr>
-                                    </tfoot> -->
+                                  
                                     <tbody>
                                     <c:forEach var="list" items="${list}"> 
                                     <tr>
                     	<td><c:out value="${list.deal_id}"/></td>
              
-                       <td>	<a href="purUser.do?purUser=${list.deal_purUser}">
+                       <td>	<a href="A_Info.do?purUser=${list.deal_purUser}">
                         <c:out value="${list.deal_purUser}"/></a></td>
-                         <td>	<a href="saleUser.do?saleUser=${list.deal_saleUser}">
+                         <td>	<a href="A_Info.do?purUser=${list.deal_saleUser}">
                         <c:out value="${list.deal_saleUser}"/></a></td>
                         <td><c:out value="${list.deal_price}"/></td>
                         <td><c:out value="${list.deal_status}"/></td>
@@ -85,57 +110,24 @@
             
                                     </tbody>
                                 </table>
+                           
                             </div>
-                        </div>
+                         
+                                </div>
+                           
+                    
+                      
+                      </div>
+                 </div>       
+    </div>
+  </div>
+</div>
+                    
                     </div>
 
                 </div>
                 <!-- /.container-fluid -->
-		
-         <div class="pagination justify-content-center">
-            <nav aria-label="Page navigation example">
-              <ul class="pagination">
-                <c:if test="${pageMaker.prev}">
-                  <c:if test="${empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(pageMaker.startPage - 1)}" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span>
-                    </a></li>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(pageMaker.startPage - 1)}" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span>
-                    </a></li>
-                  </c:if>
-                </c:if>
-                <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-                  <c:if test="${empty categorySubGetOne}">
-                    <c:if test="${pageMaker.cri.page eq idx}">
-                      <li class="page-item active"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                    <c:if test="${pageMaker.cri.page ne idx}">
-                      <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <c:if test="${pageMaker.cri.page eq idx}">
-                      <li class="page-item active"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                    <c:if test="${pageMaker.cri.page ne idx}">
-                      <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
-                    </c:if>
-                  </c:if>
-                </c:forEach>
-                <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-                  <c:if test="${empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(pageMaker.endPage + 1)}" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span>
-                    </a></li>
-                  </c:if>
-                  <c:if test="${not empty categorySubGetOne}">
-                    <li class="page-item"><a class="page-link" href="adminPur.do${pageMaker.makeQuery(pageMaker.endPage + 1)}" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span>
-                    </a></li>
-                  </c:if>
-                </c:if>
-              </ul>
-            </nav>
-          </div>
+
           
             </div>
             <!-- End of Main Content -->
@@ -153,22 +145,9 @@
         </div>
         <!-- End of Content Wrapper -->
 
-    </div>
-    <!-- End of Page Wrapper -->
-<!-- 
-<script>
-function fn_view(cb_num){
-    
-    var form = document.getElementById("boardForm");
-    var url = "<c:url value='admin_board_detail.do' />";
-    url = url + "?cb_num=" + cb_num;
-    fn_view
-    form.action = url;    
-    form.submit(); 
-}
-</script>
+   
 
- -->
+
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i>
   </a>
@@ -194,5 +173,5 @@ function fn_view(cb_num){
   <%@ include file="../../include/adminstyle_js.jsp"%>
 
 </body>
-
 </html>
+

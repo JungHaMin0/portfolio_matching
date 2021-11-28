@@ -10,7 +10,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminIndex.do">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="aindex.do">
       <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
       </div>
@@ -21,7 +21,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active"><a class="nav-link" href="adminIndex.do"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+    <li class="nav-item active"><a class="nav-link" href="aindex.do"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -37,10 +37,10 @@
     
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">정보</h6> <a class="collapse-item" href="adminMember.do">고객정보 </a> 
-          <a class="collapse-item" href="adminReview.do">리뷰</a> 
-          <a class="collapse-item" href="adminPur.do">구매 내역</a> 
-          <a class="collapse-item" href="adminSale.do">판매 내역</a> 
+          <h6 class="collapse-header">정보</h6> 
+          <a class="collapse-item" href="adminMember.do">고객정보 </a> 
+          <a class="collapse-item" href="reviewlist.do">리뷰</a> 
+          <a class="collapse-item" href="adminPur.do">거래 내역</a> 
           <a class="collapse-item" href="adminStat.do">수익 현황</a> 
         </div></li>
 

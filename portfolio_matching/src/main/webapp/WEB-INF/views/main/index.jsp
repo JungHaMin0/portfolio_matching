@@ -44,7 +44,7 @@
 
           </div>
           <!-- Advance Search -->
-          <div class="advance-search">
+          <div class="advance-search text-center">
             <div class="form-row">
               <div class="form-group col-md-3">
                 <select id="portfolio_category_main" class="w-100 form-control my-2 my-lg-0" style="display: none;" onchange="catChange(this)">

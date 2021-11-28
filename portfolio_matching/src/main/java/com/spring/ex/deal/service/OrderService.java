@@ -1,10 +1,9 @@
 package com.spring.ex.deal.service;
 
+import java.util.List;
+
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.OrderVO;
-import com.spring.ex.portfolio.domain.CategoryMainVO;
-import com.spring.ex.portfolio.domain.CategorySubVO;
-import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.portfolio.domain.PortfolioDTO;
 
 public interface OrderService {
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="inquiryMapper">
+	<insert id="inquiryWrite">
+		INSERT INTO inquiry(
+			inq_deal_id,
+			inq_portfolio_id,
+			inq_purUser,
+			inq_title,
+			inq_content
+		) VALUES (
+			#{inq_deal_id},
+			#{inq_portfolio_id},
+			#{inq_purUser},
+			#{inq_title},
+			#{inq_content}
+		);
+	</insert>
+</mapper>

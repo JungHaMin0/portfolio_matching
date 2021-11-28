@@ -13,10 +13,24 @@ public class PortRegVO {
 	private String portfolio_content;
 	private int portfolio_price;
 	private String portfolio_term;
-	private int portfolio_rating;
+	private double portfolio_rating;
 	private Timestamp portfolio_regDate;
 	private String portfolio_Img;
+	private double score;
+	private int cnt;
 	
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public double getScore() {
+		return score;
+	}
+	public void setScore(double score) {
+		this.score = score;
+	}
 	public String getPortfolio_Img() {
 		return portfolio_Img;
 	}
@@ -77,10 +91,10 @@ public class PortRegVO {
 	public void setPortfolio_term(String portfolio_term) {
 		this.portfolio_term = portfolio_term;
 	}
-	public int getPortfolio_rating() {
+	public double getPortfolio_rating() {
 		return portfolio_rating;
 	}
-	public void setPortfolio_rating(int portfolio_rating) {
+	public void setPortfolio_rating(double portfolio_rating) {
 		this.portfolio_rating = portfolio_rating;
 	}
 	public Timestamp getPortfolio_regDate() {
@@ -95,7 +109,7 @@ public class PortRegVO {
 				+ ", portfolio_title=" + portfolio_title + ", portfolio_category_main=" + portfolio_category_main + ", portfolio_category_sub="
 				+ portfolio_category_sub + ", portfolio_thumbUrl=" + portfolio_thumbUrl + ", portfolio_content="
 				+ portfolio_content + ", portfolio_price=" + portfolio_price + ", portfolio_term=" + portfolio_term
-				+ ", portfolio_regDate=" + portfolio_regDate + ", portfolio_Img=" + portfolio_Img + "]";
+				+ ", portfolio_regDate=" + portfolio_regDate + ", portfolio_Img=" + portfolio_Img + ", score=" + score + "]";
 	}
 	
 	
