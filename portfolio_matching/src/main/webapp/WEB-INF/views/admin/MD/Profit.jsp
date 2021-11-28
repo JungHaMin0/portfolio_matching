@@ -112,7 +112,8 @@ $(document).ready $(function(){
                                     <c:forEach items="${smProfitList}" var="smProfitList">
                   <tr>
                    <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smProfitList.portfolio_Img }'/>" alt="image description"></td>
-                      <td class="text-center"><c:out value="${smProfitList.deal_portfolio_id}"/></td>
+                       	   <td class="text-center"> <a href="adminPortfolioDetail.do?portfolio_id=${smProfitList.deal_portfolio_id}">
+                         <c:out value="${smProfitList.deal_portfolio_id}"/></a></td>
                       <td><c:out value="${smProfitList.deal_purUser}"/></td>
                         <td><fmt:formatDate value= "${smProfitList.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                          <td class="text-center"><span><strong id="price">${smProfitList.deal_price}</strong><strong> 원</strong></span></td>
