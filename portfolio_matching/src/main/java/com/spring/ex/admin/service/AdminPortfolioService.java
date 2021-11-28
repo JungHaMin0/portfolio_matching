@@ -3,6 +3,7 @@ package com.spring.ex.admin.service;
 import java.util.List;
 
 import com.spring.ex.deal.domain.DealVO;
+import com.spring.ex.inquiry.domain.InquiryDTO;
 import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
@@ -26,4 +27,6 @@ public interface AdminPortfolioService {
 	
 	public List<DealVO> adminPortfolioRecentDeal(int portfolio_id) throws Exception;
 	public List<ReviewVO> adminPortfolioRecentReview(int portfolio_id) throws Exception;
+	public List<InquiryDTO> adminPortfolioRecentInquiry(int portfolio_id) throws Exception;
+	public int adminPortfolioAnsInq(int inq_id) throws Exception;
 }

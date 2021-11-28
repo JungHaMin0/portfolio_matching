@@ -419,23 +419,34 @@
                     <thead>
                       <tr role="row">
                         <th class="text-center" style="width: 60px;">번호</th>
-                        <th class="text-center" style="width: 150px;">구매자</th>
-                        <th class="text-center" style="width: 100px;">거래 현황</th>
+                        <th class="text-center" style="width: 60px;">거래 번호</th>
+                        <th class="text-center" style="width: 150px;">작성자</th>
+                        <th class="text-center" style="width: 200px;">제목</th>
+                        <th class="text-center" style="width: 60px;">답변 여부</th>
                         <th class="text-center" style="width: 200px;">거래 일시</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <c:if test="${empty recentDeal}">
+                      <c:if test="${empty recentInquiry}">
                         <tr>
-                          <td class="text-center" colspan="4">최근 문의 내역이 없습니다.</td>
+                          <td class="text-center" colspan="6">최근 문의 내역이 없습니다.</td>
                         </tr>
                       </c:if>
-                      <c:forEach items="${recentDeal}" var="list">
+                      <c:forEach items="${recentInquiry}" var="list">
                         <tr>
-                          <td class="text-center">${list.deal_id}</td>
-                          <td class="text-center">${list.deal_purUser}</td>
-                          <td class="text-center">${list.deal_status}</td>
-                          <td class="text-center"><fmt:formatDate pattern="yyyy-mm-dd / kk:mm" value="${list.deal_date}" /></td>
+                          <td class="text-center">${list.inq_id}</td>
+                          <td class="text-center">${list.inq_deal_id}</td>
+                          <td class="text-center">${list.inq_purUser}</td>
+                          <td class="text-center">${list.inq_title}</td>
+                          <c:choose>
+                            <c:when test="${list.inq_ans == 1}">
+                              <td class="text-center" style="color: lightgreen;"><i class="far fa-check-circle"></i></td>
+                            </c:when>
+                            <c:otherwise>
+                              <td class="text-center" style="color: #ff7979;"><i class="far fa-times-circle"></i></td>
+                            </c:otherwise>
+                          </c:choose>
+                          <td class="text-center"><fmt:formatDate pattern="yyyy-mm-dd / kk:mm" value="${list.inq_regDate}" /></td>
                         </tr>
                       </c:forEach>
                     </tbody>

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.deal.domain.DealVO;
+import com.spring.ex.inquiry.domain.InquiryVO;
 import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
@@ -83,4 +84,15 @@ public class AdminPortfolioDAOImpl implements AdminPortfolioDAO {
 	public List<ReviewVO> adminPortfolioRecentReview(int portfolio_id) throws Exception {
 		return sqlSession.selectList("adminPortfolioMapper.adminPortfolioRecentReview", portfolio_id);
 	}
+
+	@Override
+	public List<InquiryVO> adminPortfolioRecentInquiry(int portfolio_id) throws Exception {
+		return sqlSession.selectList("adminPortfolioMapper.adminPortfolioRecentInquiry", portfolio_id);
+	}
+	
+	@Override
+	public int adminPortfolioAnsInq(int inq_id) throws Exception {
+		return sqlSession.selectOne("adminPortfolioMapper.adminPortfolioAnsInq", inq_id);
+	}
+
 }

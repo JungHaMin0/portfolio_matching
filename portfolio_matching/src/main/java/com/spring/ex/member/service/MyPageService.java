@@ -3,10 +3,12 @@ package com.spring.ex.member.service;
 import java.util.List;
 import java.util.Map;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.inquiry.domain.InquiryVO;
+import com.spring.ex.member.domain.Criteria;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
 import com.spring.ex.review.domain.ReviewVO;
@@ -14,7 +16,9 @@ import com.spring.ex.scrap.domain.ScrapVO;
 
 public interface MyPageService {
 	// 구매 내역
-	public List<Deal_PortVO> pmPurchaseList(String user_id) throws Exception;
+	public List<Deal_PortVO> pmPurchaseList(Criteria cri) throws Exception;
+	
+	public int pmPurchaseListCount(Criteria cri) throws Exception;
 
 	// 구매 내역 - 구매 확정 기능
 	public void pmPurchaseConfirm(String deal_id) throws Exception;
@@ -32,13 +36,17 @@ public interface MyPageService {
 	public Map<String, Object> selectFileInfo(Map<String, Object> map) throws Exception;
 
 	// 관심 상품
-	public List<PortfolioVO> pmInterestList(String user_id) throws Exception;
-
+	public List<PortfolioVO> pmInterestList(Criteria cri) throws Exception;
+	
+	public int pmInterestListCount(Criteria cri) throws Exception;
+	
 	// 관심 상품 - 삭제 기능
 	public void pmInterestDelete(ScrapVO scrapVO) throws Exception;
 
 	// 문의 내역(구매)
-	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception;
+	public List<Deal_Port_InqVO> pmInquiryList(Criteria cri) throws Exception;
+	
+	public int pmInquiryListCount(Criteria cri) throws Exception;
 
 	// 문의 내역(구매) - 작성 기능
 	public void pmInquiryWrite(InquiryVO inquiryVO) throws Exception;
@@ -50,7 +58,10 @@ public interface MyPageService {
 	public AnswerVO pmAnswerRead(int inq_id) throws Exception;
 
 	// 판매중
-	public List<PortfolioVO> smSaleList(String user_id) throws Exception;
+	public List<PortfolioVO> smSaleList(Criteria cri) throws Exception;
+
+	// 판매중 리스트 총 갯수
+	public int smSaleListCount(Criteria cri) throws Exception;
 
 	// 판매중 - 삭제
 	public void smSaleDelete(int portfolio_id) throws Exception;
@@ -65,11 +76,17 @@ public interface MyPageService {
 	public void smDealComplete(int deal_id) throws Exception;
 
 	// 수익 현황
-	public List<Deal_PortVO> smProfitList(String user_id) throws Exception;
+	public List<Deal_PortVO> smProfitList(Criteria cri) throws Exception;
+	
+	public int smProfitListCount(Criteria cri) throws Exception;
+	
+	public List<DealVO> smProfitTotal(String user_id) throws Exception;
 
 	// 문의 내역(판매)
-	public List<Deal_Port_InqVO> smInquiryList(String user_id) throws Exception;
-
+	public List<Deal_Port_InqVO> smInquiryList(Criteria cri) throws Exception;
+	
+	public int smInquiryListCount(Criteria cri) throws Exception;
+	
 	// 문의 내역(판매) - 답변 하기
 	public InquiryVO smInquiryRead(int inq_id) throws Exception;
 
@@ -90,6 +107,5 @@ public interface MyPageService {
 
 	// 별점 총점
 	public double totalRating(int portfolio_id) throws Exception;
-	
-	
+
 }

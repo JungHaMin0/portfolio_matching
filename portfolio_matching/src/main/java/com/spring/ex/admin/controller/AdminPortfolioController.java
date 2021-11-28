@@ -47,6 +47,7 @@ public class AdminPortfolioController {
 		model.addAttribute("portfolio", adminPortfolioService.adminPortfolioDetail(portfolio_id));
 		model.addAttribute("recentDeal", adminPortfolioService.adminPortfolioRecentDeal(portfolio_id));
 		model.addAttribute("recentReview", adminPortfolioService.adminPortfolioRecentReview(portfolio_id));
+		model.addAttribute("recentInquiry", adminPortfolioService.adminPortfolioRecentInquiry(portfolio_id));
 		
 		return "admin/portfolio_detail";
 	}

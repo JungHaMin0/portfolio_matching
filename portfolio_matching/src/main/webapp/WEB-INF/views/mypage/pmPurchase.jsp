@@ -57,6 +57,34 @@
               </tbody>
             </table>
           </div>
+          
+          <div class="pagination justify-content-center">
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+
+                <c:if test="${pageMaker.prev}">
+                  <li class="page-item"><a class="page-link" href="pmPurchase.do${pageMaker.makeQuery(pageMaker.startPage - 1)}" aria-label="Previous"> <span aria-hidden="true">«</span> <span class="sr-only">Previous</span>
+                  </a></li>
+                </c:if>
+
+                <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+                  <c:if test="${pageMaker.cri.page eq idx}">
+                    <li class="page-item active"><a class="page-link" href="pmPurchase.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+                  </c:if>
+                  <c:if test="${pageMaker.cri.page ne idx}">
+                    <li class="page-item"><a class="page-link" href="pmPurchase.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+                  </c:if>
+                </c:forEach>
+
+                <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                  <li class="page-item"><a class="page-link" href="pmPurchase.do${pageMaker.makeQuery(pageMaker.endPage + 1)}" aria-label="Next"> <span aria-hidden="true">»</span> <span class="sr-only">Next</span>
+                  </a></li>
+                </c:if>
+
+              </ul>
+            </nav>
+          </div>
+          
         </div>
       </div>
     </div>
