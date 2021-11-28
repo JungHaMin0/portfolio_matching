@@ -35,4 +35,9 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	
+	<bean id="MapperScannerConfigurer"
+		class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.spring.ex.member.domain.MemberVO" />
+	</bean>
+	
 </beans>
