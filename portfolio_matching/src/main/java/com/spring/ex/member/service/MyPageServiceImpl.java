@@ -7,10 +7,12 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.inquiry.domain.InquiryVO;
+import com.spring.ex.member.domain.Criteria;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.repository.MyPageDAO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
@@ -23,8 +25,13 @@ public class MyPageServiceImpl implements MyPageService {
 	MyPageDAO dao;
 
 	@Override // 구매 내역
-	public List<Deal_PortVO> pmPurchaseList(String user_id) throws Exception {
-		return dao.pmPurchaseList(user_id);
+	public List<Deal_PortVO> pmPurchaseList(Criteria cri) throws Exception {
+		return dao.pmPurchaseList(cri);
+	}
+	
+	@Override
+	public int pmPurchaseListCount(Criteria cri) throws Exception {
+		return dao.pmPurchaseListCount(cri);
 	}
 
 	@Override // 구매 내역 - 구매 확정 기능
@@ -53,8 +60,13 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 	
 	@Override // 관심 상품
-	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
-		return dao.pmInterestList(user_id);
+	public List<PortfolioVO> pmInterestList(Criteria cri) throws Exception {
+		return dao.pmInterestList(cri);
+	}
+	
+	@Override
+	public int pmInterestListCount(Criteria cri) throws Exception {
+		return dao.pmInterestListCount(cri);
 	}
 	
 	@Override // 관심 상품 - 삭제 기능
@@ -63,8 +75,13 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	@Override // 문의 내역
-	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception {
-		return dao.pmInquiryList(user_id);
+	public List<Deal_Port_InqVO> pmInquiryList(Criteria cri) throws Exception {
+		return dao.pmInquiryList(cri);
+	}
+	
+	@Override
+	public int pmInquiryListCount(Criteria cri) throws Exception {
+		return dao.pmInquiryListCount(cri);
 	}
 
 	@Override // 문의 내역 - 작성 기능
@@ -83,8 +100,13 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	@Override // 판매중
-	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
-		return dao.smSaleList(user_id);
+	public List<PortfolioVO> smSaleList(Criteria cri) throws Exception {
+		return dao.smSaleList(cri);
+	}
+	
+	@Override
+	public int smSaleListCount(Criteria cri) throws Exception {
+		return dao.smSaleListCount(cri);
 	}
 	
 	@Override // 판매중 - 삭제
@@ -108,13 +130,28 @@ public class MyPageServiceImpl implements MyPageService {
 	}
 
 	@Override // 수익 현황
-	public List<Deal_PortVO> smProfitList(String user_id) throws Exception {
-		return dao.smProfitList(user_id);
+	public List<Deal_PortVO> smProfitList(Criteria cri) throws Exception {
+		return dao.smProfitList(cri);
+	}
+	
+	@Override
+	public int smProfitListCount(Criteria cri) throws Exception {
+		return dao.smProfitListCount(cri);
+	}
+	
+	@Override
+	public List<DealVO> smProfitTotal(String user_id) throws Exception {
+		return dao.smProfitTotal(user_id);
 	}
 
 	@Override // 문의 내역(판매)
-	public List<Deal_Port_InqVO> smInquiryList(String user_id) throws Exception {
-		return dao.smInquiryList(user_id);
+	public List<Deal_Port_InqVO> smInquiryList(Criteria cri) throws Exception {
+		return dao.smInquiryList(cri);
+	}
+	
+	@Override
+	public int smInquiryListCount(Criteria cri) throws Exception {
+		return dao.smInquiryListCount(cri);
 	}
 
 	@Override // 문의 내역(판매) - 답변 하기

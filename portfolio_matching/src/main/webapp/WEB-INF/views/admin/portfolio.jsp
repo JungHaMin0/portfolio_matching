@@ -24,9 +24,12 @@
     position: absolute;
     width: 150px;
     background-color: white;
-    border: solid 1px black;
+    border: solid 1px #e3e6f0;
     visibility: hidden;
     z-index: 9999;
+    padding: 5px;
+    left: 200px;
+    top: 5px;
   }
   
   #portfolio-category:hover #category-name{
@@ -73,11 +76,7 @@
                       <th>제목</th>
                       <th>작성자</th>
                       <th>카테고리</th>
-                      <th>가격</th>
-                      <th>기간</th>
-                      <th>평점</th>
                       <th>등록일</th>
-                      <th>삭제</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -86,10 +85,10 @@
                         <td class="text-center">${list.portfolio_id}</td>
                         <td><c:choose>
                             <c:when test="${fn:length(list.portfolio_title) gt 50}">
-                                  <a href="PortContent.do?portfolio_id=${list.portfolio_id}" target="_blank">${fn:substring(list.portfolio_title, 0, 47)}...</a>
+                                  <a href="adminPortfolioDetail.do?portfolio_id=${list.portfolio_id}">${fn:substring(list.portfolio_title, 0, 47)}...</a>
                             </c:when>
                             <c:otherwise>
-                              <div><a href="PortContent.do?portfolio_id=${list.portfolio_id}" target="_blank">${list.portfolio_title}</a></div>
+                              <div><a href="adminPortfolioDetail.do?portfolio_id=${list.portfolio_id}">${list.portfolio_title}</a></div>
                             </c:otherwise>
                           </c:choose></td>
                         <td>
@@ -98,7 +97,7 @@
                                   <a href="#">${fn:substring(list.portfolio_userId, 0, 10)}...</a>
                             </c:when>
                             <c:otherwise>
-                              <div><a href="#">${list.portfolio_userId}</a></div>
+                             <div><a href="A_Info.do?purUser=${list.portfolio_userId}">${list.portfolio_userId}</a></div>
                             </c:otherwise>
                           </c:choose>
                         </td>
@@ -106,11 +105,7 @@
                           <div id="category-id">${list.portfolio_category_main.id} - ${list.portfolio_category_sub.id}</div>
                           <div id="category-name">[${list.portfolio_category_main.name}]<br />${list.portfolio_category_sub.name}</div>
                         </td>
-                        <td class="text-right">${list.portfolio_price} 원</td>
-                        <td class="text-right">${list.portfolio_term} 일</td>
-                        <td class="text-center">${list.portfolio_rating} 점</td>
                         <td class="text-center"><fmt:formatDate pattern="yyyy-MM-dd / kk:mm" value="${list.portfolio_regDate}" /></td>
-                        <td class="text-center"><a href="javascript:adminPortfolioDelete(${list.portfolio_id});" style="color: red;">삭제</a></td>
                       </tr>
                     </c:forEach>
                   </tbody>
@@ -166,28 +161,6 @@
 
   <%@ include file="../../include/adminstyle_js.jsp"%>
   
-  <script type="text/javascript">
-  	function adminPortfolioDelete(portfolio_id) {
-  		if(confirm("정말 삭제하시겠습니까?") == true) {
-  			$.ajax({
-  	  			url: "adminPortfolioDelete.do",
-  	  			data: {"portfolio_id" : portfolio_id},
-  	  			success : function(res) {
-  	  				if(res == 1) {
-  	  					alert('삭제가 완료되었습니다.');
-    	  				location.reload();
-  	  				} else {
-  	  					alert('삭제에 실패하였습니다.');
-  	  				}
-  	  			}, error : function() {
-  	  				alert('AJAX ERROR');
-  	  			}
-  	  		});
-  		} else {
-  			return 0;
-  		}
-  	}
-  </script>
 </body>
 
 </html>

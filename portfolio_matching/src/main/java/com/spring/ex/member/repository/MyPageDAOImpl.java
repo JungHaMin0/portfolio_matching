@@ -8,10 +8,12 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.inquiry.domain.InquiryVO;
+import com.spring.ex.member.domain.Criteria;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
 import com.spring.ex.review.domain.ReviewVO;
@@ -24,8 +26,12 @@ public class MyPageDAOImpl implements MyPageDAO {
 	SqlSession sqlSession;
 
 	@Override // 구매 내역
-	public List<Deal_PortVO> pmPurchaseList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.pmPurchase_list", user_id);
+	public List<Deal_PortVO> pmPurchaseList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.pmPurchase_list", cri);
+	}
+	
+	public int pmPurchaseListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.pmPurchaseListCount", cri);
 	}
 
 	@Override // 구매 내역 - 구매 확정 기능
@@ -54,8 +60,13 @@ public class MyPageDAOImpl implements MyPageDAO {
 	}
 	
 	@Override // 관심 상품
-	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.pmInterestList", user_id);
+	public List<PortfolioVO> pmInterestList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.pmInterestList", cri);
+	}
+	
+	@Override
+	public int pmInterestListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.pmInterestListCount", cri);
 	}
 
 	@Override // 관심 상품 - 삭제 기능
@@ -64,8 +75,13 @@ public class MyPageDAOImpl implements MyPageDAO {
 	}
 
 	@Override // 문의 내역(구매)
-	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.pmInquiryList", user_id);
+	public List<Deal_Port_InqVO> pmInquiryList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.pmInquiryList", cri);
+	}
+	
+	@Override
+	public int pmInquiryListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.pmInquiryListCount", cri);
 	}
 
 	@Override // 문의 내역(구매) - 작성 기능
@@ -84,8 +100,13 @@ public class MyPageDAOImpl implements MyPageDAO {
 	}
 
 	@Override // 판매중
-	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.smSaleList", user_id);
+	public List<PortfolioVO> smSaleList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.smSaleList", cri);
+	}
+	
+	@Override
+	public int smSaleListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.listCount", cri);
 	}
 	
 	@Override // 판매중 - 삭제
@@ -109,13 +130,28 @@ public class MyPageDAOImpl implements MyPageDAO {
 	}
 
 	@Override // 수익 현황
-	public List<Deal_PortVO> smProfitList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.smProfitList", user_id);
+	public List<Deal_PortVO> smProfitList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.smProfitList", cri);
+	}
+	
+	@Override
+	public int smProfitListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.smProfitListCount", cri);
+	}
+	
+	@Override
+	public List<DealVO> smProfitTotal(String user_id) throws Exception {
+		return sqlSession.selectList("mypageMapper.smProfitTotal", user_id);
 	}
 
 	@Override // 문의 내역(판매)
-	public List<Deal_Port_InqVO> smInquiryList(String user_id) throws Exception {
-		return sqlSession.selectList("mypageMapper.smInquiryList", user_id);
+	public List<Deal_Port_InqVO> smInquiryList(Criteria cri) throws Exception {
+		return sqlSession.selectList("mypageMapper.smInquiryList", cri);
+	}
+	
+	@Override
+	public int smInquiryListCount(Criteria cri) throws Exception {
+		return sqlSession.selectOne("mypageMapper.smInquiryListCount", cri);
 	}
 
 	@Override // 문의 내역 - 답변하기

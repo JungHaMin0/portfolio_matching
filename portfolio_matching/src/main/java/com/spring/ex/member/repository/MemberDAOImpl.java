@@ -8,7 +8,6 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.member.domain.MemberVO;
-import com.spring.ex.portfolio.domain.PortListVO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -38,4 +37,7 @@ public class MemberDAOImpl implements MemberDAO {
 	public List<MemberVO> view() {
 		 return sqlSession.selectList("memberMapper.mlist");
 	}
-}
+
+
+	}
+

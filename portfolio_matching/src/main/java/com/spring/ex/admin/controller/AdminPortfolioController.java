@@ -38,6 +38,20 @@ public class AdminPortfolioController {
 		return "admin/portfolio_content";
 	}
 	
+	@RequestMapping(value = "adminPortfolioDetail.do", method = RequestMethod.GET)
+	public String adminPortfolioDetail(@RequestParam int portfolio_id, Model model) throws Exception {
+		model.addAttribute("allSaleCount", adminPortfolioService.adminPortfolioAllSaleCount(portfolio_id));
+		model.addAttribute("allSalePrice", adminPortfolioService.adminPortfolioAllSalePrice(portfolio_id));
+		model.addAttribute("allReviewCount", adminPortfolioService.adminPortfolioAllReviewCount(portfolio_id));
+		model.addAttribute("allInquiryCount", adminPortfolioService.adminPortfolioAllInquiryCount(portfolio_id));
+		model.addAttribute("portfolio", adminPortfolioService.adminPortfolioDetail(portfolio_id));
+		model.addAttribute("recentDeal", adminPortfolioService.adminPortfolioRecentDeal(portfolio_id));
+		model.addAttribute("recentReview", adminPortfolioService.adminPortfolioRecentReview(portfolio_id));
+		model.addAttribute("recentInquiry", adminPortfolioService.adminPortfolioRecentInquiry(portfolio_id));
+		
+		return "admin/portfolio_detail";
+	}
+	
 	@ResponseBody
 	@RequestMapping(value = "adminPortfolioDelete.do", method = RequestMethod.GET)
 	public int adminPortfolioDelete(@RequestParam int portfolio_id) throws Exception {

@@ -19,7 +19,14 @@
                 <label>문의 상품</label><input type="text" value="${portfolio_title}" class="form-control" readonly />
               </div>
               <div class="col-lg-3 pt-2">
-                <label>거래 번호</label><input type="text" id="ans_deal_id" name="ans_deal_id" value="${pmInquiryRead.inq_deal_id}" class="form-control" readonly />
+                <c:choose>
+                  <c:when test="${pmInquiryRead.inq_deal_id == 0}">
+                    <label>거래 번호</label><input type="text" id="ans_deal_id" name="ans_deal_id" value="미구매자" class="form-control" readonly />
+                  </c:when>
+                  <c:otherwise>
+                    <label>거래 번호</label><input type="text" id="ans_deal_id" name="ans_deal_id" value="${pmInquiryRead.inq_deal_id}" class="form-control" readonly />
+                  </c:otherwise>                
+                </c:choose>
               </div>
               <div class="col-lg-3 pt-2">
                 <label>문의 번호</label><input type="text" id="ans_inq_id" name="ans_inq_id" value="${pmInquiryRead.inq_id}" class="form-control" readonly />
