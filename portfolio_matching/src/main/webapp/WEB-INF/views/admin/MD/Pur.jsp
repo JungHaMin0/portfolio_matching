@@ -72,7 +72,7 @@ $(document).ready $(function(){
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist"> 
-                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation" class="active"  onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -91,13 +91,13 @@ $(document).ready $(function(){
                                     <thead>
                                         <tr>
                                         <th>이미지</th>
-                                            <th>거래번호</th>
-                                            <th>포폴제목</th>
-                                            <th>구매자</th>
-                                            <th>판매자</th>
-                                            <th>가격</th>
-                                            <th>상태</th>
-                                            <th>날짜</th>
+                                            <th class="text-center">거래번호</th>
+                                            <th class="text-center">포폴제목</th>
+                                            <th class="text-center">구매자</th>
+                                            <th class="text-center">판매자</th>
+                                            <th class="text-center">가격</th>
+                                            <th class="text-center">상태</th>
+                                            <th class="text-center">날짜</th>
                                         </tr>
                                     </thead>
                                   
@@ -105,16 +105,16 @@ $(document).ready $(function(){
                                         <c:forEach items="${pmPurchaseList}" var="pmPurList">
                                     <tr>
                          <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmPurList.portfolio_Img }'/>"/></td>
-                    	<td><c:out value="${pmPurList.deal_id}"/></td>
-                    	 <td> <a href="adminPortfolioDetail.do?portfolio_id=${pmPurList.portfolio_id}">
+                    	<td class="text-center"><c:out value="${pmPurList.deal_id}"/></td>
+                    	 <td class="text-center"> <a href="adminPortfolioDetail.do?portfolio_id=${pmPurList.portfolio_id}">
                          <c:out value="${pmPurList.portfolio_title}"/></a></td>
-                       <td><a href="A_Info.do?purUser=${pmPurList.deal_purUser}">
+                       <td class="text-center"><a href="A_Info.do?purUser=${pmPurList.deal_purUser}">
                         <c:out value="${pmPurList.deal_purUser}"/></a></td>
                          <td><a href="A_Info.do?purUser=${pmPurList.deal_saleUser}">
                         <c:out value="${pmPurList.deal_saleUser}"/></a></td> 
-                        <td><c:out value="${pmPurList.portfolio_price}"/></td>
-                        <td><c:out value="${pmPurList.deal_status}"/></td>
-                        <td><fmt:formatDate value= "${pmPurList.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td class="text-center"><c:out value="${pmPurList.portfolio_price}"/>원</td>
+                        <td class="text-center"><c:out value="${pmPurList.deal_status}"/></td>
+                        <td class="text-center"><fmt:formatDate value= "${pmPurList.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     </tr>
                 </c:forEach>
             

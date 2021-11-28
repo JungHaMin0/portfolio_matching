@@ -72,7 +72,7 @@ $(document).ready $(function(){
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist"> 
-                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation"   onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -90,14 +90,14 @@ $(document).ready $(function(){
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>이미지</th>
-                                            <th>포폴번호</th>
-                                            <th>포폴제목</th>
-                                            <th>아이디</th>
-                                            <th>포폴내용</th>
-                                            <th>포폴가격</th>
-                                            <th>포폴평점</th>
-                                            <th>포폴날짜</th>
+                                        <th class="text-center">이미지</th>
+                                            <th class="text-center">포폴번호</th>
+                                            <th class="text-center">포폴제목</th>
+                                            <th class="text-center">아이디</th>
+                                            <th class="text-center">포폴내용</th>
+                                            <th class="text-center">포폴가격</th>
+                                            <th class="text-center">포폴평점</th>
+                                            <th class="text-center">포폴날짜</th>
                                         </tr>
                                     </thead>
                                   
@@ -106,14 +106,14 @@ $(document).ready $(function(){
                                     <tr>
                          <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${port.portfolio_Img }'/>"/></td>
                     	<td><c:out value="${port.portfolio_id}"/></td>
-                    	   <td> <a href="adminPortfolioDetail.do?portfolio_id=${port.portfolio_id}">
+                    	   <td class="text-center"> <a href="adminPortfolioDetail.do?portfolio_id=${port.portfolio_id}">
                          <c:out value="${port.portfolio_title}"/></a></td>
-                    	 <td>	<a href="A_Info.do?purUser=${port.portfolio_userId}">
+                    	 <td class="text-center">	<a href="A_Info.do?purUser=${port.portfolio_userId}">
                         <c:out value="${port.portfolio_userId}"/></a></td>
-                         <td><c:out value="${port.portfolio_content}"/></td> 
-                        <td><c:out value="${port.portfolio_price}"/></td>
-                        <td><c:out value="${port.portfolio_rating}"/></td>
-                        <td><fmt:formatDate value= "${port.portfolio_regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                         <td class="text-center"><c:out value="${port.portfolio_content}"/></td> 
+                        <td class="text-center"><c:out value="${port.portfolio_price}"/>원</td>
+                        <td class="text-center"><c:out value="${port.portfolio_rating}"/></td>
+                        <td class="text-center"><fmt:formatDate value= "${port.portfolio_regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     </tr>
                 </c:forEach>
             

@@ -16,6 +16,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <meta charset="utf-8">
     <title>수익현황</title>
     
@@ -29,12 +30,20 @@ $(document).ready $(function(){
 	var tab = link.split('/')pop();
 	$('a[href$='+tab+']').trigger("click");
 	
-	$("#Section1").show();
+	
 }); 
-
 
 </script>
 
+<script type="text/javascript">
+    var total = 0;
+    var cur = 0;
+    function sum(number) {
+      total = total + number;
+      $("#total").html(total + " 원");
+      return total;
+    }
+  </script>
 
 </head>
 
@@ -72,7 +81,7 @@ $(document).ready $(function(){
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation"   onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -83,23 +92,34 @@ $(document).ready $(function(){
   <div class="tab-slider--container">
          <div class="card-body">
             <div class="tab-content tabs">
-              
+               <strong>전체 수익 : ${total} 원</strong>
                            
             <div role="tabpanel" class="tab-pane active" id="Section6">
                                     <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>수익현황</th>
-                                            <th>제목</th>
-                                            <th>구매자</th>
-                                            <th>구매일</th>
-                                            <th>가격</th>
+                                            <th class="text-center">이미지</th>
+                                            <th class="text-center">포폴번호</th>
+                                            <th class="text-center">구매자</th>
+                                            <th class="text-center">구매일</th>
+                                            <th class="text-center">가격</th>
+                                            <th class="text-center">실수령액</th>
                                         </tr>
                                     </thead>
                                   
                                     <tbody>
-                                   
+                                    <c:forEach items="${smProfitList}" var="smProfitList">
+                  <tr>
+                   <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smProfitList.portfolio_Img }'/>" alt="image description"></td>
+                      <td class="text-center"><c:out value="${smProfitList.deal_portfolio_id}"/></td>
+                      <td><c:out value="${smProfitList.deal_purUser}"/></td>
+                        <td><fmt:formatDate value= "${smProfitList.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                         <td class="text-center"><span><strong id="price">${smProfitList.deal_price}</strong><strong> 원</strong></span></td>
+                    	<td class="text-center"><span><strong id="total">${smProfitList.deal_price - (smProfitList.deal_price * 0.1) }</strong> 원</span></td>
+                           
+                  </tr>
+                </c:forEach>
             
                                     </tbody>
                                 </table>

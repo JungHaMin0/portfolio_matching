@@ -72,7 +72,7 @@ $(document).ready $(function(){
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                             <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                             <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation" onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -90,12 +90,13 @@ $(document).ready $(function(){
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                        <th>이미지</th>
-                                            <th>문의번호</th>
-                                            <th>문의 제목</th>
-                                            <th>작성자</th>
-                                            <th>내용</th>
-                                            <th>날짜</th>
+                                        <th class="text-center">이미지</th>
+                                            <th class="text-center">문의번호</th>
+                                            <th class="text-center">포폴제목</th>
+                                            <th class="text-center">문의 제목</th>
+                                            <th class="text-center">작성자</th>
+                                            <th class="text-center">내용</th>
+                                            <th class="text-center">날짜</th>
                                         </tr>
                                     </thead>
                                   
@@ -103,12 +104,14 @@ $(document).ready $(function(){
                                      <c:forEach items="${smInquiryList}" var="smInqList">
                                      <tr>
                                                       <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${smInqList.portfolio_Img }'/>" ></td>
-                                                                            <td><c:out value="${smInqList.inq_id}"/></td>
-                                                                            <td><c:out value="${smInqList.portfolio_title}"/></td>
-                                                                             <td>	<a href="A_Info.do?purUser=${smInqList.inq_purUser}">
+                                                                            <td class="text-center"><c:out value="${smInqList.inq_id}"/></td>
+                                                                          <td class="text-center"> <a href="adminPortfolioDetail.do?portfolio_id=${smInqList.portfolio_id}">
+                         															<c:out value="${smInqList.portfolio_title}"/></a></td>
+                                                                            <td class="text-center"><c:out value="${smInqList.inq_title}"/></td>
+                                                                             <td class="text-center">	<a href="A_Info.do?purUser=${smInqList.inq_purUser}">
                        															 <c:out value="${smInqList.inq_purUser}"/></a></td>
-                                                                            <td><c:out value="${smInqList.inq_content}"/></td>
-                                                                             <td><fmt:formatDate value= "${smInqList.inq_regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                                                                            <td class="text-center"><c:out value="${smInqList.inq_content}"/></td>
+                                                                             <td class="text-center"><fmt:formatDate value= "${smInqList.inq_regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                      
                                      </tr>
                                      </c:forEach>

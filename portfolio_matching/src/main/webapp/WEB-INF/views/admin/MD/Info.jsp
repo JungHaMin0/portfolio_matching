@@ -72,7 +72,7 @@ var tabMenu = $("#nav nav-tabs ul>li>a")
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist"> 	
-                            <li role="presentation"  class="active" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                            <li role="presentation"  class="active" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation"  onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -89,10 +89,10 @@ var tabMenu = $("#nav nav-tabs ul>li>a")
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>고객아이디</th>
-                                            <th>이름</th>
-                                            <th>연락처</th>
-                                            <th>이메일</th>
+                                            <th class="text-center">고객아이디</th>
+                                            <th class="text-center">이름</th>
+                                            <th class="text-center">연락처</th>
+                                            <th class="text-center">이메일</th>
                                           
                                         </tr>
                                     </thead>
@@ -100,10 +100,10 @@ var tabMenu = $("#nav nav-tabs ul>li>a")
                                     <tbody>
                              
                                <tr>
-                               <td><c:out value="${user.user_id}"/></td>
-                               <td><c:out value="${user.user_name}"/></td>
-                               <td><c:out value="${user.user_phone}"/></td>
-                               <td><c:out value="${user.user_email}"/></td>
+                               <td class="text-center"><c:out value="${user.user_id}"/></td>
+                               <td class="text-center"><c:out value="${user.user_name}"/></td>
+                               <td class="text-center"><c:out value="${user.user_phone}"/></td>
+                               <td class="text-center"><c:out value="${user.user_email}"/></td>
                                </tr>
                            
                                     </tbody>

@@ -72,7 +72,7 @@ $(document).ready $(function(){
                     <div class="tab" role="tabpanel">
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">내정보</a></li>
+                            <li role="presentation" onclick="location.href='A_Info.do?purUser=${user.user_id}'"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" class="on">고객정보</a></li>
                        		<li role="presentation"   onclick="location.href='A_Pur.do?purUser=${user.user_id}'"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">구매내역</a></li>
                             <li role="presentation"onclick="location.href='A_Interest.do?purUser=${user.user_id}'"><a href="#Section3" aria-controls="profile" role="tab" data-toggle="tab">관심포폴</a></li>
                             <li role="presentation"  class="active" onclick="location.href='A_Pinquiry.do?purUser=${user.user_id}'"><a href="#Section4" aria-controls="profile" role="tab" data-toggle="tab">구매문의</a></li>
@@ -90,13 +90,13 @@ $(document).ready $(function(){
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead> 
                                         <tr>
-                                           <th>이미지</th>
-                                            <th>문의번호</th>
-                                            <th>포폴제목</th>
-                                            <th>문의제목</th>
-                                            <th>문의내용</th>
-                                            <th>판매자</th>
-                                            <th>날짜</th>
+                                           <th class="text-center">이미지</th>
+                                            <th class="text-center">문의번호</th>
+                                            <th class="text-center">포폴제목</th>
+                                            <th class="text-center">문의제목</th>
+                                            <th class="text-center">문의내용</th>
+                                            <th class="text-center">판매자</th>
+                                            <th class="text-center">날짜</th>
                                         </tr>
                                     </thead>
                                   
@@ -104,11 +104,13 @@ $(document).ready $(function(){
                                     <c:forEach items="${pmInquiryList}" var="pmInqList">
                                      <tr>
                                         <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmInqList.portfolio_Img }'/>" /></td>
-                                      <td><c:out value="${pmInqList.inq_id}"></c:out></td>
-                                     <td><c:out value="${pmInqList.portfolio_title}"></c:out></td>
-                                      <td><c:out value="${pmInqList.inq_title}"></c:out></td>
-                 						<td><c:out value="${pmInqList.inq_content}"></c:out></td>
-                 						 <td>	<a href="A_Info.do?purUser=${pmInqList.portfolio_userId}">
+        
+                                            <td  class="text-center"> <c:out value="${pmInqList.inq_id}"/></td>
+                                               <td class="text-center"> <a href="adminPortfolioDetail.do?portfolio_id=${pmInqList.portfolio_id}">
+                         <c:out value="${pmInqList.portfolio_title}"/></a></td>
+                                      <td class="text-center"><c:out value="${pmInqList.inq_title}"></c:out></td>
+                 						<td class="text-center"><c:out value="${pmInqList.inq_content}"></c:out></td>
+                 						 <td class="text-center">	<a href="A_Info.do?purUser=${pmInqList.portfolio_userId}">
                        						 <c:out value="${pmInqList.portfolio_userId}"/></a></td>
                  				<td> <fmt:formatDate value= "${pmInqList.inq_regDate}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                      </tr>  

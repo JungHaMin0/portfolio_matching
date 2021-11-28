@@ -86,12 +86,12 @@ $(document).ready $(function(){
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>번호</th>
-                                            <th>구매자</th>
-                                            <th>판매자</th>
-                                            <th>가격</th>
-                                            <th>상태</th>
-                                            <th>날짜</th>
+                                            <th class="text-center">번호</th>
+                                            <th class="text-center">구매자</th>
+                                            <th class="text-center">판매자</th>
+                                            <th class="text-center">가격</th>
+                                            <th class="text-center">상태</th>
+                                            <th class="text-center">날짜</th>
                                         </tr>
                                     </thead>
                                   
@@ -100,13 +100,13 @@ $(document).ready $(function(){
                                     <tr>
                     	<td><c:out value="${list.deal_id}"/></td>
              
-                       <td>	<a href="A_Info.do?purUser=${list.deal_purUser}">
+                       <td class="text-center">	<a href="A_Info.do?purUser=${list.deal_purUser}">
                         <c:out value="${list.deal_purUser}"/></a></td>
-                         <td>	<a href="A_Info.do?purUser=${list.deal_saleUser}">
+                         <td class="text-center">	<a href="A_Info.do?purUser=${list.deal_saleUser}">
                         <c:out value="${list.deal_saleUser}"/></a></td>
-                        <td><c:out value="${list.deal_price}"/></td>
-                        <td><c:out value="${list.deal_status}"/></td>
-                        <td><fmt:formatDate value= "${list.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+                        <td class="text-center"><c:out value="${list.deal_price}"/>원</td>
+                        <td class="text-center"><c:out value="${list.deal_status}"/></td>
+                        <td class="text-center"><fmt:formatDate value= "${list.deal_date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     </tr>
                 </c:forEach>
             
