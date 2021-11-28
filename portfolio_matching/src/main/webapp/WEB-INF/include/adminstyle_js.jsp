@@ -17,9 +17,5 @@
     
     <script src="./resources/admin/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="./resources/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-<<<<<<< HEAD
+
     <script src="./resources/admin/js/demo/datatables-demo.js"></script>
-      
-=======
-    <script src="./resources/admin/js/demo/datatables-demo.js"></script>
->>>>>>> refs/remotes/origin/jeongwon
