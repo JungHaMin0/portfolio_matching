@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminDAO;
 import com.spring.ex.deal.domain.Deal_PortVO;
+import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.portfolio.domain.PortfolioVO;
 import com.spring.ex.portfolio.domain.SearchCriteria;
@@ -29,12 +30,7 @@ public class AdminServiceImpl implements AdminService {
 		return dao.purUser(purUser);
 	}
 
-	@Override
-	public List<Deal_PortVO> smSaleList(String saleUser) throws Exception {
-		return dao.smSaleList(saleUser);
-
-	}
-
+	
 	@Override
 	public  List<PortfolioVO> port(String user_id) throws Exception {
 		return dao.port(user_id);
@@ -48,6 +44,36 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public MemberVO user(String user_id) throws Exception {
 		return dao.user(user_id);
+	}
+
+	@Override
+	public List<PortfolioVO> pmInterestList(String user_id) throws Exception {
+		return dao.pmInterestList(user_id);
+	}
+
+	@Override
+	public List<Deal_Port_InqVO> pmInquiryList(String user_id) throws Exception {
+		return dao.pmInquiryList(user_id);
+	}
+
+	@Override
+	public List<PortfolioVO> smSaleList(String user_id) throws Exception {
+		return dao.smSaleList(user_id);
+	}
+
+	@Override
+	public List<Deal_PortVO> pmPurchaseList(String user_id) throws Exception {
+		return dao.pmPurchaseList(user_id);
+	}
+
+	@Override
+	public List<Deal_PortVO> smProfitList(String user_id) throws Exception {
+		return dao.smProfitList(user_id);
+	}
+
+	@Override
+	public List<Deal_Port_InqVO> smInquiryList(String user_id) throws Exception {
+		return dao.smInquiryList(user_id);
 	}
 
 

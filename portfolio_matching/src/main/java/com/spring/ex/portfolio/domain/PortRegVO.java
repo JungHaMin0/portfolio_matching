@@ -18,7 +18,14 @@ public class PortRegVO {
 	private String portfolio_Img;
 	private double score;
 	private int cnt;
+	private int pcnt;
 	
+	public int getPcnt() {
+		return pcnt;
+	}
+	public void setPcnt(int pcnt) {
+		this.pcnt = pcnt;
+	}
 	public int getCnt() {
 		return cnt;
 	}

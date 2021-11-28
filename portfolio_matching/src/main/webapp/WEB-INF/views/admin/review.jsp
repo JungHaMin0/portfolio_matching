@@ -56,24 +56,13 @@
                                             <th>삭제</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                             <th>리뷰번호</th>
-                                            <th>포트폴리오 번호</th>
-                                            <th>사용자 아이디</th>
-                                            <th>별점</th>
-                                            <th>제목</th>
-                                            <th>내용</th>
-                                            <th>날짜</th>
-                                            <th>삭제</th>
-                                            
-                                        </tr>
-                                    </tfoot>
+                                   
                                     <tbody>
                                      <c:forEach items="${reviewlist}" var="reviewlist">
                                         <tr>
                                             <td>${reviewlist.review_id}</td>
-                                            <td>${reviewlist.review_portfolio_id}</td>
+                                            <td> <a href="adminPortfolioDetail.do?portfolio_id=${reviewlist.review_portfolio_id}">
+                                            <c:out value="${reviewlist.review_portfolio_id}"/></a></td>
                                             <td><a href="A_Info.do?purUser=${reviewlist.review_userId}">
                         					<c:out value="${reviewlist.review_userId}"/></a></td>
                                             <td>${reviewlist.review_rating}</td>

@@ -63,7 +63,7 @@ $(document).ready $(function(){
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-    
+     <h6 class="m-0 font-weight-bold text-primary">구매목록</h6>
                         </div>
    <div class="container">
 
@@ -106,7 +106,8 @@ $(document).ready $(function(){
                                     <tr>
                          <td class="product-thumb"><img width="80px" height="auto" src="data:image/jpeg;base64,<c:out value='${pmPurList.portfolio_Img }'/>"/></td>
                     	<td><c:out value="${pmPurList.deal_id}"/></td>
-                    	<td><c:out value="${pmPurList.portfolio_title}"/></td>  
+                    	 <td> <a href="adminPortfolioDetail.do?portfolio_id=${pmPurList.portfolio_id}">
+                         <c:out value="${pmPurList.portfolio_title}"/></a></td>
                        <td><a href="A_Info.do?purUser=${pmPurList.deal_purUser}">
                         <c:out value="${pmPurList.deal_purUser}"/></a></td>
                          <td><a href="A_Info.do?purUser=${pmPurList.deal_saleUser}">

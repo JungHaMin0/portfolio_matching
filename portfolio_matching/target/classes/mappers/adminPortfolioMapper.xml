@@ -29,6 +29,42 @@
 		DELETE FROM portfolio WHERE portfolio_id = #{portfolio_id}
 	</delete>
 	
+	<select id="adminPortfolioDetail" parameterType="int" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+		SELECT * FROM portfolio WHERE portfolio_id = #{portfolio_id}
+	</select>
+
+	<select id="adminPortfolioAllSaleCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM deal WHERE deal_portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioAllSalePrice" parameterType="int" resultType="int">
+		SELECT IFNULL(SUM(deal_price), 0) FROM deal WHERE deal_portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioAllReviewCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM review WHERE review_portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioAllInquiryCount" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM Inquiry WHERE inq_portfolio_id = #{portfolio_id}
+	</select>
+	
+	<select id="adminPortfolioRecentDeal" parameterType="int" resultType="com.spring.ex.deal.domain.DealVO">
+		SELECT * FROM deal WHERE deal_portfolio_id = #{portfolio_id} ORDER BY deal_date DESC LIMIT 0, 5
+	</select>
+	
+	<select id="adminPortfolioRecentReview" parameterType="int" resultType="com.spring.ex.review.domain.ReviewVO">
+		SELECT * FROM review WHERE review_portfolio_id = #{portfolio_id} ORDER BY review_regDate DESC LIMIT 0, 5
+	</select>
+	
+	<select id="adminPortfolioRecentInquiry" parameterType="int" resultType="com.spring.ex.inquiry.domain.InquiryVO">
+		SELECT * FROM inquiry WHERE inq_portfolio_id = #{portfolio_id} ORDER BY inq_regDate DESC LIMIT 0, 5
+	</select>
+	
+	<select id="adminPortfolioAnsInq" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM answer WHERE ans_inq_id = #{inq_id}
+	</select>
+	
 	<!-- 어드민 메인 페이지 백분율   -->
 	<select id="portcate" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 	select portfolio_category_main, ROUND(COUNT(*) * 100 / sum(count(*)) over(), 1) AS score
@@ -52,6 +88,16 @@
 	<select id="dealcnt" resultType="com.spring.ex.deal.domain.DealVO">
 	SELECT (SUM(deal_price)* 0.1) AS dcnt
 	FROM deal
+	</select>
+	
+	<select id="acnt" resultType="com.spring.ex.inquiry.domain.AnswerVO">
+	SELECT COUNT(*) as acnt
+	FROM answer
+	</select>
+	
+	<select id="pcnt" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT COUNT(*) as pcnt
+	FROM portfolio
 	</select>
 
 </mapper>
