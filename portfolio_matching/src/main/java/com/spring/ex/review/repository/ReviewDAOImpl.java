@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.spring.ex.review.domain.ReviewPortVO;
 import com.spring.ex.review.domain.ReviewVO;
 import com.spring.ex.scrap.domain.ScrapVO;
 
@@ -24,4 +25,16 @@ public class ReviewDAOImpl implements ReviewDAO{
 	public int reviewDelete(ReviewVO reviewVO) throws Exception {
 		return sqlSession.delete("mypageMapper.reviewDelete", reviewVO);
 	}
+	
+	@Override
+	public ReviewVO selectReviewByCode(ReviewVO reviewVO) throws Exception{
+		return sqlSession.selectOne("mypageMapper.selectReviewByCode", reviewVO);
+	}
+	
+	
+	  @Override 
+	  public ReviewPortVO ReviewPort(ReviewPortVO reviewPortVO) throws Exception{ 
+		  return sqlSession.selectOne("mypageMapper.ReviewPort", reviewPortVO); 
+	  }
+	 
 }
