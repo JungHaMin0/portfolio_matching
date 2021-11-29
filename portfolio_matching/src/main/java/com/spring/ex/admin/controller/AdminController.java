@@ -2,9 +2,7 @@ package com.spring.ex.admin.controller;
 
 import java.util.List;
 
-
 import javax.inject.Inject;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +14,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.admin.service.AdminService;
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.Deal_PortVO;
-
-import com.spring.ex.member.domain.MemberVO;
-
 import com.spring.ex.member.service.MemberService;
 import com.spring.ex.member.service.MyPageService;
-import com.spring.ex.portfolio.domain.PageMaker;
-import com.spring.ex.portfolio.domain.SearchCriteria;
 
 @Controller
 public class AdminController {
@@ -31,7 +25,9 @@ public class AdminController {
    @Autowired
    MemberService service;
 
-
+   @Inject
+   MyPageService Mservice;
+   
    @Inject
    AdminService Aservice;
 
@@ -133,6 +129,17 @@ public class AdminController {
 	
 			mav.addObject("smProfitList", Aservice.smProfitList(user_id)); //수익
 			mav.addObject("user", Aservice.user(user_id));
+			
+			List<DealVO> list = Mservice.smProfitTotal(purUser);
+			double total = 0.0;
+			double temp;
+			for(int i=0; i<list.size(); i++) {
+				temp = list.get(i).getDeal_price();
+				total += (temp - (temp * 0.1));
+			}
+			
+			mav.addObject("total", total);
+			
 			mav.setViewName("admin/MD/Profit");
 			return mav;
 		}
