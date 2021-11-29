@@ -636,15 +636,11 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("../images/port_banner2.png");
-<<<<<<< HEAD
-  background-size: 100% auto;;
-=======
-  background-size: auto 100%;;
->>>>>>> refs/heads/hamin
-  background-repeat: no-repeat;
-  background-position: center top;
-  
+  background: url("../images/banner.png") no-repeat;
+  width: 100%;
+  height: 520px;
+  margin: 0 auto;
+  background-size: 100% 100%;
 }
 
 .bg-2 {
@@ -933,13 +929,14 @@ ul.pagination .active a {
   background: #fff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
-  margin-bottom: -50px;
+  margin-bottom: 100px;
+  margin-top: -10px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 480px) {
   .hero-area .advance-search {
-    margin-bottom: -80px;
+    margin-bottom: 10px;
   }
 }
 

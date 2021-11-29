@@ -11,6 +11,15 @@ public class DealVO {
 	private String deal_status;
 	private Date deal_date;
 	private int dcnt;
+	private int dealsum;
+
+	public int getDealsum() {
+		return dealsum;
+	}
+
+	public void setDealsum(int dealsum) {
+		this.dealsum = dealsum;
+	}
 
 	public int getDcnt() {
 		return dcnt;

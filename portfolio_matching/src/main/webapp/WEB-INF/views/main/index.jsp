@@ -20,7 +20,6 @@
 <!-------------------------       Hero area           ------------------------->
 <body>
   <%@ include file="../../include/header.jsp"%>
-
   <section class="hero-area bg-1 text-center">
     <div class="container">
       <div class="row">

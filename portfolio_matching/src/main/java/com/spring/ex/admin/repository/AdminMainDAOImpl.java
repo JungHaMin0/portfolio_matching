@@ -46,4 +46,9 @@ public class AdminMainDAOImpl implements AdminMainDAO {
 	public List<AnswerVO> acntlist() {
 		return sqlSession.selectList("adminPortfolioMapper.acnt");
 	}
+	
+	@Override
+	public List<DealVO> dealChart() {
+		return sqlSession.selectList("adminPortfolioMapper.dealChart");
+	}
 }

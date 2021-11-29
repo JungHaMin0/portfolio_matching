@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.spring.ex.admin.service.AdminMainService;
 import com.spring.ex.member.service.MemberService;
 
@@ -25,6 +26,8 @@ public class AdminMainController {
 		model.addAttribute("dealcnt", aservice.dcntlist());
 		model.addAttribute("pcnt", aservice.pcnt());
 		model.addAttribute("acntlist", aservice.acntlist());
+		model.addAttribute("dealChart", aservice.dealChart());
+		System.out.println(aservice.dealChart());
 		return "admin/aindex";
 	}
 	

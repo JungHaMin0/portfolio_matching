@@ -91,5 +91,12 @@
 	SELECT COUNT(*) as pcnt
 	FROM portfolio
 	</select>
+	
+	<select id="dealChart" resultType="com.spring.ex.deal.domain.DealVO">
+	SELECT deal_date, SUM(deal_price) as dealsum
+	FROM deal
+	GROUP BY deal_price
+	ORDER BY deal_date 
+	</select>
 
 </mapper>
