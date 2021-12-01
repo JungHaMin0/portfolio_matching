@@ -147,7 +147,15 @@
                             </a>
                           </div>
                           <div class="card-body">
-                            <h4 class="card-title"><a href="PortContent.do?portfolio_id=${list.portfolio_id}">${list.portfolio_title}</a></h4>
+                            <h4 class="card-title"><a href="PortContent.do?portfolio_id=${list.portfolio_id}"> <c:choose>
+                                  <c:when test="${fn:length(list.portfolio_title) gt 13}">
+                                  ${fn:substring(list.portfolio_title, 0, 11)}...
+                            </c:when>
+                                  <c:otherwise>
+                                    <div>${list.portfolio_title}</div>
+                                  </c:otherwise>
+                                </c:choose>
+                            </a></h4>
                             <ul class="list-inline product-meta">
                               <li class="list-item"><i class="fa fa-user-o"></i> ${list.portfolio_userId}</li>
                               <li class="list-item"><a href="portlist.do?main_id=${mainList.id}&id=0"> <i class="fa fa-folder-open-o"></i> ${list.portfolio_category_main.name}
