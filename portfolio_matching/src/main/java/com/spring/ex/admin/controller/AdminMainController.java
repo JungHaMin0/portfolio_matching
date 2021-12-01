@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.spring.ex.admin.service.AdminMainService;
 import com.spring.ex.member.service.MemberService;
 
@@ -25,6 +26,8 @@ public class AdminMainController {
 		model.addAttribute("dealcnt", aservice.dcntlist());
 		model.addAttribute("pcnt", aservice.pcnt());
 		model.addAttribute("acntlist", aservice.acntlist());
+		model.addAttribute("dealChart", aservice.dealChart());
+		System.out.println(aservice.dealChart());
 		return "admin/aindex";
 	}
 	
@@ -32,6 +35,19 @@ public class AdminMainController {
 	public String adminMember(Model model) throws Exception {
 		model.addAttribute("mlist", service.view());
 		return "admin/member";
+	}
+	
+
+   @RequestMapping(value = "adminStat.do", method = RequestMethod.GET)
+   public String stat(Model model) throws Exception {
+	   model.addAttribute("memberview", service.view());
+       return "admin/stat";
+   }
+   
+	@RequestMapping(value = "adminStatPortfolio.do", method = RequestMethod.GET)
+	public String adminStartPort(Model model) throws Exception {
+	   model.addAttribute("statPortList", aservice.statPortList());
+	   return "admin/statp";
 	}
 
 }
