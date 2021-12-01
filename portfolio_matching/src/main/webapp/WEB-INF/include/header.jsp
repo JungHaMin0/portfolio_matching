@@ -12,8 +12,8 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav ml-auto main-nav ">
-              <li class="nav-item active"><a class="nav-link" href="index.do">Home</a></li>
-              <li class="nav-item dropdown dropdown-slide"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오<span><i class="fa fa-angle-down"></i></span>
+              <li class="nav-item active"><a class="nav-link" href="index.do">HOME</a></li>
+              <li class="nav-item dropdown dropdown-slide"><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="">포트폴리오<span><!-- <i class="fa fa-angle-down"></i> --></span>
               </a> <!-- Dropdown list -->
                 <div id="dropdown-category" class="dropdown-menu">
                   <ul class="main2">
@@ -29,18 +29,20 @@
 
             </ul>
             <ul class="navbar-nav ml-auto mt-10">
-            <c:if test="${member.user_ref == 1}">
-				<li>
-				 <a href="aindex.do">관리자 화면</a> 
-				</li> 
-			</c:if>
               <c:if test="${member == null}">
-                <li class="nav-item"><a class="nav-link login-button" href="login.do">로그인</a></li>
+                <li class="nav-item"><a class="nav-link hsign" href="login.do">로그인</a></li>
+                <li class="nav-item"><a class="nav-link login-button" href="register.do">무료 회원가입</a></li>
               </c:if>
-              <c:if test="${member != null}">
-                <li class="nav-item"><a class="nav-link login-button" href="pmPurchase.do">${member.user_id}</a></li>
+              <c:if test="${member.user_ref == 0}">
+                <li class="nav-item"><a class="nav-link hsign" href="pmPurchase.do">${member.user_id}<span>님 환영합니다</span></a></li> 
                 <li class="nav-item"><a class="nav-link login-button" href="logout.do">로그아웃</a></li>
               </c:if>
+              
+              <c:if test="${member.user_ref == 1}">
+                <li class="nav-item"><a class="nav-link hsign" href="aindex.do">관리자<span>님 환영합니다</span></a></li> 
+                <li class="nav-item"><a class="nav-link login-button" href="logout.do">로그아웃</a></li>
+              </c:if>
+              
               <c:if test="${msg == false}">
                 <script>
                   	alert("로그인 실패! 아이디와 비밀번호 확인해주세요.");
