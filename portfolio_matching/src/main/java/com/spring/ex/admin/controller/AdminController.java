@@ -158,45 +158,5 @@ public class AdminController {
 			return mav;
 		}
 		
-		
-			
-   
-<<<<<<< HEAD
-
-   @RequestMapping(value = "adminStat.do", method = RequestMethod.GET)
-   public String stat() throws Exception {
-
-      return "admin/stat";
-   }
-=======
-   // 구매내역 상세
-   @RequestMapping(value = "purUser.do", method = RequestMethod.GET)
-   public ModelAndView purUser(@RequestParam String purUser, HttpSession session) throws Exception {
-      ModelAndView mav = new ModelAndView();
-      mav.setViewName("admin/purUser");
-      mav.addObject("dto", Aservice.purUser(purUser));
-      return mav;
-   }
-   // 판매내역 상세
-   @RequestMapping(value = "saleUser.do", method = RequestMethod.GET)
-   public ModelAndView saleUSer(@RequestParam String saleUser, HttpSession session) throws Exception {
-      ModelAndView mav = new ModelAndView();
-      mav.setViewName("admin/saleUser");
-      mav.addObject("dto", Aservice.saleUser(saleUser));
-      return mav;
-   }
-   // 판매내역
-   @RequestMapping(value = "adminSale.do", method = RequestMethod.GET)
-      public ModelAndView sale() throws Exception {
-         List<Deal_PortVO> list = Aservice.PurchaseList();
-         ModelAndView mav = new ModelAndView();
-         mav.setViewName("admin/sale");
-         mav.addObject("list", list);
-   
-
-         return mav;
-      }
->>>>>>> refs/remotes/origin/hamin
-   
 }
 
