@@ -23,4 +23,6 @@ public interface AdminMainDAO {
 	public List<AnswerVO> acntlist();
 	
 	public List<DealVO> dealChart();
+	
+	public List<PortRegVO> statPortList();
 }

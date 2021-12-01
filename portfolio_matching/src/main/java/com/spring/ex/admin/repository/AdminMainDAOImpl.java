@@ -51,4 +51,9 @@ public class AdminMainDAOImpl implements AdminMainDAO {
 	public List<DealVO> dealChart() {
 		return sqlSession.selectList("adminPortfolioMapper.dealChart");
 	}
+	
+	@Override
+	public List<PortRegVO> statPortList() {
+		return sqlSession.selectList("adminPortfolioMapper.statPortList");
+	}
 }

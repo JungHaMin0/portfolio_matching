@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.spring.ex.admin.service.AdminMainService;
 import com.spring.ex.admin.service.AdminService;
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.member.service.MemberService;
@@ -70,11 +71,5 @@ public class AdminController {
 
          return mav;
       }
-
-   @RequestMapping(value = "adminStat.do", method = RequestMethod.GET)
-   public String stat() throws Exception {
-
-      return "admin/stat";
-   }
    
 }

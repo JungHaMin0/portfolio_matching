@@ -36,5 +36,18 @@ public class AdminMainController {
 		model.addAttribute("mlist", service.view());
 		return "admin/member";
 	}
+	
+
+   @RequestMapping(value = "adminStat.do", method = RequestMethod.GET)
+   public String stat(Model model) throws Exception {
+	   model.addAttribute("memberview", service.view());
+       return "admin/stat";
+   }
+   
+	@RequestMapping(value = "adminStatPortfolio.do", method = RequestMethod.GET)
+	public String adminStartPort(Model model) throws Exception {
+	   model.addAttribute("statPortList", aservice.statPortList());
+	   return "admin/statp";
+	}
 
 }

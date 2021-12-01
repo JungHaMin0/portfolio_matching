@@ -98,5 +98,11 @@
 	GROUP BY deal_price
 	ORDER BY deal_date 
 	</select>
+	
+	<select id="statPortList" resultType="com.spring.ex.portfolio.domain.PortRegVO">
+	SELECT portfolio_id, portfolio_userId, portfolio_title, portfolio_category_main, portfolio_content, portfolio_price, portfolio_rating, portfolio_regDate
+	FROM portfolio
+	ORDER BY portfolio_regDate DESC
+	</select>
 
 </mapper>

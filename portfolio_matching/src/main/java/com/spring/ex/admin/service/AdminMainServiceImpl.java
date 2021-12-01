@@ -48,4 +48,9 @@ public class AdminMainServiceImpl implements AdminMainService {
 	public List<DealVO> dealChart() {
 		return dao.dealChart();
 	}
+	
+	@Override
+	public List<PortRegVO> statPortList() {
+		return dao.statPortList();
+	}
 }
