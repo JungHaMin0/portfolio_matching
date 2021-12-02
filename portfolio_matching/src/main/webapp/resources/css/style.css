@@ -61,6 +61,7 @@ label {
 
 .nav-pills.with-background .nav-item {
   margin-right: 10px;
+  margin-bottom: 0;
 }
 
 .nav-pills.with-background .nav-item:last-child {
@@ -81,6 +82,10 @@ label {
   background: #5672f9;
   position: relative;
   transition: 0s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #000;
 }
 
 .nav-pills.with-background .nav-link.active:hover {
@@ -143,7 +148,7 @@ ul.pagination li a {
 }
 
 ul.pagination .active a {
-  background-color: #5672f9 !important;
+  background-color: #000 !important;
   color: #fff !important;
   border-color: transparent !important;
 }
@@ -318,6 +323,11 @@ button {
 
 .section {
   padding: 100px 0;
+}
+
+.header {
+	box-shadow: 0 1px 0 0 #dad2d25e;
+	border-bottom: 1px solid #dad2d25e;
 }
 
 .section-sm {
@@ -594,7 +604,7 @@ ul.pagination .active a {
 }
 
 .page-search {
-  background: #5672f9;
+  background: #484848;
   padding: 30px 0;
 }
 
@@ -632,15 +642,15 @@ ul.pagination .active a {
 }
 
 .bg-gray {
-  background: #F5F5F5;
+  background: #f9f9f9;
 }
 
 .bg-1 {
-  background: url("../images/port_banner2.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center top;
-  
+  background: url("../images/banner.png") no-repeat;
+  width: 100%;
+  height: 520px;
+  margin: 0 auto;
+  background-size: 100% 100%;
 }
 
 .bg-2 {
@@ -668,9 +678,43 @@ ul.pagination .active a {
 }
 
 .login-button {
-  border: 2px solid #dedede;
+  border: 2px solid #faed7d;
   margin-right: 8px;
-  padding: 6px 20px !important;
+  margin-left: 7px;
+  padding: 8px 20px !important;
+  border-radius: 20px 20px;
+  font-weight: 500;
+  color: #000;
+}
+
+.login-button:hover {
+	color: #faed7d; 
+}
+
+.hre {
+	display:flex;
+}
+
+a {
+	color: #000;
+}
+
+li .hsign {
+	color: #000;
+	margin-bottom: 0;
+	text-align: center;
+	font-size: 18px;
+}
+
+li .hsigna {
+	color: #000;
+	margin: 0;
+	text-align: center;
+	font-size: 9px;
+}
+
+li .hsign span {
+	font-size: 14px;
 }
 
 @media (max-width: 400px) {
@@ -735,7 +779,7 @@ ul.pagination .active a {
 }
 
 .main-nav .nav-item.active .nav-link {
-  color: #5672f9;
+  color: #000;
 }
 
 .main-nav .search .nav-link i {
@@ -793,7 +837,7 @@ ul.pagination .active a {
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  background: #5672f9;
+  background: #000;
 }
 
 .dropdown-item {
@@ -929,13 +973,14 @@ ul.pagination .active a {
   background: #fff;
   padding: 40px 15px 25px 15px;
   border-radius: 3px;
-  margin-bottom: -50px;
+  margin-bottom: 100px;
+  margin-top: -10px;
   box-shadow: -1px 3px 6px rgba(0, 0, 0, 0.12);
 }
 
 @media (max-width: 480px) {
   .hero-area .advance-search {
-    margin-bottom: -80px;
+    margin-bottom: 10px;
   }
 }
 
@@ -2733,6 +2778,15 @@ form textarea {
 
 .top-to a:hover {
   text-decoration: none;
+}
+
+#hdis {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 50px;
+    font-size: 10px;
+    text-align: center;
+    width: 150px;
 }
 
 /*# sourceMappingURL=maps/style.css.map */

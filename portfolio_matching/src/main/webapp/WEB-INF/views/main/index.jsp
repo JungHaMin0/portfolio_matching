@@ -120,11 +120,11 @@
                     </ul>
                     <p class="card-text">
                       <c:choose>
-                        <c:when test="${fn:length(list.portfolio_content) gt 36}">
-                          <c:out value="${fn:substring(list.portfolio_content, 0, 33)}"></c:out>...
+                        <c:when test="${fn:length(list.portfolio_content) gt 30}">
+                          ${fn:substring(list.portfolio_content, 0, 27)}...
                             </c:when>
                         <c:otherwise>
-                          <c:out value="${list.portfolio_content}"></c:out>
+                          ${list.portfolio_content}
                         </c:otherwise>
                       </c:choose>
                     </p>
