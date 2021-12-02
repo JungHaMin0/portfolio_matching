@@ -66,12 +66,12 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item"><a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages"> 
     <i class="fas fa-fw fa-folder"></i> 
-    <span>사이트 현황</span>
+    <span>모든 정보</span>
     </a>
       <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header">All</h6> 
-          <a class="collapse-item" href="adminStat.do">현황</a>
+          <a class="collapse-item" href="adminStatPortfolio.do">정보 현황</a>
         </div>
       </div></li>
 
@@ -86,8 +86,6 @@
 
   </ul>
   <!-- End of Sidebar -->
-
-
 
 </body>
 </html>

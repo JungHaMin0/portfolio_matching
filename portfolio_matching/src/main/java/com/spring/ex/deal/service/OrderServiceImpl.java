@@ -1,14 +1,13 @@
 package com.spring.ex.deal.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.deal.domain.OrderVO;
 import com.spring.ex.deal.repository.OrderDAO;
-import com.spring.ex.portfolio.domain.CategoryMainVO;
-import com.spring.ex.portfolio.domain.CategorySubVO;
-import com.spring.ex.portfolio.domain.PortRegVO;
-import com.spring.ex.portfolio.domain.PortfolioDTO;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -29,5 +28,4 @@ public class OrderServiceImpl implements OrderService {
 
 		return vo1;
 	}
-
 }

@@ -9,6 +9,15 @@ public class AnswerVO {
 	private String ans_saleUser;
 	private String ans_content;
 	private Date ans_regDate;
+	private int acnt;
+
+	public int getAcnt() {
+		return acnt;
+	}
+
+	public void setAcnt(int acnt) {
+		this.acnt = acnt;
+	}
 
 	public int getAns_id() {
 		return ans_id;

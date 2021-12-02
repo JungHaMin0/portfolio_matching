@@ -8,10 +8,12 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminPortfolioDAO;
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
 import com.spring.ex.portfolio.domain.PortfolioDTO;
+import com.spring.ex.review.domain.ReviewVO;
 
 @Service
 public class AdminPortfolioServiceImpl implements AdminPortfolioService {
@@ -75,6 +77,42 @@ public class AdminPortfolioServiceImpl implements AdminPortfolioService {
 	public int adminPortfolioDelete(int portfolio_id) throws Exception {
 		
 		return adminPortfolioDao.adminPortfolioDelete(portfolio_id);
+	}
+
+	@Override
+	public PortfolioDTO adminPortfolioDetail(int portfolio_id) throws Exception {
+		PortRegVO portRegVO =  adminPortfolioDao.adminPortfolioDetail(portfolio_id);
+		return convertToDto(portRegVO);
+	}
+
+	@Override
+	public int adminPortfolioAllSaleCount(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioAllSaleCount(portfolio_id);
+	}
+
+	@Override
+	public int adminPortfolioAllSalePrice(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioAllSalePrice(portfolio_id);
+	}
+
+	@Override
+	public int adminPortfolioAllReviewCount(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioAllReviewCount(portfolio_id);
+	}
+
+	@Override
+	public int adminPortfolioAllInquiryCount(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioAllInquiryCount(portfolio_id);
+	}
+
+	@Override
+	public List<DealVO> adminPortfolioRecentDeal(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioRecentDeal(portfolio_id);
+	}
+
+	@Override
+	public List<ReviewVO> adminPortfolioRecentReview(int portfolio_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioRecentReview(portfolio_id);
 	}
 
 }

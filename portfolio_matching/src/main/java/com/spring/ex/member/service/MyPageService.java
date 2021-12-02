@@ -3,8 +3,6 @@ package com.spring.ex.member.service;
 import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpSession;
-
 import com.spring.ex.deal.domain.Deal_PortVO;
 import com.spring.ex.deal.domain.Deal_Port_InqVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
