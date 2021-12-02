@@ -2,6 +2,7 @@ package com.spring.ex.member.controller;
 
 import java.io.File;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -18,9 +19,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.spring.ex.deal.domain.DealVO;
 import com.spring.ex.inquiry.domain.AnswerVO;
 import com.spring.ex.inquiry.domain.InquiryVO;
+import com.spring.ex.member.domain.Criteria;
 import com.spring.ex.member.domain.MemberVO;
+import com.spring.ex.member.domain.PageMaker;
 import com.spring.ex.member.service.MyPageService;
 import com.spring.ex.review.domain.ReviewVO;
 import com.spring.ex.scrap.domain.ScrapVO;
@@ -33,12 +37,17 @@ public class MyPageController {
 
 	// 구매 내역
 	@RequestMapping(value = "pmPurchase.do", method = RequestMethod.GET)
-	public String pmPurchase(HttpSession session, Model model) throws Exception {
+	public String pmPurchase(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
-		model.addAttribute("pmPurchaseList", service.pmPurchaseList(user_id));
-
+		cri.setUser_id(vo.getUser_id());
+		model.addAttribute("pmPurchaseList", service.pmPurchaseList(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.pmPurchaseListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "mypage/pmPurchase";
 	}
 
@@ -119,12 +128,17 @@ public class MyPageController {
 	
 	// 관심 상품
 	@RequestMapping(value = "pmInterest.do", method = RequestMethod.GET)
-	public String pmInterest(HttpSession session, Model model) throws Exception {
+	public String pmInterest(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
-
-		model.addAttribute("pmInterestList", service.pmInterestList(user_id));
+		cri.setUser_id(vo.getUser_id());
+		
+		model.addAttribute("pmInterestList", service.pmInterestList(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.pmInterestListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
 
 		return "mypage/pmInterest";
 	}
@@ -146,12 +160,18 @@ public class MyPageController {
 
 	// 문의 내역(구매)
 	@RequestMapping(value = "pmInquiry.do", method = RequestMethod.GET)
-	public String pmInquiry(HttpSession session, Model model) throws Exception {
+	public String pmInquiry(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
-
-		model.addAttribute("pmInquiryList", service.pmInquiryList(user_id));
+		cri.setUser_id(vo.getUser_id());
+		
+		model.addAttribute("pmInquiryList", service.pmInquiryList(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.pmInquiryListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "mypage/pmInquiry";
 	}
 
@@ -202,13 +222,18 @@ public class MyPageController {
 	
 	// 판매 중
 	@RequestMapping(value = "smSale.do", method = RequestMethod.GET)
-	public String smSale(HttpSession session, Model model) throws Exception {
+	public String smSale(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
+		cri.setUser_id(vo.getUser_id());
 
-		model.addAttribute("smSaleList", service.smSaleList(user_id));
-
+		model.addAttribute("smSaleList", service.smSaleList(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.smSaleListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "mypage/smSale";
 	}
 	
@@ -256,24 +281,44 @@ public class MyPageController {
 
 	// 수익 현황
 	@RequestMapping(value = "smProfit.do", method = RequestMethod.GET)
-	public String smProfit(HttpSession session, Model model) throws Exception {
+	public String smProfit(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
-
-		model.addAttribute("smProfitList", service.smProfitList(user_id));
-
+		cri.setUser_id(vo.getUser_id());
+		
+		
+		model.addAttribute("smProfitList", service.smProfitList(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.smProfitListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
+		List<DealVO> list = service.smProfitTotal(vo.getUser_id());
+		double total = 0.0;
+		double temp;
+		for(int i=0; i<list.size(); i++) {
+			temp = list.get(i).getDeal_price();
+			total += (temp - (temp * 0.1));
+		}
+		model.addAttribute("total", total);
+		
 		return "mypage/smProfit";
 	}
 
 	// 문의 내역(판매)
 	@RequestMapping(value = "smInquiry.do", method = RequestMethod.GET)
-	public String smInquiry(HttpSession session, Model model) throws Exception {
+	public String smInquiry(HttpSession session, Model model, Criteria cri) throws Exception {
 
 		MemberVO vo = (MemberVO) session.getAttribute("member");
-		String user_id = vo.getUser_id();
-
-		model.addAttribute("smInquiryList", service.smInquiryList(user_id));
+		cri.setUser_id(vo.getUser_id());
+		
+		model.addAttribute("smInquiryList", service.smInquiryList(cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.smInquiryListCount(cri));
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "mypage/smInquiry";
 	}
 

@@ -57,6 +57,14 @@
 		SELECT * FROM review WHERE review_portfolio_id = #{portfolio_id} ORDER BY review_regDate DESC LIMIT 0, 5
 	</select>
 	
+	<select id="adminPortfolioRecentInquiry" parameterType="int" resultType="com.spring.ex.inquiry.domain.InquiryVO">
+		SELECT * FROM inquiry WHERE inq_portfolio_id = #{portfolio_id} ORDER BY inq_regDate DESC LIMIT 0, 5
+	</select>
+	
+	<select id="adminPortfolioAnsInq" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM answer WHERE ans_inq_id = #{inq_id}
+	</select>
+	
 	<!-- 어드민 메인 페이지 백분율   -->
 	<select id="portcate" resultType="com.spring.ex.portfolio.domain.PortRegVO">
 	select portfolio_category_main, ROUND(COUNT(*) * 100 / sum(count(*)) over(), 1) AS score

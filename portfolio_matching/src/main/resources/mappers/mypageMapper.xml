@@ -4,13 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mypageMapper">
 	<!-- 구매 내역 -->
-	<select id="pmPurchase_list" parameterType="String" resultType="com.spring.ex.deal.domain.Deal_PortVO">
-		SELECT * FROM deal, portfolio
-		WHERE deal_portfolio_id = portfolio_id
-		AND deal_purUser = #{user_id}
-		ORDER BY deal_id DESC;
+	<select id="pmPurchase_list" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.deal.domain.Deal_PortVO">
+		SELECT * FROM (SELECT *, ROW_NUMBER() OVER(ORDER BY deal_id DESC) AS rnum FROM deal, portfolio WHERE deal_portfolio_id = portfolio_id AND deal_purUser = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY deal_id DESC;
 	</select>
-
+	
+	<!-- 구매 총 개수 -->
+	<select id="pmPurchaseListCount" resultType="int" parameterType="com.spring.ex.member.domain.Criteria">
+	<![CDATA[
+		SELECT COUNT(*) FROM deal, portfolio WHERE deal_portfolio_id = portfolio_id AND deal_purUser = #{user_id}
+	]]>
+	</select>
 	<!-- 구매 내역 - 구매 확정 기능 -->
 	<update id="pmPurchaseConfirm" parameterType="String">
 		UPDATE deal SET
@@ -94,11 +97,12 @@
 	</select>
 	
 	<!-- 관심 상품 -->
-	<select id="pmInterestList" parameterType="String" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
-		SELECT portfolio.* FROM scrap, portfolio
-		WHERE scrap_portfolio_id = portfolio_id
-		AND scrap_userId = #{user_id}
-		ORDER BY scrap_id DESC;
+	<select id="pmInterestList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
+		SELECT * FROM (SELECT *, ROW_NUMBER() OVER(ORDER BY scrap_id DESC) AS rnum FROM scrap, portfolio WHERE scrap_portfolio_id = portfolio_id AND scrap_userId = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY scrap_id DESC;
+	</select>
+	
+	<select id="pmInterestListCount" resultType="int" parameterType="com.spring.ex.member.domain.Criteria">
+		SELECT COUNT(*) FROM scrap, portfolio WHERE scrap_portfolio_id = portfolio_id AND scrap_userId = #{user_id} ORDER BY scrap_id DESC;
 	</select>
 	
 	<!-- 관심 상품 - 삭제 기능 -->
@@ -109,12 +113,14 @@
 	</delete>
 	
 	<!-- 문의 내역(구매) -->
-	<select id="pmInquiryList" resultType="com.spring.ex.deal.domain.Deal_Port_InqVO">
-		SELECT * FROM inquiry, deal, portfolio
-		WHERE inq_deal_id = deal_id
-		AND deal_portfolio_id = portfolio_id
-		AND inq_purUser = #{user_id}
-		ORDER BY inq_id DESC;
+	<select id="pmInquiryList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.deal.domain.Deal_Port_InqVO">
+		SELECT * FROM (SELECT inquiry.*, portfolio.portfolio_title, portfolio.portfolio_Img, ROW_NUMBER() OVER(ORDER BY inq_id DESC) AS rnum FROM inquiry, portfolio WHERE portfolio_id = inq_portfolio_id AND inq_purUser = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY inq_id DESC;
+	</select>
+	
+	<select id="pmInquiryListCount" resultType="int" parameterType="com.spring.ex.member.domain.Criteria">
+	<![CDATA[
+		SELECT COUNT(*) FROM inquiry, portfolio WHERE portfolio_id = inq_portfolio_id AND inq_purUser = #{user_id} ORDER BY inq_id DESC
+	]]>
 	</select>
 	
 	<!-- 문의 내역(구매) - 문의 작성 기능 -->
@@ -145,10 +151,15 @@
 	</select>
 	
 	<!-- 판매 중 -->
-	<select id="smSaleList" parameterType="String" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
-		SELECT * FROM portfolio
-		WHERE portfolio_userId = #{user_id}
-		ORDER BY portfolio_id DESC;
+	<select id="smSaleList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
+		SELECT * FROM (SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS rnum FROM portfolio WHERE portfolio_userId = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY portfolio_id DESC
+	</select>
+	
+	<!-- 판매 중 개수 -->
+	<select id="listCount" resultType="int" parameterType="com.spring.ex.member.domain.Criteria">
+	<![CDATA[
+		SELECT COUNT(portfolio_id) FROM portfolio WHERE portfolio_id > 0 AND portfolio_userId = #{user_id}
+	]]>
 	</select>
 	
 	<!-- 판매 중 - 삭제 기능 -->
@@ -178,21 +189,25 @@
 	</update>
 	
 	<!-- 수익 현황 -->
-	<select id="smProfitList" parameterType="String" resultType="com.spring.ex.deal.domain.Deal_PortVO">
-		SELECT * FROM deal, portfolio
-		WHERE deal_portfolio_id = portfolio_id
-		AND deal_saleUser = #{user_id}
-		AND deal_status = '구매 확정'
-		ORDER BY deal_date DESC;
+	<select id="smProfitList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.deal.domain.Deal_PortVO">
+		SELECT * FROM (SELECT deal.*, portfolio.portfolio_title, portfolio.portfolio_Img, ROW_NUMBER() OVER(ORDER BY deal_id DESC) AS rnum FROM deal, portfolio WHERE portfolio_id = deal_portfolio_id AND deal_saleUser = #{user_id} AND deal_status = '구매 확정') p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY deal_id DESC;
+	</select>
+	
+	<select id="smProfitListCount" parameterType="com.spring.ex.member.domain.Criteria" resultType="int">
+		SELECT COUNT(*) FROM deal, portfolio WHERE deal_portfolio_id = portfolio_id AND deal_saleUser = #{user_id} AND deal_status = '구매 확정' ORDER BY deal_date DESC;
+	</select>
+	
+	<select id="smProfitTotal" parameterType="string" resultType="com.spring.ex.deal.domain.DealVO">
+		SELECT deal_price FROM deal, portfolio WHERE deal_portfolio_id = portfolio_id AND deal_saleUser = #{user_id} AND deal_status = '구매 확정' ORDER BY deal_date DESC;
 	</select>
 	
 	<!-- 문의 내역(판매) -->
-	<select id="smInquiryList" parameterType="String" resultType="com.spring.ex.deal.domain.Deal_Port_InqVO">
-		SELECT * FROM inquiry, deal, portfolio
-		WHERE inq_deal_id = deal_id
-		AND deal_portfolio_id = portfolio_id
-		AND deal_saleUser = #{user_id}
-		ORDER BY inq_id DESC;
+	<select id="smInquiryList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.deal.domain.Deal_Port_InqVO">
+		SELECT * FROM (SELECT inquiry.*, portfolio.portfolio_title, portfolio.portfolio_Img, ROW_NUMBER() OVER(ORDER BY inq_id DESC) AS rnum FROM inquiry, portfolio WHERE portfolio_id = inq_portfolio_id AND portfolio_userId = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY inq_id DESC;
+	</select>
+	
+	<select id="smInquiryListCount" parameterType="com.spring.ex.member.domain.Criteria" resultType="int">
+		SELECT COUNT(*) FROM inquiry, portfolio WHERE portfolio_id = inq_portfolio_id AND portfolio_userId = #{user_id} ORDER BY inq_id DESC;
 	</select>
 	
 	<!-- 문의 내역(판매) - 답변 하기 -->

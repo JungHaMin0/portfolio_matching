@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.admin.repository.AdminPortfolioDAO;
 import com.spring.ex.deal.domain.DealVO;
+import com.spring.ex.inquiry.domain.InquiryDTO;
+import com.spring.ex.inquiry.domain.InquiryVO;
 import com.spring.ex.portfolio.domain.CategoryMainVO;
 import com.spring.ex.portfolio.domain.CategorySubVO;
 import com.spring.ex.portfolio.domain.PortRegVO;
@@ -114,5 +116,43 @@ public class AdminPortfolioServiceImpl implements AdminPortfolioService {
 	public List<ReviewVO> adminPortfolioRecentReview(int portfolio_id) throws Exception {
 		return adminPortfolioDao.adminPortfolioRecentReview(portfolio_id);
 	}
+
+	@Override
+	public List<InquiryDTO> adminPortfolioRecentInquiry(int portfolio_id) throws Exception {
+		List<InquiryVO> inquiryVOList = adminPortfolioDao.adminPortfolioRecentInquiry(portfolio_id);
+		
+		List<InquiryDTO> inquiryDTOList = new ArrayList<InquiryDTO>();
+		
+		for (int i = 0; i < inquiryVOList.size(); i++) {
+			InquiryVO vo = inquiryVOList.get(i);
+
+			InquiryDTO dto = convertToInquiryDto(vo);
+			inquiryDTOList.add(dto);
+		}
+		return inquiryDTOList;
+	}
+
+	@Override
+	public int adminPortfolioAnsInq(int inq_id) throws Exception {
+		return adminPortfolioDao.adminPortfolioAnsInq(inq_id);
+	}
+	
+	public InquiryDTO convertToInquiryDto(InquiryVO vo) throws Exception {
+
+		InquiryDTO dto = new InquiryDTO();
+		dto.setInq_id(vo.getInq_id());
+		dto.setInq_deal_id(vo.getInq_deal_id());
+		dto.setInq_portfolio_id(vo.getInq_portfolio_id());
+		dto.setInq_purUser(vo.getInq_purUser());
+		dto.setInq_title(vo.getInq_title());
+		dto.setInq_content(vo.getInq_content());
+		dto.setInq_regDate(vo.getInq_regDate());
+		
+		dto.setInq_ans(adminPortfolioDao.adminPortfolioAnsInq(vo.getInq_id()));
+
+		return dto;
+	}
+	
+	
 
 }

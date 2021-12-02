@@ -2,10 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<<<<<<< HEAD
 <c:set var="path" value="${pageContext.request.contextPath}"/>
-=======
->>>>>>> refs/remotes/origin/hamin
 
 <!DOCTYPE html>
 <html>
