@@ -2,6 +2,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/develop
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
@@ -56,21 +60,11 @@
                                             <th>Delete</th>
                                         </tr>
                                     </thead>
-                                    <tfoot align="center">
-                                        <tr>
-                                             <th>번호</th>
-                                            <!-- <th>포트폴리오 no.</th> -->
-                                            <th>ID</th>
-                                            <th>Title</th>
-                                            <th>Content</th>
-                                            <th>Rating</th>
-                                            <th>Date</th>
-                                            <th>Delete</th>
-                                            
-                                        </tr>
-                                    </tfoot>
+
                                     <tbody align="center">
+
                                      <c:forEach items="${reviewlist}" var="reviewlist">
+
                                      
                                      <tr>
                                        <%--  <tr onclick="review_detail('${reviewlist.review_id}');"> --%>
@@ -80,6 +74,7 @@
                                             <%-- <td>${reviewlist.review_portfolio_id}</td> --%>
                                             <td>${reviewlist.review_userId}</td>
                                            <td>${reviewlist.review_title}</td>
+
                                             <td>${reviewlist.review_content}</td>
 													<td><%-- <ul class="list-inline">
 															<c:forEach begin="1" end="5" varStatus="stat">

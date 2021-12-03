@@ -97,7 +97,7 @@
                                   <a href="#">${fn:substring(list.portfolio_userId, 0, 10)}...</a>
                             </c:when>
                             <c:otherwise>
-                              <div><a href="#">${list.portfolio_userId}</a></div>
+                             <div><a href="A_Info.do?purUser=${list.portfolio_userId}">${list.portfolio_userId}</a></div>
                             </c:otherwise>
                           </c:choose>
                         </td>

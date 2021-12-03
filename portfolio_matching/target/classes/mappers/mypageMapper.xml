@@ -151,6 +151,7 @@
 	</select>
 	
 	<!-- 판매 중 -->
+
 	<select id="smSaleList" parameterType="com.spring.ex.member.domain.Criteria" resultType="com.spring.ex.portfolio.domain.PortfolioVO">
 		SELECT * FROM (SELECT *, ROW_NUMBER() OVER(ORDER BY portfolio_id DESC) AS rnum FROM portfolio WHERE portfolio_userId = #{user_id}) p WHERE rnum BETWEEN #{rowStart} AND #{rowEnd} ORDER BY portfolio_id DESC
 	</select>
@@ -160,6 +161,7 @@
 	<![CDATA[
 		SELECT COUNT(portfolio_id) FROM portfolio WHERE portfolio_id > 0 AND portfolio_userId = #{user_id}
 	]]>
+
 	</select>
 	
 	<!-- 판매 중 - 삭제 기능 -->

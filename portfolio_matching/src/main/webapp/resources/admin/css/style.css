@@ -1,0 +1,78 @@
+.demo{ background: #eee; }
+
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+
+.tab .nav-tabs{
+    display: inline-block;
+    background: #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 6px;
+}
+
+.tab .nav-tabs li{
+    float: none;
+    display: inline-block;
+    position: relative;
+}
+
+.tab .nav-tabs li a{
+    font-size: 16px;
+    font-weight: 700;
+    background: none;
+    color: #999;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    transition: all 0.5s ease 0s;
+}
+
+.tab .nav-tabs li a:hover{
+    background:  #fB9DA7;
+    color: #fff;
+    border: none;
+}
+.demo
+{
+	padding: 100px 0;
+}
+.heading-title
+{
+	margin-bottom: 100px;
+}
+.tab .nav-tabs li.active a,
+.tab .nav-tabs li.active a:focus,
+.tab .nav-tabs li.active a:hover{
+    border: none;
+    background: #fB9DA7;
+    color: #fff;
+}
+
+.tab .tab-content{
+    font-size: 14px;
+    color: #686868;
+    line-height: 25px;
+    text-align: left;
+    padding: 5px 20px;
+}
+
+.tab .tab-content h3{
+    font-size: 22px;
+    color: #5b5a5a;
+}
+
+@media only screen and (max-width: 480px){
+    .tab .nav-tabs{
+        border-radius: 10px;
+    }
+    .tab .nav-tabs li{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}@charset "utf-8";
+/* CSS Document */
+

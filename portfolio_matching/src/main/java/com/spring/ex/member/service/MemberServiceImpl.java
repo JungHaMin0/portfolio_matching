@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.spring.ex.member.domain.MemberVO;
 import com.spring.ex.member.repository.MemberDAO;
-import com.spring.ex.portfolio.domain.PortListVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -43,4 +42,7 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+
 }
