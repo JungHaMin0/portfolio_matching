@@ -39,3 +39,7 @@
   1. 여기부터 다시
 
 
+## 4. 마이페이지
+![portgit마이페이지](https://user-images.githubusercontent.com/80952596/145715547-13720924-132b-4f79-9cfa-3574794bccce.PNG)
+- 주요기능
+  1. 여기부터 다시
