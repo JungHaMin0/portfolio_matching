@@ -29,6 +29,7 @@
 ![portgit메인](https://user-images.githubusercontent.com/80952596/145715130-9482dbd0-6399-412e-8eed-e03eda8a5c9f.PNG)
 ### 주요 기능 실시간 트렌드
 ![s실시간트렌드](https://user-images.githubusercontent.com/80952596/146004432-e54ab9b0-6b31-4f65-a6e8-8efb825a6bac.PNG)
+
 - 주요 기능 <br>
   📒 헤더바 기능 <br>
   📒 메인 검색 기능 <br>
@@ -39,6 +40,7 @@
 ## 2. 포트폴리오 목록
 ![portgit포트폴리오](https://user-images.githubusercontent.com/80952596/145715442-f87ca2d6-18c1-4b53-9f7a-8dd9f06d062a.PNG) <br><br>
 ![p영상_포폴리스트](https://user-images.githubusercontent.com/80952596/146004614-5a6f2b60-2cd2-45e1-8b4d-6f7ecfb73718.gif)
+
 - 주요 기능 <br>
   📕 카테고리 <br>
   📕 카테고리 별 포트폴리오 데이터 <br>
@@ -51,16 +53,18 @@
 <br>
 
 ## 3. 포트폴리오 등록
-![portgit등록하기](https://user-images.githubusercontent.com/80952596/145715538-951b1f25-905e-4e76-acfd-be18ccbba7fb.PNG)
-- 주요기능
-  📘 4가지 과정들을 걸쳐 포트폴리오 등록
-  📘 세세하게 오류 잡고, 정상 동작
+![portgit등록하기](https://user-images.githubusercontent.com/80952596/145715538-951b1f25-905e-4e76-acfd-be18ccbba7fb.PNG)<br>
+
+- 주요기능<br>
+  📘 4가지 과정들을 걸쳐 포트폴리오 등록<br>
+  📘 세세하게 오류 잡고, 정상 동작<br>
 <br>
 
 ## 4. 마이페이지
 ![portgit마이페이지](https://user-images.githubusercontent.com/80952596/145715547-13720924-132b-4f79-9cfa-3574794bccce.PNG)<br>
 ![s_판매내역](https://user-images.githubusercontent.com/80952596/146004476-392945ec-9796-4aab-8dca-c67653eb2b47.PNG)<br>
 ![s구매내역](https://user-images.githubusercontent.com/80952596/146004483-31f81412-b714-4f98-b69d-29949f0d875e.PNG)<br>
+
 - 주요기능 <br>
   📗 구매내역 확인 <br>
   📗 판매내역 확인 <br>
@@ -83,6 +87,7 @@
 ## 1. 관리자 메인 페이지
 ![p영상_관리자페이지 전체](https://user-images.githubusercontent.com/80952596/146004687-e17c0265-12e4-4e18-8c1f-8cd720fe865d.gif) <br><br><br>
 ![p영상_관리자페이지 수익](https://user-images.githubusercontent.com/80952596/146004682-17246fab-4596-42fc-8997-694f8302fd4c.gif) <br>
+
 - 주요기능<br>
   📒 수익<br>
   📒 그래프 수익<br>
@@ -96,7 +101,6 @@
   
 ## 2. 포트폴리오 리스트
 ![s관리자 포폴리스트](https://user-images.githubusercontent.com/80952596/146004509-98e3d2b2-c0ca-4dc3-9a02-9cb2705e9090.PNG)
-![p영상_포폴리스트](https://user-images.githubusercontent.com/80952596/146004614-5a6f2b60-2cd2-45e1-8b4d-6f7ecfb73718.gif)
 
 
 
@@ -104,8 +108,4 @@
 ![s 관리자 페이지 포폴리스트+상세보기](https://user-images.githubusercontent.com/80952596/146004523-2ae33082-74da-40e3-9333-31a4b739204d.PNG)
 ![p영상_관리자 포폴리스트+상세보기](https://user-images.githubusercontent.com/80952596/146004717-e5dfdd33-3ddf-4f57-accc-91e2bdd88823.gif)
 
-
-
-## 2-2. 포트폴리오 검색
-![p영상_포폴검색](https://user-images.githubusercontent.com/80952596/146004647-09bac980-6dc1-4fde-826c-812dc0fbef48.gif)
 
