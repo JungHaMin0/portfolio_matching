@@ -9,13 +9,15 @@
 			inq_portfolio_id,
 			inq_purUser,
 			inq_title,
-			inq_content
+			inq_content,
+			inq_regDate
 		) VALUES (
 			#{inq_deal_id},
 			#{inq_portfolio_id},
 			#{inq_purUser},
 			#{inq_title},
-			#{inq_content}
+			#{inq_content},
+			#{inq_regDate}
 		);
 	</insert>
 </mapper>
